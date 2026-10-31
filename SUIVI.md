@@ -14,7 +14,7 @@ Ce fichier regroupe trois choses :
 | # | Titre | Statut | Format | Durée | Composition Remotion | Date prévue | Publiée le | Lien | Notes |
 |---|-------|--------|--------|-------|----------------------|-------------|------------|------|-------|
 | 000 | Exemple — Bienvenue sur Vid-o- | 🎬 Montage | 16:9 (1920×1080) | 5 s | `HelloWorld` | — | — | — | Vidéo de test |
-| 001 | | 💡 Idée | | | | | | | |
+| 001 | Street workout (titre à définir) | 🎨 Assets | 9:16 (1080×1920) | 62 s (rush) | — | — | — | — | Rush reçu, en attente des consignes |
 | 002 | | 💡 Idée | | | | | | | |
 
 ### Banque d'idées
