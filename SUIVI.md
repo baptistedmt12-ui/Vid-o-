@@ -14,7 +14,7 @@ Ce fichier regroupe trois choses :
 | # | Titre | Statut | Format | Durée | Composition Remotion | Date prévue | Publiée le | Lien | Notes |
 |---|-------|--------|--------|-------|----------------------|-------------|------------|------|-------|
 | 000 | Exemple — Bienvenue sur Vid-o- | 🎬 Montage | 16:9 (1920×1080) | 5 s | `HelloWorld` | — | — | — | Vidéo de test |
-| 001 | Street workout (titre à définir) | 🎨 Assets | 9:16 (1080×1920) | 62 s (rush) | — | — | — | — | Rush reçu, en attente des consignes |
+| 001 | Les 5 niveaux du poids de corps | 🔍 Relecture | 9:16 (1080×1920) | 1 min 06 | `Video001` | — | — | — | v1 rendue, voix off à enregistrer |
 | 002 | | 💡 Idée | | | | | | | |
 
 ### Banque d'idées
@@ -76,28 +76,28 @@ Ce fichier regroupe trois choses :
 
 | Rôle | Couleur | Utilisation |
 |------|---------|-------------|
-| Fond principal | `#0B1020` | Arrière-plan des scènes |
+| Fond principal | `#0B0B0D` | Arrière-plan des scènes |
 | Texte principal | `#FFFFFF` | Titres et textes |
-| Couleur d'accent | `#______` | Mots importants, boutons, soulignements |
-| Couleur secondaire | `#______` | Formes, éléments décoratifs |
+| Couleur d'accent | `#E10600` (rouge) | Mots importants, badges, soulignements |
+| Couleur secondaire | blanc 28 % | Éléments inactifs (échelle de niveaux) |
 
 ### Typographie
 
 | Usage | Police | Graisse | Taille (1080p) |
 |-------|--------|---------|----------------|
-| Titres | *(ex. : Montserrat)* | Bold | 100–120 px |
-| Sous-titres | | SemiBold | 60–72 px |
+| Titres | Anton | Regular | 105–240 px |
+| Badges / petits textes | Inter | ExtraBold (800) | 40–50 px |
 | Texte courant / sous-titrage | | Regular | 40–48 px |
 
 ### Animations et rythme
 - **Entrée des textes :** fondu + léger zoom (`spring`, damping 200) — comme dans `HelloWorld`
-- **Transitions entre scènes :** *(ex. : glissement, fondu, coupe franche)*
+- **Transitions entre scènes :** flash blanc, zoom avec flou, whip (glissement rapide) + son whoosh
 - **Durée minimale d'un texte à l'écran :** ~1,5 s
 - **Rythme :** un changement visuel toutes les 2–4 s
 
 ### Son
 - **Style de musique :**
-- **Effets sonores :** *(ex. : whoosh sur les transitions)*
+- **Effets sonores :** whoosh sur les transitions, impact sur les titres, pop sur les mots
 - **Voix off :** oui / non
 
 ### Éléments récurrents

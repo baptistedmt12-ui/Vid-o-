@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/baptistedmt12-ui/Vid-o-#readme",
   "dependencies": {
+    "@fontsource/anton": "^5.3.0",
+    "@fontsource/inter": "^5.3.0",
     "@remotion/cli": "^4.0.539",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
