@@ -13,7 +13,7 @@ Ce fichier regroupe trois choses :
 
 | # | Titre | Statut | Format | Durée | Composition Remotion | Date prévue | Publiée le | Lien | Notes |
 |---|-------|--------|--------|-------|----------------------|-------------|------------|------|-------|
-| 001 | Exemple — Bienvenue sur Vid-o- | 🎬 Montage | 16:9 (1920×1080) | 5 s | `HelloWorld` | — | — | — | Vidéo de test |
+| 000 | Exemple — Bienvenue sur Vid-o- | 🎬 Montage | 16:9 (1920×1080) | 5 s | `HelloWorld` | — | — | — | Vidéo de test |
 | 002 | | 💡 Idée | | | | | | | |
 | 003 | | 💡 Idée | | | | | | | |
 
