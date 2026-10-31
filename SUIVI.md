@@ -15,7 +15,8 @@ Ce fichier regroupe trois choses :
 |---|-------|--------|--------|-------|----------------------|-------------|------------|------|-------|
 | 000 | Exemple — Bienvenue sur Vid-o- | 🎬 Montage | 16:9 (1920×1080) | 5 s | `HelloWorld` | — | — | — | Vidéo de test |
 | 001 | Les 5 niveaux du poids de corps | 🔍 Relecture | 9:16 (1080×1920) | 1 min 06 | `Video001` | — | — | — | v1 rendue, voix off à enregistrer |
-| 002 | | 💡 Idée | | | | | | | |
+| 002 | L'étiquette arrachée (MT-09 à 4 000 €) | 🔍 Relecture | 9:16 (1080×1920) | 1 min 00 | `Video002` | — | — | — | v1 rendue (motion design calé sur la voix off, sans sous-titres) |
+| 003 | | 💡 Idée | | | | | | | |
 
 ### Banque d'idées
 
