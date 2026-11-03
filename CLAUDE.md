@@ -31,6 +31,16 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
   Ne le committer que s'il fait moins de 100 Mo ; sinon, le dire.
 - Les rendus intermédiaires (aperçus) peuvent être en qualité réduite, en le précisant.
 
+## Livraison des vidéos (constaté avec l'utilisateur)
+- L'utilisateur est sur **iPhone 17 Pro + PC Windows** (pas de Mac).
+- **Réception des rushes :** par lien **WeTransfer** (original intact). Les pièces jointes sont limitées à ~30 Mo.
+- **Envoi des vidéos finales :** dans la discussion. Sur l'appli iPhone, le bouton de partage n'apparaît
+  que pour les fichiers d'environ 100 Mo maximum (vu à 94 Mo, absent à 206 Mo), et l'enregistrement
+  depuis l'iPhone ne fonctionne pas de toute façon. L'utilisateur télécharge donc sur **PC**
+  (claude.ai/code), puis passe la vidéo sur l'iPhone via iCloud Drive.
+- Toujours envoyer la version qualité max. Si elle dépasse 100 Mo, envoyer aussi une version
+  de moins de 95 Mo (H.264 2 passes) et la committer dans `export/` pour un lien GitHub de secours.
+
 ## Habillage TikTok (exigence de l'utilisateur)
 - Textes et compteurs **petits et sur le côté**, jamais en gros au milieu : on doit bien voir les mouvements.
 - Ne rien placer dans les zones de l'interface TikTok (voir `videos/README.md`) :
