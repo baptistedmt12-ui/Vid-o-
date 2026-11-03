@@ -5,6 +5,8 @@ import { Video001 } from "./videos/001-video-001/Video001";
 import { FPS, TOTAL_FRAMES } from "./videos/001-video-001/timeline";
 import { Video002 } from "./videos/002-etiquette-arrachee/Video002";
 import * as T002 from "./videos/002-etiquette-arrachee/timeline";
+import { Video003 } from "./videos/003-defi-15-15-7/Video003";
+import * as V3 from "./videos/003-defi-15-15-7/reps";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -31,6 +33,14 @@ export const RemotionRoot: React.FC = () => {
         component={Video002}
         durationInFrames={T002.TOTAL_FRAMES}
         fps={T002.FPS}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="Video003"
+        component={Video003}
+        durationInFrames={V3.TOTAL_FRAMES}
+        fps={V3.FPS}
         width={1080}
         height={1920}
       />

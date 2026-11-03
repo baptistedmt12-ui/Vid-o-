@@ -31,6 +31,11 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
   Ne le committer que s'il fait moins de 100 Mo ; sinon, le dire.
 - Les rendus intermédiaires (aperçus) peuvent être en qualité réduite, en le précisant.
 
+## Habillage TikTok (exigence de l'utilisateur)
+- Textes et compteurs **petits et sur le côté**, jamais en gros au milieu : on doit bien voir les mouvements.
+- Ne rien placer dans les zones de l'interface TikTok (voir `videos/README.md`) :
+  haut ~280 px, droite au-delà de ~900 px, bas à partir de ~1450 px.
+
 ## Rendu
 - Aperçu : `npm run dev`
 - Rendu : `npx remotion render <Composition> out/<nom>.mp4`

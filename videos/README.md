@@ -27,3 +27,10 @@ videos/
 
 GitHub refuse les fichiers de plus de **100 Mo**. Pour les gros rushes,
 envoie une version compressée ou un lien (Drive, WeTransfer…).
+
+## Zones TikTok à laisser libres (1080×1920)
+
+- **En haut**, jusqu'à ~280 px : barre d'état et onglets « Suivis / Pour toi ».
+- **À droite**, au-delà de ~900 px (entre ~650 et ~1550 px de haut) : j'aime, commentaires, partage.
+- **En bas**, à partir de ~1450 px : pseudo, description, musique.
+- L'habillage ne doit jamais cacher les mouvements : petit, sur le côté.
