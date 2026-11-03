@@ -1,4 +1,4 @@
-# Vidéo 003 — Défi 15 muscle-ups / 15 dips / 7 tractions
+# Vidéo 003 — Défi 15 / 15 / 15 (réalisé : 15 muscle-ups, 15 dips, 7 tractions)
 
 - **Statut :** 🔍 Relecture (v1 rendue)
 - **Format :** 9:16 (1080×1920), 30 i/s — rush original en 4K vertical
@@ -33,8 +33,10 @@ pour qu'on comprenne que j'ai fait 15, 15 et 7.
   - petite carte compteur en haut à gauche, sous la barre TikTok : nom de l'exercice,
     « n/15 » qui saute à chaque répétition avec un « ding », et 3 pastilles 15 · 15 · 7 ;
   - changement d'exercice : léger flash, bandeau « PARTIE 2/3 · 15 DIPS » sous la carte ;
-  - phrases « ÇA SE COMPLIQUE… » et « ALLEZ, LA DERNIÈRE ! » pendant les tractions ;
-  - fin : image figée et bilan 15 / 15 / 7, centré dans la zone sûre ;
+  - phrases « ÇA SE COMPLIQUE… » et « ALLEZ, ENCORE UNE ! » pendant les tractions ;
+  - **suspense** : le défi annoncé est 15 / 15 / 15, donc le compteur des tractions affiche « /15 »
+    et les pastilles 15 · 15 · 15 ; l'échec (7/15) n'est révélé qu'au bilan final ;
+  - fin : image figée et bilan « 15 MUSCLE-UPS / 15 DIPS / 7/15 TRACTIONS », centré dans la zone sûre ;
   - vidéo en continu, son d'origine conservé.
 
 ## À faire / retours

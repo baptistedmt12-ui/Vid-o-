@@ -1,4 +1,5 @@
-// Vidéo 003 — défi 15 muscle-ups / 15 dips / 7 tractions
+// Vidéo 003 — défi annoncé 15 muscle-ups / 15 dips / 15 tractions (réalisé : 15 / 15 / 7).
+// Le compteur affiche toujours l'objectif annoncé (/15) pour garder le suspense jusqu'au bilan.
 // Instants de chaque répétition (en secondes dans le rush original IMG_6027.mov),
 // repérés par analyse d'image puis vérifiés visuellement.
 export const FPS = 30;
@@ -36,7 +37,7 @@ export const EXERCISES: Exercise[] = [
   {
     id: "tractions",
     name: "TRACTIONS",
-    target: 7,
+    target: 15, // objectif annoncé ; seulement 7 réalisées, révélé au bilan
     start: 68.9,
     reps: [72.0, 73.6, 75.5, 79.3, 94.3, 96.5, 108.3],
   },
@@ -45,7 +46,7 @@ export const EXERCISES: Exercise[] = [
 /** Petites phrases pendant les moments difficiles des tractions */
 export const CAPTIONS = [
   { from: 83.5, to: 90.5, text: "ÇA SE COMPLIQUE…" },
-  { from: 100.5, to: 107.5, text: "ALLEZ, LA DERNIÈRE !" },
+  { from: 100.5, to: 107.5, text: "ALLEZ, ENCORE UNE !" },
 ];
 
 export const toFrame = (s: number) => Math.round(s * FPS);

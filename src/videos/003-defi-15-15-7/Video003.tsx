@@ -46,7 +46,7 @@ const CounterCard: React.FC = () => {
   const n = repsDone(ex, frame);
   const since = n > 0 ? frame - toFrame(ex.reps[n - 1]) : 999;
   const pop = spring({ frame: since, fps, config: { damping: 10, stiffness: 260 } });
-  const scale = n > 0 ? interpolate(pop, [0, 1], [1.35, 1]) : 1;
+  const scale = n > 0 ? interpolate(pop, [0, 1], [1.18, 1]) : 1;
   const glow = interpolate(since, [0, 12], [1, 0], clamp);
   const appear = spring({ frame, fps, config: { damping: 200 }, durationInFrames: 12 });
 
@@ -84,7 +84,7 @@ const CounterCard: React.FC = () => {
             lineHeight: 1.05,
             color: theme.colors.white,
             transform: `scale(${scale})`,
-            transformOrigin: "left bottom",
+            transformOrigin: "left 75%",
             textShadow: `0 0 ${40 * glow}px ${theme.colors.red}`,
           }}
         >
@@ -244,6 +244,9 @@ const Recap: React.FC = () => {
             >
               <span style={{ fontFamily: theme.fonts.title, fontSize: 120, lineHeight: 1, color: theme.colors.red }}>
                 {ex.reps.length}
+                {ex.reps.length < ex.target && (
+                  <span style={{ fontSize: 60, color: "rgba(255,255,255,0.6)" }}>/{ex.target}</span>
+                )}
               </span>
               <span style={{ fontFamily: theme.fonts.title, fontSize: 68, lineHeight: 1, color: theme.colors.white }}>
                 {ex.name}
