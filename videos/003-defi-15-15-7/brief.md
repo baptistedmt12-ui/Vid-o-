@@ -1,6 +1,6 @@
 # Vidéo 003 — Défi 15 / 15 / 15 (réalisé : 15 muscle-ups, 15 dips, 7 tractions)
 
-- **Statut :** 🔍 Relecture (v1 rendue)
+- **Statut :** 🔍 Relecture (v1 rendue et envoyée)
 - **Format :** 9:16 (1080×1920), 30 i/s — rush original en 4K vertical
 - **Durée finale :** ~2 min (1 min 56 de vidéo + 4 s de récap)
 - **Plateforme :** TikTok (plus d'1 minute, monétisation)
@@ -17,7 +17,7 @@ pour qu'on comprenne que j'ai fait 15, 15 et 7.
 | Fichier | Dossier | Description |
 |---------|---------|-------------|
 | `IMG_6027.mov` | `rushes/original/` (hors Git) | Original reçu via WeTransfer, 375 Mo, 4K vertical, 1 min 57 |
-| `source.mp4` | `rushes/` | Copie compressée pour l'archive Git (pas utilisée pour le rendu) |
+| `source.mp4` | `rushes/` | Copie 1080p compressée pour l'archive Git (pas utilisée pour le rendu) |
 
 ## Ce qui a été fait
 
@@ -38,6 +38,11 @@ pour qu'on comprenne que j'ai fait 15, 15 et 7.
     et les pastilles 15 · 15 · 15 ; l'échec (7/15) n'est révélé qu'au bilan final ;
   - fin : image figée et bilan « 15 MUSCLE-UPS / 15 DIPS / 7/15 TRACTIONS », centré dans la zone sûre ;
   - vidéo en continu, son d'origine conservé.
+
+## Export
+
+- `export/003-v1.mp4` : 2 min 00, 1080×1920, 30 i/s, H.264 CRF 14, AAC 320 kb/s, **206 Mo**.
+  Trop gros pour GitHub (> 100 Mo) : envoyé dans la discussion, pas commité.
 
 ## À faire / retours
 
