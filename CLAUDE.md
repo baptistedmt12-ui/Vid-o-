@@ -45,7 +45,15 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
     `https://github.com/baptistedmt12-ui/Vid-o-/raw/<branche>/videos/NNN-nom/export/NNN-vX.mp4`
   - Le quota LFS gratuit est limité : supprimer du suivi LFS les anciennes versions remplacées.
 
+## Transcription de la voix
+- « Comme d'habitude » = graphiques animés **calés au mot près sur ce qu'il dit** : toujours transcrire.
+- Les noms propres qu'il écrit (ville, salle…) servent à l'**orthographe**, pas de contenu à afficher seul.
+- Si Hugging Face est bloqué : modèle Whisper small (CTranslate2) publié sur npm en 4 parties
+  `@skillninja/shortmovie-telop-model-p0..p3` (télécharger les tarballs, concaténer `model.bin.part*`,
+  vérifier `model.sha256`), puis `faster-whisper` avec l'audio passé en tableau numpy (16 kHz mono).
+
 ## Habillage TikTok (exigence de l'utilisateur)
+- Pas de texte sur les actions (ex. « CROC ! ») : un effet sonore suffit.
 - Textes et compteurs **petits et sur le côté**, jamais en gros au milieu : on doit bien voir les mouvements.
 - Ne rien placer dans les zones de l'interface TikTok (voir `videos/README.md`) :
   haut ~280 px, droite au-delà de ~900 px, bas à partir de ~1450 px.
