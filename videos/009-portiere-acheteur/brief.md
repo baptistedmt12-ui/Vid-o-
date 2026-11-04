@@ -33,19 +33,19 @@ python3 scripts/remodel.py videos/009-portiere-acheteur/rushes/original/original
 ```
 `rushes/segments.json` = découpage du remodelage (n = normal, f = miroir gauche/droite).
 
-## Script (voix off)
+## Script (voix off, v2)
 
 **[HOOK]**
-Le type qui a fait cette bosse est revenu un mois plus tard. Pour acheter la voiture.
+La personne qui a fait cette bosse est revenue un mois plus tard pour acheter la voiture.
 
 **[MISE EN PLACE]**
-Un client m'appelle un vendredi soir. Il vend sa voiture le lendemain à neuf heures. Il y a un mois, au parking du supermarché, quelqu'un lui a mis un coup de portière, juste au-dessus de la poignée. Pas de mot, pas de numéro, rien. Il veut une portière parfaite avant la vente.
+Un vendredi soir, un client m'appelle : il vend sa voiture le lendemain à neuf heures du matin, et il y a un mois, sur le parking du supermarché, quelqu'un lui a mis un coup de portière juste au-dessus de la poignée, sans laisser de message ni de numéro. Il veut que sa portière soit parfaite avant la vente.
 
 **[TENSION]**
-J'arrive, je regarde. Une bosse ronde, profonde, pile à hauteur de main. Je colle mes tirettes, je tire, je reprends au marteau. Pendant que je travaille, l'acheteur l'appelle trois fois. Et à chaque fois, la même question : est-ce que la portière conducteur a des bosses ? Pas la voiture. La portière conducteur. Mon client trouve ça bizarre. Moi aussi.
+J'arrive, je regarde, et je trouve une bosse ronde, profonde, pile à hauteur de main. Je colle mes tirettes, je tire, puis je reprends au marteau. Pendant que je travaille, l'acheteur l'appelle trois fois, et à chaque fois, il pose la même question : est-ce que la portière conducteur a des bosses ? Pas la voiture, la portière conducteur. Mon client trouve ça louche, et moi aussi.
 
 **[RÉSOLUTION]**
-Samedi midi, il me rappelle en rigolant. L'acheteur est allé directement à la portière. Il a passé le doigt au-dessus de la poignée, et il a dit : bizarre, j'étais sûr qu'il y avait une bosse ici. Mon client lui demande pourquoi. Le gars devient tout rouge. Il y a un mois, au parking du supermarché, c'était lui. Il a reconnu la voiture sur l'annonce. Mon client lui a vendu la voiture, et il lui a fait payer la réparation en plus. Et vous, quand vous touchez une voiture, vous laissez un mot ?
+Samedi midi, il me rappelle en rigolant. L'acheteur est allé directement à la portière, il a passé le doigt au-dessus de la poignée, et il a dit : bizarre, j'étais sûr qu'il y avait une bosse ici. Mon client lui demande pourquoi, et le gars devient tout rouge : il y a un mois, sur le parking du supermarché, c'était lui. Il avait reconnu la voiture sur l'annonce. Mon client lui a vendu la voiture, et il lui a fait payer la réparation en plus. Et vous, quand vous touchez une voiture, vous laissez un petit mot ?
 
 ## Ce qui a été fait
 
@@ -59,7 +59,15 @@ Samedi midi, il me rappelle en rigolant. L'acheteur est allé directement à la 
     (`src/videos/009-portiere-acheteur/captions.ts`, généré par `scripts/captions.py`).
   - Bruitages : whoosh, pop, sonnerie, notifications, impacts, nappe + battements de cœur pendant la tension. Son d'atelier du rush très bas.
 
+- *2026-11-04* — v2 (`export/009-v2.mp4`) :
+  - **Voix d'homme** (Kokoro : 60 % im_nicola + 40 % ff_siwis, voix « A » choisie parmi 5 essais).
+  - **Voix plus fluide** : script réécrit en phrases longues et liées, généré par blocs de plusieurs phrases
+    (plus de phrases collées une à une avec un blanc entre chaque).
+  - Graphiques recalés automatiquement sur la nouvelle voix (`scripts/retime.py`), sous-titres refaits.
+
 ## À faire / retours
+
+- [x] Retour : « trop saccadé, robotique » + « voix d'homme la plus réaliste possible » → v2
 
 - [x] Retour : sous-titres ajoutés, sans déborder sur les zones TikTok
 

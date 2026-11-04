@@ -69,7 +69,9 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
 ## Voix off de synthèse (quand l'utilisateur la demande)
 - Hugging Face et les voix Microsoft sont bloqués, mais les releases GitHub passent : modèle **Kokoro**
   (`thewh1teagle/kokoro-onnx`, release `model-files-v1.0` : `kokoro-v1.0.onnx` + `voices-v1.0.bin`), `pip install kokoro-onnx soundfile`.
-- Seule voix française : `ff_siwis` (féminine). Vitesse ~1,06–1,09 pour ~220 mots en 60 s.
-- Script : `scripts/voix_off.py` (une phrase à la fois, silences coupés, corrige « parking » et « vasistas » mal phonétisés).
+- **Voix d'homme** (préférée par l'utilisateur) : mélange 60 % `im_nicola` + 40 % `ff_siwis` (seule voix française, féminine).
+- **Fluidité** : écrire des phrases longues et liées (pas de fragments), générer par blocs de plusieurs phrases,
+  jamais phrase par phrase avec un blanc entre chaque (rendu « saccadé, robotique »). Vitesse ~1,0 pour ~240 mots en 60 s.
+- Script : `scripts/voix_off.py` (corrige « parking » et « vasistas » mal phonétisés) ; recalage des graphiques : `scripts/retime.py`.
 - Toujours vérifier la prononciation en retranscrivant avec Whisper, puis caler les graphiques sur le minutage des mots.
 - Remodelage d'un rush (durée exacte, miroirs) : `scripts/remodel.py`. Aperçus rapides : `node scripts/stills.mjs`.

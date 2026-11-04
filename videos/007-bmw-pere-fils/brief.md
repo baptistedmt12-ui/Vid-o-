@@ -33,19 +33,19 @@ python3 scripts/remodel.py videos/007-bmw-pere-fils/rushes/original/original.mp4
 ```
 `rushes/segments.json` = découpage du remodelage (n = normal, f = miroir gauche/droite).
 
-## Script (voix off)
+## Script (voix off, v2)
 
 **[HOOK]**
-Ce client m'a payé pour effacer cette bosse. Sauf que ce n'est pas lui qui l'avait faite. Et le vrai coupable m'a appelé deux jours plus tard.
+Ce client m'a payé pour effacer cette bosse, sauf que ce n'est pas lui qui l'avait faite, et le vrai coupable m'a appelé deux jours plus tard.
 
 **[MISE EN PLACE]**
-Dimanche matin, un jeune m'appelle en panique. Il a emprunté la BMW de son père pour un premier rendez-vous. En sortant du restaurant, il découvre une bosse juste au-dessus du feu arrière. Son père rentre lundi.
+Dimanche matin, un jeune m'appelle en panique : il a emprunté la BMW de son père pour un premier rendez-vous, et en sortant du restaurant, il découvre une bosse juste au-dessus du feu arrière. Son père rentre lundi.
 
 **[TENSION]**
-J'arrive, je regarde. Une bosse ronde, nette, sur l'aile. Je lui demande s'il est sûr que c'est arrivé au restaurant. Il hésite une seconde. Puis il me jure que oui, il s'était garé loin de tout le monde. Je répare tout en une heure. Il me fait promettre de ne jamais rien dire. Mardi soir, mon téléphone sonne. Même nom de famille.
+J'arrive et je regarde : une bosse ronde, bien nette, sur l'aile. Je lui demande s'il est sûr que c'est arrivé au restaurant, il hésite une seconde, puis il me jure que oui, qu'il s'était garé loin de tout le monde. Je répare tout en une heure, il me fait promettre de ne jamais rien dire, et mardi soir, mon téléphone sonne. Même nom de famille.
 
 **[RÉSOLUTION]**
-C'est le père. Il me dit : vendredi, j'ai touché le pilier du garage en reculant. Une bosse au-dessus du feu arrière. J'ai prêté la voiture à mon fils sans rien lui dire. Il faut la réparer avant qu'il la voie, sinon il va me le rappeler toute ma vie. Je passe voir la voiture. Il passe la main dessus dix fois. Plus rien. Je lui dis que parfois, les bosses partent toutes seules. Le fils a payé pour la bêtise de son père, et aucun des deux ne le sait. Je leur dis, ou pas ?
+C'est le père. Il me dit que vendredi, il a touché le pilier du garage en reculant, qu'il a une bosse au-dessus du feu arrière, et qu'il a prêté la voiture à son fils sans rien lui dire. Il veut que je la répare avant que son fils la voie, sinon il va le lui rappeler toute sa vie. Je passe voir la voiture, il passe la main dessus dix fois, et il n'y a plus rien. Je lui dis que parfois, les bosses partent toutes seules. Le fils a payé pour la bêtise de son père, et aucun des deux ne le sait. Alors, je leur dis, ou pas ?
 
 ## Ce qui a été fait
 
@@ -59,7 +59,15 @@ C'est le père. Il me dit : vendredi, j'ai touché le pilier du garage en recula
     (`src/videos/007-bmw-pere-fils/captions.ts`, généré par `scripts/captions.py`).
   - Bruitages : whoosh, pop, sonnerie, notifications, impacts, nappe + battements de cœur pendant la tension. Son d'atelier du rush très bas.
 
+- *2026-11-04* — v2 (`export/007-v2.mp4`) :
+  - **Voix d'homme** (Kokoro : 60 % im_nicola + 40 % ff_siwis, voix « A » choisie parmi 5 essais).
+  - **Voix plus fluide** : script réécrit en phrases longues et liées, généré par blocs de plusieurs phrases
+    (plus de phrases collées une à une avec un blanc entre chaque).
+  - Graphiques recalés automatiquement sur la nouvelle voix (`scripts/retime.py`), sous-titres refaits.
+
 ## À faire / retours
+
+- [x] Retour : « trop saccadé, robotique » + « voix d'homme la plus réaliste possible » → v2
 
 - [x] Retour : sous-titres ajoutés, sans déborder sur les zones TikTok
 - [x] Retour : miroir moins fréquent → bascule toutes les ~10–15 s (11,2 / 20,6 / 32,1 / 44,3 s)

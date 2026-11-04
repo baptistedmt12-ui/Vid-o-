@@ -1,59 +1,55 @@
 """Sous-titres calés sur la voix off.
 
-Usage : python3 scripts/captions.py <dossier vidéo (videos/NNN-nom)> <sortie .ts>
-Lit assets/phrases.json (début/fin exacts de chaque phrase générée) et assets/mots.json (Whisper),
-découpe chaque phrase en petits groupes de mots et écrit un module TypeScript.
-Le texte affiché est celui du script (orthographe exacte), les nombres sont écrits en chiffres.
+Usage : python3 scripts/captions.py <scripts.json> <id vidéo> <mots.json (Whisper)> <sortie .ts>
+Le texte affiché est celui du script (orthographe exacte, nombres en chiffres) ; chaque mot du script
+est aligné sur la transcription Whisper pour récupérer son instant, puis découpé en petits groupes.
 """
-import json, re, sys
+import difflib, json, re, sys, unicodedata
 
-d, out = sys.argv[1], sys.argv[2]
-lines = json.load(open(f"{d}/assets/phrases.json"))
-whisper = json.load(open(f"{d}/assets/mots.json"))
+scripts, vid, words_p, out = sys.argv[1:5]
+text = " ".join(json.load(open(scripts))[vid])
+for a, b in [("quarante-trois", "43"), ("trente-sept", "37"), ("quarante et un", "41"), ("seize", "16"), ("neuf heures", "9 h")]:
+    text = text.replace(a, b)
+words = text.split()
 
-# mots Whisper fusionnés (« m » + « 'a » → un mot), pour comparer au script
-merged = []
-for s, e, w in whisper:
-    if merged and (w.startswith("'") or w.startswith("-")):
-        merged[-1][1] = e
+def norm(w):
+    w = unicodedata.normalize("NFD", w.lower())
+    return re.sub(r"[^a-z0-9]", "", "".join(c for c in w if unicodedata.category(c) != "Mn"))
+
+W = []
+for s, e, w in json.load(open(words_p)):
+    if W and (w.startswith("'") or w.startswith("-")):
+        W[-1][1] = e; W[-1][2] += w
     else:
-        merged.append([s, e, w])
+        W.append([s, e, w])
+sm = difflib.SequenceMatcher(a=[norm(w) for w in words], b=[norm(x[2]) for x in W], autojunk=False)
+T = [None] * len(words)
+for blk in sm.get_matching_blocks():
+    for i in range(blk.size):
+        T[blk.a + i] = W[blk.b + i][0]
+# mots non reconnus : interpolation entre voisins
+known = [i for i, t in enumerate(T) if t is not None]
+for i in range(len(T)):
+    if T[i] is None:
+        lo = max([k for k in known if k < i], default=None)
+        hi = min([k for k in known if k > i], default=None)
+        if lo is None: T[i] = T[hi]
+        elif hi is None: T[i] = T[lo] + 0.3 * (i - lo)
+        else: T[i] = T[lo] + (T[hi] - T[lo]) * (i - lo) / (hi - lo)
 
-NUM = [("quarante-trois", "43"), ("trente-sept", "37"), ("quarante et un", "41"), ("seize", "16"), ("neuf heures", "9 h")]
 MAXW, MAXC = 4, 24
-chunks = []
-for ln in lines:
-    text = ln["text"]
-    for a, b in NUM:
-        text = text.replace(a, b)
-    words = text.split()
-    t0, t1 = ln["t"], ln["end"]
-    ws = [m for m in merged if t0 - 0.12 <= m[0] < t1 - 0.05]
-    if len(ws) == len(words):
-        starts = [max(t0, m[0]) for m in ws]
-    else:  # répartition au prorata du nombre de lettres
-        tot = sum(len(w) + 1 for w in words)
-        acc, starts = 0, []
-        for w in words:
-            starts.append(t0 + (t1 - t0) * acc / tot)
-            acc += len(w) + 1
-    # groupes de mots : coupe après une ponctuation ou quand c'est trop long
-    cur = []
-    for w, s in zip(words, starts):
-        cur.append({"t": round(s, 2), "w": w})
-        size = sum(len(x["w"]) + 1 for x in cur)
-        if len(cur) >= MAXW or size >= MAXC or re.search(r"[.,:;?!]$", w):
-            chunks.append(cur); cur = []
-    if cur:
-        chunks.append(cur)
-    chunks[-1][-1]["lineEnd"] = round(t1, 2)
-
+chunks, cur = [], []
+for w, t in zip(words, T):
+    cur.append({"t": round(t, 2), "w": w})
+    if len(cur) >= MAXW or sum(len(x["w"]) + 1 for x in cur) >= MAXC or re.search(r"[.,:;?!]$", w):
+        chunks.append(cur); cur = []
+if cur:
+    chunks.append(cur)
+end_voice = W[-1][1]
 res = []
 for i, c in enumerate(chunks):
-    nxt = chunks[i + 1][0]["t"] if i + 1 < len(chunks) else c[0]["t"] + 3
-    end = min(nxt, c[-1].get("lineEnd", nxt) + 0.25)
-    res.append({"t": c[0]["t"], "end": round(end, 2), "words": [{"t": x["t"], "w": x["w"]} for x in c]})
+    end = chunks[i + 1][0]["t"] if i + 1 < len(chunks) else end_voice + 0.4
+    res.append({"t": c[0]["t"], "end": round(end, 2), "words": c})
 open(out, "w").write("// Généré par scripts/captions.py — ne pas modifier à la main.\nexport const CAPTIONS: { t: number; end: number; words: { t: number; w: string }[] }[] = "
                      + json.dumps(res, ensure_ascii=False) + ";\n")
-ok = sum(1 for ln in lines if len([m for m in merged if ln["t"] - 0.12 <= m[0] < ln["end"] - 0.05]) == len(ln["text"].split()))
-print(out, len(res), "groupes ;", ok, "/", len(lines), "phrases calées sur Whisper")
+print(out, len(res), "groupes ;", len(known), "/", len(words), "mots alignés")

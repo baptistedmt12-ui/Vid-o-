@@ -33,19 +33,19 @@ python3 scripts/remodel.py videos/008-toit-vasistas/rushes/original/original.mp4
 ```
 `rushes/segments.json` = découpage du remodelage (n = normal, f = miroir gauche/droite).
 
-## Script (voix off)
+## Script (voix off, v2)
 
 **[HOOK]**
-Cette bosse est apparue en pleine nuit, sur un toit, dans un garage fermé à clé. Personne n'est entré. Et pourtant, quelqu'un est sorti.
+Cette bosse est apparue en pleine nuit, sur le toit d'une voiture enfermée dans un garage fermé à clé. Personne n'est entré, et pourtant, quelqu'un est sorti.
 
 **[MISE EN PLACE]**
-Une mère de famille m'appelle. Le matin, elle descend au garage et elle trouve une bosse sur le toit de sa voiture, juste à côté de l'antenne. La porte est verrouillée, personne n'a la clé à part elle et son mari. L'assurance ne veut rien savoir : pas de tiers, pas de remboursement.
+Une mère de famille m'appelle : le matin, en descendant au garage, elle a trouvé une bosse sur le toit de sa voiture, juste à côté de l'antenne. La porte était verrouillée, et personne n'a la clé à part elle et son mari. Et l'assurance ne veut rien savoir : pas de tiers, pas de remboursement.
 
 **[TENSION]**
-J'arrive, je regarde le toit. La bosse est large, molle, comme si quelque chose de lourd s'était posé dessus. Pas un choc. Un poids. Et juste au-dessus de la voiture, il y a un vasistas. Je nettoie le toit avant de coller mes tirettes. Et dans la poussière, à côté de la bosse, je vois une trace de semelle. Pointure quarante-trois. Elle fait du trente-sept. Son mari, du quarante et un.
+J'arrive et je regarde le toit. La bosse est large et molle, comme si quelque chose de lourd s'était posé dessus : pas un choc, un poids. Et juste au-dessus de la voiture, il y a un vasistas. Je nettoie le toit avant de coller mes tirettes, et dans la poussière, à côté de la bosse, je vois une trace de semelle. Pointure quarante-trois. Elle fait du trente-sept, et son mari du quarante et un.
 
 **[RÉSOLUTION]**
-Son fils de seize ans, lui, fait du quarante-trois. Je débosselle le toit, elle me demande de ne rien dire. Elle veut le prendre sur le fait. Le lendemain, elle m'envoie un message. Une heure du matin, elle l'attendait dans le garage, dans le noir. Il est monté sur la voiture, et la lumière s'est allumée. Il a dit qu'il allait chercher le chat. Ils n'ont pas de chat. Et vous, à seize ans, vous sortiez par où ?
+Mais son fils de seize ans, lui, fait du quarante-trois. Je débosselle le toit, et elle me demande de ne rien dire, parce qu'elle veut le prendre sur le fait. Le lendemain, elle m'envoie un message : à une heure du matin, elle l'attendait dans le garage, dans le noir. Il est monté sur la voiture, et la lumière s'est allumée. Il a juré qu'il allait chercher le chat. Sauf qu'ils n'ont pas de chat. Et vous, à seize ans, vous sortiez par où ?
 
 ## Ce qui a été fait
 
@@ -59,7 +59,15 @@ Son fils de seize ans, lui, fait du quarante-trois. Je débosselle le toit, elle
     (`src/videos/008-toit-vasistas/captions.ts`, généré par `scripts/captions.py`).
   - Bruitages : whoosh, pop, sonnerie, notifications, impacts, nappe + battements de cœur pendant la tension. Son d'atelier du rush très bas.
 
+- *2026-11-04* — v2 (`export/008-v2.mp4`) :
+  - **Voix d'homme** (Kokoro : 60 % im_nicola + 40 % ff_siwis, voix « A » choisie parmi 5 essais).
+  - **Voix plus fluide** : script réécrit en phrases longues et liées, généré par blocs de plusieurs phrases
+    (plus de phrases collées une à une avec un blanc entre chaque).
+  - Graphiques recalés automatiquement sur la nouvelle voix (`scripts/retime.py`), sous-titres refaits.
+
 ## À faire / retours
+
+- [x] Retour : « trop saccadé, robotique » + « voix d'homme la plus réaliste possible » → v2
 
 - [x] Retour : sous-titres ajoutés, sans déborder sur les zones TikTok
 

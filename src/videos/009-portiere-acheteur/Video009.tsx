@@ -35,115 +35,114 @@ const CUTS: Cut[] = [
 ];
 
 const ZOOMS: Zoom[] = [
-  { t: 0.94, s: 1.08 }, // cette bosse
-  { t: 1.54, s: 1.1 }, // revenu
-  { t: 2.94, s: 1.14, shake: true }, // acheter la voiture
-  { t: 11.4, s: 1.1, shake: true }, // coup de portière
-  { t: 20.36, s: 1.1 }, // pile à hauteur de main
-  { t: 26.02, s: 1.1 }, // trois fois
-  { t: 29.44, s: 1.12 }, // portière conducteur
-  { t: 32.28, s: 1.14, shake: true }, // la portière conducteur
-  { t: 44.34, s: 1.12 }, // une bosse ici
-  { t: 47.22, s: 1.14, shake: true }, // tout rouge
-  { t: 50.3, s: 1.16, shake: true }, // c'était lui
-  { t: 55.62, s: 1.12 }, // réparation
+  { t: 1.08, s: 1.08 }, // cette bosse
+  { t: 1.69, s: 1.1 }, // revenu
+  { t: 2.96, s: 1.14, shake: true }, // acheter la voiture
+  { t: 11.82, s: 1.1, shake: true }, // coup de portière
+  { t: 21.46, s: 1.1 }, // pile à hauteur de main
+  { t: 27.32, s: 1.1 }, // trois fois
+  { t: 31.02, s: 1.12 }, // portière conducteur
+  { t: 33.58, s: 1.14, shake: true }, // la portière conducteur
+  { t: 45.52, s: 1.12 }, // une bosse ici
+  { t: 48.36, s: 1.14, shake: true }, // tout rouge
+  { t: 51.26, s: 1.16, shake: true }, // c'était lui
+  { t: 56.44, s: 1.12 }, // réparation
 ];
 
 const T = 300;
 
 export const Video009: React.FC = () => (
   <AbsoluteFill style={{ backgroundColor: "#0B0B0D" }}>
-    <Footage video={VIDEO} cuts={CUTS} punches={ZOOMS} darkFrom={24.1} />
+    <Footage video={VIDEO} cuts={CUTS} punches={ZOOMS} darkFrom={25.64} />
 
     {/* HOOK */}
-    <G from={0} to={2.82} name="Il est revenu">
-      <Tag top={T} t={0.05} tone="white" icon={<Dot><HandIcon size={34} /></Dot>} text="Celui qui a fait cette bosse" />
-      <Tag top={T + 96} t={1.54} icon={<Dot color="#1d2a4a"><ClockIcon size={38} h={10} m={10} /></Dot>} text="est revenu" sub="un mois plus tard" size={34} />
+    <G from={0.0} to={2.72} name="Il est revenu">
+      <Tag top={T} t={0.06} tone="white" icon={<Dot><HandIcon size={34} /></Dot>} text="Celui qui a fait cette bosse" />
+      <Tag top={T + 96} t={1.69} icon={<Dot color="#1d2a4a"><ClockIcon size={38} h={10} m={10} /></Dot>} text="est revenu" sub="un mois plus tard" size={34} />
     </G>
-    <G from={2.82} to={4.0} name="Pour acheter">
-      <Punch t={2.86} top={T} text="POUR ACHETER LA VOITURE." color="#FFD23F" size={60} />
+    <G from={2.72} to={4.0} name="Pour acheter">
+      <Punch t={2.74} top={T} text="POUR ACHETER LA VOITURE." color="#FFD23F" size={60} />
     </G>
 
     {/* MISE EN PLACE */}
-    <G from={4.0} to={5.95} name="Vendredi soir">
+    <G from={4.0} to={6.0} name="Vendredi soir">
       <Call top={T} t={4.06} caller="Un client" sub="Vendredi soir" />
     </G>
-    <G from={5.95} to={8.05} name="Annonce">
-      <Annonce top={T} t={6.0} />
+    <G from={6.0} to={8.45} name="Annonce">
+      <Annonce top={T} t={6.02} />
     </G>
-    <G from={8.05} to={13.8} name="Parking">
-      <Tag top={T} t={8.08} icon={<Dot><CartIcon size={34} /></Dot>} text="Il y a 1 mois, au supermarché" size={30} />
-      <Parking top={T + 96} t={9.0} tHit={11.4} label="Un coup de portière" />
+    <G from={8.45} to={14.23} name="Parking">
+      <Tag top={T} t={8.5} icon={<Dot><CartIcon size={34} /></Dot>} text="Il y a 1 mois, au supermarché" size={30} />
+      <Parking top={T + 96} t={9.4} tHit={11.82} label="Un coup de portière" />
     </G>
-    <G from={13.8} to={15.45} name="Pas de mot">
-      <Side top={T} t={13.86}>
+    <G from={14.23} to={16.04} name="Pas de mot">
+      <Side top={T} t={14.32}>
         <div style={{ ...tone("dark"), borderRadius: 26, padding: "14px 26px", width: 420 }}>
-          <Line t={13.86} icon={<Cross k={1} size={42} />} text="Pas de mot" />
-          <Line t={14.4} icon={<Cross k={1} size={42} />} text="Pas de numéro" />
-          <Line t={14.98} icon={<Cross k={1} size={42} />} text="Rien" />
+          <Line t={14.32} icon={<Cross k={1} size={42} />} text="Pas de message" />
+          <Line t={15.09} icon={<Cross k={1} size={42} />} text="Pas de numéro" />
         </div>
       </Side>
     </G>
-    <G from={15.45} to={17.75} name="Parfaite">
-      <Tag top={T} t={15.5} tone="green" icon={<Check k={1} size={58} />} text="Portière parfaite" sub="avant la vente" />
+    <G from={16.04} to={18.61} name="Parfaite">
+      <Tag top={T} t={16.08} tone="green" icon={<Check k={1} size={58} />} text="Portière parfaite" sub="avant la vente" />
     </G>
 
     {/* TENSION */}
-    <G from={17.75} to={21.55} name="Diagnostic">
-      <Tag top={T} t={17.8} icon={<Dot><MagnifierIcon size={34} /></Dot>} text="Ronde, profonde" />
-      <Polaroid src={A("avant.jpg")} t={19.16} top={T + 100} label="À HAUTEUR DE MAIN" w={260} h={330} mark={{ x: 0.55, y: 0.6 }} />
+    <G from={18.61} to={22.77} name="Diagnostic">
+      <Tag top={T} t={18.66} icon={<Dot><MagnifierIcon size={34} /></Dot>} text="Ronde, profonde" />
+      <Polaroid src={A("avant.jpg")} t={20.22} top={T + 100} label="À HAUTEUR DE MAIN" w={260} h={330} mark={{ x: 0.55, y: 0.6 }} />
     </G>
-    <G from={21.55} to={24.05} name="Méthode">
-      <Side top={T} t={21.6}>
+    <G from={22.77} to={25.58} name="Méthode">
+      <Side top={T} t={22.83}>
         <div style={{ ...tone("white"), borderRadius: 26, padding: "14px 26px", width: 420 }}>
-          <Line t={21.62} icon={<Num n={1} />} text="Je colle" dark />
-          <Line t={22.6} icon={<Num n={2} />} text="Je tire" dark />
-          <Line t={23.08} icon={<Num n={3} />} text="Je reprends au marteau" dark />
+          <Line t={22.86} icon={<Num n={1} />} text="Je colle" dark />
+          <Line t={23.82} icon={<Num n={2} />} text="Je tire" dark />
+          <Line t={24.38} icon={<Num n={3} />} text="Je reprends au marteau" dark />
         </div>
       </Side>
     </G>
-    <G from={24.05} to={26.8} name="3 appels">
-      <Call top={T} t={24.1} caller="L'acheteur" sub="Appel n° 1… 2… 3" reveal={{ t: 26.02, text: "3 appels manqués" }} />
+    <G from={25.58} to={27.87} name="3 appels">
+      <Call top={T} t={25.64} caller="L'acheteur" sub="Appel n° 1… 2… 3" reveal={{ t: 28.65, text: "3 appels manqués" }} />
     </G>
-    <G from={26.8} to={32.95} name="Même question">
+    <G from={27.87} to={34.32} name="Même question">
       <Talk top={T}>
-        <Say t={27.72} who="L'ACHETEUR" text="« Est-ce que la portière conducteur a des bosses ? »" />
+        <Say t={29.28} who="L'ACHETEUR" text="« Est-ce que la portière conducteur a des bosses ? »" />
       </Talk>
-      <Punch t={30.98} top={T + 190} text="PAS LA VOITURE." size={60} />
-      <Punch t={31.84} top={T + 266} text="LA PORTIÈRE CONDUCTEUR." color="#FFD23F" size={56} />
+      <Punch t={32.42} top={T + 190} text="PAS LA VOITURE." size={60} />
+      <Punch t={33.16} top={T + 266} text="LA PORTIÈRE CONDUCTEUR." color="#FFD23F" size={56} />
     </G>
-    <G from={32.95} to={35.2} name="Bizarre">
-      <Tag top={T} t={33.2} icon={<Dot color="#FFD23F"><span style={{ fontFamily: "Anton, Impact, sans-serif", fontSize: 40, color: "#0B0B0D" }}>?</span></Dot>} text="Bizarre… moi aussi" />
+    <G from={34.32} to={36.68} name="Bizarre">
+      <Tag top={T} t={34.6} icon={<Dot color="#FFD23F"><span style={{ fontFamily: "Anton, Impact, sans-serif", fontSize: 40, color: "#0B0B0D" }}>?</span></Dot>} text="Louche… moi aussi" />
     </G>
 
     {/* RÉSOLUTION */}
-    <G from={35.2} to={37.38} name="Samedi midi">
-      <Tag top={T} t={35.28} tone="white" icon={<Day day="SAM." />} text="Samedi midi" sub="il me rappelle en rigolant" />
+    <G from={36.68} to={38.91} name="Samedi midi">
+      <Tag top={T} t={36.76} tone="white" icon={<Day day="SAM." />} text="Samedi midi" sub="il me rappelle en rigolant" />
     </G>
-    <G from={37.38} to={45.05} name="Bosse ici">
-      <Tag top={T} t={37.42} icon={<Dot><HandIcon size={34} /></Dot>} text="Droit vers la portière" size={32} />
+    <G from={38.91} to={46.27} name="Bosse ici">
+      <Tag top={T} t={38.96} icon={<Dot><HandIcon size={34} /></Dot>} text="Droit vers la portière" size={32} />
       <Talk top={T + 100}>
-        <Say t={42.46} who="L'ACHETEUR" text="« Bizarre… j'étais sûr qu'il y avait une bosse ici. »" />
+        <Say t={43.56} who="L'ACHETEUR" text="« Bizarre… j'étais sûr qu'il y avait une bosse ici. »" />
       </Talk>
     </G>
-    <G from={45.05} to={46.65} name="Pourquoi ?">
+    <G from={46.27} to={47.9} name="Pourquoi ?">
       <Talk top={T}>
-        <Say t={45.1} who="MON CLIENT" side="right" tone="dark" text="« Ah bon ? Pourquoi ? »" />
+        <Say t={46.32} who="MON CLIENT" side="right" tone="dark" text="« Ah bon ? Pourquoi ? »" />
       </Talk>
     </G>
-    <G from={46.65} to={48.0} name="Tout rouge">
-      <Punch t={46.7} top={T} text="IL DEVIENT TOUT ROUGE." color="#E10600" size={62} />
+    <G from={47.9} to={49.06} name="Tout rouge">
+      <Punch t={47.96} top={T} text="IL DEVIENT TOUT ROUGE." color="#E10600" size={62} />
     </G>
-    <G from={48.0} to={52.85} name="C'était lui">
-      <Parking top={T} t={48.02} tHit={50.25} label="Le supermarché… c'était lui" />
-      <Tag top={T + 330} t={50.88} tone="white" icon={<Dot><MagnifierIcon size={34} /></Dot>} text="Reconnue sur l'annonce" size={30} />
+    <G from={49.06} to={53.99} name="C'était lui">
+      <Parking top={T} t={49.08} tHit={51.21} label="Le supermarché… c'était lui" />
+      <Tag top={T + 330} t={51.94} tone="white" icon={<Dot><MagnifierIcon size={34} /></Dot>} text="Reconnue sur l'annonce" size={30} />
     </G>
-    <G from={52.85} to={56.68} name="Réparation payée">
-      <Tag top={T} t={52.9} tone="green" icon={<Check k={1} size={58} />} text="Voiture vendue" />
-      <Facture top={T + 110} t={54.76} tPaid={55.62} />
+    <G from={53.99} to={57.76} name="Réparation payée">
+      <Tag top={T} t={54.04} tone="green" icon={<Check k={1} size={58} />} text="Voiture vendue" />
+      <Facture top={T + 110} t={55.38} tPaid={56.44} />
     </G>
-    <G from={56.68} to={DURATION_S} name="Un mot ?">
-      <Poll top={T} t={56.72} question="Tu touches une voiture : tu laisses un mot ?" a="OUI" b="NON" />
+    <G from={57.76} to={DURATION_S} name="Un mot ?">
+      <Poll top={T} t={57.88} question="Tu touches une voiture : tu laisses un mot ?" a="OUI" b="NON" />
     </G>
 
     <Captions data={CAPTIONS} />
@@ -151,22 +150,22 @@ export const Video009: React.FC = () => (
     {/* Son */}
     <Audio src={staticFile(A("voix.wav"))} volume={1} />
     <Audio src={staticFile(AMBIANCE)} volume={0.12} />
-    <Sequence from={sec(24.1)} durationInFrames={sec(11)} name="nappe" layout="none">
+    <Sequence from={sec(25.64)} durationInFrames={sec(11.41)} name="nappe" layout="none">
       <Audio src={staticFile(A("drone.wav"))} volume={0.14} />
     </Sequence>
-    <Sequence from={sec(42.4)} durationInFrames={sec(6)} name="cœur" layout="none">
+    <Sequence from={sec(43.53)} durationInFrames={sec(6.02)} name="cœur" layout="none">
       <Audio src={staticFile(A("heartbeat.wav"))} volume={0.3} />
     </Sequence>
     {CUTS.map((c) => <Sfx key={`w${c.t}`} src={A("whoosh.wav")} t={c.t - 0.2} volume={0.2} />)}
-    {[0.05, 1.54, 6.0, 8.08, 13.86, 14.4, 14.98, 17.8, 19.16, 21.62, 22.6, 23.08, 33.2, 35.28, 37.42, 50.88, 52.9, 56.9, 57.1].map((t) => (
+    {[0.06, 1.69, 6.02, 8.5, 14.32, 15.09, 15.66, 18.66, 20.22, 22.86, 23.82, 24.38, 34.6, 36.76, 38.96, 51.94, 54.04, 57.94, 58.04].map((t) => (
       <Sfx key={`p${t}`} src={A("pop.wav")} t={t} volume={0.28} />
     ))}
-    {[2.86, 11.4, 31.84, 46.7, 50.25].map((t) => <Sfx key={`i${t}`} src={A("impact.wav")} t={t} volume={0.32} />)}
-    {[27.72, 42.46, 45.1].map((t) => <Sfx key={`n${t}`} src={A("notif.wav")} t={t} volume={0.24} />)}
+    {[2.74, 11.82, 33.16, 47.96, 51.21].map((t) => <Sfx key={`i${t}`} src={A("impact.wav")} t={t} volume={0.32} />)}
+    {[29.28, 43.56, 46.32].map((t) => <Sfx key={`n${t}`} src={A("notif.wav")} t={t} volume={0.24} />)}
     <Sfx src={A("ring.wav")} t={4.06} volume={0.2} len={1.6} />
-    <Sfx src={A("ring.wav")} t={24.1} volume={0.2} len={1.8} />
-    <Sfx src={A("ding.wav")} t={15.5} volume={0.2} />
-    <Sfx src={A("cash.wav")} t={55.6} volume={0.28} />
+    <Sfx src={A("ring.wav")} t={25.64} volume={0.2} len={1.8} />
+    <Sfx src={A("ding.wav")} t={16.08} volume={0.2} />
+    <Sfx src={A("cash.wav")} t={56.42} volume={0.28} />
   </AbsoluteFill>
 );
 
