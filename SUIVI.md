@@ -19,7 +19,8 @@ Ce fichier regroupe trois choses :
 | 003 | Défi 15 / 15 / 15 (15 MU, 15 dips, 7 tractions) | 🔍 Relecture | 9:16 (1080×1920) | 2 min 00 | `Video003` | — | — | — | v1 qualité max envoyée (206 Mo, hors GitHub) |
 | 004 | La boue rouge (enduro, gendarmes à 17h) | 🔍 Relecture | 9:16 (1080×1920) | 1 min 08 | `Video004` | — | — | — | v1 rendue, graphiques compacts |
 | 005 | Le compteur (moto en LLD à rendre lundi) | 🔍 Relecture | 9:16 (1080×1920) | 1 min 06 | `Video005` | — | — | — | v1 rendue, graphiques compacts |
-| 006 | | 💡 Idée | | | | | | | |
+| 006 | On Air Chambly (banane en voiture) | 🎨 Assets | 9:16 (1080×1920) 60 i/s | 9 s | — | — | — | — | Rush reçu, en attente du texte parlé |
+| 007 | | 💡 Idée | | | | | | | |
 
 ### Banque d'idées
 
