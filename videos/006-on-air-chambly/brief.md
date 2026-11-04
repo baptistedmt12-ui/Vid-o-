@@ -1,9 +1,10 @@
 # Vidéo 006 — On Air Chambly (banane dans la voiture)
 
-- **Statut :** 🎨 Assets (rush reçu, en attente du texte parlé)
+- **Statut :** 🔍 Relecture (v1 rendue)
 - **Format :** 9:16 (1080×1920), **60 i/s** (HEVC), rush de 9 s
 - **Plateforme :** TikTok
-- **Composition Remotion :** à créer
+- **Composition Remotion :** `Video006` (`src/videos/006-on-air-chambly/`)
+- **Durée finale :** 10,1 s (9,1 s de vidéo + 1 s d'image figée)
 
 ## Ma demande
 
@@ -25,9 +26,15 @@ quand je croque dans la banane).
 ## Ce qui a été fait
 
 - 2026-11-04 — Rush rangé. Transcription automatique impossible (Hugging Face bloqué par le réseau) :
-  texte demandé à l'utilisateur.
+  texte demandé à l'utilisateur. L'utilisateur préfère un montage sans transcription.
+- 2026-11-04 — **v1** (`export/006-v1.mp4`, 1080×1920 à **60 i/s**, qualité max, 23,5 Mo) :
+  - badge « ● ON AIR » (voyant rouge qui clignote, clin d'œil au micro) + « 📍 Chambly », en haut à gauche sous la barre TikTok ;
+  - léger zoom d'ouverture ;
+  - à la bouchée (8,75 s) : zoom « punch », secousse, flash, sticker « CROC ! » et bruit de croquage ;
+  - 1 s d'image figée à la fin sur la réaction ;
+  - son d'origine conservé, sons : whoosh + pop à l'apparition du badge, crunch à la bouchée.
 
 ## À faire / retours
 
-- [ ] Recevoir le texte parlé
-- [ ] Montage
+- [x] Montage v1
+- [ ] Retours sur la v1
