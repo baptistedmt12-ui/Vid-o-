@@ -92,3 +92,55 @@ export const StrollerIcon: React.FC<P> = ({ size = 44, color = "#fff" }) => (
     <circle cx={17} cy={20} r={2} fill={color} />
   </svg>
 );
+
+export const HeartIcon: React.FC<P> = ({ size = 44, color = "#E10600" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24">
+    <path fill={color} d="M12 21s-7.5-4.6-9.6-9.2C.8 8.2 3 4.5 6.6 4.5c2.1 0 3.6 1.2 5.4 3.2 1.8-2 3.3-3.2 5.4-3.2 3.6 0 5.8 3.7 4.2 7.3C19.5 16.4 12 21 12 21z" />
+  </svg>
+);
+
+export const LockIcon: React.FC<P> = ({ size = 44, color = "#fff" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24">
+    <path fill="none" stroke={color} strokeWidth={2.4} d="M7.5 10V7.5a4.5 4.5 0 0 1 9 0V10" />
+    <rect x={4.5} y={10} width={15} height={11} rx={2.5} fill={color} />
+  </svg>
+);
+
+export const HandIcon: React.FC<P> = ({ size = 44, color = "#fff" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24">
+    <path fill={color} d="M7 11V5.5a1.5 1.5 0 0 1 3 0V10h.5V3.5a1.5 1.5 0 0 1 3 0V10h.5V4.5a1.5 1.5 0 0 1 3 0V11h.5V7.5a1.5 1.5 0 0 1 3 0V15a7 7 0 0 1-7 7h-1a7 7 0 0 1-5.6-2.8L3.4 15a1.6 1.6 0 0 1 2.4-2.1L7 14z" />
+  </svg>
+);
+
+export const ShoeIcon: React.FC<P> = ({ size = 44, color = "#fff" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24">
+    <path fill={color} d="M2 15.5c0-2 .6-6.5 1.5-8.5h3l1 2.5c1.6 1.4 4.3 2.6 7.4 3.4 4 1 7.1 1.8 7.1 4.6v1H2z" />
+    <rect x={2} y={19} width={20} height={2} rx={1} fill={color} />
+  </svg>
+);
+
+export const HomeIcon: React.FC<P> = ({ size = 44, color = "#fff" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24">
+    <path fill={color} d="M12 3 2 11h3v10h5v-6h4v6h5V11h3z" />
+  </svg>
+);
+
+export const ShieldIcon: React.FC<P> = ({ size = 44, color = "#fff" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24">
+    <path fill={color} d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5z" />
+  </svg>
+);
+
+export const CartIcon: React.FC<P> = ({ size = 44, color = "#fff" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24">
+    <path fill="none" stroke={color} strokeWidth={2.2} strokeLinejoin="round" d="M2 3h3l2.4 11.5h11L21 7H6.2" />
+    <circle cx={9} cy={19.5} r={1.8} fill={color} />
+    <circle cx={17} cy={19.5} r={1.8} fill={color} />
+  </svg>
+);
+
+export const MessageIcon: React.FC<P> = ({ size = 44, color = "#fff" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24">
+    <path fill={color} d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H9l-5 4v-4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" />
+  </svg>
+);

@@ -10,6 +10,9 @@ import * as V3 from "./videos/003-defi-15-15-7/reps";
 import { Video004, TOTAL_FRAMES as F004 } from "./videos/004-boue-rouge/Video004";
 import { Video005, TOTAL_FRAMES as F005 } from "./videos/005-compteur-location/Video005";
 
+import { Video007, TOTAL_FRAMES as F007 } from "./videos/007-bmw-pere-fils/Video007";
+import { Video008, TOTAL_FRAMES as F008 } from "./videos/008-toit-vasistas/Video008";
+import { Video009, TOTAL_FRAMES as F009 } from "./videos/009-portiere-acheteur/Video009";
 import { Video006, FPS as FPS006, TOTAL_FRAMES as TOTAL006 } from "./videos/006-on-air-chambly/Video006";
 
 export const RemotionRoot: React.FC = () => {
@@ -58,6 +61,9 @@ export const RemotionRoot: React.FC = () => {
         width={1080}
         height={1920}
       />
+      <Composition id="Video007" component={Video007} durationInFrames={F007} fps={30} width={1080} height={1920} />
+      <Composition id="Video008" component={Video008} durationInFrames={F008} fps={30} width={1080} height={1920} />
+      <Composition id="Video009" component={Video009} durationInFrames={F009} fps={30} width={1080} height={1920} />
     </>
   );
 };

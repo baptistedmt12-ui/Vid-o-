@@ -20,7 +20,10 @@ Ce fichier regroupe trois choses :
 | 004 | La boue rouge (enduro, gendarmes à 17h) | 🔍 Relecture | 9:16 (1080×1920) | 1 min 08 | `Video004` | — | — | — | v1 rendue, graphiques compacts |
 | 005 | Le compteur (moto en LLD à rendre lundi) | 🔍 Relecture | 9:16 (1080×1920) | 1 min 06 | `Video005` | — | — | — | v1 rendue, graphiques compacts |
 | 006 | On Air Chambly — annonce du 15/15/15 (banane en voiture) | 🔍 Relecture | 9:16 (1080×1920) 60 i/s | 10 s | `Video006` | — | — | — | v2 calée sur la voix (Whisper) |
-| 007 | | 💡 Idée | | | | | | | |
+| 007 | La bosse du père (BMW 116i) | 🔍 Relecture | 9:16 (1080×1920) | 1 min 01 | `Video007` | — | — | — | v1 : voix off de synthèse, remodelage + miroirs |
+| 008 | Le vasistas (bosse sur le toit) | 🔍 Relecture | 9:16 (1080×1920) | 1 min 01 | `Video008` | — | — | — | v1 : voix off de synthèse, remodelage + miroirs |
+| 009 | Le coup de portière (l'acheteur) | 🔍 Relecture | 9:16 (1080×1920) | 1 min 01 | `Video009` | — | — | — | v1 : voix off de synthèse, remodelage + miroirs |
+| 010 | | 💡 Idée | | | | | | | |
 
 ### Banque d'idées
 

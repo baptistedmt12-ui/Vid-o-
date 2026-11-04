@@ -62,3 +62,11 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
 - Aperçu : `npm run dev`
 - Rendu : `npx remotion render <Composition> out/<nom>.mp4`
   (dans l'environnement cloud, ajouter `--browser-executable=/opt/pw-browsers/chromium`).
+
+## Voix off de synthèse (quand l'utilisateur la demande)
+- Hugging Face et les voix Microsoft sont bloqués, mais les releases GitHub passent : modèle **Kokoro**
+  (`thewh1teagle/kokoro-onnx`, release `model-files-v1.0` : `kokoro-v1.0.onnx` + `voices-v1.0.bin`), `pip install kokoro-onnx soundfile`.
+- Seule voix française : `ff_siwis` (féminine). Vitesse ~1,06–1,09 pour ~220 mots en 60 s.
+- Script : `scripts/voix_off.py` (une phrase à la fois, silences coupés, corrige « parking » et « vasistas » mal phonétisés).
+- Toujours vérifier la prononciation en retranscrivant avec Whisper, puis caler les graphiques sur le minutage des mots.
+- Remodelage d'un rush (durée exacte, miroirs) : `scripts/remodel.py`. Aperçus rapides : `node scripts/stills.mjs`.
