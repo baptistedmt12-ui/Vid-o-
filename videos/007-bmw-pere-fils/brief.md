@@ -55,9 +55,14 @@ C'est le père. Il me dit : vendredi, j'ai touché le pilier du garage en recula
     (`assets/voix.wav`, minutage dans `assets/mots.json`).
   - Graphiques **petits, à gauche**, entre 300 et ~800 px de haut : étiquettes, appels entrants, bulles de dialogue, photos polaroid
     tirées du rush, illustrations, sondage final pour faire réagir en commentaire. Rien sous la colonne de droite ni en bas.
+  - **Sous-titres** de la voix off, mot par mot (mot en cours en jaune), bas du texte à 1410 px, entre 95 et 875 px
+    (`src/videos/007-bmw-pere-fils/captions.ts`, généré par `scripts/captions.py`).
   - Bruitages : whoosh, pop, sonnerie, notifications, impacts, nappe + battements de cœur pendant la tension. Son d'atelier du rush très bas.
 
 ## À faire / retours
+
+- [x] Retour : sous-titres ajoutés, sans déborder sur les zones TikTok
+- [x] Retour : miroir moins fréquent → bascule toutes les ~10–15 s (11,2 / 20,6 / 32,1 / 44,3 s)
 
 - [x] Retour : « pas à l'envers, juste l'effet miroir » → effet kaléidoscope retiré, miroir gauche/droite uniquement
 - [x] Rien sur les zones / filigrane TikTok (graphiques entre 300 et ~850 px de haut, à gauche de 700 px)

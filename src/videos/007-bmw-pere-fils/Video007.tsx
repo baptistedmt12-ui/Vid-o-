@@ -2,7 +2,8 @@ import { AbsoluteFill, Audio, Sequence, staticFile } from "remotion";
 import { Footage, type Cut, type Punch as Zoom } from "../_shared/Footage";
 import { ClockIcon, EuroIcon, HandIcon, HeartIcon, LockIcon, MagnifierIcon, PinIcon } from "../_shared/icons";
 import { Check, Cross, G, GREEN, Sfx, sec } from "../_shared/kit";
-import { Call, Day, Dot, Poll, Polaroid, Punch, Say, Side, Tag, Talk, Timeline, Times, tone } from "../_shared/story";
+import { CAPTIONS } from "./captions";
+import { Captions, Call, Day, Dot, Poll, Polaroid, Punch, Say, Side, Tag, Talk, Timeline, Times, tone } from "../_shared/story";
 import { BODY, TITLE } from "../_shared/kit";
 import { CarRear } from "./Graphics";
 
@@ -174,6 +175,8 @@ export const Video007: React.FC = () => (
     <G from={57.8} to={DURATION_S} name="Je leur dis ?">
       <Poll top={T} t={57.86} question="Je leur dis, ou pas ?" a="OUI" b="NON" />
     </G>
+
+    <Captions data={CAPTIONS} />
 
     {/* Son */}
     <Audio src={staticFile(A("voix.wav"))} volume={1} />

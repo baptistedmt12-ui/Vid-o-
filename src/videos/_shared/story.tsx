@@ -1,5 +1,5 @@
 import React from "react";
-import { Easing, Img, interpolate, spring, staticFile } from "remotion";
+import { Easing, Img, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { PhoneIcon } from "./icons";
 import { BODY, GREEN, RED, SAFE, TITLE, nbsp, useG } from "./kit";
 
@@ -312,4 +312,52 @@ export const Times: React.FC<{ t0: number; t1: number; to: number; size?: number
   const { lin } = useG();
   const n = Math.max(1, Math.round(to * lin(t0, t1, Easing.out(Easing.quad))));
   return <span style={{ fontFamily: TITLE, fontSize: size, color: "#FFD23F" }}>×{n}</span>;
+};
+
+/** Sous-titres de la voix off, mot par mot (mot en cours en jaune).
+ *  Calés dans la zone sûre : bas du texte à 1410 px (la barre TikTok commence vers 1450),
+ *  entre 95 et 875 px de large (la colonne de droite commence vers 900). */
+export type Caption = { t: number; end: number; words: { t: number; w: string }[] };
+export const Captions: React.FC<{ data: Caption[] }> = ({ data }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const now = frame / fps;
+  const c = data.find((x) => now >= x.t && now < x.end);
+  if (!c) return null;
+  const k = spring({ frame: frame - Math.round(c.t * fps), fps, config: { damping: 14, stiffness: 260 }, durationInFrames: 8 });
+  return (
+    <div style={{ position: "absolute", left: 95, width: 780, bottom: 1920 - 1410, display: "flex", justifyContent: "center" }}>
+      <div
+        style={{
+          textAlign: "center",
+          fontFamily: BODY,
+          fontWeight: 900,
+          fontSize: 54,
+          lineHeight: 1.18,
+          transform: `scale(${0.85 + 0.15 * k})`,
+          opacity: Math.min(1, k * 2),
+        }}
+      >
+        {c.words.map((w, i) => {
+          const on = now >= w.t && (i === c.words.length - 1 || now < c.words[i + 1].t);
+          return (
+            <span
+              key={i}
+              style={{
+                color: on ? "#FFD23F" : "#fff",
+                WebkitTextStroke: "9px #000",
+                paintOrder: "stroke fill",
+                textShadow: "0 5px 14px rgba(0,0,0,0.6)",
+                marginRight: i < c.words.length - 1 ? "0.26em" : 0,
+                display: "inline-block",
+                transform: on ? "scale(1.06)" : undefined,
+              }}
+            >
+              {w.w}
+            </span>
+          );
+        })}
+      </div>
+    </div>
+  );
 };

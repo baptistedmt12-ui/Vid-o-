@@ -55,7 +55,9 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
 ## Habillage TikTok (exigence de l'utilisateur)
 - Pas de texte sur les actions (ex. « CROC ! ») : un effet sonore suffit.
 - Textes et compteurs **petits et sur le côté**, jamais en gros au milieu : on doit bien voir les mouvements.
-- Effet miroir = image inversée gauche/droite uniquement (jamais à l'envers, pas de kaléidoscope).
+- Effet miroir = image inversée gauche/droite uniquement (jamais à l'envers, pas de kaléidoscope),
+  et pas trop souvent : une bascule toutes les 10–15 s.
+- Sous-titres de la voix off : `scripts/captions.py` + composant `Captions` (bas du texte à 1410 px, 95–875 px de large).
 - Ne rien placer dans les zones de l'interface TikTok (voir `videos/README.md`) :
   haut ~280 px, droite au-delà de ~900 px, bas à partir de ~1450 px.
 

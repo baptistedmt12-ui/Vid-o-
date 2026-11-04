@@ -2,7 +2,8 @@ import { AbsoluteFill, Audio, Sequence, staticFile } from "remotion";
 import { Footage, type Cut, type Punch as Zoom } from "../_shared/Footage";
 import { CartIcon, ClockIcon, HandIcon, MagnifierIcon } from "../_shared/icons";
 import { BODY, Check, Cross, G, GREEN, Sfx, sec } from "../_shared/kit";
-import { Call, Day, Dot, Poll, Polaroid, Punch, Say, Side, Tag, Talk, tone } from "../_shared/story";
+import { CAPTIONS } from "./captions";
+import { Captions, Call, Day, Dot, Poll, Polaroid, Punch, Say, Side, Tag, Talk, tone } from "../_shared/story";
 import { Annonce, Facture, Parking } from "./Graphics";
 
 // Vidéo 009 — « Le coup de portière » (voiture bordeaux, bosse au-dessus de la poignée).
@@ -144,6 +145,8 @@ export const Video009: React.FC = () => (
     <G from={56.68} to={DURATION_S} name="Un mot ?">
       <Poll top={T} t={56.72} question="Tu touches une voiture : tu laisses un mot ?" a="OUI" b="NON" />
     </G>
+
+    <Captions data={CAPTIONS} />
 
     {/* Son */}
     <Audio src={staticFile(A("voix.wav"))} volume={1} />

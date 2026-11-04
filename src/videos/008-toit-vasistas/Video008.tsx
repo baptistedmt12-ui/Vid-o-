@@ -2,7 +2,8 @@ import { AbsoluteFill, Audio, Sequence, staticFile } from "remotion";
 import { Footage, type Cut, type Punch as Zoom } from "../_shared/Footage";
 import { ClockIcon, HomeIcon, LockIcon, MagnifierIcon, MessageIcon, ShieldIcon } from "../_shared/icons";
 import { BODY, Check, Cross, G, GREEN, Sfx, Stamp, sec } from "../_shared/kit";
-import { Call, Dot, Poll, Polaroid, Punch, Say, Side, Tag, Talk, tone } from "../_shared/story";
+import { CAPTIONS } from "./captions";
+import { Captions, Call, Dot, Poll, Polaroid, Punch, Say, Side, Tag, Talk, tone } from "../_shared/story";
 import { Footprint, Garage, LightOn, MoonIcon, Sizes } from "./Graphics";
 
 // Vidéo 008 — « Le vasistas » (bosse sur le toit, garage fermé à clé).
@@ -159,6 +160,8 @@ export const Video008: React.FC = () => (
     <G from={58.02} to={DURATION_S} name="Par où ?">
       <Poll top={T} t={58.08} question="À 16 ans, tu sortais par où ?" a="LA PORTE" b="LA FENÊTRE" />
     </G>
+
+    <Captions data={CAPTIONS} />
 
     {/* Son */}
     <Audio src={staticFile(A("voix.wav"))} volume={1} />
