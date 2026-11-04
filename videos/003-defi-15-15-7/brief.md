@@ -44,7 +44,9 @@ pour qu'on comprenne que j'ai fait 15, 15 et 7.
 - `export/003-v1.mp4` : 2 min 00, 1080×1920, 30 i/s, H.264 CRF 14, AAC 320 kb/s, **206 Mo**.
   Trop gros pour GitHub (> 100 Mo) : envoyé dans la discussion, pas commité.
 - `export/003-v1-tiktok.mp4` : même vidéo, 94 Mo (H.264 2 passes, 6,1 Mb/s, AAC 192 kb/s),
-  sur GitHub pour pouvoir la télécharger par lien. Aucune différence visible une fois sur TikTok.
+  sur GitHub pour pouvoir la télécharger par lien.
+- `export/003-v1-hevc.mp4` : même vidéo, 93 Mo en **HEVC** 2 passes (6 Mb/s, AAC 256 kb/s) —
+  plus fidèle au master que la version H.264 (PSNR 47,3 dB contre 45,1 dB). **Version à télécharger sur iPhone.**
 
 ## À faire / retours
 

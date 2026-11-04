@@ -39,7 +39,7 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
   depuis l'iPhone ne fonctionne pas de toute façon. L'utilisateur télécharge donc sur **PC**
   (claude.ai/code), puis passe la vidéo sur l'iPhone via iCloud Drive.
 - Toujours envoyer la version qualité max. Si elle dépasse 100 Mo, envoyer aussi une version
-  de moins de 95 Mo (H.264 2 passes) et la committer dans `export/` pour un lien GitHub de secours.
+  de moins de 95 Mo en **HEVC 2 passes** (`-c:v libx265 -tag:v hvc1`, nettement plus fidèle que H.264 à taille égale) et la committer dans `export/` pour un lien GitHub de secours.
 
 ## Habillage TikTok (exigence de l'utilisateur)
 - Textes et compteurs **petits et sur le côté**, jamais en gros au milieu : on doit bien voir les mouvements.
