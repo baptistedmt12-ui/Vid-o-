@@ -7,6 +7,8 @@ import { Video002 } from "./videos/002-etiquette-arrachee/Video002";
 import * as T002 from "./videos/002-etiquette-arrachee/timeline";
 import { Video003 } from "./videos/003-defi-15-15-7/Video003";
 import * as V3 from "./videos/003-defi-15-15-7/reps";
+import { Video004, TOTAL_FRAMES as F004 } from "./videos/004-boue-rouge/Video004";
+import { Video005, TOTAL_FRAMES as F005 } from "./videos/005-compteur-location/Video005";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -44,6 +46,8 @@ export const RemotionRoot: React.FC = () => {
         width={1080}
         height={1920}
       />
+      <Composition id="Video004" component={Video004} durationInFrames={F004} fps={30} width={1080} height={1920} />
+      <Composition id="Video005" component={Video005} durationInFrames={F005} fps={30} width={1080} height={1920} />
     </>
   );
 };
