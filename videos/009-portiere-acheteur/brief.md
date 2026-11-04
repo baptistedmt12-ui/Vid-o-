@@ -50,7 +50,7 @@ Samedi midi, il me rappelle en rigolant. L'acheteur est allé directement à la 
 ## Ce qui a été fait
 
 - *2026-11-04* — v1 (`export/009-v1.mp4`, rendu `render:hq`) :
-  - Rush remodelé à **61,0 s** : coupes dans les passages répétitifs, passages en **miroir** (image inversée gauche/droite, jamais à l'envers), agrandi en 1080×1920 (lanczos), transitions whip / zoom / flash sur chaque coupe, zooms punch.
+  - Rush remodelé à **61,0 s** : coupes dans les passages répétitifs, sans effet miroir (gardé seulement sur la vidéo 007, à la demande de l'utilisateur), agrandi en 1080×1920 (lanczos), transitions whip / zoom / flash sur chaque coupe, zooms punch.
   - **Voix off de synthèse** (Kokoro, voix française « siwis ») sans blancs, transcrite avec Whisper pour caler les graphiques au mot près
     (`assets/voix.wav`, minutage dans `assets/mots.json`).
   - Graphiques **petits, à gauche**, entre 300 et ~800 px de haut : étiquettes, appels entrants, bulles de dialogue, photos polaroid
@@ -59,7 +59,7 @@ Samedi midi, il me rappelle en rigolant. L'acheteur est allé directement à la 
 
 ## À faire / retours
 
-- [x] Retour : « pas à l'envers, juste l'effet miroir » → effet kaléidoscope retiré, miroir gauche/droite uniquement
+- [x] Retour : « pas à l'envers, juste l'effet miroir » → puis « fais-le que sur une vidéo » : pas de miroir sur cette vidéo
 - [x] Rien sur les zones / filigrane TikTok (graphiques entre 300 et ~850 px de haut, à gauche de 700 px)
 
 - [ ] Retours de l'utilisateur sur la v1
