@@ -1,7 +1,7 @@
 """Remodelage d'un rush : segments enchaînés, effets miroir, durée exacte, 1080×1920.
 
 Usage : python3 scripts/remodel.py <rush> <sortie.mp4> <ambiance.wav> <durée> <segments.json>
-segments.json : [[début, fin, mode], ...] avec mode = "n" (normal), "f" (miroir retourné), "s" (miroir symétrique).
+segments.json : [[début, fin, mode], ...] avec mode = "n" (normal), "f" (miroir retourné), "s" (miroir symétrique, à éviter : l'utilisateur veut seulement le miroir gauche/droite).
 Le dernier segment est raccourci pour tomber pile sur la durée demandée.
 """
 import json, subprocess, sys

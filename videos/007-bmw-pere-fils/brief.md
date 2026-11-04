@@ -31,7 +31,7 @@ Fichiers de travail (hors Git, régénérables) :
 python3 scripts/remodel.py videos/007-bmw-pere-fils/rushes/original/original.mp4 videos/007-bmw-pere-fils/rushes/original/travail.mp4 \
   videos/007-bmw-pere-fils/rushes/original/ambiance.wav 61.0 videos/007-bmw-pere-fils/rushes/segments.json
 ```
-`rushes/segments.json` = découpage du remodelage (n = normal, f = miroir retourné, s = miroir symétrique).
+`rushes/segments.json` = découpage du remodelage (n = normal, f = miroir gauche/droite).
 
 ## Script (voix off)
 
@@ -50,8 +50,7 @@ C'est le père. Il me dit : vendredi, j'ai touché le pilier du garage en recula
 ## Ce qui a été fait
 
 - *2026-11-04* — v1 (`export/007-v1.mp4`, rendu `render:hq`) :
-  - Rush remodelé à **61,0 s** : coupes dans les passages répétitifs, passages en **miroir retourné** et en **miroir symétrique**
-    (effet kaléidoscope), agrandi en 1080×1920 (lanczos), transitions whip / zoom / flash sur chaque coupe, zooms punch.
+  - Rush remodelé à **61,0 s** : coupes dans les passages répétitifs, passages en **miroir** (image inversée gauche/droite, jamais à l'envers), agrandi en 1080×1920 (lanczos), transitions whip / zoom / flash sur chaque coupe, zooms punch.
   - **Voix off de synthèse** (Kokoro, voix française « siwis ») sans blancs, transcrite avec Whisper pour caler les graphiques au mot près
     (`assets/voix.wav`, minutage dans `assets/mots.json`).
   - Graphiques **petits, à gauche**, entre 300 et ~800 px de haut : étiquettes, appels entrants, bulles de dialogue, photos polaroid
@@ -59,6 +58,9 @@ C'est le père. Il me dit : vendredi, j'ai touché le pilier du garage en recula
   - Bruitages : whoosh, pop, sonnerie, notifications, impacts, nappe + battements de cœur pendant la tension. Son d'atelier du rush très bas.
 
 ## À faire / retours
+
+- [x] Retour : « pas à l'envers, juste l'effet miroir » → effet kaléidoscope retiré, miroir gauche/droite uniquement
+- [x] Rien sur les zones / filigrane TikTok (graphiques entre 300 et ~850 px de haut, à gauche de 700 px)
 
 - [ ] Retours de l'utilisateur sur la v1
 - [ ] Rush d'origine en meilleure qualité (fichier du téléphone, 1080p ou 4K) pour un rendu plus net
