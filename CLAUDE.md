@@ -36,10 +36,14 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
 - **Réception des rushes :** par lien **WeTransfer** (original intact). Les pièces jointes sont limitées à ~30 Mo.
 - **Envoi des vidéos finales :** dans la discussion. Sur l'appli iPhone, le bouton de partage n'apparaît
   que pour les fichiers d'environ 100 Mo maximum (vu à 94 Mo, absent à 206 Mo), et l'enregistrement
-  depuis l'iPhone ne fonctionne pas de toute façon. L'utilisateur télécharge donc sur **PC**
-  (claude.ai/code), puis passe la vidéo sur l'iPhone via iCloud Drive.
-- Toujours envoyer la version qualité max. Si elle dépasse 100 Mo, envoyer aussi une version
-  de moins de 95 Mo en **HEVC 2 passes** (`-c:v libx265 -tag:v hvc1`, nettement plus fidèle que H.264 à taille égale) et la committer dans `export/` pour un lien GitHub de secours.
+  depuis l'iPhone ne fonctionne pas de toute façon : il récupère ses vidéos par **lien GitHub** dans Safari.
+- Toujours envoyer la version qualité max dans la discussion **et** la mettre sur GitHub :
+  - moins de 100 Mo : commit normal ;
+  - plus de 100 Mo : via **Git LFS** (`git lfs track "videos/NNN-nom/export/NNN-vX.mp4"`, uniquement le
+    fichier final, pas les rushes) — les domaines LFS sont autorisés dans le réseau de l'environnement.
+  - Donner le lien direct à ouvrir dans Safari :
+    `https://github.com/baptistedmt12-ui/Vid-o-/raw/<branche>/videos/NNN-nom/export/NNN-vX.mp4`
+  - Le quota LFS gratuit est limité : supprimer du suivi LFS les anciennes versions remplacées.
 
 ## Habillage TikTok (exigence de l'utilisateur)
 - Textes et compteurs **petits et sur le côté**, jamais en gros au milieu : on doit bien voir les mouvements.
