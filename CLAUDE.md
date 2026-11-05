@@ -71,6 +71,16 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
   Clé dans la variable `ELEVENLABS_API_KEY` (jamais dans le dépôt). Script : `scripts/voix_elevenlabs.py`
   (modèle **eleven_v3**, tout le script en une requête, stabilité 0 « Creative » ; l'utilisateur veut un script **joué** :
   ponctuation d'intonation, « … » avant les révélations, balises [whispers] [laughs] [curious] [excited], aucun blanc inutile), puis `scripts/ajuste_voix.py` pour tenir la durée.
+- **Fluidité « comme un humain qui lit » (exigence forte de l'utilisateur)** : la voix doit couler **paragraphe par
+  paragraphe** (HOOK / MISE EN PLACE / TENSION / RÉSOLUTION), jamais phrase par phrase.
+  - Écrire en prose liée : peu de points, des virgules et des liaisons (« et », « sauf que », « du coup », « alors »),
+    pas de phrases d'un ou deux mots, au plus un ou deux « … » par vidéo, une ou deux balises d'émotion maximum.
+  - Écrire le script **à la bonne longueur dès le départ** (~215 mots pour 61 s en v3, à mesurer sur un essai)
+    pour ne **pas** écraser les silences ni accélérer après coup : `ajuste_voix.py` seulement en dernier recours,
+    avec une pause max ≥ 0,35 s et un tempo ≤ 1,05.
+  - Générer **un paragraphe par requête** avec `previous_text` / `next_text` (continuité d'intonation), puis enchaîner
+    avec ~0,15 s entre phrases d'un même paragraphe et ~0,35 s entre deux paragraphes.
+  - Avant la vidéo complète, envoyer un **essai du HOOK** (v3 et multilingual v2) pour que l'utilisateur valide la lecture.
 - Compte **gratuit** : 10 000 caractères/mois (~7 voix off d'1 min ; v3 parle lentement : viser ~220 mots pour 61 s) et **pas de voix de la Voice Library par l'API**
   (Maxime, etc. → erreur 402) ; seules les voix par défaut (Charlie, Brian, George…) marchent.
 - Sinon (quota épuisé) : Kokoro ci-dessous.
