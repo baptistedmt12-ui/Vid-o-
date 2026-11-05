@@ -8,9 +8,9 @@ import difflib, json, re, sys, unicodedata
 
 scripts, vid, words_p, out = sys.argv[1:5]
 text = re.sub(r"\[[^\]]*\]\s*", "", " ".join(json.load(open(scripts))[vid]))  # sans les balises d'émotion ElevenLabs v3
-for a, b in [("quarante-trois", "43"), ("trente-sept", "37"), ("quarante et un", "41"), ("seize", "16"), ("neuf heures", "9 h")]:
+for a, b in [("quatre cent soixante euros", "460\u00a0€"), ("mille cinq cents euros", "1\u00a0500\u00a0€"), ("dix-sept heures trente", "17\u00a0h\u00a030"), ("quatorze heures cinquante", "14\u00a0h\u00a050"), ("vingt-deux heures", "22\u00a0h"), ("dix-huit heures", "18\u00a0h"), ("quinze heures", "15\u00a0h"), ("dix minutes", "10\u00a0minutes"), ("vingt minutes", "20\u00a0minutes"), ("quarante-trois", "43"), ("trente-sept", "37"), ("quarante et un", "41"), ("seize", "16"), ("neuf heures", "9\u00a0h")]:
     text = text.replace(a, b)
-words = text.split()
+words = [w for w in text.replace("\n", " ").split(" ") if w]  # les espaces insécables restent dans le mot
 
 def norm(w):
     w = unicodedata.normalize("NFD", w.lower())
