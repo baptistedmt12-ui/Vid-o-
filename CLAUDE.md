@@ -71,10 +71,13 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
   (dans l'environnement cloud, ajouter `--browser-executable=/opt/pw-browsers/chromium`).
 
 ## Voix off de synthèse (quand l'utilisateur la demande)
-- **En priorité : ElevenLabs**, voix **Charlie de base** (`IKne3meq5aSn9XLyUdCD`) : modèle **eleven_multilingual_v2**,
-  **réglages par défaut** (comme l'essai qu'il a choisi). **Ne jamais retoucher la voix** (pas d'accélération, pas de
-  ralentissement, pas de silences raccourcis) : si c'est trop long ou trop court, **ajuster le script** et régénérer.
-  Le mode v3 « Creative » change le timbre d'une génération à l'autre : l'utilisateur ne veut plus ça.
+- **En priorité : ElevenLabs**, voix **Charlie** (`IKne3meq5aSn9XLyUdCD`). Référence validée par l'utilisateur : la voix de la
+  **vidéo 011** (`videos/011-drone-voisin/assets/voix.wav`, eleven_v3, stabilité 0 « Creative »).
+  Problème connu : en v3 « Creative », le timbre change d'une génération à l'autre (010 et 012 ne sonnent pas comme 011,
+  alors que la hauteur mesurée est la même). Claude ne peut pas écouter : **avant chaque rendu, envoyer les 10 premières
+  secondes de la nouvelle voix à côté de la référence 011** et ne continuer que si l'utilisateur valide.
+  **Ne jamais retoucher la voix** (pas d'accélération, pas de ralentissement, pas de silences raccourcis) :
+  si c'est trop long ou trop court, **ajuster le script** et régénérer.
   Clé dans `ELEVENLABS_API_KEY` (jamais dans le dépôt). Script : `scripts/voix_elevenlabs.py`.
 - **Fluidité « comme un humain qui lit » (exigence forte de l'utilisateur)** : ni phrase par phrase collée avec des blancs,
   ni tout un paragraphe d'une traite. Comme un humain : **chaque phrase commencée et finie d'un seul élan**, puis un
