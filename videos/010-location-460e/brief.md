@@ -39,11 +39,12 @@ Le soir, il m'appelle. À l'agence, l'employée a fait le tour de la voiture ave
 ## Ce qui a été fait
 
 - *2026-11-05* — v1 (`export/010-v1.mp4`, rendu `render:hq`) :
-  - Rush remodelé à 61,0 s, transitions sur les coupes, zooms punch. Miroir gauche/droite toutes les ~15 s (14 / 29 / 46 s).
+  - Rush remodelé à 61,0 s, transitions sur les coupes, zooms punch. Miroir gauche/droite à chaque coupe (~5 s).
   - Voix ElevenLabs **Charlie** (eleven_v3, « Creative »), script écrit à la bonne longueur ; **pauses naturelles conservées**
     (seuls les blancs > 0,38–0,6 s raccourcis), accélération ≤ 4 %. Voix envoyée à l'utilisateur avant le montage.
   - Graphiques petits à gauche calés au mot près (Whisper), polaroid « avant », sondage final, sous-titres mot par mot.
 
 ## À faire / retours
 
+- [x] Retour : « l'effet miroir souvent avec la petite transition, c'était top » → miroir toutes les ~5 s
 - [ ] Retours de l'utilisateur sur la v1

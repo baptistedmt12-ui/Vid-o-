@@ -7,7 +7,7 @@ import { BottleIcon, CorkShot, EyeIcon, Steps } from "../_shared/story2";
 import { CAPTIONS } from "./captions";
 
 // Vidéo 012 — « Le bouchon de champagne » (voiture bleue des mariés, bosse sur le toit au-dessus de la vitre arrière).
-// Rush remodelé (scripts/remodel.py) : 25 → 30 i/s, 61,0 s, sans miroir. Voix ElevenLabs « Charlie » (v3).
+// Rush remodelé (scripts/remodel.py) : 25 → 30 i/s, 61,0 s, miroir gauche/droite à chaque coupe (~5 s). Voix ElevenLabs « Charlie » (v3).
 export const DURATION_S = 61.0;
 export const TOTAL_FRAMES = sec(DURATION_S);
 
@@ -17,11 +17,17 @@ const AMBIANCE = `${DIR}/rushes/original/ambiance.wav`;
 const A = (f: string) => `${DIR}/assets/${f}`;
 
 const CUTS: Cut[] = [
-  { t: 11.96, type: "whip" },
-  { t: 21.5, type: "zoom" },
+  { t: 5.9, type: "whip" },
+  { t: 11.96, type: "zoom" },
+  { t: 16.7, type: "flash" },
+  { t: 21.5, type: "whip" },
+  { t: 26.4, type: "zoom" },
   { t: 31.32, type: "flash" },
-  { t: 39.0, type: "whip" },
-  { t: 47.0, type: "zoom" },
+  { t: 35.2, type: "whip" },
+  { t: 39.0, type: "zoom" },
+  { t: 43.0, type: "flash" },
+  { t: 47.0, type: "whip" },
+  { t: 51.0, type: "zoom" },
   { t: 54.96, type: "flash" },
 ];
 

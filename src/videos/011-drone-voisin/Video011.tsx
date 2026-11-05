@@ -9,7 +9,7 @@ import { CAPTIONS } from "./captions";
 import { Feed, Street } from "./Graphics";
 
 // Vidéo 011 — « Le drone du voisin » (bosse sur le toit, contre la barre de toit).
-// Rush remodelé (scripts/remodel.py) : 61,0 s, sans miroir. Voix ElevenLabs « Charlie » (v3).
+// Rush remodelé (scripts/remodel.py) : 61,0 s, miroir gauche/droite à chaque coupe (~5 s). Voix ElevenLabs « Charlie » (v3).
 export const DURATION_S = 61.0;
 export const TOTAL_FRAMES = sec(DURATION_S);
 
@@ -19,11 +19,16 @@ const AMBIANCE = `${DIR}/rushes/original/ambiance.wav`;
 const A = (f: string) => `${DIR}/assets/${f}`;
 
 const CUTS: Cut[] = [
-  { t: 13.0, type: "whip" },
-  { t: 26.8, type: "zoom" },
+  { t: 6.5, type: "whip" },
+  { t: 13.0, type: "zoom" },
+  { t: 19.5, type: "flash" },
+  { t: 26.8, type: "whip" },
+  { t: 32.5, type: "zoom" },
   { t: 38.0, type: "flash" },
-  { t: 47.87, type: "whip" },
-  { t: 50.67, type: "zoom" },
+  { t: 43.0, type: "whip" },
+  { t: 47.87, type: "zoom" },
+  { t: 50.67, type: "flash" },
+  { t: 56.0, type: "whip" },
 ];
 
 const ZOOMS: Zoom[] = [

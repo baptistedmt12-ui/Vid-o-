@@ -8,6 +8,10 @@ Réponds toujours en français.
 - `videos/` : un dossier par vidéo (voir `videos/README.md`).
 - `src/` : code Remotion (compositions déclarées dans `src/Root.tsx`).
 
+## Façon de travailler
+- Ne pas commenter chaque étape : travailler à fond, puis envoyer seulement le résultat final (vidéos + liens).
+  Ne donner des nouvelles que s'il y a un problème ou une décision à prendre.
+
 ## Quand l'utilisateur envoie une vidéo ou une demande
 1. Si c'est une nouvelle vidéo : copier `videos/_modele/` vers `videos/NNN-nom-court/`
    (NNN = numéro suivant, nom en minuscules avec tirets).
@@ -55,8 +59,8 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
 ## Habillage TikTok (exigence de l'utilisateur)
 - Pas de texte sur les actions (ex. « CROC ! ») : un effet sonore suffit.
 - Textes et compteurs **petits et sur le côté**, jamais en gros au milieu : on doit bien voir les mouvements.
-- Effet miroir = image inversée gauche/droite uniquement (jamais à l'envers, pas de kaléidoscope),
-  et pas trop souvent : une bascule toutes les 10–15 s.
+- Effet miroir = image inversée gauche/droite uniquement (jamais à l'envers, pas de kaléidoscope), **sur toutes les vidéos** :
+  une bascule à chaque coupe, toutes les ~5–6 s, avec la petite transition (whip / zoom / flash) — l'utilisateur adore.
 - Sous-titres de la voix off : `scripts/captions.py` + composant `Captions` (bas du texte à 1410 px, 95–875 px de large).
 - Ne rien placer dans les zones de l'interface TikTok (voir `videos/README.md`) :
   haut ~280 px, droite au-delà de ~900 px, bas à partir de ~1450 px.

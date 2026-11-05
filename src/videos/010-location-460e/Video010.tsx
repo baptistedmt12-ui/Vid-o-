@@ -7,7 +7,7 @@ import { Card, DocIcon, Steps } from "../_shared/story2";
 import { CAPTIONS } from "./captions";
 
 // Vidéo 010 — « Les 460 € » (voiture noire de location, bosse sous la vitre de la portière).
-// Rush remodelé (scripts/remodel.py) : 97,7 s → 61,0 s, miroir toutes les ~15 s. Voix ElevenLabs « Charlie » (v3).
+// Rush remodelé (scripts/remodel.py) : 97,7 s → 61,0 s, miroir gauche/droite à chaque coupe (~5 s). Voix ElevenLabs « Charlie » (v3).
 export const DURATION_S = 61.0;
 export const TOTAL_FRAMES = sec(DURATION_S);
 
@@ -19,11 +19,13 @@ const A = (f: string) => `${DIR}/assets/${f}`;
 const CUTS: Cut[] = [
   { t: 7.0, type: "whip" },
   { t: 14.0, type: "zoom" },
-  { t: 23.8, type: "flash" },
-  { t: 29.1, type: "whip" },
-  { t: 37.1, type: "zoom" },
-  { t: 45.7, type: "flash" },
-  { t: 51.4, type: "whip" },
+  { t: 19.0, type: "flash" },
+  { t: 23.8, type: "whip" },
+  { t: 29.1, type: "zoom" },
+  { t: 37.1, type: "flash" },
+  { t: 45.7, type: "whip" },
+  { t: 51.4, type: "zoom" },
+  { t: 56.4, type: "flash" },
 ];
 
 const ZOOMS: Zoom[] = [
