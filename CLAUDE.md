@@ -71,10 +71,11 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
   (dans l'environnement cloud, ajouter `--browser-executable=/opt/pw-browsers/chromium`).
 
 ## Voix off de synthèse (quand l'utilisateur la demande)
-- **En priorité : ElevenLabs**, voix **Charlie** (`IKne3meq5aSn9XLyUdCD`), choisie par l'utilisateur.
-  Clé dans la variable `ELEVENLABS_API_KEY` (jamais dans le dépôt). Script : `scripts/voix_elevenlabs.py`
-  (modèle **eleven_v3**, tout le script en une requête, stabilité 0 « Creative » ; l'utilisateur veut un script **joué** :
-  ponctuation d'intonation, « … » avant les révélations, balises [whispers] [laughs] [curious] [excited], aucun blanc inutile), puis `scripts/ajuste_voix.py` pour tenir la durée.
+- **En priorité : ElevenLabs**, voix **Charlie de base** (`IKne3meq5aSn9XLyUdCD`) : modèle **eleven_multilingual_v2**,
+  **réglages par défaut** (comme l'essai qu'il a choisi). **Ne jamais retoucher la voix** (pas d'accélération, pas de
+  ralentissement, pas de silences raccourcis) : si c'est trop long ou trop court, **ajuster le script** et régénérer.
+  Le mode v3 « Creative » change le timbre d'une génération à l'autre : l'utilisateur ne veut plus ça.
+  Clé dans `ELEVENLABS_API_KEY` (jamais dans le dépôt). Script : `scripts/voix_elevenlabs.py`.
 - **Fluidité « comme un humain qui lit » (exigence forte de l'utilisateur)** : ni phrase par phrase collée avec des blancs,
   ni tout un paragraphe d'une traite. Comme un humain : **chaque phrase commencée et finie d'un seul élan**, puis un
   **petit temps naturel**, plus ou moins long selon le sens (court après une virgule, un peu plus après une révélation),
