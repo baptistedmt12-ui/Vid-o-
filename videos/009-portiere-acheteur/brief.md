@@ -33,19 +33,19 @@ python3 scripts/remodel.py videos/009-portiere-acheteur/rushes/original/original
 ```
 `rushes/segments.json` = découpage du remodelage (n = normal, f = miroir gauche/droite).
 
-## Script (voix off, v2)
+## Script (voix off, v3 — balises d'émotion ElevenLabs v3 entre crochets)
 
 **[HOOK]**
-La personne qui a fait cette bosse est revenue un mois plus tard pour acheter la voiture.
+[mischievously] La personne qui a fait cette bosse est revenue un mois plus tard… pour acheter la voiture !
 
 **[MISE EN PLACE]**
-Un vendredi soir, un client m'appelle : il vend sa voiture le lendemain à neuf heures du matin, et il y a un mois, sur le parking du supermarché, quelqu'un lui a mis un coup de portière juste au-dessus de la poignée, sans laisser de message ni de numéro. Il veut que sa portière soit parfaite avant la vente.
+Un vendredi soir, un client m'appelle : il vend sa voiture le lendemain matin. Un mois plus tôt, sur le parking du supermarché, quelqu'un lui a mis un coup de portière juste au-dessus de la poignée, sans laisser de mot.
 
 **[TENSION]**
-J'arrive, je regarde, et je trouve une bosse ronde, profonde, pile à hauteur de main. Je colle mes tirettes, je tire, puis je reprends au marteau. Pendant que je travaille, l'acheteur l'appelle trois fois, et à chaque fois, il pose la même question : est-ce que la portière conducteur a des bosses ? Pas la voiture, la portière conducteur. Mon client trouve ça louche, et moi aussi.
+Je trouve une bosse ronde, profonde, pile à hauteur de main. Je colle mes tirettes, je tire, puis je reprends au marteau. Pendant que je travaille, l'acheteur l'appelle trois fois, toujours avec la même question : est-ce que la portière conducteur a des bosses ? [curious] Pas la voiture… la portière conducteur. Mon client trouve ça louche, et moi aussi.
 
 **[RÉSOLUTION]**
-Samedi midi, il me rappelle en rigolant. L'acheteur est allé directement à la portière, il a passé le doigt au-dessus de la poignée, et il a dit : bizarre, j'étais sûr qu'il y avait une bosse ici. Mon client lui demande pourquoi, et le gars devient tout rouge : il y a un mois, sur le parking du supermarché, c'était lui. Il avait reconnu la voiture sur l'annonce. Mon client lui a vendu la voiture, et il lui a fait payer la réparation en plus. Et vous, quand vous touchez une voiture, vous laissez un petit mot ?
+[excited] Samedi midi, il me rappelle en rigolant : l'acheteur est allé droit à la portière, il a passé le doigt au-dessus de la poignée, et il a dit : « Bizarre… j'étais sûr qu'il y avait une bosse ici ! » Mon client lui demande pourquoi, et le gars devient tout rouge : le coup de portière au supermarché… c'était lui ! Il avait reconnu la voiture sur l'annonce. [laughs] Mon client lui a vendu la voiture, et il lui a fait payer la réparation en plus. Et vous, quand vous touchez une voiture, vous laissez un petit mot ?
 
 ## Ce qui a été fait
 
@@ -66,12 +66,14 @@ Samedi midi, il me rappelle en rigolant. L'acheteur est allé directement à la 
   - Graphiques recalés automatiquement sur la nouvelle voix (`scripts/retime.py`), sous-titres refaits.
 
 - *2026-11-05* — v3 (`export/009-v3.mp4`) :
-  - **Voix ElevenLabs « Charlie »** (choisie parmi 12 voix d'homme), modèle multilingual v2, réglages standard (quota ElevenLabs épuisé avant la version expressive).
+  - **Voix ElevenLabs « Charlie »**, modèle **eleven_v3** (le plus expressif, stabilité « Creative »), script « joué » :
+    ponctuation d'intonation, « … » avant les révélations, balises [whispers] [laughs] [curious]…, détails secondaires retirés.
   - Silences raccourcis à 0,2 s max + légère accélération sans changer la hauteur (`scripts/ajuste_voix.py`) pour tenir en 61 s.
   - Graphiques et sous-titres recalés sur la nouvelle voix.
 
 ## À faire / retours
 
+- [x] Retour : « faut vivre le script, de l'intonation, fluide, pas de blancs » → eleven_v3 + script réécrit
 - [x] Retour : « voix plus naturelle, comme Maxime sur ElevenLabs » → Charlie (Maxime = voix de bibliothèque, refusée par l'API en compte gratuit)
 
 - [x] Retour : « trop saccadé, robotique » + « voix d'homme la plus réaliste possible » → v2
