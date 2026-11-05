@@ -12,13 +12,13 @@ speed = float(sys.argv[4]) if len(sys.argv) > 4 else 1.0
 voice = sys.argv[5] if len(sys.argv) > 5 else "IKne3meq5aSn9XLyUdCD"  # Charlie (voix gratuite via l'API)
 text = " ".join(json.load(open(src))[vid])
 # eleven_v3 lit les balises d'émotion [excited], [whispers], [laughs]… ; les autres modèles les retirent
-MODEL = os.environ.get("ELEVEN_MODEL", "eleven_multilingual_v2")  # voix de Charlie « de base » (choix de l'utilisateur)
+MODEL = os.environ.get("ELEVEN_MODEL", "eleven_v3")  # la voix de Charlie validée par l'utilisateur (vidéos 007-009, 011)
 if MODEL != "eleven_v3":
     import re
     text = re.sub(r"\[[^\]]*\]\s*", "", text)
-body = {"text": text, "model_id": MODEL, "language_code": "fr"}  # réglages par défaut de la voix : on ne touche à rien
-if MODEL == "eleven_v3" and os.environ.get("ELEVEN_STABILITY"):
-    body["voice_settings"] = {"stability": float(os.environ["ELEVEN_STABILITY"])}
+body = {"text": text, "model_id": MODEL, "language_code": "fr"}
+if MODEL == "eleven_v3":  # mêmes réglages que les vidéos validées (Creative) ; ne jamais retoucher l'audio ensuite
+    body["voice_settings"] = {"stability": 0.0, "similarity_boost": 0.8, "use_speaker_boost": True}
 req = urllib.request.Request(
     f"https://api.elevenlabs.io/v1/text-to-speech/{voice}?output_format=mp3_44100_128",
     data=json.dumps(body).encode(), headers={"xi-api-key": os.environ["ELEVENLABS_API_KEY"], "Content-Type": "application/json"})

@@ -96,7 +96,7 @@ export const Video012: React.FC = () => (
       <Punch t={37.82} top={T + 110} text="L'ONCLE, EN AVANCE !" color="#E10600" size={60} />
     </G>
     <G from={39.54} to={42.04} name="Je range tout">
-      <Tag top={T} t={39.6} tone="white" icon={<Dot><HandIcon size={34} /></Dot>} text="Je range tout…" sub="l'air de rien" />
+      <Tag top={T} t={39.6} tone="white" icon={<Dot><HandIcon size={34} /></Dot>} text="Je range tout…" sub="et je fais semblant de passer" />
     </G>
 
     {/* RÉSOLUTION */}

@@ -99,7 +99,7 @@ export const Video010: React.FC = () => (
     </G>
     <G from={29.79} to={33.5} name="Ça se verra ?">
       <Talk top={T}>
-        <Say t={31.0} who="LE CLIENT · SANS ARRÊT" side="right" tone="dark" text="« Ça se verra encore ? »" />
+        <Say t={31.0} who="LE CLIENT · TOUTES LES 10 MIN" side="right" tone="dark" text="« Ça se verra encore ? »" />
       </Talk>
     </G>
     <G from={33.5} to={36.48} name="17 h 30">
@@ -114,7 +114,7 @@ export const Video010: React.FC = () => (
       <Call top={T} t={38.02} caller="Le client" sub="Le soir" />
     </G>
     <G from={39.81} to={43.99} name="Inspection">
-      <Tag top={T} t={39.88} tone="white" icon={<Dot><MagnifierIcon size={34} /></Dot>} text="L'agence inspecte tout" size={32} />
+      <Tag top={T} t={39.88} tone="white" icon={<Dot><MagnifierIcon size={34} /></Dot>} text="L'agence inspecte à la lampe" size={32} />
       <Tag top={T + 96} t={42.92} tone="green" icon={<Check k={1} size={58} />} text="Rien trouvé" />
     </G>
     <G from={43.99} to={51.2} name="État des lieux">
