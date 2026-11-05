@@ -79,6 +79,10 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
   **Ne jamais retoucher la voix** (pas d'accélération, pas de ralentissement, pas de silences raccourcis) :
   si c'est trop long ou trop court, **ajuster le script** et régénérer.
   Clé dans `ELEVENLABS_API_KEY` (jamais dans le dépôt). Script : `scripts/voix_elevenlabs.py`.
+- **Écriture des scripts (exigence de l'utilisateur)** : exactement comme son exemple — **4 blocs** [HOOK] [MISE EN PLACE]
+  [TENSION] [RÉSOLUTION], chaque bloc écrit comme une histoire racontée à l'oral : phrases simples qui s'enchaînent
+  (« il me dit que… », « je lui demande… », « je dis rien »), pas de points de suspension, pas de deux-points en série,
+  pas de petits fragments, pas de balises d'émotion. Exemple validé : `videos/012-bouchon-champagne/script-a-enregistrer.md`.
 - **Fluidité « comme un humain qui lit » (exigence forte de l'utilisateur)** : ni phrase par phrase collée avec des blancs,
   ni tout un paragraphe d'une traite. Comme un humain : **chaque phrase commencée et finie d'un seul élan**, puis un
   **petit temps naturel**, plus ou moins long selon le sens (court après une virgule, un peu plus après une révélation),
