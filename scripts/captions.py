@@ -7,7 +7,7 @@ est aligné sur la transcription Whisper pour récupérer son instant, puis déc
 import difflib, json, re, sys, unicodedata
 
 scripts, vid, words_p, out = sys.argv[1:5]
-text = " ".join(json.load(open(scripts))[vid])
+text = re.sub(r"\[[^\]]*\]\s*", "", " ".join(json.load(open(scripts))[vid]))  # sans les balises d'émotion ElevenLabs v3
 for a, b in [("quarante-trois", "43"), ("trente-sept", "37"), ("quarante et un", "41"), ("seize", "16"), ("neuf heures", "9 h")]:
     text = text.replace(a, b)
 words = text.split()
