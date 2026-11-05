@@ -67,6 +67,12 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
   (dans l'environnement cloud, ajouter `--browser-executable=/opt/pw-browsers/chromium`).
 
 ## Voix off de synthèse (quand l'utilisateur la demande)
+- **En priorité : ElevenLabs**, voix **Charlie** (`IKne3meq5aSn9XLyUdCD`), choisie par l'utilisateur.
+  Clé dans la variable `ELEVENLABS_API_KEY` (jamais dans le dépôt). Script : `scripts/voix_elevenlabs.py`
+  (tout le script en une requête, stabilité 0,3, style 0,65 = beaucoup d'intonation), puis `scripts/ajuste_voix.py` pour tenir la durée.
+- Compte **gratuit** : 10 000 caractères/mois (~7 voix off d'1 min) et **pas de voix de la Voice Library par l'API**
+  (Maxime, etc. → erreur 402) ; seules les voix par défaut (Charlie, Brian, George…) marchent.
+- Sinon (quota épuisé) : Kokoro ci-dessous.
 - Hugging Face et les voix Microsoft sont bloqués, mais les releases GitHub passent : modèle **Kokoro**
   (`thewh1teagle/kokoro-onnx`, release `model-files-v1.0` : `kokoro-v1.0.onnx` + `voices-v1.0.bin`), `pip install kokoro-onnx soundfile`.
 - **Voix d'homme** (préférée par l'utilisateur) : mélange 60 % `im_nicola` + 40 % `ff_siwis` (seule voix française, féminine).

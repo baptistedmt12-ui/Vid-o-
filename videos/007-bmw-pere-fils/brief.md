@@ -65,7 +65,14 @@ C'est le père. Il me dit que vendredi, il a touché le pilier du garage en recu
     (plus de phrases collées une à une avec un blanc entre chaque).
   - Graphiques recalés automatiquement sur la nouvelle voix (`scripts/retime.py`), sous-titres refaits.
 
+- *2026-11-05* — v3 (`export/007-v3.mp4`) :
+  - **Voix ElevenLabs « Charlie »** (choisie parmi 12 voix d'homme), modèle multilingual v2, réglages expressifs.
+  - Silences raccourcis à 0,2 s max + légère accélération sans changer la hauteur (`scripts/ajuste_voix.py`) pour tenir en 61 s.
+  - Graphiques et sous-titres recalés sur la nouvelle voix.
+
 ## À faire / retours
+
+- [x] Retour : « voix plus naturelle, comme Maxime sur ElevenLabs » → Charlie (Maxime = voix de bibliothèque, refusée par l'API en compte gratuit)
 
 - [x] Retour : « trop saccadé, robotique » + « voix d'homme la plus réaliste possible » → v2
 
