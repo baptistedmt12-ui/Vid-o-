@@ -20,8 +20,10 @@ body = {
     "language_code": "fr",
     "voice_settings": {"stability": 0.3, "similarity_boost": 0.8, "style": 0.65, "use_speaker_boost": True, "speed": speed},
 }
-if MODEL == "eleven_v3":  # v3 : stabilité 0 = « Creative », le plus d'intonation ; pas de réglage style
-    body["voice_settings"] = {"stability": 0.0, "similarity_boost": 0.8, "use_speaker_boost": True}
+if MODEL == "eleven_v3":
+    # v3 : « Natural » (0,5) garde le même timbre d'une vidéo à l'autre ; « Creative » (0) change la voix à chaque fois.
+    body["voice_settings"] = {"stability": float(os.environ.get("ELEVEN_STABILITY", "0.5")), "similarity_boost": 0.9, "use_speaker_boost": True}
+    body["seed"] = int(os.environ.get("ELEVEN_SEED", "4242"))
 req = urllib.request.Request(
     f"https://api.elevenlabs.io/v1/text-to-speech/{voice}?output_format=mp3_44100_128",
     data=json.dumps(body).encode(), headers={"xi-api-key": os.environ["ELEVENLABS_API_KEY"], "Content-Type": "application/json"})
