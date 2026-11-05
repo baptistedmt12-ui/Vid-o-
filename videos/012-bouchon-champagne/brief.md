@@ -47,4 +47,6 @@ Il fait le tour de sa voiture, il passe la main sur le toit, et il dit fièremen
 ## À faire / retours
 
 - [x] Retour : « l'effet miroir souvent avec la petite transition, c'était top » → miroir toutes les ~5 s
-- [ ] Retours de l'utilisateur sur la v1
+- [x] Retour : « pour la troisième, enlève la voix off et les sous-titres, fais-moi un script qui colle exactement à la vidéo, je le ferai moi-même »
+  → v1 rendue sans voix ni sous-titres (`AVEC_VOIX = false`), script minuté : `script-a-enregistrer.md`
+- [ ] Recevoir l'enregistrement de l'utilisateur, le caler et ajouter les sous-titres

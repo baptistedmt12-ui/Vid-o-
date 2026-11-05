@@ -10,6 +10,8 @@ import { CAPTIONS } from "./captions";
 // Rush remodelé (scripts/remodel.py) : 25 → 30 i/s, 61,0 s, miroir gauche/droite à chaque coupe (~5 s). Voix ElevenLabs « Charlie » (v3).
 export const DURATION_S = 61.5;
 export const TOTAL_FRAMES = sec(DURATION_S);
+// L'utilisateur enregistre lui-même la voix off : rendu sans voix ni sous-titres (script calé dans videos/012-…/script-a-enregistrer.md).
+const AVEC_VOIX = false;
 
 const DIR = "012-bouchon-champagne";
 const VIDEO = `${DIR}/rushes/original/travail.mp4`;
@@ -118,11 +120,11 @@ export const Video012: React.FC = () => (
       <Poll top={T} t={59.3} question="J'y retourne, ou pas ?" a="OUI" b="NON" />
     </G>
 
-    <Captions data={CAPTIONS} />
+    {AVEC_VOIX && <Captions data={CAPTIONS} />}
 
     {/* Son */}
-    <Audio src={staticFile(A("voix.wav"))} volume={1} />
-    <Audio src={staticFile(AMBIANCE)} volume={0.12} />
+    {AVEC_VOIX && <Audio src={staticFile(A("voix.wav"))} volume={1} />}
+    <Audio src={staticFile(AMBIANCE)} volume={AVEC_VOIX ? 0.12 : 0.35} />
     <Sequence from={sec(24.64)} durationInFrames={sec(15.04)} name="nappe" layout="none">
       <Audio src={staticFile(A("drone.wav"))} volume={0.13} />
     </Sequence>
