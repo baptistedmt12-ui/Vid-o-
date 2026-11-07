@@ -72,3 +72,5 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
 - **Bruitages** légers à l'apparition des graphiques/images, et sur les prix.
 - **Pas de musique** (il l'ajoute sur TikTok) — à rediscuter plus tard.
 - Un petit **appel à l'action** vers ~40 s (like, partage ou commentaire), discret, varié.
+- Moments forts (message d'un client, discussion, carnet…) : peuvent être affichés **en grand mais brièvement**.
+- Habillage partagé : `src/videos/_shared/luxe.tsx` (verre fumé, filet doré, Playfair Display + Inter, Caveat pour le manuscrit).
