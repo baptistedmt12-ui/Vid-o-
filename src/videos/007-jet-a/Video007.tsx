@@ -21,6 +21,7 @@ import {
   Tag,
   glass,
   useIn,
+  type Punch,
 } from "../_shared/luxe";
 
 // Vidéo 007 — « Peut-être rien, mais peut-être pas » (client inquiet après le crash en Floride)
@@ -42,6 +43,17 @@ const MIRRORS: [number, number][] = [
   [60.9, 66.33],
 ];
 
+const PUNCHES: Punch[] = [
+  { t: 0.48, s: 1.08 }, // crash
+  { t: 2.32, s: 1.06 }, // dort plus
+  { t: 15.9, s: 1.08 }, // tombe
+  { t: 25.76, s: 1.06 }, // jeudi
+  { t: 32.16, s: 1.07 }, // bizarre
+  { t: 47.96, s: 1.06 }, // tout brille
+  { t: 53.46, s: 1.1 }, // trace noire
+  { t: 59.96, s: 1.08 }, // peut-être pas
+  { t: 65.7, s: 1.06 }, // avant jeudi
+];
 
 /* -------------------------------------------------- 18,3 – 23 s : l'enregistrement */
 const Recording: React.FC = () => {
@@ -111,7 +123,7 @@ const Rag: React.FC = () => {
 
 export const Video007: React.FC = () => (
   <AbsoluteFill style={{ backgroundColor: "#0B0B0D" }}>
-    <LuxeFootage video={VIDEO} mirrors={MIRRORS} />
+    <LuxeFootage video={VIDEO} mirrors={MIRRORS} punches={PUNCHES} />
 
     <G from={0.05} to={3.0} name="Crash en Floride">
       <Tag top={300} icon={I.plane({})} label="Floride" text="Crash d'un jet privé" sub="Mon client ne dort plus" subT={1.94} />
@@ -225,20 +237,20 @@ export const Video007: React.FC = () => (
 
     {/* Son : voix off + bruitages légers */}
     <Audio src={staticFile(VOICE)} />
-    {MIRRORS.flat().map((t) => <Sfx key={`w${t}`} src={A("whoosh.wav")} t={t - 0.18} volume={0.35} />)}
+    {MIRRORS.flat().map((t) => <Sfx key={`w${t}`} src={A("whoosh.wav")} t={t - 0.18} volume={0.16} />)}
     {[0.05, 5.4, 7.62, 13.84, 18.26, 23.12, 32.44, 38.5, 45.02, 48.38, 52.2, 66.1].map((t) => (
-      <Sfx key={`p${t}`} src={A("pop.wav")} t={t} volume={0.48} />
+      <Sfx key={`p${t}`} src={A("pop.wav")} t={t} volume={0.22} />
     ))}
     {[8.96, 10.02, 12.34, 25.38, 26.66, 27.74, 33.42, 34.28, 36.26].map((t) => (
-      <Sfx key={`t${t}`} src={A("tick.wav")} t={t} volume={0.35} len={0.4} />
+      <Sfx key={`t${t}`} src={A("tick.wav")} t={t} volume={0.16} len={0.4} />
     ))}
-    {[45.38, 46.22, 46.74].map((t) => <Sfx key={`d${t}`} src={A("ding.wav")} t={t} volume={0.31} />)}
-    {[29.0, 30.3, 43.78, 60.46, 61.48, 64.62].map((t) => <Sfx key={`n${t}`} src={A("notif.wav")} t={t} volume={0.44} />)}
-    <Sfx src={A("notif.wav")} t={3.06} volume={0.55} />
-    <Sfx src={A("impact.wav")} t={17.2} volume={0.48} />
-    <Sfx src={A("ding.wav")} t={47.78} volume={0.4} />
-    <Sfx src={A("impact.wav")} t={53.46} volume={0.62} />
-    <Sfx src={A("heartbeat.wav")} t={52.2} volume={0.28} len={6.4} />
-    <Sfx src={A("impact.wav")} t={59.5} volume={0.44} />
+    {[45.38, 46.22, 46.74].map((t) => <Sfx key={`d${t}`} src={A("ding.wav")} t={t} volume={0.14} />)}
+    {[29.0, 30.3, 43.78, 60.46, 61.48, 64.62].map((t) => <Sfx key={`n${t}`} src={A("notif.wav")} t={t} volume={0.2} />)}
+    <Sfx src={A("notif.wav")} t={3.06} volume={0.25} />
+    <Sfx src={A("impact.wav")} t={17.2} volume={0.22} />
+    <Sfx src={A("ding.wav")} t={47.78} volume={0.18} />
+    <Sfx src={A("impact.wav")} t={53.46} volume={0.28} />
+    <Sfx src={A("heartbeat.wav")} t={52.2} volume={0.2} len={6.4} />
+    <Sfx src={A("impact.wav")} t={59.5} volume={0.2} />
   </AbsoluteFill>
 );

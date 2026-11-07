@@ -18,6 +18,7 @@ import {
   SerifLine,
   Tag,
   glass,
+  type Punch,
 } from "../_shared/luxe";
 
 // Vidéo 008 — « Le carnet de vol » (avion de 500 000 € hérité par trois frères et sœurs)
@@ -39,6 +40,16 @@ const MIRRORS: [number, number][] = [
   [56.75, 62.9],
 ];
 
+const PUNCHES: Punch[] = [
+  { t: 0.0, s: 1.08 }, // 500 000 €
+  { t: 7.66, s: 1.06 }, // trois frères et sœurs
+  { t: 17.78, s: 1.07 }, // refusait
+  { t: 27.74, s: 1.06 }, // vieux
+  { t: 41.98, s: 1.1 }, // carnet de vol
+  { t: 48.34, s: 1.06 }, // un prénom
+  { t: 50.9, s: 1.06 }, // premier vol
+  { t: 63.8, s: 1.08 }, // si je pars
+];
 
 /* -------------------------------------------------- 6,9 – 10,2 s : trois frères et sœurs */
 const Siblings: React.FC = () => {
@@ -75,7 +86,7 @@ const Siblings: React.FC = () => {
 
 export const Video008: React.FC = () => (
   <AbsoluteFill style={{ backgroundColor: "#0B0B0D" }}>
-    <LuxeFootage video={VIDEO} mirrors={MIRRORS} />
+    <LuxeFootage video={VIDEO} mirrors={MIRRORS} punches={PUNCHES} />
 
     <G from={0.0} to={2.9} name="500 000 €">
       <BigNumber top={300} t0={0.0} t1={0.9} to={500000} suffix=" €" label="Le prix de l'avion" sub="nettoyé mardi" subT={1.92} />
@@ -218,22 +229,22 @@ export const Video008: React.FC = () => (
 
     {/* Son : voix off + bruitages légers */}
     <Audio src={staticFile(VOICE)} />
-    {MIRRORS.flat().map((t) => <Sfx key={`w${t}`} src={A("whoosh.wav")} t={t - 0.18} volume={0.35} />)}
+    {MIRRORS.flat().map((t) => <Sfx key={`w${t}`} src={A("whoosh.wav")} t={t - 0.18} volume={0.16} />)}
     {[3.0, 6.86, 12.64, 14.04, 18.32, 21.94, 27.86, 34.9, 39.6, 47.22, 58.48, 60.88].map((t) => (
-      <Sfx key={`p${t}`} src={A("pop.wav")} t={t} volume={0.48} />
+      <Sfx key={`p${t}`} src={A("pop.wav")} t={t} volume={0.22} />
     ))}
     {[4.48, 5.88, 15.62, 16.28, 28.26, 29.54, 31.2, 42.94, 44.24, 45.0, 7.66, 7.78, 8.28].map((t) => (
-      <Sfx key={`t${t}`} src={A("tick.wav")} t={t} volume={0.35} len={0.4} />
+      <Sfx key={`t${t}`} src={A("tick.wav")} t={t} volume={0.16} len={0.4} />
     ))}
-    {[36.32, 37.3, 38.28].map((t) => <Sfx key={`d${t}`} src={A("ding.wav")} t={t} volume={0.31} />)}
-    <Sfx src={A("cash.wav")} t={0.62} volume={0.66} />
-    <Sfx src={A("impact.wav")} t={9.0} volume={0.4} />
-    <Sfx src={A("notif.wav")} t={10.26} volume={0.55} />
-    <Sfx src={A("impact.wav")} t={17.54} volume={0.44} />
-    <Sfx src={A("cash.wav")} t={18.52} volume={0.31} />
-    <Sfx src={A("impact.wav")} t={41.98} volume={0.53} />
-    <Sfx src={A("whoosh.wav")} t={50.75} volume={0.44} />
-    <Sfx src={A("heartbeat.wav")} t={60.88} volume={0.28} len={6.3} />
-    <Sfx src={A("whoosh.wav")} t={63.6} volume={0.44} />
+    {[36.32, 37.3, 38.28].map((t) => <Sfx key={`d${t}`} src={A("ding.wav")} t={t} volume={0.14} />)}
+    <Sfx src={A("cash.wav")} t={0.62} volume={0.3} />
+    <Sfx src={A("impact.wav")} t={9.0} volume={0.18} />
+    <Sfx src={A("notif.wav")} t={10.26} volume={0.25} />
+    <Sfx src={A("impact.wav")} t={17.54} volume={0.2} />
+    <Sfx src={A("cash.wav")} t={18.52} volume={0.14} />
+    <Sfx src={A("impact.wav")} t={41.98} volume={0.24} />
+    <Sfx src={A("whoosh.wav")} t={50.75} volume={0.2} />
+    <Sfx src={A("heartbeat.wav")} t={60.88} volume={0.18} len={6.3} />
+    <Sfx src={A("whoosh.wav")} t={63.6} volume={0.2} />
   </AbsoluteFill>
 );
