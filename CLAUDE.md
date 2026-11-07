@@ -62,3 +62,13 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
 - Aperçu : `npm run dev`
 - Rendu : `npx remotion render <Composition> out/<nom>.mp4`
   (dans l'environnement cloud, ajouter `--browser-executable=/opt/pw-browsers/chromium`).
+
+## Série « nettoyage de jet privé » (repost amélioré, monétisation TikTok, vidéos ~1 min)
+- Rushes = petit montage déjà fait + voix off déjà posée : on garde sa voix, **pas de sous-titres** (il les fait).
+- Graphiques animés **calés au mot près** sur la voix off (transcrire), petits, sur les côtés.
+- Style **épuré, un peu luxe, simple mais efficace** (pas trop « aviation »).
+- **Effet miroir** (inversion gauche/droite, pas retournement) toutes les ~7-10 s ; le décaler juste avant/après
+  si une plaque, une immatriculation ou du texte est visible (si impossible, tant pis, on le garde).
+- **Bruitages** légers à l'apparition des graphiques/images, et sur les prix.
+- **Pas de musique** (il l'ajoute sur TikTok) — à rediscuter plus tard.
+- Un petit **appel à l'action** vers ~40 s (like, partage ou commentaire), discret, varié.
