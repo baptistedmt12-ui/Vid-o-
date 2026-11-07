@@ -26,7 +26,8 @@ Ce fichier regroupe trois choses :
 | 010 | Les 460 € (voiture de location) | 🔍 Relecture | 9:16 (1080×1920) | 1 min 01 | `Video010` | — | — | — | v1 : voix Charlie (ElevenLabs v3), miroir |
 | 011 | Le drone du voisin (toit) | 🔍 Relecture | 9:16 (1080×1920) | 1 min 01 | `Video011` | — | — | — | v1 : voix Charlie (ElevenLabs v3) |
 | 012 | Le bouchon de champagne (mariage) | 🔍 Relecture | 9:16 (1080×1920) | 1 min 01 | `Video012` | — | — | — | v1 : voix Charlie (ElevenLabs v3) |
-| 013 | | 💡 Idée | | | | | | | |
+| 013 | La moto des 18 ans (lavage Honda) | 🔍 Relecture | 9:16 (1080×1920) | 1 min 02 | `Video013` | — | — | — | v1 : voix de l'utilisateur, graphiques, miroir, sans sous-titres |
+| 014 | | 💡 Idée | | | | | | | |
 
 ### Banque d'idées
 
