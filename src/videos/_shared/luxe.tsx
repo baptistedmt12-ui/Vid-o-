@@ -597,13 +597,13 @@ export const SerifLine: React.FC<{ top: number; parts: { t: number; text: string
 export type Punch = { t: number; s: number };
 
 /**
+ * Rush original, sans filtre ni assombrissement (image d'origine intacte).
  * Rush monté en continu : effet miroir sur les plages `mirrors` (secondes),
  * petit « whip » flouté à chaque bascule, zooms punch sur les mots forts.
  */
 export const LuxeFootage: React.FC<{ video: string; mirrors: [number, number][]; punches: Punch[] }> = ({ video, mirrors, punches }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const t = frame / fps;
 
   const mirrored = mirrors.some(([a, b]) => frame >= sec(a) && frame < sec(b));
   const toggles = mirrors.flatMap(([a, b]) => [a, b]);
@@ -631,20 +631,17 @@ export const LuxeFootage: React.FC<{ video: string; mirrors: [number, number][];
     punch *= 1 + (p.s - 1) * up * (1 - down);
   }
 
-  const drift = 1.02 + 0.015 * Math.sin(t / 3);
 
   return (
     <AbsoluteFill style={{ backgroundColor: "#0B0B0D", overflow: "hidden" }}>
       <AbsoluteFill
         style={{
-          transform: `translateX(${x}px) scale(${punch * tScale * drift}) scaleX(${mirrored ? -1 : 1})`,
-          filter: `blur(${blur}px) contrast(1.06) saturate(1.06)`,
+          transform: `translateX(${x}px) scale(${punch * tScale}) scaleX(${mirrored ? -1 : 1})`,
+          filter: blur > 0.01 ? `blur(${blur}px)` : undefined,
         }}
       >
         <OffthreadVideo src={staticFile(video)} muted style={{ width: "100%", height: "100%", objectFit: "cover" }} />
       </AbsoluteFill>
-      <AbsoluteFill style={{ background: "radial-gradient(ellipse at center, rgba(0,0,0,0) 58%, rgba(0,0,0,0.38) 100%)" }} />
-      <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(0,0,0,0.32) 0%, rgba(0,0,0,0) 38%)" }} />
     </AbsoluteFill>
   );
 };

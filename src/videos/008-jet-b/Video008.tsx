@@ -27,7 +27,7 @@ export const DURATION_S = 69.3;
 export const TOTAL_FRAMES = sec(DURATION_S);
 
 const DIR = "008-jet-b";
-const VIDEO = `${DIR}/rushes/original/travail.mp4`;
+const VIDEO = `${DIR}/rushes/original/original.mov`;
 const VOICE = `${DIR}/rushes/original/voix.wav`;
 const A = (f: string) => `${DIR}/assets/${f}`;
 
