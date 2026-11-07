@@ -75,3 +75,9 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
 - Moments forts (message d'un client, discussion, carnet…) : peuvent être affichés **en grand mais brièvement**.
 - Habillage partagé : `src/videos/_shared/luxe.tsx` (verre fumé, filet doré, Playfair Display + Inter, Caveat pour le manuscrit).
 - **Livraison :** toujours la meilleure qualité possible, et donner **directement le lien de téléchargement** GitHub (Safari) dès que la vidéo est prête.
+- **Image intacte :** aucun filtre, vignettage, dégradé, étalonnage, zoom permanent ni zoom « punch » sur le rush
+  (ça assombrit et baisse la qualité). Seuls ajouts : graphiques, miroir, bruitages.
+- **Bruitages plus audibles** (il ajoute une petite musique sur TikTok) : normaliser les .wav à -3 dB crête,
+  puis volumes ~0,3–0,6 (heartbeat ~0,3). Ceux de la 007/008 v2 étaient trop faibles.
+- **Tout regrouper en un seul rendu** : appliquer toutes ses demandes d'un coup avant de rendre, pour ne pas
+  gaspiller sa limite d'utilisation. S'il dit « stop », s'arrêter immédiatement.
