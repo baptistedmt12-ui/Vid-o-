@@ -39,4 +39,5 @@ ffmpeg -i rushes/original/original.mov -vn -ac 2 -ar 48000 -c:a pcm_s16le rushes
 
 ## À faire / retours
 
-- [ ] Retours de l'utilisateur sur la v1
+- *2026-11-07* — v2 : retour « image plus sombre, effet vintage » → suppression du vignettage, du dégradé sombre, de l'étalonnage et du zoom lent permanent ; rendu depuis l'original, images PNG sans perte.
+- [ ] Retours sur la v2
