@@ -35,6 +35,11 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
   Ne le committer que s'il fait moins de 100 Mo ; sinon, le dire.
 - Les rendus intermédiaires (aperçus) peuvent être en qualité réduite, en le précisant.
 
+## Stockage (demande de l'utilisateur)
+- Il télécharge chaque vidéo dès qu'elle est envoyée : **à chaque nouveau lien WeTransfer, supprimer les vidéos des
+  projets précédents** (rushes, `source.mp4`, fichiers de travail et exports, en local et sur GitHub) pour garder de la place.
+  Garder le code, les briefs, les scripts et les petits assets (sons, voix, images).
+
 ## Livraison des vidéos (constaté avec l'utilisateur)
 - L'utilisateur est sur **iPhone 17 Pro + PC Windows** (pas de Mac).
 - **Réception des rushes :** par lien **WeTransfer** (original intact). Les pièces jointes sont limitées à ~30 Mo.
