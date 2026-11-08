@@ -84,3 +84,6 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
 - **Illustrer vraiment** ce qu'il dit (demande du 08/11) : pas seulement des cartes à puces, mais des
   illustrations animées (`src/videos/_shared/illus.tsx` : Polaroid avec flash, scènes SVG, valise, carte,
   post Instagram avec image figée du rush…), brèves, et en grand pour les moments forts.
+- **Ménage :** à chaque nouvelle livraison, supprimer de GitHub les exports des vidéos précédentes
+  (garder seulement ceux du jour). Rester sous 100 Mo par export (commit normal) : le quota Git LFS
+  gratuit est presque plein (~840 Mo stockés, non libérés par une suppression).
