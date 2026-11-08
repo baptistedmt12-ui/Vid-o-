@@ -62,6 +62,12 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
 - Effet miroir = image inversée gauche/droite uniquement (jamais à l'envers, pas de kaléidoscope), **sur toutes les vidéos** :
   une bascule à chaque coupe, toutes les ~5–6 s, avec la petite transition (whip / zoom / flash) — l'utilisateur adore.
 - Sous-titres de la voix off : `scripts/captions.py` + composant `Captions` (bas du texte à 1410 px, 95–875 px de large).
+- **Aucun filtre sur l'image entière** (pas d'étalonnage, vignette, assombrissement) : `<Footage clean />`.
+- Graphiques : petites étiquettes à gauche **et**, aux moments forts, une **illustration au centre** ~1,5–2 s
+  (`CenterPop` dans `src/videos/_shared/center.tsx`, dessin vectoriel ; ex. mamie sur un podium).
+- Quand la voix off est déjà dans le rush : montage continu (segments contigus), voix intacte, pas de sous-titres.
+- Disque limité : les rendus copient le dossier public ; rendre avec un petit dossier public de liens durs
+  (`out/pub-NNN/…`, option `--public-dir`) et supprimer les `hd.mov` intermédiaires une fois le remodelage fait.
 - Ne rien placer dans les zones de l'interface TikTok (voir `videos/README.md`) :
   haut ~280 px, droite au-delà de ~900 px, bas à partir de ~1450 px.
 

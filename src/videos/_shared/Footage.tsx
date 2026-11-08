@@ -42,12 +42,13 @@ const zoomAt = (EVENTS: ZoomEvent[], frame: number, fps: number) => {
 };
 
 /** Rush monté en continu + zooms punch, transitions sur les coupes, étalonnage. */
-export const Footage: React.FC<{ video: string; cuts: Cut[]; punches: Punch[]; darkFrom?: number; topShade?: number }> = ({
+export const Footage: React.FC<{ video: string; cuts: Cut[]; punches: Punch[]; darkFrom?: number; topShade?: number; clean?: boolean }> = ({
   video,
   cuts: CUTS,
   punches,
   darkFrom = 9999,
   topShade = 0.3,
+  clean = false,
 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
@@ -98,7 +99,7 @@ export const Footage: React.FC<{ video: string; cuts: Cut[]; punches: Punch[]; d
       <AbsoluteFill
         style={{
           transform: `translate(${x}px, ${y}px) scale(${punch * tScale * drift})`,
-          filter: `blur(${blur}px) saturate(${saturate}) contrast(${contrast}) brightness(${brightness})`,
+          filter: clean ? (blur > 0.2 ? `blur(${blur}px)` : undefined) : `blur(${blur}px) saturate(${saturate}) contrast(${contrast}) brightness(${brightness})`,
         }}
       >
         <OffthreadVideo
@@ -107,6 +108,8 @@ export const Footage: React.FC<{ video: string; cuts: Cut[]; punches: Punch[]; d
           style={{ width: "100%", height: "100%", objectFit: "cover" }}
         />
       </AbsoluteFill>
+      {/* Mode « clean » : aucun filtre ni assombrissement sur l'image (exigence de l'utilisateur) */}
+      {!clean && (<>
       {/* Teinte froide quand l'histoire bascule */}
       <AbsoluteFill style={{ backgroundColor: "rgba(20,40,80,1)", opacity: dark * 0.16, mixBlendMode: "multiply" }} />
       {/* Vignette */}
@@ -119,6 +122,7 @@ export const Footage: React.FC<{ video: string; cuts: Cut[]; punches: Punch[]; d
       <AbsoluteFill
         style={{ background: `linear-gradient(180deg, rgba(0,0,0,${topShade}) 0%, rgba(0,0,0,0) 45%)` }}
       />
+      </>)}
       {flash > 0 && <AbsoluteFill style={{ backgroundColor: `rgba(255,255,255,${flash})` }} />}
     </AbsoluteFill>
   );

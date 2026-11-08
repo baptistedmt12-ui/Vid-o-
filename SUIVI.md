@@ -27,7 +27,9 @@ Ce fichier regroupe trois choses :
 | 011 | Le drone du voisin (toit) | 🔍 Relecture | 9:16 (1080×1920) | 1 min 01 | `Video011` | — | — | — | v1 : voix Charlie (ElevenLabs v3) |
 | 012 | Le bouchon de champagne (mariage) | 🔍 Relecture | 9:16 (1080×1920) | 1 min 01 | `Video012` | — | — | — | v1 : voix Charlie (ElevenLabs v3) |
 | 013 | La moto des 18 ans (lavage Honda) | 🔍 Relecture | 9:16 (1080×1920) | 1 min 02 | `Video013` | — | — | — | v1 : voix de l'utilisateur, graphiques, miroir, sans sous-titres |
-| 014 | | 💡 Idée | | | | | | | |
+| 014 | La mamie de l'enduro | 🔍 Relecture | 9:16 (1080×1920) | 1 min 00 | `Video014` | — | — | — | v1 : voix de l'utilisateur, illustrations au centre, miroir, sans filtre |
+| 015 | Le réservoir interdit (Jessica) | 🔍 Relecture | 9:16 (1080×1920) | 1 min 03 | `Video015` | — | — | — | v1 : voix de l'utilisateur, illustrations au centre, miroir, sans filtre |
+| 016 | | 💡 Idée | | | | | | | |
 
 ### Banque d'idées
 
