@@ -88,7 +88,8 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
   (garder seulement ceux du jour). Rester sous 100 Mo par export (commit normal) : le quota Git LFS
   gratuit est presque plein (~840 Mo stockés, non libérés par une suppression).
 - **Sons prêts à l'emploi :** `videos/_sons/` (normalisés à -3 dB crête : pop, tick, ding, whoosh, impact, notif,
-  cash, ring, shutter, vacuum, heartbeat) → les copier dans `videos/NNN-nom/assets/`.
+  cash, ring, shutter, vacuum, heartbeat, knock) → les copier dans `videos/NNN-nom/assets/`.
 - **Modèles de montage :** `src/videos/009-jet-c/Video009.tsx` et `src/videos/010-jet-d/Video010.tsx`
   (dernière méthode validée : image intacte, miroir, illustrations, bruitages). Leurs rushes ont été supprimés.
 - **Ménage du 08/11 :** tous les rushes et exports 001–010 ont été supprimés (déjà téléchargés par l'utilisateur).
+- **Rush 4K :** rendre avec `--concurrency=2 --offthreadvideo-cache-size-in-bytes=1500000000` (sinon plantage mémoire).
