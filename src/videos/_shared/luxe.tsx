@@ -597,51 +597,20 @@ export const SerifLine: React.FC<{ top: number; parts: { t: number; text: string
 export type Punch = { t: number; s: number };
 
 /**
- * Rush original, sans filtre ni assombrissement (image d'origine intacte).
- * Rush monté en continu : effet miroir sur les plages `mirrors` (secondes),
- * petit « whip » flouté à chaque bascule, zooms punch sur les mots forts.
+ * Rush original affiché tel quel : aucun filtre, aucun zoom, aucun flou (qualité d'origine intacte).
+ * Seul effet : le miroir (inversion gauche/droite) sur les plages `mirrors` (secondes), en coupe franche.
+ * (`punches` est accepté pour les anciennes vidéos mais ignoré.)
  */
-export const LuxeFootage: React.FC<{ video: string; mirrors: [number, number][]; punches: Punch[] }> = ({ video, mirrors, punches }) => {
+export const LuxeFootage: React.FC<{ video: string; mirrors: [number, number][]; punches?: Punch[] }> = ({ video, mirrors }) => {
   const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
-
   const mirrored = mirrors.some(([a, b]) => frame >= sec(a) && frame < sec(b));
-  const toggles = mirrors.flatMap(([a, b]) => [a, b]);
-
-  // Transition sur les bascules miroir
-  let x = 0;
-  let blur = 0;
-  let tScale = 1;
-  for (const T of toggles) {
-    const d = frame - sec(T);
-    if (d < -4 || d > 7) continue;
-    const amt = d < 0 ? interpolate(d, [-4, 0], [0, 1], { ...clamp, easing: Easing.in(Easing.quad) }) : interpolate(d, [0, 7], [1, 0], { ...clamp, easing: Easing.out(Easing.cubic) });
-    x += (d < 0 ? -1 : 1) * amt * 160;
-    blur += amt * 16;
-    tScale *= 1 + amt * 0.06;
-  }
-
-  // Zooms punch (montée rapide, redescente douce)
-  let punch = 1;
-  for (const p of punches) {
-    const d = frame - sec(p.t);
-    if (d < 0 || d > 40) continue;
-    const up = spring({ frame: d, fps, config: { damping: 16, stiffness: 260 }, durationInFrames: 8 });
-    const down = interpolate(d, [10, 40], [0, 1], { ...clamp, easing: Easing.inOut(Easing.quad) });
-    punch *= 1 + (p.s - 1) * up * (1 - down);
-  }
-
-
   return (
     <AbsoluteFill style={{ backgroundColor: "#0B0B0D", overflow: "hidden" }}>
-      <AbsoluteFill
-        style={{
-          transform: `translateX(${x}px) scale(${punch * tScale}) scaleX(${mirrored ? -1 : 1})`,
-          filter: blur > 0.01 ? `blur(${blur}px)` : undefined,
-        }}
-      >
-        <OffthreadVideo src={staticFile(video)} muted style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-      </AbsoluteFill>
+      <OffthreadVideo
+        src={staticFile(video)}
+        muted
+        style={{ width: "100%", height: "100%", objectFit: "cover", transform: mirrored ? "scaleX(-1)" : undefined }}
+      />
     </AbsoluteFill>
   );
 };

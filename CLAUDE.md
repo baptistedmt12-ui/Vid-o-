@@ -81,3 +81,6 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
   puis volumes ~0,3–0,6 (heartbeat ~0,3). Ceux de la 007/008 v2 étaient trop faibles.
 - **Tout regrouper en un seul rendu** : appliquer toutes ses demandes d'un coup avant de rendre, pour ne pas
   gaspiller sa limite d'utilisation. S'il dit « stop », s'arrêter immédiatement.
+- **Illustrer vraiment** ce qu'il dit (demande du 08/11) : pas seulement des cartes à puces, mais des
+  illustrations animées (`src/videos/_shared/illus.tsx` : Polaroid avec flash, scènes SVG, valise, carte,
+  post Instagram avec image figée du rush…), brèves, et en grand pour les moments forts.

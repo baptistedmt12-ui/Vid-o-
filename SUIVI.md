@@ -22,7 +22,9 @@ Ce fichier regroupe trois choses :
 | 006 | On Air Chambly — annonce du 15/15/15 (banane en voiture) | 🔍 Relecture | 9:16 (1080×1920) 60 i/s | 10 s | `Video006` | — | — | — | v2 calée sur la voix (Whisper) |
 | 007 | Peut-être rien, mais peut-être pas (crash Floride) | 🔍 Relecture | 9:16 (1080×1920) | 1 min 08 | `Video007` | — | — | — | v2 sans filtre (image d'origine), miroir, sans sous-titres |
 | 008 | Le carnet de vol (héritage 500 000 €) | 🔍 Relecture | 9:16 (1080×1920) | 1 min 09 | `Video008` | — | — | — | v2 sans filtre (image d'origine), miroir, sans sous-titres |
-| 009 | | 💡 Idée | | | | | | | |
+| 009 | Le coach et le jet loué | 🔍 Relecture | 9:16 (1080×1920, rush 4K) | 1 min 06 | `Video009` | — | — | — | v1 illustrations animées, image intacte, miroir |
+| 010 | La grand-mère dans l'aspirateur | 🔍 Relecture | 9:16 (1080×1920, rush 4K) | 1 min 06 | `Video010` | — | — | — | v1 illustrations animées, image intacte, miroir |
+| 011 | | 💡 Idée | | | | | | | |
 
 ### Banque d'idées
 
