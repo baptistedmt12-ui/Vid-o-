@@ -14,17 +14,9 @@ Ce fichier regroupe trois choses :
 | # | Titre | Statut | Format | Durée | Composition Remotion | Date prévue | Publiée le | Lien | Notes |
 |---|-------|--------|--------|-------|----------------------|-------------|------------|------|-------|
 | 000 | Exemple — Bienvenue sur Vid-o- | 🎬 Montage | 16:9 (1920×1080) | 5 s | `HelloWorld` | — | — | — | Vidéo de test |
-| 001 | Les 5 niveaux du poids de corps | 🔍 Relecture | 9:16 (1080×1920) | 1 min 06 | `Video001` | — | — | — | v1 rendue, voix off à enregistrer |
-| 002 | L'étiquette arrachée (MT-09 à 4 000 €) | 🔍 Relecture | 9:16 (1080×1920) | 1 min 00 | `Video002` | — | — | — | v1 rendue (motion design calé sur la voix off, sans sous-titres) |
-| 003 | Défi 15 / 15 / 15 (15 MU, 15 dips, 7 tractions) | 🔍 Relecture | 9:16 (1080×1920) | 2 min 00 | `Video003` | — | — | — | v1 qualité max envoyée (206 Mo, hors GitHub) |
-| 004 | La boue rouge (enduro, gendarmes à 17h) | 🔍 Relecture | 9:16 (1080×1920) | 1 min 08 | `Video004` | — | — | — | v1 rendue, graphiques compacts |
-| 005 | Le compteur (moto en LLD à rendre lundi) | 🔍 Relecture | 9:16 (1080×1920) | 1 min 06 | `Video005` | — | — | — | v1 rendue, graphiques compacts |
-| 006 | On Air Chambly — annonce du 15/15/15 (banane en voiture) | 🔍 Relecture | 9:16 (1080×1920) 60 i/s | 10 s | `Video006` | — | — | — | v2 calée sur la voix (Whisper) |
-| 007 | Peut-être rien, mais peut-être pas (crash Floride) | 🔍 Relecture | 9:16 (1080×1920) | 1 min 08 | `Video007` | — | — | — | v2 sans filtre (image d'origine), miroir, sans sous-titres |
-| 008 | Le carnet de vol (héritage 500 000 €) | 🔍 Relecture | 9:16 (1080×1920) | 1 min 09 | `Video008` | — | — | — | v2 sans filtre (image d'origine), miroir, sans sous-titres |
-| 009 | Le coach et le jet loué | 🔍 Relecture | 9:16 (1080×1920, rush 4K) | 1 min 06 | `Video009` | — | — | — | v1 illustrations animées, image intacte, miroir |
-| 010 | La grand-mère dans l'aspirateur | 🔍 Relecture | 9:16 (1080×1920, rush 4K) | 1 min 06 | `Video010` | — | — | — | v1 illustrations animées, image intacte, miroir |
 | 011 | | 💡 Idée | | | | | | | |
+
+*Vidéos 001 à 010 livrées puis supprimées du dépôt le 08/11/2026 (l'utilisateur a tout téléchargé). Prochaine vidéo : 011.*
 
 ### Banque d'idées
 
