@@ -98,3 +98,4 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
   fixe : `ffmpeg -i original.mov -vf "fps=30,scale=1080:1920:flags=lanczos" -c:v libx264 -crf 8 -preset slow
   -pix_fmt yuv420p -an travail.mp4` (ou fps=60 si le rush est en 60 i/s), pointer la composition dessus, puis
   vérifier l'export : `ffmpeg -i export.mp4 -vf mpdecimate -f null -` ne doit presque rien supprimer.
+- **Résolution validée (09/11) :** 1080p suffit, pas de 4K. La 011 v2 (copie 30 i/s fixe + export ~96 Mo) lui convient.
