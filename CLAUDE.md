@@ -88,11 +88,6 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
   `language_code: fr`, sortie `mp3_44100_128` (le 192 kb/s demande l'offre Creator). Jamais le mode v3 « Creative ».
   Clé dans `ELEVENLABS_API_KEY` (jamais dans le dépôt). **Ne jamais retoucher la voix** (ni accélérer, ni ralentir,
   ni couper les silences) : si c'est trop long ou trop court, **ajuster le script** et régénérer.
-- Un clone de la voix de l'utilisateur existe sur son compte (« Baptiste (voix off) », `KbNRL3l0L8IIk0FVLA3O`),
-  mais il ne veut pas l'utiliser : ne s'en servir que s'il le demande.
-- Ancienne voix (comptes gratuits) : Charlie (`IKne3meq5aSn9XLyUdCD`), anglophone, accent variable → abandonnée.
-- Alternatives gratuites testées : voix Microsoft `fr-FR-RemyMultilingualNeural` / `fr-FR-HenriNeural` (edge-tts, `--proxy "$HTTPS_PROXY"`),
-  et Chatterbox multilingue (clonage à partir d'un extrait, licence MIT, ~5 min de calcul par minute de voix).
 - **Écriture des scripts (exigence de l'utilisateur)** : exactement comme son exemple — **4 blocs** [HOOK] [MISE EN PLACE]
   [TENSION] [RÉSOLUTION], chaque bloc écrit comme une histoire racontée à l'oral : phrases simples qui s'enchaînent
   (« il me dit que… », « je lui demande… », « je dis rien »), pas de points de suspension, pas de deux-points en série,
@@ -109,14 +104,7 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
   - Ponctuation au service de la lecture : virgules pour les respirations, points pour les temps, « … » rares
     (révélations), une ou deux balises d'émotion maximum.
   - Avant la vidéo complète, envoyer un **essai du HOOK + début de la mise en place** pour validation.
-- Compte **gratuit** : 10 000 caractères/mois (~7 voix off d'1 min ; v3 parle lentement : viser ~220 mots pour 61 s) et **pas de voix de la Voice Library par l'API**
-  (Maxime, etc. → erreur 402) ; seules les voix par défaut (Charlie, Brian, George…) marchent.
-- Sinon (quota épuisé) : Kokoro ci-dessous.
-- Hugging Face et les voix Microsoft sont bloqués, mais les releases GitHub passent : modèle **Kokoro**
-  (`thewh1teagle/kokoro-onnx`, release `model-files-v1.0` : `kokoro-v1.0.onnx` + `voices-v1.0.bin`), `pip install kokoro-onnx soundfile`.
-- **Voix d'homme** (préférée par l'utilisateur) : mélange 60 % `im_nicola` + 40 % `ff_siwis` (seule voix française, féminine).
-- **Fluidité** : écrire des phrases longues et liées (pas de fragments), générer par blocs de plusieurs phrases,
-  jamais phrase par phrase avec un blanc entre chaque (rendu « saccadé, robotique »). Vitesse ~1,0 pour ~240 mots en 60 s.
-- Script : `scripts/voix_off.py` (corrige « parking » et « vasistas » mal phonétisés) ; recalage des graphiques : `scripts/retime.py`.
+- Voix off : **uniquement Maxime** (décision de l'utilisateur). Les autres pistes (Charlie, voix gratuites, Kokoro,
+  clone de sa voix) ont été abandonnées et supprimées.
 - Toujours vérifier la prononciation en retranscrivant avec Whisper, puis caler les graphiques sur le minutage des mots.
 - Remodelage d'un rush (durée exacte, miroirs) : `scripts/remodel.py`. Aperçus rapides : `node scripts/stills.mjs`.
