@@ -93,3 +93,8 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
   (dernière méthode validée : image intacte, miroir, illustrations, bruitages). Leurs rushes ont été supprimés.
 - **Ménage du 08/11 :** tous les rushes et exports 001–010 ont été supprimés (déjà téléchargés par l'utilisateur).
 - **Rush 4K :** rendre avec `--concurrency=2 --offthreadvideo-cache-size-in-bytes=1500000000` (sinon plantage mémoire).
+- **Fluidité (constaté le 09/11 sur la 011) :** monter directement sur l'original iPhone (4K, cadence variable)
+  fait répéter ~1 image sur 6 dans l'export (saccades). Toujours créer d'abord une copie de travail à cadence
+  fixe : `ffmpeg -i original.mov -vf "fps=30,scale=1080:1920:flags=lanczos" -c:v libx264 -crf 8 -preset slow
+  -pix_fmt yuv420p -an travail.mp4` (ou fps=60 si le rush est en 60 i/s), pointer la composition dessus, puis
+  vérifier l'export : `ffmpeg -i export.mp4 -vf mpdecimate -f null -` ne doit presque rien supprimer.
