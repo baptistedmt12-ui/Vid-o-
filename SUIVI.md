@@ -29,7 +29,13 @@ Ce fichier regroupe trois choses :
 | 013 | La moto des 18 ans (lavage Honda) | 🔍 Relecture | 9:16 (1080×1920) | 1 min 02 | `Video013` | — | — | — | v1 : voix de l'utilisateur, graphiques, miroir, sans sous-titres |
 | 014 | La mamie de l'enduro | 🔍 Relecture | 9:16 (1080×1920) | 1 min 00 | `Video014` | — | — | — | v1 : voix de l'utilisateur, illustrations au centre, miroir, sans filtre |
 | 015 | Le réservoir interdit (Jessica) | 🔍 Relecture | 9:16 (1080×1920) | 1 min 03 | `Video015` | — | — | — | v1 : voix de l'utilisateur, illustrations au centre, miroir, sans filtre |
-| 016 | | 💡 Idée | | | | | | | |
+| 016 | La bosse en forme de fesses | 🔍 Relecture | 9:16 (1080×1920) | 62 s | `Video016` | — | — | — | v1 : voix Maxime, hook n° 1 |
+| 017 | La noix de coco à Lille | 🔍 Relecture | 9:16 (1080×1920) | 61 s | `Video017` | — | — | — | v1 : voix Maxime, hook n° 9 |
+| 018 | Le portail de la voisine | 🔍 Relecture | 9:16 (1080×1920) | 61 s | `Video018` | — | — | — | v1 : voix Maxime, hook n° 10 |
+| 019 | Le mec dans le coffre | 🔍 Relecture | 9:16 (1080×1920) | 65 s | `Video019` | — | — | — | v1 : voix Maxime, hook n° 7 |
+| 020 | Remettez la bosse ! | 🔍 Relecture | 9:16 (1080×1920) | 61 s | `Video020` | — | — | — | v1 : voix Maxime, hook n° 2 |
+| 021 | Les gamins qui poussent la voiture | 🔍 Relecture | 9:16 (1080×1920) | 61 s | `Video021` | — | — | — | v1 : voix Maxime, hook n° 5 |
+| 022 | | 💡 Idée | | | | | | | |
 
 ### Banque d'idées
 

@@ -19,6 +19,12 @@ import { Video012, TOTAL_FRAMES as F012 } from "./videos/012-bouchon-champagne/V
 import { Video013, TOTAL_FRAMES as F013 } from "./videos/013-lavage-moto/Video013";
 import { Video014, TOTAL_FRAMES as F014 } from "./videos/014-mamie-enduro/Video014";
 import { Video015, TOTAL_FRAMES as F015 } from "./videos/015-reservoir-jessica/Video015";
+import { Video016, TOTAL_FRAMES as F016 } from "./videos/016-bosse-fesses/Video016";
+import { Video017, TOTAL_FRAMES as F017 } from "./videos/017-noix-de-coco/Video017";
+import { Video018, TOTAL_FRAMES as F018 } from "./videos/018-mamie-portail/Video018";
+import { Video019, TOTAL_FRAMES as F019 } from "./videos/019-mec-dans-le-coffre/Video019";
+import { Video020, TOTAL_FRAMES as F020 } from "./videos/020-remettre-la-bosse/Video020";
+import { Video021, TOTAL_FRAMES as F021 } from "./videos/021-gamin-pousse/Video021";
 import { Video006, FPS as FPS006, TOTAL_FRAMES as TOTAL006 } from "./videos/006-on-air-chambly/Video006";
 
 export const RemotionRoot: React.FC = () => {
@@ -76,6 +82,12 @@ export const RemotionRoot: React.FC = () => {
       <Composition id="Video013" component={Video013} durationInFrames={F013} fps={30} width={1080} height={1920} />
       <Composition id="Video014" component={Video014} durationInFrames={F014} fps={30} width={1080} height={1920} />
       <Composition id="Video015" component={Video015} durationInFrames={F015} fps={30} width={1080} height={1920} />
+      <Composition id="Video016" component={Video016} durationInFrames={F016} fps={30} width={1080} height={1920} />
+      <Composition id="Video017" component={Video017} durationInFrames={F017} fps={30} width={1080} height={1920} />
+      <Composition id="Video018" component={Video018} durationInFrames={F018} fps={30} width={1080} height={1920} />
+      <Composition id="Video019" component={Video019} durationInFrames={F019} fps={30} width={1080} height={1920} />
+      <Composition id="Video020" component={Video020} durationInFrames={F020} fps={30} width={1080} height={1920} />
+      <Composition id="Video021" component={Video021} durationInFrames={F021} fps={30} width={1080} height={1920} />
     </>
   );
 };

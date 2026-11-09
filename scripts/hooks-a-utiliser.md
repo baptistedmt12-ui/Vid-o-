@@ -15,3 +15,9 @@ le développer en histoire 4 blocs, et noter ici lequel a été utilisé.
 10. Une mamie de 79 ans m'a supplié de réparer sa voiture avant que sa voisine rentre de vacances. Parce que la bosse, c'est le portail de la voisine qui l'a faite. Et c'était pas un accident.
 
 ## Utilisés
+- Hook n° 1 → vidéo 016 (La bosse en forme de fesses)
+- Hook n° 9 → vidéo 017 (La noix de coco à Lille)
+- Hook n° 10 → vidéo 018 (Le portail de la voisine)
+- Hook n° 7 → vidéo 019 (Le mec dans le coffre)
+- Hook n° 2 → vidéo 020 (Remettez la bosse !)
+- Hook n° 5 → vidéo 021 (Les gamins qui poussent la voiture)
