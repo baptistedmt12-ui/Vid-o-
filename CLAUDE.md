@@ -70,6 +70,10 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
 - **Aucun filtre sur l'image entière** (pas d'étalonnage, vignette, assombrissement) : `<Footage clean />`.
 - Graphiques : petites étiquettes à gauche **et**, aux moments forts, une **illustration au centre** ~1,5–2 s
   (`CenterPop` dans `src/videos/_shared/center.tsx`, dessin vectoriel ; ex. mamie sur un podium).
+- **Remontage poussé pour la rétention** (à faire sur toutes les prochaines vidéos, pas juste raccourcir/garder l'ordre) :
+  ouvrir sur le plan le plus fort (la bosse bien visible en gros plan), couper les temps morts (chiffon, changement
+  d'outil), accélérer les gestes répétitifs, ralentis sur les moments satisfaisants (tirette qui tire la tôle),
+  avant/après à la fin pour la révélation, plans réorganisés selon l'histoire.
 - Quand la voix off est déjà dans le rush : montage continu (segments contigus), voix intacte, pas de sous-titres.
 - Disque limité : les rendus copient le dossier public ; rendre avec un petit dossier public de liens durs
   (`out/pub-NNN/…`, option `--public-dir`) et supprimer les `hd.mov` intermédiaires une fois le remodelage fait.
@@ -95,6 +99,9 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
 - **Hooks (rétention TikTok)** : style de `scripts/exemples-hooks.md` — mission banale, détail qui cloche, chute qui
   retourne tout ou promesse de révélation ; concret, un chiffre précis, jamais la réponse. Varier le type de hook
   d'une vidéo à l'autre. Thème : débosselage de voiture.
+- **La voix off démarre à 0 s** (exigence de l'utilisateur) : aucun décalage au début, et couper le petit silence
+  qu'ElevenLabs met avant le premier mot (seul ce blanc de tête est retiré, le reste de la voix n'est pas touché).
+  Si la voix est plus courte que 61 s, allonger le script plutôt que d'ajouter du blanc au début.
 - **Voix vivante et dynamique (exigence de l'utilisateur)** : pas une lecture plate pendant une minute. Le script porte
   l'intonation : phrases de longueurs variées, points d'exclamation et vraies questions aux moments forts, paroles
   rapportées entre guillemets (« Il me dit : "Surtout, n'ouvre pas le coffre !" »), mots qui claquent placés en fin de
