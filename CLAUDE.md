@@ -82,14 +82,16 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
   (dans l'environnement cloud, ajouter `--browser-executable=/opt/pw-browsers/chromium`).
 
 ## Voix off de synthèse (quand l'utilisateur la demande)
-- **En priorité : ElevenLabs**, voix **Charlie** (`IKne3meq5aSn9XLyUdCD`). Référence validée par l'utilisateur : la voix de la
-  **vidéo 011** (`videos/011-drone-voisin/assets/voix.wav`, eleven_v3, stabilité 0 « Creative »).
-  Problème connu : en v3 « Creative », le timbre change d'une génération à l'autre (010 et 012 ne sonnent pas comme 011,
-  alors que la hauteur mesurée est la même). Claude ne peut pas écouter : **avant chaque rendu, envoyer les 10 premières
-  secondes de la nouvelle voix à côté de la référence 011** et ne continuer que si l'utilisateur valide.
-  **Ne jamais retoucher la voix** (pas d'accélération, pas de ralentissement, pas de silences raccourcis) :
-  si c'est trop long ou trop court, **ajuster le script** et régénérer.
-  Clé dans `ELEVENLABS_API_KEY` (jamais dans le dépôt). Script : `scripts/voix_elevenlabs.py`.
+- **En priorité : la voix clonée de l'utilisateur sur ElevenLabs** (abonnement Starter) : voix « Baptiste (voix off) »,
+  `voice_id` **`KbNRL3l0L8IIk0FVLA3O`** (clone instantané fait à partir de sa voix off de la vidéo 013).
+  Réglages à garder identiques pour avoir la même voix à chaque vidéo : modèle `eleven_multilingual_v2`, stabilité 0,5,
+  similarité 0,85, style 0,15, speaker boost ; sortie `mp3_44100_128` (le 192 kb/s demande l'offre Creator).
+  Variante plus expressive testée : `eleven_v3`, stabilité 0,5 (« Natural ») — jamais « Creative » (le timbre change).
+  Clé dans `ELEVENLABS_API_KEY` (jamais dans le dépôt). **Ne jamais retoucher la voix** (ni accélérer, ni ralentir,
+  ni couper les silences) : si c'est trop long ou trop court, **ajuster le script** et régénérer.
+- Ancienne voix (comptes gratuits) : Charlie (`IKne3meq5aSn9XLyUdCD`), anglophone, accent variable → abandonnée.
+- Alternatives gratuites testées : voix Microsoft `fr-FR-RemyMultilingualNeural` / `fr-FR-HenriNeural` (edge-tts, `--proxy "$HTTPS_PROXY"`),
+  et Chatterbox multilingue (clonage à partir d'un extrait, licence MIT, ~5 min de calcul par minute de voix).
 - **Écriture des scripts (exigence de l'utilisateur)** : exactement comme son exemple — **4 blocs** [HOOK] [MISE EN PLACE]
   [TENSION] [RÉSOLUTION], chaque bloc écrit comme une histoire racontée à l'oral : phrases simples qui s'enchaînent
   (« il me dit que… », « je lui demande… », « je dis rien »), pas de points de suspension, pas de deux-points en série,
