@@ -91,6 +91,9 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
   `language_code: fr`, sortie `mp3_44100_128` (le 192 kb/s demande l'offre Creator). Jamais le mode v3 « Creative ».
   Clé dans `ELEVENLABS_API_KEY` (jamais dans le dépôt). **Ne jamais retoucher la voix** (ni accélérer, ni ralentir,
   ni couper les silences) : si c'est trop long ou trop court, **ajuster le script** et régénérer.
+- **Hooks (rétention TikTok)** : style de `scripts/exemples-hooks.md` — mission banale, détail qui cloche, chute qui
+  retourne tout ou promesse de révélation ; concret, un chiffre précis, jamais la réponse. Varier le type de hook
+  d'une vidéo à l'autre. Thème : débosselage de voiture.
 - **Écriture des scripts (exigence de l'utilisateur)** : exactement comme son exemple — **4 blocs** [HOOK] [MISE EN PLACE]
   [TENSION] [RÉSOLUTION], chaque bloc écrit comme une histoire racontée à l'oral : phrases simples qui s'enchaînent
   (« il me dit que… », « je lui demande… », « je dis rien »), pas de points de suspension, pas de deux-points en série,
