@@ -30,4 +30,5 @@ illustrations animées calées sur la voix, bruitages plus forts, CTA ~40 s, pas
 
 ## À faire / retours
 
-- [ ] Retours sur la v1
+- *2026-11-09* — v2 : retour « pas fluide, un peu pixelisé » → ~290 images répétées dans la v1 (original iPhone à cadence variable). Montage sur copie 30 i/s fixe (1080p lanczos, CRF 8), rendu CRF 12 puis double passe 12,1 Mb/s pour rester < 100 Mo (SSIM 0,997). Export vérifié : 1 859 images uniques sur 1 865.
+- [ ] Retours sur la v2

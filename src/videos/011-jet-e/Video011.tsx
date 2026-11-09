@@ -11,7 +11,7 @@ export const DURATION_S = 62.15;
 export const TOTAL_FRAMES = sec(DURATION_S);
 
 const DIR = "011-jet-e";
-const VIDEO = `${DIR}/rushes/original/original.mov`;
+const VIDEO = `${DIR}/rushes/original/travail.mp4`; // copie 30 i/s fixe, 1080p lanczos, CRF 8 (évite les saccades)
 const VOICE = `${DIR}/rushes/original/voix.wav`;
 const A = (f: string) => `${DIR}/assets/${f}`;
 
