@@ -82,6 +82,9 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
   (dans l'environnement cloud, ajouter `--browser-executable=/opt/pw-browsers/chromium`).
 
 ## Voix off de synthèse (quand l'utilisateur la demande)
+- **Pas de tests ni d'essais envoyés** : à chaque lien WeTransfer, écrire l'histoire, générer directement la voix off
+  avec Maxime, vérifier la prononciation (Whisper), monter et envoyer la vidéo finale. Viser une seule génération
+  par vidéo (script à la bonne longueur) ; si un mot est mal prononcé, régénérer seulement la phrase concernée.
 - **Voix off : ElevenLabs, voix « Maxime »** (`5Qfm4RqcAer0xoyWtoHC`, voix française de la bibliothèque), choisie par
   l'utilisateur, qui a pris l'abonnement Starter (les voix de la bibliothèque marchent donc par l'API).
   Réglages fixes pour avoir la même voix à chaque vidéo : `eleven_multilingual_v2`, réglages par défaut de la voix,
@@ -103,7 +106,6 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
   - Donc écrire le script **à la bonne longueur dès le départ** (~215 mots pour 61 s en v3, à mesurer sur un essai).
   - Ponctuation au service de la lecture : virgules pour les respirations, points pour les temps, « … » rares
     (révélations), une ou deux balises d'émotion maximum.
-  - Avant la vidéo complète, envoyer un **essai du HOOK + début de la mise en place** pour validation.
 - Voix off : **uniquement Maxime** (décision de l'utilisateur). Les autres pistes (Charlie, voix gratuites, Kokoro,
   clone de sa voix) ont été abandonnées et supprimées.
 - Toujours vérifier la prononciation en retranscrivant avec Whisper, puis caler les graphiques sur le minutage des mots.
