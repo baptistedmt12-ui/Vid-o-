@@ -82,13 +82,14 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
   (dans l'environnement cloud, ajouter `--browser-executable=/opt/pw-browsers/chromium`).
 
 ## Voix off de synthèse (quand l'utilisateur la demande)
-- **En priorité : la voix clonée de l'utilisateur sur ElevenLabs** (abonnement Starter) : voix « Baptiste (voix off) »,
-  `voice_id` **`KbNRL3l0L8IIk0FVLA3O`** (clone instantané fait à partir de sa voix off de la vidéo 013).
-  Réglages à garder identiques pour avoir la même voix à chaque vidéo : modèle `eleven_multilingual_v2`, stabilité 0,5,
-  similarité 0,85, style 0,15, speaker boost ; sortie `mp3_44100_128` (le 192 kb/s demande l'offre Creator).
-  Variante plus expressive testée : `eleven_v3`, stabilité 0,5 (« Natural ») — jamais « Creative » (le timbre change).
+- **Voix off : ElevenLabs, voix « Maxime »** (`5Qfm4RqcAer0xoyWtoHC`, voix française de la bibliothèque), choisie par
+  l'utilisateur, qui a pris l'abonnement Starter (les voix de la bibliothèque marchent donc par l'API).
+  Réglages fixes pour avoir la même voix à chaque vidéo : `eleven_multilingual_v2`, réglages par défaut de la voix,
+  `language_code: fr`, sortie `mp3_44100_128` (le 192 kb/s demande l'offre Creator). Jamais le mode v3 « Creative ».
   Clé dans `ELEVENLABS_API_KEY` (jamais dans le dépôt). **Ne jamais retoucher la voix** (ni accélérer, ni ralentir,
   ni couper les silences) : si c'est trop long ou trop court, **ajuster le script** et régénérer.
+- Un clone de la voix de l'utilisateur existe sur son compte (« Baptiste (voix off) », `KbNRL3l0L8IIk0FVLA3O`),
+  mais il ne veut pas l'utiliser : ne s'en servir que s'il le demande.
 - Ancienne voix (comptes gratuits) : Charlie (`IKne3meq5aSn9XLyUdCD`), anglophone, accent variable → abandonnée.
 - Alternatives gratuites testées : voix Microsoft `fr-FR-RemyMultilingualNeural` / `fr-FR-HenriNeural` (edge-tts, `--proxy "$HTTPS_PROXY"`),
   et Chatterbox multilingue (clonage à partir d'un extrait, licence MIT, ~5 min de calcul par minute de voix).

@@ -9,10 +9,10 @@ import json, os, sys, urllib.request
 
 src, vid, out = sys.argv[1:4]
 speed = float(sys.argv[4]) if len(sys.argv) > 4 else 1.0
-voice = sys.argv[5] if len(sys.argv) > 5 else "IKne3meq5aSn9XLyUdCD"  # Charlie (voix gratuite via l'API)
+voice = sys.argv[5] if len(sys.argv) > 5 else "5Qfm4RqcAer0xoyWtoHC"  # Maxime (voix française, abonnement Starter)
 text = " ".join(json.load(open(src))[vid])
 # eleven_v3 lit les balises d'émotion [excited], [whispers], [laughs]… ; les autres modèles les retirent
-MODEL = os.environ.get("ELEVEN_MODEL", "eleven_v3")  # la voix de Charlie validée par l'utilisateur (vidéos 007-009, 011)
+MODEL = os.environ.get("ELEVEN_MODEL", "eleven_multilingual_v2")  # la voix de Charlie validée par l'utilisateur (vidéos 007-009, 011)
 if MODEL != "eleven_v3":
     import re
     text = re.sub(r"\[[^\]]*\]\s*", "", text)
