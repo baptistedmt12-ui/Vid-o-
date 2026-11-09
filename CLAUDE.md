@@ -87,13 +87,18 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
   par vidéo (script à la bonne longueur) ; si un mot est mal prononcé, régénérer seulement la phrase concernée.
 - **Voix off : ElevenLabs, voix « Maxime »** (`5Qfm4RqcAer0xoyWtoHC`, voix française de la bibliothèque), choisie par
   l'utilisateur, qui a pris l'abonnement Starter (les voix de la bibliothèque marchent donc par l'API).
-  Réglages fixes pour avoir la même voix à chaque vidéo : `eleven_multilingual_v2`, réglages par défaut de la voix,
+  Réglages fixes pour avoir la même voix à chaque vidéo : `eleven_multilingual_v2`, **réglages « dynamiques »** :
+  stabilité 0,35, similarité 0,85, style 0,4, speaker boost (l'utilisateur veut de l'intonation, pas une lecture plate),
   `language_code: fr`, sortie `mp3_44100_128` (le 192 kb/s demande l'offre Creator). Jamais le mode v3 « Creative ».
   Clé dans `ELEVENLABS_API_KEY` (jamais dans le dépôt). **Ne jamais retoucher la voix** (ni accélérer, ni ralentir,
   ni couper les silences) : si c'est trop long ou trop court, **ajuster le script** et régénérer.
 - **Hooks (rétention TikTok)** : style de `scripts/exemples-hooks.md` — mission banale, détail qui cloche, chute qui
   retourne tout ou promesse de révélation ; concret, un chiffre précis, jamais la réponse. Varier le type de hook
   d'une vidéo à l'autre. Thème : débosselage de voiture.
+- **Voix vivante et dynamique (exigence de l'utilisateur)** : pas une lecture plate pendant une minute. Le script porte
+  l'intonation : phrases de longueurs variées, points d'exclamation et vraies questions aux moments forts, paroles
+  rapportées entre guillemets (« Il me dit : "Surtout, n'ouvre pas le coffre !" »), mots qui claquent placés en fin de
+  phrase, montée de tension vers la chute.
 - **Écriture des scripts (exigence de l'utilisateur)** : exactement comme son exemple — **4 blocs** [HOOK] [MISE EN PLACE]
   [TENSION] [RÉSOLUTION], chaque bloc écrit comme une histoire racontée à l'oral : phrases simples qui s'enchaînent
   (« il me dit que… », « je lui demande… », « je dis rien »), pas de points de suspension, pas de deux-points en série,

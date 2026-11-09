@@ -17,6 +17,8 @@ if MODEL != "eleven_v3":
     import re
     text = re.sub(r"\[[^\]]*\]\s*", "", text)
 body = {"text": text, "model_id": MODEL, "language_code": "fr"}
+if MODEL == "eleven_multilingual_v2":  # Maxime dynamique : plus d'intonation, timbre stable (réglages fixes pour toutes les vidéos)
+    body["voice_settings"] = {"stability": 0.35, "similarity_boost": 0.85, "style": 0.4, "use_speaker_boost": True}
 if MODEL == "eleven_v3":  # mêmes réglages que les vidéos validées (Creative) ; ne jamais retoucher l'audio ensuite
     body["voice_settings"] = {"stability": 0.0, "similarity_boost": 0.8, "use_speaker_boost": True}
 req = urllib.request.Request(
