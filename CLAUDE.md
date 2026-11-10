@@ -63,6 +63,10 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
 - « Filigrane » = les zones de l'interface TikTok (likes, commentaires, description…) : rien dedans.
 - **Garder libre la bande ~280–430 px en haut** : il y met son titre (sous la barre « Suivis / Pour toi »).
   Les graphiques du haut commencent vers 450 px.
+- **Vidéos sans voix off** (liens TikTok à remonter) : ne rien ajouter de lié au son (ni musique, ni bruitages,
+  ni sous-titres / textes d'histoire). **Garder le son d'origine** de chaque plan (ASMR, il n'y a pas de paroles) :
+  il décidera lui-même de le couper en ajoutant sa voix. Plans à vitesse normale de préférence, pour que le son
+  reste naturel.
 
 ## Transcription de la voix
 - « Comme d'habitude » = graphiques animés **calés au mot près sur ce qu'il dit** : toujours transcrire.
