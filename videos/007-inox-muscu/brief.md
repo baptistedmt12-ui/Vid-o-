@@ -37,6 +37,17 @@ garder le format d'origine. Téléchargement en 1080p max (pas de 4K).
     hors des zones TikTok (haut < 280 px, droite > 900 px, bas > 1450 px), pas de texte sur les actions.
 - Note : créée d'abord sous le n° 002 dans une session en retard sur GitHub, renumérotée 007.
 
+## Envoyé à l'utilisateur (2026-11-10)
+
+- `export/007-v1.mp4` — 1 min 06, 1080×1920, 25 i/s, H.264 CRF 14, AAC 320 kb/s, 75 Mo, avec musique.
+- `export/007-v1-sans-musique.mp4` — même image, son = bruitages discrets seulement (pour la voix off), 73 Mo.
+- Les deux sont aussi sur GitHub (moins de 100 Mo, commit normal).
+
+## Ménage (demandé par l'utilisateur)
+
+- Après l'envoi, supprimés du serveur : l'original d'1 h 13 (1,4 Go) et les 17 plans extraits sans perte (~0,8 Go).
+  Ils n'étaient pas sur GitHub. Pour une v2, renvoyer l'original par WeTransfer (timecodes ci-dessous).
+
 ## Plans retenus (timecodes dans l'original « Que devient Inox en Muscu »)
 
 | Plan | Original | Durée à l'écran | Contenu |
@@ -65,5 +76,7 @@ puis `npm run render:hq -- Video007 …`.
 
 ## À faire / retours
 
+- [x] v1 envoyée (avec et sans musique)
 - [ ] Retours sur la v1
+- [ ] Enregistrer la voix off
 - [ ] Option : remplacer la musique par un son tendance directement dans TikTok (bon pour la portée)
