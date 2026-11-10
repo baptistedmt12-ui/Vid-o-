@@ -24,7 +24,12 @@ Ce fichier regroupe trois choses :
 | 008 | Style jet premium (script « raciste »), sans voix | 🔍 Relecture | 9:16 (1080×1920) | 1 min 03 | `Video008Test` | — | — | — | Images de @udetailers (accord de l'utilisateur) ; textes à caler sur la voix |
 | 009 | Le scooter volé (casque à marguerite) | 🔍 Relecture | 9:16 (1080×1920) | 1 min 02 | `Video009` | — | — | — | v1 calée au mot près sur la voix off |
 | 010 | TMAX noir (rush @aliengarage.th), sans voix | 🔍 Relecture | 9:16 (1080×1920) 60 i/s | 1 min 03 | `Video010` | — | — | — | Son d'origine (ASMR), aucun habillage |
-| 011 | | 💡 Idée | | | | | | | |
+| 011 | Honda PCX blanc (rush @aliengarage.th), sans voix | 🎬 Montage | 9:16 (1080×1920) 60 i/s | 1 min 08 | `Video011` | — | — | — | Son d'origine (ASMR), aucun habillage |
+| 012 | Yamaha NMAX noir et vert (rush @aliengarage.th), sans voix | 🎬 Montage | 9:16 (1080×1920) 60 i/s | 1 min 07 | `Video012` | — | — | — | Son d'origine (ASMR), aucun habillage |
+| 013 | Honda Click blanc (rush @aliengarage.th), sans voix | 🎬 Montage | 9:16 (1080×1920) 60 i/s | 1 min 07 | `Video013` | — | — | — | Son d'origine (ASMR), aucun habillage |
+| 014 | Ducati Monster rouge (rush @aliengarage.th), sans voix | 🎬 Montage | 9:16 (1080×1920) 60 i/s | 1 min 08 | `Video014` | — | — | — | Son d'origine (ASMR), aucun habillage |
+| 015 | Compilation : mousse sur une série de motos et scooters (rush @aliengarage.th), sans voix | 🎬 Montage | 9:16 (1080×1920) 60 i/s | 1 min 08 | `Video015` | — | — | — | Son d'origine (ASMR), aucun habillage |
+| 016 | | 💡 Idée | | | | | | | |
 
 ### Banque d'idées
 

@@ -17,6 +17,11 @@ import { Video008 } from "./videos/008-jet-raciste-test/Video008";
 import { TOTAL_FRAMES as TOTAL008 } from "./videos/008-jet-raciste-test/timeline";
 import { Video009 } from "./videos/009-scooter-nettoyage/Video009";
 import { TOTAL_FRAMES as TOTAL009 } from "./videos/009-scooter-nettoyage/timeline";
+import { Video011, TOTAL_FRAMES as TOTAL011 } from "./videos/011-aliengarage-2/Video011";
+import { Video012, TOTAL_FRAMES as TOTAL012 } from "./videos/012-aliengarage-3/Video012";
+import { Video013, TOTAL_FRAMES as TOTAL013 } from "./videos/013-aliengarage-4/Video013";
+import { Video014, TOTAL_FRAMES as TOTAL014 } from "./videos/014-aliengarage-5/Video014";
+import { Video015, TOTAL_FRAMES as TOTAL015 } from "./videos/015-aliengarage-6/Video015";
 import { Video010 } from "./videos/010-aliengarage-1/Video010";
 import { TOTAL_FRAMES as TOTAL010 } from "./videos/010-aliengarage-1/timeline";
 
@@ -83,6 +88,11 @@ export const RemotionRoot: React.FC = () => {
         height={1920}
         defaultProps={{ musique: false }}
       />
+      <Composition id="Video011" component={Video011} durationInFrames={TOTAL011} fps={60} width={1080} height={1920} />
+      <Composition id="Video012" component={Video012} durationInFrames={TOTAL012} fps={60} width={1080} height={1920} />
+      <Composition id="Video013" component={Video013} durationInFrames={TOTAL013} fps={60} width={1080} height={1920} />
+      <Composition id="Video014" component={Video014} durationInFrames={TOTAL014} fps={60} width={1080} height={1920} />
+      <Composition id="Video015" component={Video015} durationInFrames={TOTAL015} fps={60} width={1080} height={1920} />
       <Composition id="Video010" component={Video010} durationInFrames={TOTAL010} fps={60} width={1080} height={1920} />
       <Composition id="Video009" component={Video009} durationInFrames={TOTAL009} fps={30} width={1080} height={1920} />
       <Composition id="Video008Test" component={Video008} durationInFrames={TOTAL008} fps={30} width={1080} height={1920} />

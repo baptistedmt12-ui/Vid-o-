@@ -47,7 +47,7 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
 
 ## Montage TikTok monétisé (consignes de l'utilisateur, 10/11/2026)
 - **Une seule version** envoyée : la meilleure qualité possible (pas de copie allégée en plus).
-- **Durée : entre 1 min et 1 min 05**, jamais plus (monétisation TikTok = plus d'1 minute, et la rétention).
+- **Durée : entre 1 min 05 et 1 min 10** (nouvelle préférence du 10/11 ; avant : 1 min–1 min 05). Monétisation TikTok = plus d'1 minute.
 - **Toujours donner le lien GitHub direct** pour télécharger, même au-dessus de 100 Mo (Git LFS).
 - Montage pensé rétention / réactions : meilleur plan en premier, coupe à chaque phrase, relance au milieu,
   question à deux camps à la fin (voir `SUIVI.md`, sections 4 et 5).
