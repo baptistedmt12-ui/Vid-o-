@@ -118,3 +118,29 @@ Ce fichier regroupe trois choses :
 |-----------|------------|
 | | |
 | | |
+
+---
+
+## 4. Leçons TikTok (statistiques réelles du compte)
+
+### Analyse du 10/11/2026 — format « histoire racontée sur un lavage de moto »
+| Vidéo | Vues | Encore là à 10 s | Vue en entier | Likes / vues | Comm. / partages |
+|---|---|---|---|---|---|
+| « Interdit : le réservoir » (Jessica) | 5 218 | 41 % | 25,9 % | 1,5 % | 0 / 0 |
+| « Une belle surprise non » (papa, 18 ans) | 1 201 | 35 % | 19,9 % | 5 % | 1 / 0 |
+
+- Même montage pour les deux : la différence vient de **la 1re phrase et de la 1re image**.
+  - Réservoir : interdit + transgression en 6 s (« Évidemment, j'ai touché au réservoir ») → on veut savoir.
+  - Papa : phrase de 5 s sans conflit, le conflit (« sa femme n'était pas au courant ») n'arrive qu'à 5–8 s,
+    puis 16 s d'explications ; 1re image = chaîne en gros plan, peu lisible.
+- Après 10 s, les deux courbes sont plates : l'histoire tient, seul le début fait perdre les vues.
+- Aucune question en fin de vidéo → presque 0 commentaire → TikTok arrête la diffusion au bout de quelques heures.
+- TikTok a signalé « Améliore la résolution » sur la vidéo papa : exporter et publier en 1080p minimum.
+
+### Règles à appliquer
+1. Conflit ou interdit dans les **3 premières secondes**, en une phrase courte ; la 2e phrase relance (≤ 6 s).
+2. 1re image = le plan le plus visuel (mousse, couleur, saleté qui part), jamais un gros plan illisible.
+3. Couper l'exposition : chaque phrase doit faire avancer l'histoire.
+4. Relance vers le milieu (~25 s) : un rebondissement annoncé.
+5. Finir sur une **question à deux camps** (« Tu lui dis ou tu te tais ? ») + commentaire épinglé, ou « partie 2 ».
+6. Rester au-dessus d'1 minute (monétisation).
