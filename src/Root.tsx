@@ -13,6 +13,8 @@ import { Video005, TOTAL_FRAMES as F005 } from "./videos/005-compteur-location/V
 import { Video006, FPS as FPS006, TOTAL_FRAMES as TOTAL006 } from "./videos/006-on-air-chambly/Video006";
 import { Video007 } from "./videos/007-inox-muscu/Video007";
 import { FPS as FPS007, TOTAL_FRAMES as TOTAL007 } from "./videos/007-inox-muscu/timeline";
+import { Video008 } from "./videos/008-jet-raciste-test/Video008";
+import { TOTAL_FRAMES as TOTAL008 } from "./videos/008-jet-raciste-test/timeline";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -77,6 +79,7 @@ export const RemotionRoot: React.FC = () => {
         height={1920}
         defaultProps={{ musique: false }}
       />
+      <Composition id="Video008Test" component={Video008} durationInFrames={TOTAL008} fps={30} width={1080} height={1920} />
     </>
   );
 };
