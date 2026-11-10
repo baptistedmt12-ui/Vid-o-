@@ -125,3 +125,14 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
   clone de sa voix) ont été abandonnées et supprimées.
 - Toujours vérifier la prononciation en retranscrivant avec Whisper, puis caler les graphiques sur le minutage des mots.
 - Remodelage d'un rush (durée exacte, miroirs) : `scripts/remodel.py`. Aperçus rapides : `node scripts/stills.mjs`.
+
+## Thème (à partir de la vidéo 022, branche `claude/montages-nouveau-theme`)
+- **Nouveau thème : fabrication d'objets à la main en bois** (ex. une grande cuillère sculptée dans un morceau de bois
+  bien humide, avec des outils manuels). Il remplace « débosselage de voiture » pour les histoires et les hooks ;
+  toutes les autres règles ci-dessus s'appliquent à l'identique.
+- **Compte TikTok en allemand** : scripts écrits directement en allemand (traduction française dans `brief.md`),
+  textes à l'écran en allemand.
+- **Voix off : voix gratuites Microsoft (edge-tts, sans limite)**, pas ElevenLabs/Maxime pour ce compte. Extraits
+  dans `voix-essais/` ; voix retenue : *(à choisir par l'utilisateur)*.
+- Rushes : vidéos TikTok ou Instagram d'autres créateurs ; récupérer la meilleure version disponible
+  (`yt-dlp` sur le lien si possible, sinon téléchargement HD sans filigrane par l'utilisateur).
