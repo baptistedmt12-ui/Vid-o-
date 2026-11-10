@@ -31,14 +31,11 @@ const RAW: Raw[] = [
   { a: 27.53, b: 29.67, d: 2.3, fx: "zoom", note: "il avance dans l'allée" },
   // MISE EN PLACE
   { a: 5.3, b: 6.0, d: 1.0, fx: "flash", note: "arrivée à l'aéroport" },
-  { a: 2.03, b: 2.8, d: 0.8, note: "route" },
   { a: 2.8, b: 3.2, d: 0.75, fx: "whip", note: "badge" },
   { a: 8.1, b: 8.9, d: 1.35, note: "matériel" },
   { a: 15.7, b: 16.33, d: 1.2, fx: "flip", note: "voiture sur le tarmac" },
   { a: 7.3, b: 8.1, d: 1.6, note: "matériel au pied du jet" },
   { a: 16.73, b: 17.2, d: 0.9, fx: "whip", note: "main tendue" },
-  { a: 16.33, b: 16.73, d: 0.75, note: "main" },
-  { a: 6.5, b: 7.3, d: 0.9, note: "main" },
   { a: 67.53, b: 71.3, d: 3.8, fx: "zoom", note: "« Toi, tu restes en bas »" },
   { a: 66.3, b: 67.53, d: 1.6, fx: "flip", note: "la rampe" },
   { a: 30.77, b: 31.47, d: 1.3, note: "essuyer" },
@@ -62,31 +59,30 @@ const RAW: Raw[] = [
   { a: 56.07, b: 57.93, d: 2.8, cold: 1, note: "passe devant lui" },
   { a: 62.8, b: 64.1, d: 2.5, fx: "flash", cold: 1, note: "il le prend dans ses bras" },
   { a: 11.63, b: 13.33, d: 2.0, cold: 1, note: "« Mon fils m'a dit… »" },
-  { a: 38.93, b: 42.67, d: 1.8, fx: "whip", cold: 1, note: "" },
   // RÉSOLUTION
   { a: 57.93, b: 61.23, d: 2.5, fx: "zoom", cold: 1, note: "il devient tout blanc" },
   { a: 25.33, b: 26.4, d: 1.5, cold: 0.8, note: "il bafouille" },
   { a: 26.4, b: 27.53, d: 1.6, fx: "flip", cold: 0.6, note: "le bienvenu" },
   { a: 34.23, b: 34.87, d: 1.25, fx: "flash", cold: 0.3, note: "la microfibre" },
   { a: 29.67, b: 30.77, d: 1.8, cold: 0.2, note: "pile là où…" },
-  { a: 49.57, b: 52.67, d: 1.6, cold: 0.1, note: "" },
   { a: 42.67, b: 44.53, d: 1.7, fx: "zoom", note: "« Je touche à rien. »" },
   { a: 4.6, b: 5.3, d: 1.2, fx: "whip", note: "ils repartent" },
   { a: 61.23, b: 62.8, d: 2.0, fx: "mirror", note: "le contrat s'envole" },
   // QUESTION
   { a: 71.3, b: 73.8, d: 3.0, fx: "gold", note: "question" },
-  { a: 17.2, b: 18.67, d: 2.4, fx: "mirror", note: "question" },
-  { a: 64.1, b: 65.4, d: 2.4, fx: "flash", note: "question" },
 ];
+
+/** Montage resserré pour tenir entre 1 min et 1 min 05 (demande du 10/11). */
+export const SPEED = 0.9;
 
 export type Segment = Raw & { id: number; start: number; duration: number; rate: number; startFrom: number };
 
 let cursor = 0;
 export const SEGMENTS: Segment[] = RAW.map((r, id) => {
   const start = cursor;
-  const duration = sec(r.d);
+  const duration = sec(r.d * SPEED);
   cursor += duration;
-  return { ...r, id, start, duration, rate: (r.b - r.a) / r.d, startFrom: sec(r.a) };
+  return { ...r, id, start, duration, rate: (r.b - r.a) / (r.d * SPEED), startFrom: sec(r.a) };
 });
 export const TOTAL_FRAMES = cursor;
 

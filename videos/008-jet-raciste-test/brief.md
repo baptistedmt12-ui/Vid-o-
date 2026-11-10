@@ -2,7 +2,7 @@
 
 - **Statut :** 🔍 Relecture (test de style)
 - **Format :** 9:16 (1080×1920), 30 i/s
-- **Durée :** 1 min 21
+- **Durée :** 1 min 03
 - **Plateforme :** TikTok
 - **Composition Remotion :** `Video008Test`
 
@@ -44,6 +44,10 @@ par moments, motion design, effets sonores, épuré et premium (nettoyage de jet
 
 - 2026-11-10 — **v1** (`export/008-v1.mp4`) : même montage, sans la mention « TEST » (accord de l'utilisateur).
   Mis sur GitHub via Git LFS (> 100 Mo).
+
+- 2026-11-10 — Demande : « une seule version, la meilleure qualité, entre 1 min et 1 min 05, et le lien direct
+  même au-dessus de 100 Mo ». → 7 plans faibles retirés (41 plans), rythme resserré de 10 %,
+  musique recalée (1 min 04) ; `export/008-v1.mp4` remplacé, mis sur GitHub via LFS.
 
 ## À faire / retours
 
