@@ -28,7 +28,12 @@ const Sfx: React.FC<{ t: number; name: string; volume: number; len?: number }> =
   </Sequence>
 );
 
-export const Video008: React.FC<{ musique?: number; test?: boolean }> = ({ musique = 0.55, test = true }) => {
+/** textes=false : pas d'habillage lié au script (il sera calé sur la voix off quand elle arrivera). */
+export const Video008: React.FC<{ musique?: number; test?: boolean; textes?: boolean }> = ({
+  musique = 0.55,
+  test = true,
+  textes = false,
+}) => {
   return (
     <AbsoluteFill style={{ backgroundColor: "#0B0B0D" }}>
       {/* Plans */}
@@ -38,6 +43,8 @@ export const Video008: React.FC<{ musique?: number; test?: boolean }> = ({ musiq
         </Sequence>
       ))}
 
+      {textes && (
+        <>
       {/* ACCROCHE */}
       <At from={0.3} to={B.hookEnd - 0.2} name="Interdit à bord">
         {(d) => <Tag label="Interdit à bord" sub="Mon collègue. À cause de sa couleur de peau." dur={d} />}
@@ -92,6 +99,9 @@ export const Video008: React.FC<{ musique?: number; test?: boolean }> = ({ musiq
         {(d) => <Poll dur={d + 10} />}
       </At>
 
+        </>
+      )}
+
       {test && <TestMark />}
 
       {/* SON — musique d'ambiance (silence avant « Je touche à rien ») */}
@@ -113,7 +123,9 @@ export const Video008: React.FC<{ musique?: number; test?: boolean }> = ({ musiq
         <Sfx key={`g${s.id}`} t={s.start / 30} name="shine" volume={0.3} len={1.3} />
       ))}
 
-      {/* Moments de l'histoire */}
+      {/* Moments de l'histoire (seulement avec les textes, calés sur la voix) */}
+      {textes && (
+        <>
       <Sfx t={B.message} name="message" volume={0.5} len={1} />
       <Sfx t={B.h17 + 0.45} name="tick" volume={0.35} len={1.5} />
       <Sequence from={sec(B.lien)} durationInFrames={sec(B.blanc - B.lien)} name="son drone" layout="none">
@@ -131,6 +143,8 @@ export const Video008: React.FC<{ musique?: number; test?: boolean }> = ({ musiq
       <Sfx t={B.contrat + 0.4} name="whoosh" volume={0.25} len={1} />
       <Sfx t={B.question + 0.5} name="pop" volume={0.25} len={0.5} />
       <Sfx t={B.question + 0.75} name="pop" volume={0.25} len={0.5} />
+        </>
+      )}
     </AbsoluteFill>
   );
 };

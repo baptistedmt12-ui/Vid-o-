@@ -38,6 +38,11 @@ par moments, motion design, effets sonores, épuré et premium (nettoyage de jet
     whoosh / swish discrets, reflet sonore, notification, tic, battements de cœur, drone, impact, ding ;
   - **pas de sous-titres** (pas encore de voix) ; temps estimés sur le script (~4,3 mots/s).
 
+- 2026-11-10 — Demande : « n'écris rien en rapport avec le script, il faut que ma voix soit avant ».
+  → habillage lié au script masqué (`textes=false` par défaut) avec ses bruitages d'histoire ;
+  il reste le montage, les effets, la musique (sans le blanc) et les sons de transition.
+  Écritures d'origine vérifiées : seulement « $45M Private Jet » (0–2 s du reel), passage non utilisé.
+
 ## À faire / retours
 
 - [ ] Avis de l'utilisateur sur le style
