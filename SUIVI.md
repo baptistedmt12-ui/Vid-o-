@@ -144,3 +144,19 @@ Ce fichier regroupe trois choses :
 4. Relance vers le milieu (~25 s) : un rebondissement annoncé.
 5. Finir sur une **question à deux camps** (« Tu lui dis ou tu te tais ? ») + commentaire épinglé, ou « partie 2 ».
 6. Rester au-dessus d'1 minute (monétisation).
+
+---
+
+## 5. Format « histoire + nettoyage premium » (jet privé) — demandé le 10/11/2026
+
+L'utilisateur envoie ses **rushes sans montage** ; Claude écrit le script adapté aux plans, l'utilisateur enregistre sa voix, Claude fait tout le montage.
+
+- **Montage simple mais entièrement retravaillé pour TikTok et la rétention** : meilleur plan en premier, coupe à chaque phrase, relance vers 25 s, silence avant la chute, question finale.
+- **Épuré et premium** : peu d'éléments à l'écran, beaucoup d'air, rien de criard.
+  - Couleurs : noir profond `#0B0B0D`, blanc cassé `#F5F2EC`, accent **or champagne `#C9A86A`** (remplace le rouge pour ce format).
+  - Sous-titres mot par mot, blancs, mot clé en or, au-dessus de la zone de description TikTok (≤ ~1 400 px).
+  - Étiquettes de contexte petites, en haut à gauche, fine ligne dorée, entrée en fondu.
+- **Dynamisme** : effets miroir ponctuels (retournement / reflet) sur les moments de rythme, zooms lents sur les plans de cuir et de brillance, reflet lumineux qui passe sur certains textes.
+- **Motion design** discret, calé au mot près sur la voix (heure « 17:00 », montant « 4 000 € »…).
+- **Son** : effets sonores doux (whoosh léger, « ding » de brillance, silence avant la chute), musique d'ambiance discrète sous la voix.
+- Règles TikTok habituelles : pas de texte sur les actions, rien dans les zones de l'interface, plus d'1 minute.
