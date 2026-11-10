@@ -11,6 +11,8 @@ import { Video004, TOTAL_FRAMES as F004 } from "./videos/004-boue-rouge/Video004
 import { Video005, TOTAL_FRAMES as F005 } from "./videos/005-compteur-location/Video005";
 
 import { Video006, FPS as FPS006, TOTAL_FRAMES as TOTAL006 } from "./videos/006-on-air-chambly/Video006";
+import { Video007 } from "./videos/007-inox-muscu/Video007";
+import { FPS as FPS007, TOTAL_FRAMES as TOTAL007 } from "./videos/007-inox-muscu/timeline";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -57,6 +59,23 @@ export const RemotionRoot: React.FC = () => {
         fps={FPS006}
         width={1080}
         height={1920}
+      />
+      <Composition
+        id="Video007"
+        component={Video007}
+        durationInFrames={TOTAL007}
+        fps={FPS007}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="Video007SansMusique"
+        component={Video007}
+        durationInFrames={TOTAL007}
+        fps={FPS007}
+        width={1080}
+        height={1920}
+        defaultProps={{ musique: false }}
       />
     </>
   );
