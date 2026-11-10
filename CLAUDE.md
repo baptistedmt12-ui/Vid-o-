@@ -53,6 +53,14 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
   question à deux camps à la fin (voir `SUIVI.md`, sections 4 et 5).
 - Pas de texte lié au script tant que la voix off n'est pas enregistrée (sinon pas au bon moment).
 - Retirer les écritures déjà incrustées dans les rushes reçus.
+- **Montage épuré** (c'est ce qu'il vend) : coupes franches, image toujours nette. Pas de flous de transition,
+  flashes, rotations 3D, secousses, écran coupé en deux : ça fait baisser la qualité (retour sur la vidéo 008).
+- **« Effet miroir » = retourner le plan horizontalement** (le siège passe de gauche à droite), sur quelques plans
+  pour le dynamisme — jamais une symétrie (image coupée en deux). Éviter les plans avec du texte lisible.
+- Motion design et petits effets sonores **discrets** (pas trop forts sous la voix).
+- **Incruster des images** quand il parle d'un objet (ex. le casque à marguerite, comme une photo prise par lui),
+  plutôt qu'un dessin : demander une vraie photo si on n'en a pas.
+- « Filigrane » = les zones de l'interface TikTok (likes, commentaires, description…) : rien dedans.
 
 ## Transcription de la voix
 - « Comme d'habitude » = graphiques animés **calés au mot près sur ce qu'il dit** : toujours transcrire.

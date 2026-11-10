@@ -37,6 +37,15 @@ l'attention des gens et pour que ça donne envie d'interagir. » + « Fais atten
   - son : voix d'origine, musique de tension générée (blanc avant « c'est pas ce que tu crois »),
     clés qui tombent, billet, photo, vibreur, message, battements de cœur, impacts, whoosh.
 
+- 2026-11-10 — Retour de l'utilisateur avant envoi : « effet miroir » = plan retourné horizontalement (pas une
+  symétrie) ; montage **épuré** (trop d'effets = baisse de qualité) ; sons discrets ; incruster des images
+  (ex. photo du casque) ; « filigrane » = zones de l'interface TikTok.
+  → v1 refaite : coupes franches, 16 plans retournés, petit zoom d'entrée sur 15 mots forts, plus de flou /
+  flash / rotation / secousse / écran coupé ; étalonnage très léger ; bruitages baissés de 40 %, musique plus basse.
+  Rendu 3D d'un casque essayé pour l'incrustation : pas assez réaliste, non utilisé → demander une vraie photo.
+
 ## À faire / retours
+
+- [ ] Photo d'un casque blanc à marguerite à incruster vers « un casque blanc avec une petite marguerite » (25,4 s)
 
 - [ ] Avis de l'utilisateur

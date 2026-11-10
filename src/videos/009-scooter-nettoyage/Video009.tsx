@@ -63,31 +63,24 @@ export const Video009: React.FC = () => (
     <Audio src={snd("voix")} volume={1} />
     <Audio
       src={snd("musique")}
-      volume={(f) => 0.2 * interpolate(f, [0, 6, TOTAL_FRAMES - 40, TOTAL_FRAMES], [0, 1, 1.4, 0], { extrapolateRight: "clamp" })}
+      volume={(f) => 0.15 * interpolate(f, [0, 6, TOTAL_FRAMES - 40, TOTAL_FRAMES], [0, 1, 1.4, 0], { extrapolateRight: "clamp" })}
     />
 
-    {SEGMENTS.filter((s) => s.fx === "whip").map((s) => (
-      <Sfx key={`w${s.id}`} t={s.start / 30 - 0.12} name="whoosh" volume={0.2} len={1} />
-    ))}
-    {SEGMENTS.filter((s) => s.fx === "flip" || s.fx === "mirror").map((s) => (
-      <Sfx key={`s${s.id}`} t={s.start / 30 - 0.08} name="swish" volume={0.16} len={1} />
-    ))}
-
     {/* Bruitages calés sur les mots */}
-    <Sfx t={0.88} name="cles" volume={0.5} len={1} />
-    <Sfx t={3.04} name="impact" volume={0.22} />
-    <Sfx t={14.0} name="cles" volume={0.45} len={1} />
-    <Sfx t={18.1} name="cash" volume={0.25} len={1.5} />
-    <Sfx t={40.3} name="photo" volume={0.5} len={0.5} />
-    <Sfx t={41.5} name="vibreur" volume={0.35} len={1} />
-    <Sfx t={41.86} name="message" volume={0.45} len={1} />
+    <Sfx t={0.88} name="cles" volume={0.3} len={1} />
+    <Sfx t={3.04} name="impact" volume={0.13} />
+    <Sfx t={14.0} name="cles" volume={0.27} len={1} />
+    <Sfx t={18.1} name="cash" volume={0.15} len={1.5} />
+    <Sfx t={40.3} name="photo" volume={0.3} len={0.5} />
+    <Sfx t={41.5} name="vibreur" volume={0.21} len={1} />
+    <Sfx t={41.86} name="message" volume={0.27} len={1} />
     <Sequence from={sec(44.2)} durationInFrames={sec(4.6)} name="son cœur" layout="none">
-      <Audio src={snd("heartbeat")} volume={0.3} />
+      <Audio src={snd("heartbeat")} volume={0.18} />
     </Sequence>
-    <Sfx t={48.45} name="impact" volume={0.35} />
-    <Sfx t={50.4} name="cles" volume={0.5} len={1} />
-    <Sfx t={55.3} name="ding" volume={0.3} />
-    <Sfx t={56.1} name="pop" volume={0.25} len={0.5} />
-    <Sfx t={56.35} name="pop" volume={0.25} len={0.5} />
+    <Sfx t={48.45} name="impact" volume={0.21} />
+    <Sfx t={50.4} name="cles" volume={0.3} len={1} />
+    <Sfx t={55.3} name="ding" volume={0.18} />
+    <Sfx t={56.1} name="pop" volume={0.15} len={0.5} />
+    <Sfx t={56.35} name="pop" volume={0.15} len={0.5} />
   </AbsoluteFill>
 );
