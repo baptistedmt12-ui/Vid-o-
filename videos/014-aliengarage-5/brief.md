@@ -1,6 +1,6 @@
 # Vidéo 014 — Ducati Monster rouge (rush TikTok @aliengarage.th), montage sans voix
 
-- **Statut :** 🎬 Montage (rendu en cours)
+- **Statut :** 🔍 Relecture
 - **Format :** 9:16 (1080×1920), 60 i/s
 - **Durée :** 1 min 08
 - **Plateforme :** TikTok (monétisation)

@@ -27,8 +27,8 @@ Ce fichier regroupe trois choses :
 | 011 | Honda PCX blanc (rush @aliengarage.th), sans voix | 🔍 Relecture | 9:16 (1080×1920) 60 i/s | 1 min 08 | `Video011` | — | — | — | Son d'origine (ASMR), aucun habillage |
 | 012 | Yamaha NMAX noir et vert (rush @aliengarage.th), sans voix | 🔍 Relecture | 9:16 (1080×1920) 60 i/s | 1 min 07 | `Video012` | — | — | — | Son d'origine (ASMR), aucun habillage |
 | 013 | Honda Click blanc (rush @aliengarage.th), sans voix | 🔍 Relecture | 9:16 (1080×1920) 60 i/s | 1 min 07 | `Video013` | — | — | — | Son d'origine (ASMR), aucun habillage |
-| 014 | Ducati Monster rouge (rush @aliengarage.th), sans voix | 🎬 Montage | 9:16 (1080×1920) 60 i/s | 1 min 08 | `Video014` | — | — | — | Son d'origine (ASMR), aucun habillage |
-| 015 | Compilation : mousse sur une série de motos et scooters (rush @aliengarage.th), sans voix | 🎬 Montage | 9:16 (1080×1920) 60 i/s | 1 min 08 | `Video015` | — | — | — | Son d'origine (ASMR), aucun habillage |
+| 014 | Ducati Monster rouge (rush @aliengarage.th), sans voix | 🔍 Relecture | 9:16 (1080×1920) 60 i/s | 1 min 08 | `Video014` | — | — | — | Son d'origine (ASMR), aucun habillage |
+| 015 | Compilation : mousse sur une série de motos et scooters (rush @aliengarage.th), sans voix | 🔍 Relecture | 9:16 (1080×1920) 60 i/s | 1 min 08 | `Video015` | — | — | — | Son d'origine (ASMR), aucun habillage |
 | 016 | | 💡 Idée | | | | | | | |
 
 ### Banque d'idées

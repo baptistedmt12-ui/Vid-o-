@@ -7,3 +7,5 @@ videos/010-aliengarage-1/export/010-v1.mp4 filter=lfs diff=lfs merge=lfs -text
 videos/011-aliengarage-2/export/011-v1.mp4 filter=lfs diff=lfs merge=lfs -text
 videos/012-aliengarage-3/export/012-v1.mp4 filter=lfs diff=lfs merge=lfs -text
 videos/013-aliengarage-4/export/013-v1.mp4 filter=lfs diff=lfs merge=lfs -text
+videos/014-aliengarage-5/export/014-v1.mp4 filter=lfs diff=lfs merge=lfs -text
+videos/015-aliengarage-6/export/015-v1.mp4 filter=lfs diff=lfs merge=lfs -text
