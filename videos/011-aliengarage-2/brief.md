@@ -1,6 +1,6 @@
 # Vidéo 011 — Honda PCX blanc (rush TikTok @aliengarage.th), montage sans voix
 
-- **Statut :** 🎬 Montage (rendu en cours)
+- **Statut :** 🔍 Relecture
 - **Format :** 9:16 (1080×1920), 60 i/s
 - **Durée :** 1 min 08
 - **Plateforme :** TikTok (monétisation)

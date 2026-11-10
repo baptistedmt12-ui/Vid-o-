@@ -4,3 +4,6 @@ videos/005-compteur-location/export/005-v1.mp4 filter=lfs diff=lfs merge=lfs -te
 videos/008-jet-raciste-test/export/008-v1.mp4 filter=lfs diff=lfs merge=lfs -text
 videos/009-scooter-nettoyage/export/009-v1.mp4 filter=lfs diff=lfs merge=lfs -text
 videos/010-aliengarage-1/export/010-v1.mp4 filter=lfs diff=lfs merge=lfs -text
+videos/011-aliengarage-2/export/011-v1.mp4 filter=lfs diff=lfs merge=lfs -text
+videos/012-aliengarage-3/export/012-v1.mp4 filter=lfs diff=lfs merge=lfs -text
+videos/013-aliengarage-4/export/013-v1.mp4 filter=lfs diff=lfs merge=lfs -text

@@ -1,6 +1,6 @@
 # Vidéo 012 — Yamaha NMAX noir et vert (rush TikTok @aliengarage.th), montage sans voix
 
-- **Statut :** 🎬 Montage (rendu en cours)
+- **Statut :** 🔍 Relecture
 - **Format :** 9:16 (1080×1920), 60 i/s
 - **Durée :** 1 min 07
 - **Plateforme :** TikTok (monétisation)
