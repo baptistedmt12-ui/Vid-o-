@@ -37,6 +37,32 @@ garder le format d'origine. Téléchargement en 1080p max (pas de 4K).
     hors des zones TikTok (haut < 280 px, droite > 900 px, bas > 1450 px), pas de texte sur les actions.
 - Note : créée d'abord sous le n° 002 dans une session en retard sur GitHub, renumérotée 007.
 
+## Plans retenus (timecodes dans l'original « Que devient Inox en Muscu »)
+
+| Plan | Original | Durée à l'écran | Contenu |
+|------|----------|-----------------|---------|
+| s01 | 1:12:06.6 (ralenti 0,8×) | 2,9 s | Accroche : les deux torse nu au vestiaire, Inox contracte |
+| s02 | 0:04:05 | 3,8 s | Développé couché, gros plan |
+| s03 | 0:10:16 | 3,8 s | Développé couché, vue de côté |
+| s04 | 0:29:37 | 2,9 s | Inox sous la barre |
+| s05 | 0:24:07 | 5,8 s | Inox force au développé couché, parade (secousse) |
+| s06 | 0:24:16 | 2,9 s | Réaction, rires |
+| s07 | 0:26:25 | 3,8 s | Développé couché, visage |
+| s08 | 1:01:17.5 | 4,8 s | Inox au développé épaules (machine) |
+| s09 | 0:49:21.5 | 2,9 s | Développé épaules, plan large |
+| s10 | 1:06:09 | 5,8 s | Élévations latérales |
+| s11 | 1:09:16 | 2,9 s | Poulie |
+| s12 | 1:11:06 (accéléré 1,4×) | 5,8 s | Duel de pompes |
+| s13 | 1:11:55.5 | 2,9 s | Arrivée au vestiaire |
+| s14 | 1:12:02 | 4,8 s | Physiques |
+| s15 | 1:12:14.5 | 3,8 s | Physiques, plan serré |
+| s16 | 1:12:29 | 3,8 s | Physiques, plan serré |
+| s17 | 1:12:35 | 2,9 s | Fin (boucle sur l'accroche) |
+
+Pour refaire un rendu : remettre l'original dans `rushes/original/`, réextraire les plans sans perte
+(`ffmpeg -ss <début> -i original.mp4 -t <durée+0,6> -an -c:v libx264 -qp 0 rushes/original/segments/sNN.mp4`),
+puis `npm run render:hq -- Video007 …`.
+
 ## À faire / retours
 
 - [ ] Retours sur la v1
