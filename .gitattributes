@@ -3,3 +3,4 @@ videos/004-boue-rouge/export/004-v1.mp4 filter=lfs diff=lfs merge=lfs -text
 videos/005-compteur-location/export/005-v1.mp4 filter=lfs diff=lfs merge=lfs -text
 videos/008-jet-raciste-test/export/008-v1.mp4 filter=lfs diff=lfs merge=lfs -text
 videos/009-scooter-nettoyage/export/009-v1.mp4 filter=lfs diff=lfs merge=lfs -text
+videos/010-aliengarage-1/export/010-v1.mp4 filter=lfs diff=lfs merge=lfs -text
