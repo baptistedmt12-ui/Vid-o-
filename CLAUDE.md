@@ -168,3 +168,6 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
   la vidéo, toujours pour la rétention et la monétisation : hook fort, fil conducteur et suspense du début à la fin,
   fin qui fait réagir en commentaires.
 - Les liens arrivent groupés dans un même message : **ne pas commencer avant le « go » de l'utilisateur**.
+- **Hooks osés et choquants autorisés** (demande de l'utilisateur) : toujours un élément qui intrigue, contredit ou
+  choque dès la 1re phrase pour stopper le scroll. Limite : rester dans les règles TikTok pour garder la monétisation
+  (pas de violence explicite, sexe, actes dangereux à imiter, ni fausses infos sur des personnes ou événements réels).
