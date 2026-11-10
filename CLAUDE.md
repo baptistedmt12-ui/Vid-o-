@@ -45,6 +45,15 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
     `https://github.com/baptistedmt12-ui/Vid-o-/raw/<branche>/videos/NNN-nom/export/NNN-vX.mp4`
   - Le quota LFS gratuit est limité : supprimer du suivi LFS les anciennes versions remplacées.
 
+## Montage TikTok monétisé (consignes de l'utilisateur, 10/11/2026)
+- **Une seule version** envoyée : la meilleure qualité possible (pas de copie allégée en plus).
+- **Durée : entre 1 min et 1 min 05**, jamais plus (monétisation TikTok = plus d'1 minute, et la rétention).
+- **Toujours donner le lien GitHub direct** pour télécharger, même au-dessus de 100 Mo (Git LFS).
+- Montage pensé rétention / réactions : meilleur plan en premier, coupe à chaque phrase, relance au milieu,
+  question à deux camps à la fin (voir `SUIVI.md`, sections 4 et 5).
+- Pas de texte lié au script tant que la voix off n'est pas enregistrée (sinon pas au bon moment).
+- Retirer les écritures déjà incrustées dans les rushes reçus.
+
 ## Transcription de la voix
 - « Comme d'habitude » = graphiques animés **calés au mot près sur ce qu'il dit** : toujours transcrire.
 - Les noms propres qu'il écrit (ville, salle…) servent à l'**orthographe**, pas de contenu à afficher seul.
