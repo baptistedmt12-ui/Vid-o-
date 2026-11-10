@@ -147,10 +147,11 @@ const CUTS = [
   { t: 28.0, type: "whip" as const },
   { t: 33.6, type: "zoom" as const },
   { t: 39.2, type: "whip" as const },
-  { t: 44.81, type: "zoom" as const },
-  { t: 50.41, type: "whip" as const },
-  { t: 55.31, type: "flash" as const },
-  { t: 57.21, type: "flash" as const },
+  { t: 44.8, type: "zoom" as const },
+  { t: 50.4, type: "whip" as const },
+  { t: 55.1, type: "flash" as const },
+  { t: 57.2, type: "flash" as const },
+  { t: 59.97, type: "zoom" as const },
 ];
 
 export const Video022: React.FC = () => (
@@ -164,7 +165,7 @@ export const Video022: React.FC = () => (
       { t: 45.94, s: 1.05 },
       { t: 57.25, s: 1.06 },
     ]}
-    ambiance={0.28}
+    ambiance={(t) => ((t >= 27.9 && t < 33.7) || (t >= 55.0 && t < 57.3) ? 0.04 : 0.1)}
     whoosh={0.07}
     sfx={{ pop: [11.0, 39.3, 50.0, 59.05] }}
   >
@@ -200,8 +201,8 @@ export const Video022: React.FC = () => (
         <MaedchenStuhl />
       </CenterPop>
     </G>
-    <G from={55.3} to={57.2} name="Vorher">
-      <Tag top={T} t={55.36} tone="white" text="Vorher" size={30} />
+    <G from={55.1} to={57.2} name="Vorher">
+      <Tag top={T} t={55.2} tone="white" text="Vorher" size={30} />
     </G>
     <G from={57.2} to={59.0} name="Nachher">
       <Tag top={T} t={57.25} tone="green" text="Nachher" size={30} />
@@ -210,6 +211,6 @@ export const Video022: React.FC = () => (
     <G from={59.0} to={DURATION_S} name="Umfrage">
       <Poll top={T} t={59.05} question="Habt ihr etwas von euren Großeltern?" a="JA" b="NEIN" footer="Antworte in den Kommentaren 👇" />
     </G>
-    <Captions data={CAPTIONS} />
+    <Captions data={CAPTIONS} hl="#4FC3FF" />
   </StoryVideo>
 );

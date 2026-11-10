@@ -146,3 +146,19 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
   anecdote de travail : on doit vouloir entendre la suite. Puis un fil conducteur qui garde le suspense jusqu'à la fin,
   et une fin qui fait réagir en commentaires. Ne pas recopier la mécanique d'un exemple (ex. « interdiction brisée ») :
   les exemples donnent le niveau, pas la recette.
+- **Retours sur la 022 (à appliquer à toutes les vidéos de ce compte)** :
+  - Sous-titres : mot en cours en **bleu clair** (`<Captions hl="#4FC3FF" />`), jamais jaune/orangé (se confond
+    avec le bois) ; rouge possible.
+  - Son d'origine **vraiment en fond** : ~0,1 sous la voix, ~0,04 sur les plans bruyants (bois sorti de l'eau…)
+    via `ambiance={(t) => …}` ; la voix off doit nettement ressortir. Volume final normalisé à -14 LUFS.
+  - **Aucun ralenti ni accéléré** (vitesse 1 partout dans `segments.json`) : ça dégrade la qualité et la fluidité.
+    Le remontage se fait par le choix, l'ordre et la longueur des plans (remplace « accélérer / ralentis » ci-dessus).
+  - Peu d'effets sonores, montage épuré (pas « too much »).
+  - Toujours donner le lien GitHub de la vidéo finale (LFS si > 100 Mo) en plus du fichier.
+  - **Titre permanent pendant toute la vidéo** (exemple validé par l'utilisateur sur la 022 :
+    « Sie wollte diesen Löffel NICHT / zum Kochen 🥄👵 ») : composant `Title` (`src/videos/_shared/title.tsx`),
+    style texte TikTok = lignes centrées sur fond blanc arrondi, texte noir gras, taille ~56 px, haut à ~245 px
+    (juste sous la zone de l'interface). **Toujours en pyramide** : 2 lignes de préférence, la 2e plus courte que la
+    1re ; 1–2 emojis en fin de titre. Titre **accrocheur** (en allemand, qui pose une question ou une promesse,
+    sans donner la réponse). Les étiquettes du haut à gauche passent **sous le titre** (`top = titleBottom(n)`),
+    et les illustrations au centre ne doivent pas le recouvrir.

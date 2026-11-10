@@ -15,7 +15,7 @@ export const StoryVideo: React.FC<{
   zooms: Zoom[];
   sfx: Sfxs;
   tension?: [number, number];
-  ambiance?: number;
+  ambiance?: number | ((t: number) => number);
   whoosh?: number;
   children: React.ReactNode;
 }> = ({ dir, cuts, zooms, sfx, tension, ambiance = 0.06, whoosh = 0.15, children }) => {
@@ -25,7 +25,7 @@ export const StoryVideo: React.FC<{
       <Footage video={`${dir}/rushes/original/travail.mp4`} cuts={cuts} punches={zooms} clean />
       {children}
       <Audio src={staticFile(A("voix.wav"))} volume={1} />
-      <Audio src={staticFile(`${dir}/rushes/original/ambiance.wav`)} volume={ambiance} />
+      <Audio src={staticFile(`${dir}/rushes/original/ambiance.wav`)} volume={typeof ambiance === "number" ? ambiance : (f: number) => ambiance(f / 30)} />
       {tension && (
         <Sequence from={sec(tension[0])} durationInFrames={sec(tension[1] - tension[0])} name="cœur" layout="none">
           <Audio src={staticFile(A("heartbeat.wav"))} volume={0.2} />

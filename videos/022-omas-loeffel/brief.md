@@ -60,6 +60,10 @@ donneriez jamais ?
   - Sous-titres allemands mot à mot (zone sûre TikTok). Son d'origine (ASMR des outils) gardé à 0,28 sous la voix,
     whoosh très discrets, 4 « pop » seulement.
 
+- *2026-11-10* — Retours de l'utilisateur appliqués dans le code (sous-titres bleu clair, son d'origine plus bas,
+  plus aucun ralenti/accéléré) mais **v2 non rendue** à sa demande : ces règles valent pour les prochaines vidéos.
+  Titre proposé : « Sie wollte diesen Löffel NICHT / zum Kochen 🥄👵 ».
+
 ## À faire / retours
 
 - [ ] Retours de l'utilisateur sur la v1

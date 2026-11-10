@@ -318,7 +318,7 @@ export const Times: React.FC<{ t0: number; t1: number; to: number; size?: number
  *  Calés dans la zone sûre : bas du texte à 1410 px (la barre TikTok commence vers 1450),
  *  entre 95 et 875 px de large (la colonne de droite commence vers 900). */
 export type Caption = { t: number; end: number; words: { t: number; w: string }[] };
-export const Captions: React.FC<{ data: Caption[] }> = ({ data }) => {
+export const Captions: React.FC<{ data: Caption[]; hl?: string }> = ({ data, hl = "#FFD23F" }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const now = frame / fps;
@@ -344,7 +344,7 @@ export const Captions: React.FC<{ data: Caption[] }> = ({ data }) => {
             <span
               key={i}
               style={{
-                color: on ? "#FFD23F" : "#fff",
+                color: on ? hl : "#fff",
                 WebkitTextStroke: "9px #000",
                 paintOrder: "stroke fill",
                 textShadow: "0 5px 14px rgba(0,0,0,0.6)",
