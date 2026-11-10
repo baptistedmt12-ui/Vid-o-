@@ -133,6 +133,6 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
 - **Compte TikTok en allemand** : scripts écrits directement en allemand (traduction française dans `brief.md`),
   textes à l'écran en allemand.
 - **Voix off : voix gratuites Microsoft (edge-tts, sans limite)**, pas ElevenLabs/Maxime pour ce compte. Extraits
-  dans `voix-essais/` ; voix retenue : *(à choisir par l'utilisateur)*.
+  dans `voix-essais/` ; voix retenue : **Andrew** (`en-US-AndrewMultilingualNeural`, extrait 02), choisie par l'utilisateur.
 - Rushes : vidéos TikTok ou Instagram d'autres créateurs ; récupérer la meilleure version disponible
   (`yt-dlp` sur le lien si possible, sinon téléchargement HD sans filigrane par l'utilisateur).
