@@ -136,3 +136,13 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
   dans `voix-essais/` ; voix retenue : **Andrew** (`en-US-AndrewMultilingualNeural`, extrait 02), choisie par l'utilisateur.
 - Rushes : vidéos TikTok ou Instagram d'autres créateurs ; récupérer la meilleure version disponible
   (`yt-dlp` sur le lien si possible, sinon téléchargement HD sans filigrane par l'utilisateur).
+- **Format des histoires (expliqué par l'utilisateur)** : le narrateur, c'est l'artisan (lui). Un client l'appelle pour
+  une commande (cuillère, couteau en bois…), un détail de la demande cloche, et la raison n'arrive que plus tard.
+  Le bac rouge des rushes = sa réserve de bois humide (pas un élément de l'histoire).
+  Ex. de hook validé : « L'autre jour, un homme m'appelle et me demande de fabriquer un petit couteau en bois pour son
+  fils. Je lui demande quel âge a son fils. Il me dit 16 ans. Je lui demande pourquoi en bois. Et ce qu'il m'a répondu
+  n'était pas ce que j'attendais. »
+- **Le hook doit créer une émotion ou une intrigue forte** (ce qui touche ou ce qui intrigue), pas raconter une
+  anecdote de travail : on doit vouloir entendre la suite. Puis un fil conducteur qui garde le suspense jusqu'à la fin,
+  et une fin qui fait réagir en commentaires. Ne pas recopier la mécanique d'un exemple (ex. « interdiction brisée ») :
+  les exemples donnent le niveau, pas la recette.
