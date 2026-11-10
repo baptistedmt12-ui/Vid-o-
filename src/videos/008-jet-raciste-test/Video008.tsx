@@ -31,7 +31,7 @@ const Sfx: React.FC<{ t: number; name: string; volume: number; len?: number }> =
 /** textes=false : pas d'habillage lié au script (il sera calé sur la voix off quand elle arrivera). */
 export const Video008: React.FC<{ musique?: number; test?: boolean; textes?: boolean }> = ({
   musique = 0.55,
-  test = true,
+  test = false,
   textes = false,
 }) => {
   return (

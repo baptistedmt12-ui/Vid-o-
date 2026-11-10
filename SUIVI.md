@@ -21,7 +21,7 @@ Ce fichier regroupe trois choses :
 | 005 | Le compteur (moto en LLD à rendre lundi) | 🔍 Relecture | 9:16 (1080×1920) | 1 min 06 | `Video005` | — | — | — | v1 rendue, graphiques compacts |
 | 006 | On Air Chambly — annonce du 15/15/15 (banane en voiture) | 🔍 Relecture | 9:16 (1080×1920) 60 i/s | 10 s | `Video006` | — | — | — | v2 calée sur la voix (Whisper) |
 | 007 | Inox en muscu (extrait « Que devient Inox en Muscu ») | 🔍 Relecture | 9:16 (1080×1920) 25 i/s | 1 min 06 | `Video007` | — | — | — | v1 rendue, musique générée calée sur les coupes |
-| 008 | TEST style jet premium (script « raciste ») — ne pas publier | 🔍 Relecture | 9:16 (1080×1920) | 1 min 21 | `Video008Test` | — | — | — | Images d'un autre compte : test de style uniquement |
+| 008 | Style jet premium (script « raciste »), sans voix | 🔍 Relecture | 9:16 (1080×1920) | 1 min 21 | `Video008Test` | — | — | — | Images de @udetailers (accord de l'utilisateur) ; textes à caler sur la voix |
 | 009 | | 💡 Idée | | | | | | | |
 
 ### Banque d'idées

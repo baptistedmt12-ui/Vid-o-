@@ -6,9 +6,8 @@
 - **Plateforme :** TikTok
 - **Composition Remotion :** `Video008Test`
 
-> ⚠️ **NE PAS PUBLIER.** Les images viennent d'un reel Instagram d'un autre compte (@udetailers) et
-> on y voit le visage d'une vraie personne. Ce montage sert uniquement à valider le style ; la vraie
-> vidéo sera refaite avec les rushes de l'utilisateur. Ni le rush ni l'export ne sont mis sur GitHub.
+> Images : reel Instagram du compte @udetailers. L'utilisateur indique avoir l'accord pour les utiliser
+> (2026-11-10) ; mention « TEST » retirée. Le rush reste hors Git (`rushes/original/`).
 
 ## Ma demande
 
@@ -42,6 +41,9 @@ par moments, motion design, effets sonores, épuré et premium (nettoyage de jet
   → habillage lié au script masqué (`textes=false` par défaut) avec ses bruitages d'histoire ;
   il reste le montage, les effets, la musique (sans le blanc) et les sons de transition.
   Écritures d'origine vérifiées : seulement « $45M Private Jet » (0–2 s du reel), passage non utilisé.
+
+- 2026-11-10 — **v1** (`export/008-v1.mp4`) : même montage, sans la mention « TEST » (accord de l'utilisateur).
+  Mis sur GitHub via Git LFS (> 100 Mo).
 
 ## À faire / retours
 
