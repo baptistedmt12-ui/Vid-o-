@@ -162,3 +162,9 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
     1re ; 1–2 emojis en fin de titre. Titre **accrocheur** (en allemand, qui pose une question ou une promesse,
     sans donner la réponse). Les étiquettes du haut à gauche passent **sous le titre** (`top = titleBottom(n)`),
     et les illustrations au centre ne doivent pas le recouvrir.
+- **Diversité des scripts (demande de l'utilisateur)** : varier au maximum les histoires pour toucher le plus de monde
+  (familles, couples, enfants, deuil, humour, argent, voisins, métiers…), et quand c'est possible faire un lien avec
+  l'actualité ou des sujets qui parlent à beaucoup de gens (en Allemagne). Toujours en rapport avec ce qu'on voit dans
+  la vidéo, toujours pour la rétention et la monétisation : hook fort, fil conducteur et suspense du début à la fin,
+  fin qui fait réagir en commentaires.
+- Les liens arrivent groupés dans un même message : **ne pas commencer avant le « go » de l'utilisateur**.
