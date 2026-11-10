@@ -61,6 +61,8 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
 - **Incruster des images** quand il parle d'un objet (ex. le casque à marguerite, comme une photo prise par lui),
   plutôt qu'un dessin : demander une vraie photo si on n'en a pas.
 - « Filigrane » = les zones de l'interface TikTok (likes, commentaires, description…) : rien dedans.
+- **Garder libre la bande ~280–430 px en haut** : il y met son titre (sous la barre « Suivis / Pour toi »).
+  Les graphiques du haut commencent vers 450 px.
 
 ## Transcription de la voix
 - « Comme d'habitude » = graphiques animés **calés au mot près sur ce qu'il dit** : toujours transcrire.
