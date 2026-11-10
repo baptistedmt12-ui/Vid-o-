@@ -23,7 +23,8 @@ Ce fichier regroupe trois choses :
 | 007 | Inox en muscu (extrait « Que devient Inox en Muscu ») | 🔍 Relecture | 9:16 (1080×1920) 25 i/s | 1 min 06 | `Video007` | — | — | — | v1 rendue, musique générée calée sur les coupes |
 | 008 | Style jet premium (script « raciste »), sans voix | 🔍 Relecture | 9:16 (1080×1920) | 1 min 03 | `Video008Test` | — | — | — | Images de @udetailers (accord de l'utilisateur) ; textes à caler sur la voix |
 | 009 | Le scooter volé (casque à marguerite) | 🔍 Relecture | 9:16 (1080×1920) | 1 min 02 | `Video009` | — | — | — | v1 calée au mot près sur la voix off |
-| 010 | | 💡 Idée | | | | | | | |
+| 010 | TMAX noir (rush @aliengarage.th), sans voix | 🔍 Relecture | 9:16 (1080×1920) 60 i/s | 1 min 03 | `Video010` | — | — | — | Son d'origine (ASMR), aucun habillage |
+| 011 | | 💡 Idée | | | | | | | |
 
 ### Banque d'idées
 

@@ -17,6 +17,8 @@ import { Video008 } from "./videos/008-jet-raciste-test/Video008";
 import { TOTAL_FRAMES as TOTAL008 } from "./videos/008-jet-raciste-test/timeline";
 import { Video009 } from "./videos/009-scooter-nettoyage/Video009";
 import { TOTAL_FRAMES as TOTAL009 } from "./videos/009-scooter-nettoyage/timeline";
+import { Video010 } from "./videos/010-aliengarage-1/Video010";
+import { TOTAL_FRAMES as TOTAL010 } from "./videos/010-aliengarage-1/timeline";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -81,6 +83,7 @@ export const RemotionRoot: React.FC = () => {
         height={1920}
         defaultProps={{ musique: false }}
       />
+      <Composition id="Video010" component={Video010} durationInFrames={TOTAL010} fps={60} width={1080} height={1920} />
       <Composition id="Video009" component={Video009} durationInFrames={TOTAL009} fps={30} width={1080} height={1920} />
       <Composition id="Video008Test" component={Video008} durationInFrames={TOTAL008} fps={30} width={1080} height={1920} />
     </>
