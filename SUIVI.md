@@ -35,7 +35,8 @@ Ce fichier regroupe trois choses :
 | 019 | Le mec dans le coffre | 🔍 Relecture | 9:16 (1080×1920) | 65 s | `Video019` | — | — | — | v1 : voix Maxime, hook n° 7 |
 | 020 | Remettez la bosse ! | 🔍 Relecture | 9:16 (1080×1920) | 61 s | `Video020` | — | — | — | v1 : voix Maxime, hook n° 2 |
 | 021 | Les gamins qui poussent la voiture | 🔍 Relecture | 9:16 (1080×1920) | 61 s | `Video021` | — | — | — | v1 : voix Maxime, hook n° 5 |
-| 022 | | 💡 Idée | | | | | | | |
+| 022 | Omas Löffel (grande cuillère, compte allemand) | 🔍 Relecture | 9:16 (1080×1920) | 63 s | `Video022` | — | — | — | v1 : voix Andrew (edge-tts, allemand), sous-titres, habillage épuré |
+| 023 | | 💡 Idée | | | | | | | |
 
 ### Banque d'idées
 

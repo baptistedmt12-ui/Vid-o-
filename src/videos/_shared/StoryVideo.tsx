@@ -16,8 +16,9 @@ export const StoryVideo: React.FC<{
   sfx: Sfxs;
   tension?: [number, number];
   ambiance?: number;
+  whoosh?: number;
   children: React.ReactNode;
-}> = ({ dir, cuts, zooms, sfx, tension, ambiance = 0.06, children }) => {
+}> = ({ dir, cuts, zooms, sfx, tension, ambiance = 0.06, whoosh = 0.15, children }) => {
   const A = (f: string) => `${dir}/assets/${f}`;
   return (
     <AbsoluteFill style={{ backgroundColor: "#0B0B0D" }}>
@@ -30,7 +31,7 @@ export const StoryVideo: React.FC<{
           <Audio src={staticFile(A("heartbeat.wav"))} volume={0.2} />
         </Sequence>
       )}
-      {cuts.map((c) => <Sfx key={`w${c.t}`} src={A("whoosh.wav")} t={c.t - 0.2} volume={0.15} />)}
+      {cuts.map((c) => <Sfx key={`w${c.t}`} src={A("whoosh.wav")} t={c.t - 0.2} volume={whoosh} />)}
       {(sfx.pop ?? []).map((t) => <Sfx key={`p${t}`} src={A("pop.wav")} t={t} volume={0.2} />)}
       {(sfx.impact ?? []).map((t) => <Sfx key={`i${t}`} src={A("impact.wav")} t={t} volume={0.24} />)}
       {(sfx.notif ?? []).map((t) => <Sfx key={`n${t}`} src={A("notif.wav")} t={t} volume={0.18} />)}

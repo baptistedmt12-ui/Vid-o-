@@ -277,7 +277,7 @@ export const Polaroid: React.FC<{ src: string; t: number; top: number; left?: nu
 };
 
 /** Sondage de fin (appel aux commentaires). */
-export const Poll: React.FC<{ top: number; t: number; question: string; a: string; b: string }> = ({ top, t, question, a, b }) => {
+export const Poll: React.FC<{ top: number; t: number; question: string; a: string; b: string; footer?: string }> = ({ top, t, question, a, b, footer = "Réponds en commentaire 👇" }) => {
   const { pop, frame, at } = useG();
   const ka = pop(t + 0.35, 14, 200);
   const kb = pop(t + 0.55, 14, 200);
@@ -301,7 +301,7 @@ export const Poll: React.FC<{ top: number; t: number; question: string; a: strin
           <Opt k={ka} text={a} c={GREEN} />
           <Opt k={kb} text={b} c={RED} />
         </div>
-        <div style={{ fontFamily: BODY, fontWeight: 700, fontSize: 24, color: "#77777c", marginTop: 12, textAlign: "center" }}>Réponds en commentaire 👇</div>
+        <div style={{ fontFamily: BODY, fontWeight: 700, fontSize: 24, color: "#77777c", marginTop: 12, textAlign: "center" }}>{footer}</div>
       </div>
     </Side>
   );

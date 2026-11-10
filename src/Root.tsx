@@ -25,6 +25,7 @@ import { Video018, TOTAL_FRAMES as F018 } from "./videos/018-mamie-portail/Video
 import { Video019, TOTAL_FRAMES as F019 } from "./videos/019-mec-dans-le-coffre/Video019";
 import { Video020, TOTAL_FRAMES as F020 } from "./videos/020-remettre-la-bosse/Video020";
 import { Video021, TOTAL_FRAMES as F021 } from "./videos/021-gamin-pousse/Video021";
+import { Video022, TOTAL_FRAMES as F022 } from "./videos/022-omas-loeffel/Video022";
 import { Video006, FPS as FPS006, TOTAL_FRAMES as TOTAL006 } from "./videos/006-on-air-chambly/Video006";
 
 export const RemotionRoot: React.FC = () => {
@@ -88,6 +89,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition id="Video019" component={Video019} durationInFrames={F019} fps={30} width={1080} height={1920} />
       <Composition id="Video020" component={Video020} durationInFrames={F020} fps={30} width={1080} height={1920} />
       <Composition id="Video021" component={Video021} durationInFrames={F021} fps={30} width={1080} height={1920} />
+      <Composition id="Video022" component={Video022} durationInFrames={F022} fps={30} width={1080} height={1920} />
     </>
   );
 };

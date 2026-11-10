@@ -41,7 +41,7 @@ MAXW, MAXC = 4, 24
 chunks, cur = [], []
 for w, t in zip(words, T):
     cur.append({"t": round(t, 2), "w": w})
-    if len(cur) >= MAXW or sum(len(x["w"]) + 1 for x in cur) >= MAXC or re.search(r"[.,:;?!]$", w):
+    if len(cur) >= MAXW or sum(len(x["w"]) + 1 for x in cur) >= MAXC or re.search(r"[.,:;?!][“”»\"]?$", w):
         chunks.append(cur); cur = []
 if cur:
     chunks.append(cur)
