@@ -38,7 +38,8 @@ Ce fichier regroupe trois choses :
 | 022 | Omas Löffel (grande cuillère, compte allemand) | 🔍 Relecture | 9:16 (1080×1920) | 63 s | `Video022` | — | — | — | v1 : voix Andrew (edge-tts, allemand), sous-titres, habillage épuré |
 | 023 | Die zerbrochene Schale (bol percé → cadre de miroir) | 🔍 Relecture | 9:16 (1080×1920) | 64,5 s | `Video023` | — | — | — | v1 : voix Andrew, titre pyramide, sous-titres bleu clair |
 | 024 | Die Tafel-Kelle (louche, soupe populaire) | 🔍 Relecture | 9:16 (1080×1920) | 63 s | `Video024` | — | — | — | v1 : voix Andrew vivante, 78 Mo |
-| 025 | | 💡 Idée | | | | | | | |
+| 025 | Der Pfannenwender der Schwiegermutter (spatule) | 🔍 Relecture | 9:16 (1080×1920) | 63,6 s | `Video025` | — | — | — | v1 : humour famille, 78 Mo |
+| 026 | | 💡 Idée | | | | | | | |
 
 ### Banque d'idées
 
