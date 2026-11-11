@@ -22,7 +22,7 @@ bague, la regarde et éclate de rire. Puis il sort une petite boîte de sa poche
 lui-même une bague sur lui et qu'il n'osait pas ! Une femme a-t-elle le droit de faire la demande ?
 
 ## Ce qui a été fait
-- *2026-11-11* — v1 (`export/029-v1.mp4`, 10 Mb/s, -14 LUFS, 76 Mo) : voix Andrew par blocs, Whisper OK (« wenn er
+- *2026-11-11* — v1 (`export/029-v1.mp4`, 10 Mb/s, -14 LUFS, 76 Mo ; re-rendue avant envoi pour corriger « gebr8 »/« Sch8el » dans les sous-titres) : voix Andrew par blocs, Whisper OK (« wenn er
   Nein sagt » remplacé : mal prononcé) ; remontage à vitesse 1, sans couvercle marqué ; titre, étiquettes,
   2 illustrations, sous-titres bleu clair, sondage final (JA / NEIN).
 
