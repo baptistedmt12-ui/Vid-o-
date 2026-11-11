@@ -350,7 +350,7 @@ export const Captions: React.FC<{ data: Caption[]; hl?: string }> = ({ data, hl 
                 textShadow: "0 5px 14px rgba(0,0,0,0.6)",
                 marginRight: i < c.words.length - 1 ? "0.26em" : 0,
                 display: "inline-block",
-                transform: on ? "scale(1.06)" : undefined,
+                transform: on && w.w.length < 10 ? "scale(1.06)" : undefined, // pas de zoom sur les mots longs (ils mordaient sur les espaces)
               }}
             >
               {w.w}
