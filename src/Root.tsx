@@ -27,6 +27,8 @@ import { Video020, TOTAL_FRAMES as F020 } from "./videos/020-remettre-la-bosse/V
 import { Video021, TOTAL_FRAMES as F021 } from "./videos/021-gamin-pousse/Video021";
 import { Video022, TOTAL_FRAMES as F022 } from "./videos/022-omas-loeffel/Video022";
 import { Video023, TOTAL_FRAMES as F023 } from "./videos/023-zerbrochene-schale/Video023";
+import { Video024, TOTAL_FRAMES as F024 } from "./videos/024-tafel-kelle/Video024";
+import { Video025, TOTAL_FRAMES as F025 } from "./videos/025-schwiegermutter/Video025";
 import { Video006, FPS as FPS006, TOTAL_FRAMES as TOTAL006 } from "./videos/006-on-air-chambly/Video006";
 
 export const RemotionRoot: React.FC = () => {
@@ -92,6 +94,8 @@ export const RemotionRoot: React.FC = () => {
       <Composition id="Video021" component={Video021} durationInFrames={F021} fps={30} width={1080} height={1920} />
       <Composition id="Video022" component={Video022} durationInFrames={F022} fps={30} width={1080} height={1920} />
       <Composition id="Video023" component={Video023} durationInFrames={F023} fps={30} width={1080} height={1920} />
+      <Composition id="Video024" component={Video024} durationInFrames={F024} fps={30} width={1080} height={1920} />
+      <Composition id="Video025" component={Video025} durationInFrames={F025} fps={30} width={1080} height={1920} />
     </>
   );
 };
