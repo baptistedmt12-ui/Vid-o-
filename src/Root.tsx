@@ -33,6 +33,7 @@ import { Video026, TOTAL_FRAMES as F026 } from "./videos/026-drei-ringe/Video026
 import { Video027, TOTAL_FRAMES as F027 } from "./videos/027-holzmesser/Video027";
 import { Video028, TOTAL_FRAMES as F028 } from "./videos/028-ki-wette/Video028";
 import { Video029, TOTAL_FRAMES as F029 } from "./videos/029-antrag-loeffel/Video029";
+import { Video030, TOTAL_FRAMES as F030 } from "./videos/030-hundeschale/Video030";
 import { Video006, FPS as FPS006, TOTAL_FRAMES as TOTAL006 } from "./videos/006-on-air-chambly/Video006";
 
 export const RemotionRoot: React.FC = () => {
@@ -104,6 +105,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition id="Video027" component={Video027} durationInFrames={F027} fps={30} width={1080} height={1920} />
       <Composition id="Video028" component={Video028} durationInFrames={F028} fps={30} width={1080} height={1920} />
       <Composition id="Video029" component={Video029} durationInFrames={F029} fps={30} width={1080} height={1920} />
+      <Composition id="Video030" component={Video030} durationInFrames={F030} fps={30} width={1080} height={1920} />
     </>
   );
 };

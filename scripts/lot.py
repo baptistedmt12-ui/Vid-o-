@@ -41,14 +41,17 @@ def voix(d):
     blocks = [b.strip() for b in open(f"{d}/script-de.txt").read().split("\n\n") if b.strip()]
     tmp = f"{d}/rushes/original"
     os.makedirs(tmp, exist_ok=True)
-    parts = []
+    parts, offs, t = [], [], 0.0
     for i, b in enumerate(blocks):
         mp3, wav = f"{tmp}/bloc{i}.mp3", f"{tmp}/bloc{i}.wav"
         tts(b, mp3)
         trim = "silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse"
         sh("ffmpeg", "-v", "error", "-y", "-i", mp3, "-af", trim, "-ar", "48000", "-ac", "2", wav)
         parts.append(wav)
+        offs.append((t, wav))
+        t += dur(wav)
         if i < len(blocks) - 1:
+            t += GAPS[min(i, 2)]
             g = f"{tmp}/gap{i}.wav"
             sh("ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-t", str(GAPS[min(i, 2)]), "-i", "anullsrc=r=48000:cl=stereo", g)
             parts.append(g)
@@ -62,16 +65,18 @@ def voix(d):
     # Vérification Whisper (allemand) + minutage des mots
     import numpy as np
     from faster_whisper import WhisperModel
-    a = np.frombuffer(subprocess.run(["ffmpeg", "-v", "error", "-i", f"{d}/assets/voix.wav", "-f", "s16le", "-ac", "1",
-                                      "-ar", "16000", "-"], capture_output=True).stdout, np.int16).astype(np.float32) / 32768
     pad = 0.5  # un demi-seconde de silence devant pour que Whisper n'avale pas le 1er mot
-    a = np.concatenate([np.zeros(int(16000 * pad), np.float32), a])
     m = WhisperModel("medium", device="cpu", compute_type="int8")
-    segs, _ = m.transcribe(a, language="de", beam_size=5, word_timestamps=True)
     W, txt = [], []
-    for s in segs:
-        txt.append(s.text.strip())
-        W += [[round(max(0, w.start - pad), 2), round(w.end - pad, 2), w.word.strip()] for w in s.words]
+    # bloc par bloc : Whisper saute parfois une phrase sur un long fichier
+    for off, wav in offs:
+        a = np.frombuffer(subprocess.run(["ffmpeg", "-v", "error", "-i", wav, "-f", "s16le", "-ac", "1", "-ar", "16000", "-"],
+                                         capture_output=True).stdout, np.int16).astype(np.float32) / 32768
+        a = np.concatenate([np.zeros(int(16000 * pad), np.float32), a, np.zeros(8000, np.float32)])
+        segs, _ = m.transcribe(a, language="de", beam_size=5, word_timestamps=True, condition_on_previous_text=False)
+        for s in segs:
+            txt.append(s.text.strip())
+            W += [[round(max(0, w.start - pad) + off, 2), round(w.end - pad + off, 2), w.word.strip()] for w in s.words]
     json.dump(W, open(f"{d}/assets/mots.json", "w"), ensure_ascii=False)
     nid = os.path.basename(d)[:3]
     json.dump({nid: blocks}, open(f"{d}/assets/script.json", "w"), ensure_ascii=False)
