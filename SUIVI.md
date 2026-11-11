@@ -41,7 +41,8 @@ Ce fichier regroupe trois choses :
 | 025 | Der Pfannenwender der Schwiegermutter (spatule) | 🔍 Relecture | 9:16 (1080×1920) | 63,6 s | `Video025` | — | — | — | v1 : humour famille, 78 Mo |
 | 026 | Drei Ringe (porte-alliances, humour) | 🔍 Relecture | 9:16 (1080×1920) | 62,6 s | `Video026` | — | — | — | v1 : 79 Mo |
 | 027 | Das Holzmesser (couteau en bois pour le fils) | 🔍 Relecture | 9:16 (1080×1920) | 63,9 s | `Video027` | — | — | — | v1 : histoire de l'utilisateur en allemand, 77 Mo |
-| 028 | | 💡 Idée | | | | | | | |
+| 028 | Die KI-Wette (cuillère à la hachette, IA) | 🔍 Relecture | 9:16 (1080×1920) | 63,4 s | `Video028` | — | — | — | v1 : actualité IA, 80 Mo |
+| 029 | | 💡 Idée | | | | | | | |
 
 ### Banque d'idées
 
