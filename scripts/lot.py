@@ -107,17 +107,6 @@ def voix(d):
 def montage(d, total):
     sh("python3", f"{ROOT}/scripts/remodel_seg.py", f"{d}/rushes/original/reel.mkv", f"{d}/rushes/original/travail.mp4",
        f"{d}/rushes/original/ambiance.wav", str(total), f"{d}/rushes/segments.json")
-    import numpy as np
-    a = np.frombuffer(subprocess.run(["ffmpeg", "-v", "error", "-i", f"{d}/rushes/original/ambiance.wav", "-f", "s16le",
-                                      "-ac", "1", "-ar", "8000", "-"], capture_output=True).stdout, np.int16).astype(np.float32) / 32768
-    segs = json.load(open(f"{d}/rushes/segments.json"))
-    t = 0
-    for s in segs:
-        L = s[1] - s[0]
-        x = a[int(t * 8000):int(min(total, t + L) * 8000)]
-        if len(x):
-            print(f"plan {t:5.1f}-{t + L:5.1f} : {20 * np.log10(np.sqrt((x ** 2).mean()) + 1e-9):6.1f} dB")
-        t += L
     # dossier public de liens durs pour le rendu
     name = os.path.basename(d)
     pub = f"{ROOT}/out/pub-{name[:3]}/{name}"
@@ -129,6 +118,17 @@ def montage(d, total):
     for f in os.listdir(f"{d}/assets"):
         if f.endswith(".wav"):
             os.link(f"{d}/assets/{f}", f"{pub}/assets/{f}")
+    import numpy as np
+    a = np.frombuffer(subprocess.run(["ffmpeg", "-v", "error", "-i", f"{d}/rushes/original/ambiance.wav", "-f", "s16le",
+                                      "-ac", "1", "-ar", "8000", "-"], capture_output=True).stdout, np.int16).astype(np.float32) / 32768
+    segs = json.load(open(f"{d}/rushes/segments.json"))
+    t = 0
+    for s in segs:
+        L = s[1] - s[0]
+        x = a[int(t * 8000):int(min(total, t + L) * 8000)]
+        if len(x):
+            print(f"plan {t:5.1f}-{t + L:5.1f} : {20 * np.log10(np.sqrt((x ** 2).mean()) + 1e-9):6.1f} dB")
+        t += L
 
 
 def rendu(d, comp):
