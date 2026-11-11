@@ -39,7 +39,8 @@ Ce fichier regroupe trois choses :
 | 023 | Die zerbrochene Schale (bol percé → cadre de miroir) | 🔍 Relecture | 9:16 (1080×1920) | 64,5 s | `Video023` | — | — | — | v1 : voix Andrew, titre pyramide, sous-titres bleu clair |
 | 024 | Die Tafel-Kelle (louche, soupe populaire) | 🔍 Relecture | 9:16 (1080×1920) | 63 s | `Video024` | — | — | — | v1 : voix Andrew vivante, 78 Mo |
 | 025 | Der Pfannenwender der Schwiegermutter (spatule) | 🔍 Relecture | 9:16 (1080×1920) | 63,6 s | `Video025` | — | — | — | v1 : humour famille, 78 Mo |
-| 026 | | 💡 Idée | | | | | | | |
+| 026 | Drei Ringe (porte-alliances, humour) | 🔍 Relecture | 9:16 (1080×1920) | 62,6 s | `Video026` | — | — | — | v1 : 79 Mo |
+| 027 | | 💡 Idée | | | | | | | |
 
 ### Banque d'idées
 
