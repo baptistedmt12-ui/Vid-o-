@@ -176,3 +176,12 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
   (« Neun. Neun Jahre alt! »), réactions à soi (« Warum, um Himmels willen? »), mots qui claquent en fin de phrase
   (« Alle! »), questions directes. Voix Andrew à vitesse et hauteur **normales**, texte généré d'un bloc :
   **pas** de rate/pitch différents par bloc (essai n° 3 refusé : « trop », « limite accéléré »).
+- **Chaîne de production du compte allemand** (lot 024–035) : `scripts/lot.py voix|montage|rendu <dossier>` +
+  composant `WoodVideo` / `EmojiScene` (`src/videos/_shared/wood.tsx`).
+  - Voix générée **bloc par bloc** (4 blocs de `script-de.txt`), petites pauses entre les parties (0,65 / 0,5 / 0,6 s),
+    Whisper bloc par bloc ; chiffres affichés via `assets/ersetzen.json` (mots entiers uniquement).
+  - Mots mal prononcés par Andrew à éviter : « KI » (dit « Kai » → écrire « künstliche Intelligenz »), « Knack »,
+    « Burnouts », « trauert », « Rasenmäher », « wenn er Nein sagt », « Er wird sich freuen » (→ « will »).
+  - Rushes : ne jamais montrer le couvercle rouge du bac (nom du créateur embossé) ; éviter les temps morts.
+  - Rendu final à **10 Mb/s** (H.264 preset slow, audio 320 kb/s, -14 LUFS) : au-dessus du débit des rushes
+    (2–5 Mb/s), donc sans perte visible, et < 100 Mo → commit normal (pas de quota LFS) et partage iPhone possible.
