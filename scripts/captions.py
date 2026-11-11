@@ -45,6 +45,15 @@ for w, t in zip(words, T):
         chunks.append(cur); cur = []
 if cur:
     chunks.append(cur)
+# un mot seul (ex. « mehr. ») rejoint le groupe précédent s'il tient sur la ligne et que ce groupe ne finit pas une phrase
+merged = []
+for c in chunks:
+    if merged and len(c) == 1 and not re.search(r"[.,:;?!][“”»\"]?$", merged[-1][-1]["w"]) \
+            and sum(len(x["w"]) + 1 for x in merged[-1] + c) <= MAXC + 8:
+        merged[-1] += c
+    else:
+        merged.append(c)
+chunks = merged
 end_voice = W[-1][1]
 res = []
 for i, c in enumerate(chunks):

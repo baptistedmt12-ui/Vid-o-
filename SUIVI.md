@@ -36,7 +36,8 @@ Ce fichier regroupe trois choses :
 | 020 | Remettez la bosse ! | 🔍 Relecture | 9:16 (1080×1920) | 61 s | `Video020` | — | — | — | v1 : voix Maxime, hook n° 2 |
 | 021 | Les gamins qui poussent la voiture | 🔍 Relecture | 9:16 (1080×1920) | 61 s | `Video021` | — | — | — | v1 : voix Maxime, hook n° 5 |
 | 022 | Omas Löffel (grande cuillère, compte allemand) | 🔍 Relecture | 9:16 (1080×1920) | 63 s | `Video022` | — | — | — | v1 : voix Andrew (edge-tts, allemand), sous-titres, habillage épuré |
-| 023 | | 💡 Idée | | | | | | | |
+| 023 | Die zerbrochene Schale (bol percé → cadre de miroir) | 🔍 Relecture | 9:16 (1080×1920) | 64,5 s | `Video023` | — | — | — | v1 : voix Andrew, titre pyramide, sous-titres bleu clair |
+| 024 | | 💡 Idée | | | | | | | |
 
 ### Banque d'idées
 
