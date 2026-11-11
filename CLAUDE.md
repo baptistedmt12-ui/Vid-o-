@@ -171,3 +171,8 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
 - **Hooks osés et choquants autorisés** (demande de l'utilisateur) : toujours un élément qui intrigue, contredit ou
   choque dès la 1re phrase pour stopper le scroll. Limite : rester dans les règles TikTok pour garder la monétisation
   (pas de violence explicite, sexe, actes dangereux à imiter, ni fausses infos sur des personnes ou événements réels).
+- **Intonation choisie (essai n° 2, `voix-essais/intonation/2-script-vivant.mp3`)** : le narrateur **vit** l'histoire.
+  Le jeu passe uniquement par l'écriture du script : points d'exclamation aux moments forts, répétitions qui montent
+  (« Neun. Neun Jahre alt! »), réactions à soi (« Warum, um Himmels willen? »), mots qui claquent en fin de phrase
+  (« Alle! »), questions directes. Voix Andrew à vitesse et hauteur **normales**, texte généré d'un bloc :
+  **pas** de rate/pitch différents par bloc (essai n° 3 refusé : « trop », « limite accéléré »).
