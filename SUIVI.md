@@ -43,7 +43,8 @@ Ce fichier regroupe trois choses :
 | 027 | Das Holzmesser (couteau en bois pour le fils) | 🔍 Relecture | 9:16 (1080×1920) | 63,9 s | `Video027` | — | — | — | v1 : histoire de l'utilisateur en allemand, 77 Mo |
 | 028 | Die KI-Wette (cuillère à la hachette, IA) | 🔍 Relecture | 9:16 (1080×1920) | 63,4 s | `Video028` | — | — | — | v1 : actualité IA, 80 Mo |
 | 029 | Der Antrag im Löffel (cuillère, demande en mariage) | 🔍 Relecture | 9:16 (1080×1920) | 62,7 s | `Video029` | — | — | — | v1 : 76 Mo |
-| 030 | | 💡 Idée | | | | | | | |
+| 030 | Die Hundeschale (gamelle, chien en deuil) | 🔍 Relecture | 9:16 (1080×1920) | 62,9 s | `Video030` | — | — | — | v1 : 80 Mo |
+| 031 | | 💡 Idée | | | | | | | |
 
 ### Banque d'idées
 

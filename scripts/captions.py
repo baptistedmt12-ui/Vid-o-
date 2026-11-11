@@ -13,8 +13,8 @@ for a, b in [("quatre cent soixante euros", "460\u00a0€"), ("mille cinq cents 
 import os
 _rep = os.path.join(os.path.dirname(os.path.abspath(words_p)), "ersetzen.json")  # remplacements propres à la vidéo (chiffres…)
 if os.path.exists(_rep):
-    for a, b in json.load(open(_rep)).items():
-        text = text.replace(a, b)
+    for a, b in json.load(open(_rep)).items():  # mots entiers seulement (sinon « gebracht » → « gebr8 »)
+        text = re.sub(r"(?<![\wäöüÄÖÜß])" + re.escape(a) + r"(?![\wäöüÄÖÜß])", b, text)
 words = [w for w in text.replace("\n", " ").split(" ") if w]  # les espaces insécables restent dans le mot
 
 def norm(w):
