@@ -51,7 +51,6 @@ une ligne/courbe qui suit mes jambes et montre qu'elles reviennent dans l'axe. *
 ## Export
 
 - `export/008-v1.mp4` : 1 min 01,7, 1080×1920, 59,94 i/s, H.264 CRF 14, **155 Mo** — sur GitHub via Git LFS.
-- `export/008-v1-hevc.mp4` : même vidéo en HEVC 2 passes, < 95 Mo (lien de secours).
 
 ## À faire / retours
 

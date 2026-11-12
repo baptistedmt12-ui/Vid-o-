@@ -41,7 +41,8 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
   - moins de 100 Mo : commit normal ;
   - plus de 100 Mo : via **Git LFS** (`git lfs track "videos/NNN-nom/export/NNN-vX.mp4"`, uniquement le
     fichier final, pas les rushes) — les domaines LFS sont autorisés dans le réseau de l'environnement.
-  - Donner le lien direct à ouvrir dans Safari :
+  - **Pas de version allégée** (HEVC, < 95 Mo…) : l'utilisateur n'en veut pas, seulement la qualité max.
+  - Donner le lien direct à ouvrir dans Safari (appui long → « Télécharger le fichier lié ») :
     `https://github.com/baptistedmt12-ui/Vid-o-/raw/<branche>/videos/NNN-nom/export/NNN-vX.mp4`
   - Le quota LFS gratuit est limité : supprimer du suivi LFS les anciennes versions remplacées.
 
