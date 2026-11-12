@@ -120,10 +120,8 @@ def voix(d):
             os.remove(f"{tmp}/{f}")
 
 
-def montage(d, total):
-    sh("python3", f"{ROOT}/scripts/remodel_seg.py", f"{d}/rushes/original/reel.mkv", f"{d}/rushes/original/travail.mp4",
-       f"{d}/rushes/original/ambiance.wav", str(total), f"{d}/rushes/segments.json")
-    # dossier public de liens durs pour le rendu
+def pub_links(d):
+    """Dossier public de liens durs pour le rendu, recréé à chaque fois (toujours la dernière voix)."""
     name = os.path.basename(d)
     pub = f"{ROOT}/out/pub-{name[:3]}/{name}"
     subprocess.run(["rm", "-rf", f"{ROOT}/out/pub-{name[:3]}"])
@@ -134,6 +132,12 @@ def montage(d, total):
     for f in os.listdir(f"{d}/assets"):
         if f.endswith(".wav"):
             os.link(f"{d}/assets/{f}", f"{pub}/assets/{f}")
+
+
+def montage(d, total):
+    sh("python3", f"{ROOT}/scripts/remodel_seg.py", f"{d}/rushes/original/reel.mkv", f"{d}/rushes/original/travail.mp4",
+       f"{d}/rushes/original/ambiance.wav", str(total), f"{d}/rushes/segments.json")
+    pub_links(d)
     import numpy as np
     a = np.frombuffer(subprocess.run(["ffmpeg", "-v", "error", "-i", f"{d}/rushes/original/ambiance.wav", "-f", "s16le",
                                       "-ac", "1", "-ar", "8000", "-"], capture_output=True).stdout, np.int16).astype(np.float32) / 32768
@@ -148,6 +152,7 @@ def montage(d, total):
 
 
 def rendu(d, comp):
+    pub_links(d)
     name = os.path.basename(d)
     out = f"{d}/export/{name[:3]}-v1.mp4"
     os.makedirs(f"{d}/export", exist_ok=True)
