@@ -52,7 +52,8 @@ Ce fichier regroupe trois choses :
 | 036 | Der angebliche Araber (mépris → revanche) | 🔍 Relecture | 9:16 (1080×1920) | 64 s | `Video036` | — | — | — | v2 : prononciation du hook corrigée |
 | 037 | Der undankbare Sohn (mépris → revanche) | 🔍 Relecture | 9:16 (1080×1920) | 62,8 s | `Video037` | — | — | — | v1 : 77 Mo |
 | 038 | Der Typ aus der Garage (mépris → revanche) | 🔍 Relecture | 9:16 (1080×1920) | 64,4 s | `Video038` | — | — | — | v1 : 79 Mo |
-| 039 | | 💡 Idée | | | | | | | |
+| 039 | Der Deutschlehrer (mépris → revanche) | 🔍 Relecture | 9:16 (1080×1920) | 62,1 s | `Video039` | — | — | — | v1 |
+| 040 | | 💡 Idée | | | | | | | |
 
 ### Banque d'idées
 
