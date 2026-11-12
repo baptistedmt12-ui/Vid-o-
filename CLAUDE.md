@@ -185,3 +185,8 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
   - Rushes : ne jamais montrer le couvercle rouge du bac (nom du créateur embossé) ; éviter les temps morts.
   - Rendu final à **10 Mb/s** (H.264 preset slow, audio 320 kb/s, -14 LUFS) : au-dessus du débit des rushes
     (2–5 Mb/s), donc sans perte visible, et < 100 Mo → commit normal (pas de quota LFS) et partage iPhone possible.
+- **Nouveau format de script (à partir du lot suivant) : « mépris → revanche »** — voir `scripts/format-mepris-revanche.md`.
+  Réplique choquante dès la 1re seconde (gardée telle quelle, demande de l'utilisateur), retournement secret,
+  révélation humiliante, « Tarif spécial … », question finale. Varier le type de mépris d'une vidéo à l'autre.
+  L'utilisateur peut aussi envoyer des scripts déjà écrits en français : les adapter en allemand (pas mot à mot),
+  à la bonne longueur. Vidéo finale entre 1 min et 1 min 05, voix qui commence à 0 s et finit à la fin.
