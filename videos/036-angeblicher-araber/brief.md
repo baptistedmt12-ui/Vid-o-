@@ -23,7 +23,8 @@ cuillère. » Il est devenu blême, puis rouge vif. Sa facture était salée. Ta
 auriez fait pareil ?
 
 ## Ce qui a été fait
-- *2026-11-12* — v1 (`export/036-v1.mp4`, 10 Mb/s, -14 LUFS, 82 Mo) : voix Andrew par blocs, Whisper OK ; remontage à
+- *2026-11-12* — v2 (`export/036-v2.mp4`) : « Du dreckiger Araber, Finger weg… » (virgule au lieu de « ! ») car Andrew prononçait « Araber! » avec un accent étranger en tout début de vidéo ; voix et rendu refaits.
+- *2026-11-12* — v1 (`export/036-v1.mp4`, remplacée), 10 Mb/s, -14 LUFS, 82 Mo) : voix Andrew par blocs, Whisper OK ; remontage à
   vitesse 1 (rush 100 % hachette), sans couvercle marqué ; titre, étiquettes, 2 illustrations, sous-titres bleu clair,
   sondage final.
 
