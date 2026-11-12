@@ -49,7 +49,8 @@ Ce fichier regroupe trois choses :
 | 033 | Nordkap (kuksa, burn-out) | 🔍 Relecture | 9:16 (1080×1920) | 64 s | `Video033` | — | — | — | v1 : 80 Mo |
 | 034 | Das Tablett (plateau, femme qui perd la vue) | 🔍 Relecture | 9:16 (1080×1920) | 63,6 s | `Video034` | — | — | — | v1 : 77 Mo |
 | 035 | Der Babylöffel (petite cuillère, désir d'enfant) | 🔍 Relecture | 9:16 (1080×1920) | 64,6 s | `Video035` | — | — | — | v1 : 78 Mo |
-| 036 | | 💡 Idée | | | | | | | |
+| 036 | Der angebliche Araber (mépris → revanche) | 🔍 Relecture | 9:16 (1080×1920) | 64 s | `Video036` | — | — | — | v1 : 82 Mo |
+| 037 | | 💡 Idée | | | | | | | |
 
 ### Banque d'idées
 
