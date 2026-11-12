@@ -24,12 +24,12 @@ def dur(f):
                                 capture_output=True, text=True).stdout.strip() or 0)
 
 
-def tts(text, out):
+def tts(text, out, extra=()):
     for i in range(8):
         if os.path.exists(out):
             os.remove(out)
         subprocess.run(["edge-tts", "--proxy", os.environ.get("HTTPS_PROXY", ""), "--voice", VOICE, "--text", text,
-                        "--write-media", out], capture_output=True)
+                        "--write-media", out, *extra], capture_output=True)
         # une génération coupée en route arrive parfois : on vérifie la durée attendue (~2,3 mots/s au minimum)
         if os.path.exists(out) and dur(out) > len(text.split()) / 4.2:
             return
@@ -42,11 +42,27 @@ def voix(d):
     tmp = f"{d}/rushes/original"
     os.makedirs(tmp, exist_ok=True)
     parts, offs, t = [], [], 0.0
+    trim = "silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse"
     for i, b in enumerate(blocks):
-        mp3, wav = f"{tmp}/bloc{i}.mp3", f"{tmp}/bloc{i}.wav"
-        tts(b, mp3)
-        trim = "silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse"
-        sh("ffmpeg", "-v", "error", "-y", "-i", mp3, "-af", trim, "-ar", "48000", "-ac", "2", wav)
+        wav = f"{tmp}/bloc{i}.wav"
+        # {{ … }} = réplique criée (ex. l'insulte du hook) : plus fort et plus tendu, le reste de la voix est normal
+        pieces = [p for p in re.split(r"(\{\{.*?\}\})", b) if p.strip()]
+        sub = []
+        for j, p in enumerate(pieces):
+            loud = p.startswith("{{")
+            txt = p.strip("{} ").strip()
+            mp3, pw = f"{tmp}/bloc{i}_{j}.mp3", f"{tmp}/bloc{i}_{j}.wav"
+            tts(txt, mp3, ["--volume=+50%", "--pitch=+6Hz", "--rate=+5%"] if loud else [])
+            sh("ffmpeg", "-v", "error", "-y", "-i", mp3, "-af", trim + (",volume=1.6,alimiter=limit=0.95" if loud else ""),
+               "-ar", "48000", "-ac", "2", pw)
+            sub.append(pw)
+            if j < len(pieces) - 1:
+                g = f"{tmp}/bloc{i}_{j}_gap.wav"
+                sh("ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-t", "0.35", "-i", "anullsrc=r=48000:cl=stereo", g)
+                sub.append(g)
+        open(f"{tmp}/bloc{i}.txt", "w").write("".join(f"file '{os.path.abspath(x)}'\n" for x in sub))
+        sh("ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", f"{tmp}/bloc{i}.txt", "-c:a", "pcm_s16le", wav)
+        blocks[i] = re.sub(r"\{\{|\}\}", "", b).replace("  ", " ").strip()
         parts.append(wav)
         offs.append((t, wav))
         t += dur(wav)
@@ -100,7 +116,7 @@ def voix(d):
     os.makedirs(os.path.dirname(out), exist_ok=True)
     sh("python3", f"{ROOT}/scripts/captions.py", f"{d}/assets/script.json", nid, f"{d}/assets/mots.json", out)
     for f in os.listdir(tmp):
-        if re.match(r"(bloc\d+\.(mp3|wav)|gap\d+\.wav|tail\.wav|voix\.txt)$", f):
+        if re.match(r"(bloc\d+.*\.(mp3|wav|txt)|gap\d+\.wav|tail\.wav|voix\.txt)$", f):
             os.remove(f"{tmp}/{f}")
 
 
