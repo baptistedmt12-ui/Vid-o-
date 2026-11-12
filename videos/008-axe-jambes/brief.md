@@ -1,6 +1,6 @@
 # Vidéo 008 — Les 5 étapes pour tes premières handstand push-ups (On Air, Chambly)
 
-- **Statut :** 🎬 Montage (rendu v1 en cours)
+- **Statut :** 🔍 Relecture (v1 rendue)
 - **Format :** 9:16 (1080×1920), **59,94 i/s**
 - **Durée finale :** 1 min 01,7 (60,3 s de vidéo + 1,4 s de récap)
 - **Plateforme :** TikTok (plus d'1 minute)
@@ -47,6 +47,11 @@ une ligne/courbe qui suit mes jambes et montre qu'elles reviennent dans l'axe. *
     axe vertical en pointillés au-dessus des mains, puis blanche « ✓ DANS L'AXE » + « POUSSE » ;
   - fin : image figée 1,4 s avec la liste des 5 étapes (la vidéo passe au-delà d'une minute) ;
   - sons très discrets (whoosh, tick, ding, pop à 14–22 % du volume), voix d'origine.
+
+## Export
+
+- `export/008-v1.mp4` : 1 min 01,7, 1080×1920, 59,94 i/s, H.264 CRF 14, **155 Mo** — sur GitHub via Git LFS.
+- `export/008-v1-hevc.mp4` : même vidéo en HEVC 2 passes, < 95 Mo (lien de secours).
 
 ## À faire / retours
 
