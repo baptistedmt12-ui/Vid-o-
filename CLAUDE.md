@@ -99,3 +99,4 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
   -pix_fmt yuv420p -an travail.mp4` (ou fps=60 si le rush est en 60 i/s), pointer la composition dessus, puis
   vérifier l'export : `ffmpeg -i export.mp4 -vf mpdecimate -f null -` ne doit presque rien supprimer.
 - **Résolution validée (09/11) :** 1080p suffit, pas de 4K. La 011 v2 (copie 30 i/s fixe + export ~96 Mo) lui convient.
+- **Remontage sans voix off (012) :** plans réordonnés + miroir en une passe ffmpeg (`videos/012-jet-remix/montage.py`), voix d'origine retirée, son muet, pas de graphiques ni bruitages, 1:00–1:05. Il accepte Git LFS pour les exports > 100 Mo.
