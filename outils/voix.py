@@ -1,75 +1,115 @@
 """Voix off synthétique + minutage mot par mot.
 
-Usage : python3 outils/voix.py NNN-nom [vitesse] [dossier_modeles]
-  lit   videos/NNN-nom/voix-off.txt   (une phrase par ligne)
+Usage : python3 outils/voix.py NNN-nom [pause_s] [dossier_cache]
+  lit   videos/NNN-nom/voix-off.txt   (une phrase par ligne, nombres en lettres)
   écrit videos/NNN-nom/assets/voix.wav et src/videos/NNN-nom/voix.ts
 
-Modèles (hors Git) : kokoro.onnx et voices.bin
-  https://github.com/thewh1teagle/kokoro-onnx/releases/tag/model-files-v1.0
-Dépendances : pip install kokoro-onnx soundfile faster-whisper
+Voix : Chatterbox multilingue (français) qui imite outils/voix-reference.wav
+  (voix d'homme choisie par l'utilisateur, « voix 3 » ; don de voix CC0 du projet
+  Unmute Voice Donation, fichier voice-donations/SSA150803_enhanced.wav de kyutai/tts-voices).
+Chaque phrase est relue par Whisper : en cas de mot mal prononcé, on réessaie (3 essais).
+Dépendances : pip install chatterbox-tts soundfile faster-whisper
+              (torch CPU : --extra-index-url https://download.pytorch.org/whl/cpu)
 """
-import difflib, json, re, sys, unicodedata
-import numpy as np, soundfile as sf
-from kokoro_onnx import Kokoro
+import difflib, json, os, re, sys, unicodedata
+import numpy as np, soundfile as sf, torch
+from chatterbox.mtl_tts import ChatterboxMultilingualTTS
 from faster_whisper import WhisperModel
 
 nom = sys.argv[1]
-vitesse = float(sys.argv[2]) if len(sys.argv) > 2 else 0.92
-modeles = sys.argv[3] if len(sys.argv) > 3 else "."
-PAUSE, DEBUT, FIN = 0.45, 0.35, 1.8  # secondes
+PAUSE = float(sys.argv[2]) if len(sys.argv) > 2 else 0.5
+cache = sys.argv[3] if len(sys.argv) > 3 else None
+DEBUT, FIN = 0.35, 1.8  # secondes
+REF = os.path.join(os.path.dirname(os.path.abspath(__file__)), "voix-reference.wav")
+NOMBRES = {"un": "1", "deux": "2", "trois": "3", "six": "6", "sept": "7", "neuf": "9", "vingtquatre": "24", "quarantehuit": "48"}
 
 lignes = [l.strip() for l in open(f"videos/{nom}/voix-off.txt", encoding="utf-8") if l.strip()]
-tts = Kokoro(f"{modeles}/kokoro.onnx", f"{modeles}/voices.bin")
 stt = WhisperModel("small", compute_type="int8")
+tts = None
 
 
 def norm(s):
     s = unicodedata.normalize("NFD", s.lower())
-    return re.sub(r"[^a-z0-9]", "", "".join(c for c in s if unicodedata.category(c) != "Mn"))
+    s = re.sub(r"[^a-z0-9]", "", "".join(c for c in s if unicodedata.category(c) != "Mn"))
+    return NOMBRES.get(s, s)
 
 
-piste, t, sortie, SR = [], DEBUT, [], 24000
-piste.append(np.zeros(int(DEBUT * SR), dtype="float32"))
-for ligne in lignes:
-    a, sr = tts.create(ligne, voice="ff_siwis", speed=vitesse, lang="fr-fr")
-    assert sr == SR
-    a = a.astype("float32")
-    actif = np.where(np.abs(a) > 0.01)[0]
-    a = a[max(0, actif[0] - 480) : actif[-1] + 1200]
-    # minutage Whisper, puis alignement sur les mots du script
-    n = int(len(a) * 16000 / SR)
+def ecoute(a, sr):
+    n = int(len(a) * 16000 / sr)
     a16 = np.interp(np.linspace(0, len(a) - 1, n), np.arange(len(a)), a).astype("float32")
     segs, _ = stt.transcribe(a16, language="fr", word_timestamps=True)
-    entendus = []
+    out = []
     for s in segs:
         for w in s.words:
             x = w.word.strip()
-            if x.startswith("'") and entendus:  # « c 'est » → « c'est »
-                entendus[-1] = (entendus[-1][0] + x, entendus[-1][1], w.end)
+            if x.startswith("'") and out:  # « c 'est » → « c'est »
+                out[-1] = (out[-1][0] + x, out[-1][1], w.end)
             else:
-                entendus.append((x, w.start, w.end))
+                out.append((x, w.start, w.end))
+    return out
+
+
+def synthese(i, ligne):
+    """Renvoie (audio, sr, mots entendus) : meilleur de 3 essais, mis en cache."""
+    global tts
+    mots = [norm(m) for m in ligne.split() if norm(m)]
+    p = f"{cache}/{i:02d}.wav" if cache else None
+    if p and os.path.exists(p) and open(p + ".txt", encoding="utf-8").read() == ligne:
+        a, sr = sf.read(p, dtype="float32")
+        return a, sr, ecoute(a, sr)
+    if tts is None:
+        torch.set_num_threads(os.cpu_count() or 4)
+        tts = ChatterboxMultilingualTTS.from_pretrained(device="cpu")
+    best = None
+    for graine in (3, 11, 27):
+        torch.manual_seed(graine)
+        w = tts.generate(ligne, language_id="fr", audio_prompt_path=REF, exaggeration=0.5, cfg_weight=0.5)
+        a = w.squeeze().numpy().astype("float32")
+        actif = np.where(np.abs(a) > 0.012)[0]
+        a = a[max(0, actif[0] - 500) : actif[-1] + 1500]
+        e = ecoute(a, tts.sr)
+        score = difflib.SequenceMatcher(a=mots, b=[norm(x[0]) for x in e], autojunk=False).ratio()
+        print(f"  phrase {i} graine {graine} : {score:.2f} | {' '.join(x[0] for x in e)}", flush=True)
+        if best is None or score > best[0]:
+            best = (score, a, e)
+        if score >= 0.93:
+            break
+    if p:
+        os.makedirs(cache, exist_ok=True)
+        sf.write(p, best[1], tts.sr, subtype="PCM_16")
+        open(p + ".txt", "w", encoding="utf-8").write(ligne)
+    return best[1], tts.sr, best[2]
+
+
+piste, t, sortie, SR = [], DEBUT, [], None
+for i, ligne in enumerate(lignes):
+    a, sr, entendus = synthese(i, ligne)
+    SR = SR or sr
+    if not piste:
+        piste.append(np.zeros(int(DEBUT * SR), dtype="float32"))
+    a = a / max(1e-6, np.max(np.abs(a))) * 0.85  # même niveau pour chaque phrase
     mots = [m for m in ligne.split() if norm(m)]
     dur = len(a) / SR
     temps = [None] * len(mots)
     sm = difflib.SequenceMatcher(a=[norm(m) for m in mots], b=[norm(e[0]) for e in entendus], autojunk=False)
-    for i, j, k in sm.get_matching_blocks():
+    for x, y, k in sm.get_matching_blocks():
         for d in range(k):
-            temps[i + d] = (entendus[j + d][1], entendus[j + d][2])
+            temps[x + d] = (entendus[y + d][1], entendus[y + d][2])
     # mots non reconnus : répartis entre leurs voisins
-    i = 0
-    while i < len(mots):
-        if temps[i] is None:
-            j = i
-            while j < len(mots) and temps[j] is None:
-                j += 1
-            g = temps[i - 1][1] if i > 0 else 0.0
-            d = temps[j][0] if j < len(mots) else dur
-            pas = (d - g) / (j - i)
-            for k in range(i, j):
-                temps[k] = (g + pas * (k - i), g + pas * (k - i + 1))
-            i = j
+    x = 0
+    while x < len(mots):
+        if temps[x] is None:
+            y = x
+            while y < len(mots) and temps[y] is None:
+                y += 1
+            g = temps[x - 1][1] if x > 0 else 0.0
+            d = temps[y][0] if y < len(mots) else dur
+            pas = (d - g) / (y - x)
+            for k in range(x, y):
+                temps[k] = (g + pas * (k - x), g + pas * (k - x + 1))
+            x = y
         else:
-            i += 1
+            x += 1
     sortie.append(
         {
             "texte": ligne,
@@ -82,7 +122,6 @@ for ligne in lignes:
     t += dur + PAUSE
 piste.append(np.zeros(int(FIN * SR), dtype="float32"))
 audio = np.concatenate(piste)
-audio = audio / np.max(np.abs(audio)) * 0.89
 sf.write(f"videos/{nom}/assets/voix.wav", audio, SR, subtype="PCM_16")
 total = round(len(audio) / SR, 3)
 with open(f"src/videos/{nom}/voix.ts", "w", encoding="utf-8") as f:
