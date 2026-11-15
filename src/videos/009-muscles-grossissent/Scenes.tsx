@@ -607,7 +607,10 @@ const Progression: React.FC = () => {
       </div>
       <Pill top={1112} tone="white" text="+ 1 RÉPÉTITION" enterAt={w(15, 1)} size={33} x={CX - 205} />
       <Pill top={1112} tone="red" text="+ UN PEU DE POIDS" enterAt={w(15, 4)} size={33} x={CX + 185} />
-      <Label t={w(15, 8)} top={1202} size={34} color="#fff">SEMAINE APRÈS SEMAINE</Label>
+      <div style={{ opacity: 1 - lin(w(15, 11) - 0.1, w(15, 11) + 0.05) }}>
+        <Label t={w(15, 8)} top={1202} size={34} color="#fff">SEMAINE APRÈS SEMAINE</Label>
+      </div>
+      <Label t={w(15, 12)} top={1198} size={40} color={RED}>SURCHARGE PROGRESSIVE</Label>
     </Scn>
   );
 };
