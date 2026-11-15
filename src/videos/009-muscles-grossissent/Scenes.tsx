@@ -279,7 +279,7 @@ const Echec: React.FC = () => {
       <Label t={w(6, 7)} top={640} size={42} color="#fff">CE QUI COMPTE</Label>
       <Svg>
         {Array.from({ length: N }).map((_, i) => {
-          const k = spring({ frame: frame - at(w(6, 7)) - i * 1.5, fps, config: { damping: 12, stiffness: 200 } });
+          const k = spring({ frame: frame - at(s(6)) - 4 - i * 1.5, fps, config: { damping: 12, stiffness: 200 } });
           const on = Math.min(1, Math.max(0, fill - i));
           const dure = i >= N - 3;
           const sh = dure && on > 0.5 ? Math.sin(frame * 1.9 + i) * 4 : 0;
@@ -491,7 +491,7 @@ const Proteines: React.FC = () => {
         {[0, 1, 2, 3].map((i) => {
           const k = pop(i < 3 ? w(11, 2) + i * 0.1 : w(11, 5), 10, 210);
           return (
-            <g key={i} transform={`translate(${CX - 240 + i * 160},1190) scale(${k * 0.33})`} opacity={i === 3 ? 0.35 + 0.65 * k : 1}>
+            <g key={i} transform={`translate(${CX - 240 + i * 160},1212) scale(${k * 0.28})`} opacity={i === 3 ? 0.35 + 0.65 * k : 1}>
               <Plate />
             </g>
           );

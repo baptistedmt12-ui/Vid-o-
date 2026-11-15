@@ -64,12 +64,17 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
 - Modèle à reprendre : `src/videos/009-muscles-grossissent/` (personnage `Perso`, `ui.tsx`, `Captions`).
 - **Voix off : toujours la « voix 3 »** choisie par l'utilisateur (homme, la vingtaine, pas trop grave) :
   Chatterbox multilingue qui imite `outils/voix-reference.wav`. Il a rejeté Kokoro et Piper (« nulles »).
+- **Voix dynamique, zéro blanc** (exigence) : comme un humain qui explique avec énergie. Aucun silence
+  ni bruit de micro entre les phrases : `outils/voix.py` s'en charge (3 prises par phrase, nettoyage
+  `voix_net.py`, tempo 1,05, pause 0,13 s). Si la vidéo devient trop courte, **allonger le script**
+  (durée visée : 1 min à 1 min 05), ne pas rajouter de pauses.
+- Mots mal prononcés par la voix (vus dans le journal Whisper) : reformuler (ex. « brins » → « fils »).
 - Pour faire écouter des voix : envoyer de **petits fichiers audio mp3**, pas une vidéo.
 - Étapes : écrire `videos/NNN-nom/voix-off.txt` (une phrase par ligne, nombres en lettres) →
-  `python3 outils/voix.py NNN-nom [pause_s] [dossier_cache]` (~10 min sur CPU ; relit chaque phrase avec
+  `python3 outils/voix.py NNN-nom [pause_s] [dossier_cache] [tempo]` (~35 min sur CPU, à lancer en arrière-plan ; relit chaque phrase avec
   Whisper, écrit `assets/voix.wav` et `src/videos/NNN-nom/voix.ts`) → `python3 outils/musique.py` →
   scènes calées sur les mots avec `w(phrase, mot)`.
-- Viser 62 à 68 s au total. Contenu factuel exact (pas de mythes), chiffres vérifiés.
+- Viser 60 à 65 s au total (toujours plus de 60 s). Contenu factuel exact (pas de mythes), chiffres vérifiés.
 
 ## Rendu
 - Aperçu : `npm run dev`

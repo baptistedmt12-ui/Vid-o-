@@ -22,7 +22,7 @@ Ce fichier regroupe trois choses :
 | 006 | On Air Chambly — annonce du 15/15/15 (banane en voiture) | 🔍 Relecture | 9:16 (1080×1920) 60 i/s | 10 s | `Video006` | — | — | — | v2 calée sur la voix (Whisper) |
 | 007 | Inox en muscu (extrait « Que devient Inox en Muscu ») | 🔍 Relecture | 9:16 (1080×1920) 25 i/s | 1 min 06 | `Video007` | — | — | — | v1 rendue, musique générée calée sur les coupes |
 | 008 | 5 étapes pour tes premières handstand push-ups (On Air) | 🔍 Relecture | 9:16 (1080×1920) 59,94 i/s | 1 min 02 | `Video008` | — | — | — | v1 : carte étapes + axe des jambes suivi |
-| 009 | Tes muscles ne grossissent pas à la salle (explication 2D) | 🔍 Relecture | 9:16 (1080×1920) | 1 min 07 | `Video009` | — | — | — | v2 : 100 % générée, voix off « voix 3 » choisie |
+| 009 | Tes muscles ne grossissent pas à la salle (explication 2D) | 🔍 Relecture | 9:16 (1080×1920) | 1 min 02 | `Video009` | — | — | — | v3 : 100 % générée, voix 3 dynamique sans blancs |
 | 010 | | 💡 Idée | | | | | | | |
 
 ### Banque d'idées
