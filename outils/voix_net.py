@@ -3,9 +3,10 @@ import subprocess
 import numpy as np, soundfile as sf
 
 
-def nettoie(a, sr, mots, pause=0.14, micro=0.06):
+def nettoie(a, sr, mots, pause=0.14, micro=0.06, plafond=None):
     """a : audio mono ; mots : [(mot, début, fin)] de Whisper.
-    Garde uniquement la parole ; pauses réelles ramenées à `pause`, micro-coupures à `micro`."""
+    Garde uniquement la parole ; pauses réelles ramenées à `pause`, micro-coupures à `micro`.
+    Avec `plafond`, les pauses gardent leur durée naturelle (silence propre), limitée à `plafond`."""
     hop = int(sr * 0.005)
     win = int(sr * 0.02)
     n = max(1, (len(a) - win) // hop)
@@ -48,7 +49,8 @@ def nettoie(a, sr, mots, pause=0.14, micro=0.06):
         x[-f:] *= np.linspace(1, 0, f)
         if k:
             trou = (i - fus[k - 1][1]) * hop / sr
-            out.append(np.zeros(int(sr * (pause if trou > 0.3 else min(trou, micro))), dtype="float32"))
+            d_pause = min(trou, plafond) if plafond else (pause if trou > 0.3 else min(trou, micro))
+            out.append(np.zeros(int(sr * d_pause), dtype="float32"))
         out.append(x)
     return np.concatenate(out).astype("float32")
 
