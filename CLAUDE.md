@@ -100,3 +100,9 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
   vérifier l'export : `ffmpeg -i export.mp4 -vf mpdecimate -f null -` ne doit presque rien supprimer.
 - **Résolution validée (09/11) :** 1080p suffit, pas de 4K. La 011 v2 (copie 30 i/s fixe + export ~96 Mo) lui convient.
 - **Remontage sans voix off (012) :** plans réordonnés + miroir en une passe ffmpeg (`videos/012-jet-remix/montage.py`), voix d'origine retirée, son muet, pas de graphiques ni bruitages, 1:00–1:05. Il accepte Git LFS pour les exports > 100 Mo.
+- **Liens Instagram :** téléchargeables en 1080p avec `python3 -m yt_dlp -f "bv*+ba/b" --merge-output-format mp4 <lien>`.
+  **YouTube bloque** le serveur (« confirm you're not a bot », 360p seulement) → lui demander WeTransfer, ne pas contourner.
+- **Mix de plusieurs vidéos (013) :** `videos/013-jet-insta/montage.py` = découpe de chaque plan sans perte puis un seul
+  encodage (un `filter_complex` avec 20+ découpes fait planter la mémoire). Partie utile 1:00–1:05, puis
+  **plans inutiles jusqu'à ~1:15–1:20** qu'il coupe lui-même sur TikTok (pour montrer qu'il monte). Aucun texte
+  incrusté dans la partie utile (vérifier les étiquettes, panneaux, cartes).

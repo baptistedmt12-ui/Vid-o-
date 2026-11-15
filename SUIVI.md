@@ -15,8 +15,9 @@ Ce fichier regroupe trois choses :
 |---|-------|--------|--------|-------|----------------------|-------------|------------|------|-------|
 | 000 | Exemple — Bienvenue sur Vid-o- | 🎬 Montage | 16:9 (1920×1080) | 5 s | `HelloWorld` | — | — | — | Vidéo de test |
 | 011 | Enfermé dans les toilettes du jet | 🔍 Relecture | 9:16 (1080×1920, rush 4K) | 1 min 02 | `Video011` | — | — | — | v2 livrée, fichiers supprimés |
-| 012 | Remontage jet 75 M$ (sans voix off) | 🔍 Relecture | 9:16 (1080×1920) | 1 min 02 | `montage.py` (ffmpeg) | — | — | — | v1 plans réordonnés + miroir, son muet |
-| 013 | | 💡 Idée | | | | | | | |
+| 012 | Remontage jet 75 M$ (sans voix off) | 🔍 Relecture | 9:16 (1080×1920) | 1 min 02 | `montage.py` (ffmpeg) | — | — | — | v1 livrée, fichiers supprimés |
+| 013 | Mix 2 Reels (nettoyage jet + tapis bleu) | 🔍 Relecture | 9:16 (1080×1920) | 1 min 03 (+ fin à couper → 1 min 17) | `montage.py` (ffmpeg) | — | — | — | v1 mix, miroir, son muet |
+| 014 | | 💡 Idée | | | | | | | |
 
 *Vidéos 001 à 010 livrées puis supprimées du dépôt le 08/11/2026 (l'utilisateur a tout téléchargé). Prochaine vidéo : 011.*
 
