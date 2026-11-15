@@ -59,6 +59,15 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
 - Ne rien placer dans les zones de l'interface TikTok (voir `videos/README.md`) :
   haut ~280 px, droite au-delà de ~900 px, bas à partir de ~1450 px.
 
+## Vidéos 2D 100 % générées (série « explications », depuis la 009)
+- Demande : vidéos de A à Z, 1 min à 1 min 10, style 2D, niche musculation / sport, qui expliquent.
+- Modèle à reprendre : `src/videos/009-muscles-grossissent/` (personnage `Perso`, `ui.tsx`, `Captions`).
+- Étapes : écrire `videos/NNN-nom/voix-off.txt` (une phrase par ligne, nombres en lettres) →
+  `python3 outils/voix.py NNN-nom [vitesse] [dossier_modeles]` (voix Kokoro + minutage Whisper,
+  écrit `assets/voix.wav` et `src/videos/NNN-nom/voix.ts`) → `python3 outils/musique.py` →
+  scènes calées sur les mots avec `w(phrase, mot)`.
+- Viser 62 à 68 s au total. Contenu factuel exact (pas de mythes), chiffres vérifiés.
+
 ## Rendu
 - Aperçu : `npm run dev`
 - Rendu : `npx remotion render <Composition> out/<nom>.mp4`

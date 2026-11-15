@@ -22,13 +22,18 @@ Ce fichier regroupe trois choses :
 | 006 | On Air Chambly — annonce du 15/15/15 (banane en voiture) | 🔍 Relecture | 9:16 (1080×1920) 60 i/s | 10 s | `Video006` | — | — | — | v2 calée sur la voix (Whisper) |
 | 007 | Inox en muscu (extrait « Que devient Inox en Muscu ») | 🔍 Relecture | 9:16 (1080×1920) 25 i/s | 1 min 06 | `Video007` | — | — | — | v1 rendue, musique générée calée sur les coupes |
 | 008 | 5 étapes pour tes premières handstand push-ups (On Air) | 🔍 Relecture | 9:16 (1080×1920) 59,94 i/s | 1 min 02 | `Video008` | — | — | — | v1 : carte étapes + axe des jambes suivi |
-| 009 | | 💡 Idée | | | | | | | |
+| 009 | Tes muscles ne grossissent pas à la salle (explication 2D) | 🔍 Relecture | 9:16 (1080×1920) | 1 min 06 | `Video009` | — | — | — | v1 : 100 % générée (voix synthétique, animation, musique) |
+| 010 | | 💡 Idée | | | | | | | |
 
 ### Banque d'idées
 
-- [ ] Idée 1 :
-- [ ] Idée 2 :
-- [ ] Idée 3 :
+Série « explications 2D » (même format que la 009) :
+- [ ] Pourquoi tu as des courbatures (et pourquoi ce n'est pas un signe de progrès)
+- [ ] Faut-il aller jusqu'à l'échec à chaque série ?
+- [ ] Créatine : ce que ça fait vraiment
+- [ ] Combien de temps de repos entre deux séries
+- [ ] Pourquoi tu ne perds pas de gras (le déficit calorique expliqué)
+- [ ] Cardio et prise de muscle : est-ce que ça « mange » le muscle ?
 
 ---
 
