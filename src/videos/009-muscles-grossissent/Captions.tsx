@@ -5,7 +5,7 @@ import { CX } from "./timeline";
 import { LIGNES } from "./voix";
 
 // Sous-titres mot à mot, par petits groupes, au-dessus de la zone basse de TikTok.
-const CHIFFRES: Record<string, string> = { "vingt-quatre": "24", "quarante-huit": "48", Sept: "7", neuf: "9" };
+const CHIFFRES: Record<string, string> = { "vingt-quatre": "24", "quarante-huit": "48", Sept: "7", neuf: "9", trois: "3", quatre: "4" };
 // « un virgule six gramme » → « 1,6 g »
 const FUSION: Record<string, string> = { "un virgule six gramme": "1,6 g" };
 
@@ -24,7 +24,6 @@ const GROUPES: Groupe[] = (() => {
         }
       }
     }
-    if (li >= 9 && li <= 11) mots[0] = { ...mots[0], m: mots[0].m + " :" };
     let cur: Mot[] = [];
     const flush = () => {
       if (cur.length) res.push({ mots: cur, t0: cur[0].t0, t1: cur[cur.length - 1].t1 });

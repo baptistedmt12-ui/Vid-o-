@@ -264,16 +264,53 @@ const Signal: React.FC = () => {
   );
 };
 
+// ───── 5 bis. Pas besoin de courbatures : des séries proches de l'échec ─────
+const Echec: React.FC = () => {
+  const { pop, lin, frame, fps, at } = useG();
+  const barre = lin(w(6, 4) + 0.3, w(6, 6));
+  const N = 10;
+  const fill = lin(w(6, 10), w(6, 15) + 0.2, Easing.linear) * N;
+  const dur = lin(w(6, 12), w(6, 17), out);
+  return (
+    <Scn>
+      <Label t={w(6, 1)} top={318} size={42}>PAS BESOIN DE</Label>
+      <Big t={w(6, 4)} top={372} size={128}>COURBATURES</Big>
+      <div style={{ position: "absolute", top: 440, left: CX - 400, width: 800 * barre, height: 14, borderRadius: 14, background: RED, transform: "rotate(-3deg)", transformOrigin: "0 50%" }} />
+      <Label t={w(6, 7)} top={640} size={42} color="#fff">CE QUI COMPTE</Label>
+      <Svg>
+        {Array.from({ length: N }).map((_, i) => {
+          const k = spring({ frame: frame - at(w(6, 7)) - i * 1.5, fps, config: { damping: 12, stiffness: 200 } });
+          const on = Math.min(1, Math.max(0, fill - i));
+          const dure = i >= N - 3;
+          const sh = dure && on > 0.5 ? Math.sin(frame * 1.9 + i) * 4 : 0;
+          return (
+            <g key={i} transform={`translate(${CX - 9 * 39 + i * 78 + sh},800) scale(${k})`}>
+              <circle r={31} fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" strokeWidth={4} />
+              <circle r={31 * on} fill={dure ? RED : "#fff"} />
+              <text y={11} textAnchor="middle" fontFamily={BODY} fontWeight={800} fontSize={30} fill={on > 0.5 ? (dure ? "#fff" : "#0B0B0D") : "rgba(255,255,255,0.5)"}>
+                {i + 1}
+              </text>
+            </g>
+          );
+        })}
+      </Svg>
+      <Label t={w(6, 12)} top={860} size={30}>RÉPÉTITIONS D'UNE SÉRIE</Label>
+      <Bar top={930} width={700} value={0.15 + 0.8 * dur} color={interpolateColors(dur, [0, 0.6, 1], [GREEN, "#FFB020", RED])} label="DIFFICULTÉ" right={dur > 0.9 ? "MAX" : ""} t={w(6, 12)} />
+      <Big t={w(6, 15)} top={1080} size={112} color={RED} rotate={-3}>PROCHE DE L'ÉCHEC</Big>
+    </Scn>
+  );
+};
+
 // ───── 6. Le chantier ─────
 const STRIPES = "repeating-linear-gradient(-45deg,#111 0 34px,#FFC400 34px 68px)";
 const Chantier: React.FC = () => {
   const { pop, frame } = useG();
-  const sign = pop(w(6, 7), 9, 150);
-  const cones = pop(w(6, 8), 11, 200);
-  const hook = pop(w(6, 7) + 0.25, 16, 70);
+  const sign = pop(w(7, 7), 9, 150);
+  const cones = pop(w(7, 8), 11, 200);
+  const hook = pop(w(7, 7) + 0.25, 16, 70);
   return (
     <Scn>
-      <Pill top={322} tone="white" icon={<IconDot size={70}><ClockIcon size={40} h={8} m={0} /></IconDot>} text="APRÈS LA SÉANCE" enterAt={w(6, 2)} size={46} />
+      <Pill top={322} tone="white" icon={<IconDot size={70}><ClockIcon size={40} h={8} m={0} /></IconDot>} text="APRÈS LA SÉANCE" enterAt={w(7, 2)} size={46} />
       <div
         style={{
           position: "absolute",
@@ -317,21 +354,21 @@ const BLOCS = Array.from({ length: 16 }).map((_, i) => {
 
 const Synthese: React.FC = () => {
   const { pop, lin, frame, at, fps } = useG();
-  const fill = lin(w(7, 0), cut(8) - 0.4, Easing.linear);
-  const grow = pop(w(7, 12), 12, 90);
+  const fill = lin(w(8, 0), cut(9) - 0.4, Easing.linear);
+  const grow = pop(w(8, 12), 12, 90);
   const r = 100 + 62 * grow;
-  const circ = pop(w(7, 0) + 0.2, 13, 170);
+  const circ = pop(w(8, 0) + 0.2, 13, 170);
   const TW = 740;
-  const p1out = lin(w(7, 12) - 0.25, w(7, 12));
+  const p1out = lin(w(8, 12) - 0.25, w(8, 12));
   return (
     <Scn>
       <Words
         top={300}
         size={176}
         items={[
-          { t: w(7, 1), text: "24", color: RED },
-          { t: w(7, 2), text: "À" },
-          { t: w(7, 3), text: "48 H", color: RED },
+          { t: w(8, 1), text: "24", color: RED },
+          { t: w(8, 2), text: "À" },
+          { t: w(8, 3), text: "48 H", color: RED },
         ]}
       />
       <div style={{ position: "absolute", top: 540, left: CX - TW / 2, width: TW }}>
@@ -365,7 +402,7 @@ const Synthese: React.FC = () => {
           <circle r={r * circ} fill={MUSCLE} stroke={MUSCLE_D} strokeWidth={8} />
           <circle r={r * circ * 0.55} fill="none" stroke="rgba(255,255,255,0.22)" strokeWidth={10} />
           {BLOCS.map((b, i) => {
-            const p = interpolate(frame, [at(w(7, 7)) + i * 4.5, at(w(7, 7)) + i * 4.5 + 20], [0, 1], { ...clamp, easing: Easing.in(Easing.quad) });
+            const p = interpolate(frame, [at(w(8, 7)) + i * 4.5, at(w(8, 7)) + i * 4.5 + 20], [0, 1], { ...clamp, easing: Easing.in(Easing.quad) });
             if (p <= 0 || p >= 1) return null;
             return (
               <rect
@@ -386,9 +423,9 @@ const Synthese: React.FC = () => {
         </g>
       </Svg>
       <div style={{ opacity: 1 - p1out }}>
-        <Pill top={1150} tone="dark" text="+ NOUVELLES PROTÉINES" enterAt={w(7, 8)} size={42} />
+        <Pill top={1150} tone="dark" text="+ NOUVELLES PROTÉINES" enterAt={w(8, 8)} size={42} />
       </div>
-      <Pill top={1150} tone="red" text="FIBRE PLUS ÉPAISSE" enterAt={w(7, 12)} size={44} />
+      <Pill top={1150} tone="red" text="FIBRE PLUS ÉPAISSE" enterAt={w(8, 12)} size={44} />
     </Scn>
   );
 };
@@ -398,12 +435,12 @@ const Trois: React.FC = () => {
   const { pop } = useG();
   return (
     <Scn>
-      <Label t={s(8)} top={400} size={46}>POUR ÇA, IL LUI FAUT</Label>
-      <Big t={w(8, 6)} top={480} size={250}>
+      <Label t={s(9)} top={400} size={46}>POUR ÇA, IL LUI FAUT</Label>
+      <Big t={w(9, 6)} top={480} size={250}>
         <span style={{ color: RED }}>3</span> CHOSES
       </Big>
       {[0, 1, 2].map((i) => {
-        const k = pop(w(8, 6) + 0.22 + i * 0.14, 9, 200);
+        const k = pop(w(9, 6) + 0.22 + i * 0.14, 9, 200);
         return (
           <div
             key={i}
@@ -434,19 +471,32 @@ const Trois: React.FC = () => {
 
 // ───── 9. Protéines ─────
 const Proteines: React.FC = () => {
-  const { pop } = useG();
-  const plate = pop(w(9, 2), 11, 170);
+  const { pop, lin } = useG();
+  const plate = pop(w(10, 2), 11, 170);
+  const repas = lin(s(11) - 0.1, s(11) + 0.1);
   return (
     <Scn>
-      <Header n={1} title="PROTÉINES" t={s(9)} t2={w(9, 1)} />
+      <Header n={1} title="PROTÉINES" t={s(10)} t2={w(10, 1)} />
       <Svg>
         <g transform={`translate(${CX},660) scale(${plate}) rotate(${(1 - plate) * -40})`}>
           <Plate />
         </g>
       </Svg>
-      <Big t={w(9, 5)} top={850} size={210} color={RED}>1,6 G</Big>
-      <Label t={w(9, 9)} top={1078} size={42} color="#fff">PAR KILO · CHAQUE JOUR</Label>
-      <Pill top={1158} tone="white" text={<>70 kg&nbsp;&nbsp;→&nbsp;&nbsp;<span style={{ color: RED }}>112 g</span> par jour</>} enterAt={w(9, 13)} size={44} />
+      <Big t={w(10, 5)} top={850} size={210} color={RED}>1,6 G</Big>
+      <Label t={w(10, 9)} top={1078} size={42} color="#fff">PAR KILO · CHAQUE JOUR</Label>
+      <div style={{ opacity: 1 - repas }}>
+        <Pill top={1158} tone="white" text={<>70 kg&nbsp;&nbsp;→&nbsp;&nbsp;<span style={{ color: RED }}>112 g</span> par jour</>} enterAt={w(10, 13)} size={44} />
+      </div>
+      <Svg>
+        {[0, 1, 2, 3].map((i) => {
+          const k = pop(i < 3 ? w(11, 2) + i * 0.1 : w(11, 5), 10, 210);
+          return (
+            <g key={i} transform={`translate(${CX - 240 + i * 160},1190) scale(${k * 0.33})`} opacity={i === 3 ? 0.35 + 0.65 * k : 1}>
+              <Plate />
+            </g>
+          );
+        })}
+      </Svg>
     </Scn>
   );
 };
@@ -454,12 +504,14 @@ const Proteines: React.FC = () => {
 // ───── 10. Sommeil ─────
 const Sommeil: React.FC = () => {
   const { pop, lin, frame, fps } = useG();
-  const bed = pop(w(10, 1), 13, 150);
-  const rec = lin(w(10, 10), w(10, 16) + 0.3, out);
+  const bed = pop(w(12, 1), 13, 150);
+  const mal = lin(w(13, 2), w(13, 6), out);
+  const rec = lin(w(12, 10), w(12, 16) + 0.3, out) * (1 - 0.72 * mal);
+  const recCol = interpolateColors(mal, [0, 1], [GREEN, RED]);
   const t = frame / fps;
   return (
     <Scn>
-      <Header n={2} title="SOMMEIL" t={s(10)} t2={w(10, 1)} />
+      <Header n={2} title="SOMMEIL" t={s(12)} t2={w(12, 1)} />
       <Svg>
         <g transform={`translate(760,560) scale(${bed})`}>
           <circle r={62} fill="#FFD75E" />
@@ -484,13 +536,16 @@ const Sommeil: React.FC = () => {
         top={880}
         size={176}
         items={[
-          { t: w(10, 3), text: "7", color: RED },
-          { t: w(10, 4), text: "À" },
-          { t: w(10, 5), text: "9 H", color: RED },
+          { t: w(12, 3), text: "7", color: RED },
+          { t: w(12, 4), text: "À" },
+          { t: w(12, 5), text: "9 H", color: RED },
         ]}
       />
-      <Label t={w(10, 7)} top={1072} size={42} color="#fff">PAR NUIT</Label>
-      <Bar top={1140} width={640} value={rec} color={GREEN} label="RÉCUPÉRATION" right={`${Math.round(rec * 100)} %`} t={w(10, 10)} />
+      <div style={{ opacity: 1 - lin(s(13) - 0.1, s(13) + 0.05) }}>
+        <Label t={w(12, 7)} top={1072} size={42} color="#fff">PAR NUIT</Label>
+      </div>
+      <Label t={w(13, 1)} top={1072} size={42} color={RED}>TU DORS MAL ?</Label>
+      <Bar top={1140} width={640} value={rec} color={recCol} label="RÉCUPÉRATION" right={`${Math.round(rec * 100)} %`} t={w(12, 10)} />
     </Scn>
   );
 };
@@ -502,17 +557,17 @@ const Progression: React.FC = () => {
   const BW = 92;
   const GAP = 32;
   const X0 = CX - (6 * BW + 5 * GAP) / 2;
-  const flatOut = lin(cut(12) - 0.2, cut(12));
-  const line = lin(w(12, 8), w(12, 10) + 0.5, out);
+  const flatOut = lin(cut(15) - 0.2, cut(15));
+  const line = lin(w(15, 8), w(15, 10) + 0.5, out);
   const tops: [number, number][] = [];
   return (
     <Scn>
-      <Header n={3} title="PROGRESSION" t={s(11)} t2={w(11, 1)} />
+      <Header n={3} title="PROGRESSION" t={s(14)} t2={w(14, 1)} />
       <Svg>
         <line x1={X0 - 20} y1={BASE} x2={X0 + 6 * BW + 5 * GAP + 20} y2={BASE} stroke="rgba(255,255,255,0.35)" strokeWidth={5} strokeLinecap="round" />
         {Array.from({ length: 6 }).map((_, i) => {
-          const a = spring({ frame: frame - at(w(11, 6)) - i * 4, fps, config: { damping: 14, stiffness: 150 } });
-          const g = spring({ frame: frame - at(w(12, 0)) - i * 6, fps, config: { damping: 12, stiffness: 120 } });
+          const a = spring({ frame: frame - at(w(14, 6)) - i * 4, fps, config: { damping: 14, stiffness: 150 } });
+          const g = spring({ frame: frame - at(w(15, 0)) - i * 6, fps, config: { damping: 12, stiffness: 120 } });
           const h = (250 + i * 58 * g) * a;
           const x = X0 + i * (BW + GAP);
           tops.push([x + BW / 2, BASE - h]);
@@ -544,15 +599,15 @@ const Progression: React.FC = () => {
           <path d="M-26 6 L4 -22 L10 14Z" fill={GREEN} transform={`translate(${tops[5][0] + 8},${tops[5][1] - 46}) rotate(8) scale(1.5)`} />
         )}
       </Svg>
-      <div style={{ position: "absolute", top: 690, left: X0 + 10, fontFamily: BODY, fontWeight: 800, fontSize: 28, letterSpacing: 3, color: "rgba(255,255,255,0.5)", opacity: pop(w(11, 6)) * (1 - flatOut) }}>
+      <div style={{ position: "absolute", top: 690, left: X0 + 10, fontFamily: BODY, fontWeight: 800, fontSize: 28, letterSpacing: 3, color: "rgba(255,255,255,0.5)", opacity: pop(w(14, 6)) * (1 - flatOut) }}>
         CHARGE (KG)
       </div>
       <div style={{ opacity: 1 - flatOut }}>
-        <Pill top={1118} tone="dark" icon={<Cross k={pop(w(11, 14) + 0.1, 20, 160)} size={58} />} text="AUCUNE RAISON DE CHANGER" enterAt={w(11, 14)} size={36} />
+        <Pill top={1118} tone="dark" icon={<Cross k={pop(w(14, 14) + 0.1, 20, 160)} size={58} />} text="AUCUNE RAISON DE CHANGER" enterAt={w(14, 14)} size={36} />
       </div>
-      <Pill top={1112} tone="white" text="+ 1 RÉPÉTITION" enterAt={w(12, 1)} size={33} x={CX - 205} />
-      <Pill top={1112} tone="red" text="+ UN PEU DE POIDS" enterAt={w(12, 4)} size={33} x={CX + 185} />
-      <Label t={w(12, 8)} top={1202} size={34} color="#fff">SEMAINE APRÈS SEMAINE</Label>
+      <Pill top={1112} tone="white" text="+ 1 RÉPÉTITION" enterAt={w(15, 1)} size={33} x={CX - 205} />
+      <Pill top={1112} tone="red" text="+ UN PEU DE POIDS" enterAt={w(15, 4)} size={33} x={CX + 185} />
+      <Label t={w(15, 8)} top={1202} size={34} color="#fff">SEMAINE APRÈS SEMAINE</Label>
     </Scn>
   );
 };
@@ -600,25 +655,25 @@ const Recap: React.FC = () => {
     };
   };
   const line: React.CSSProperties = { position: "absolute", top: 34, left: 0, width: "100%", display: "flex", alignItems: "center", justifyContent: "center", gap: 26, fontFamily: TITLE, fontSize: 84, color: "#fff", lineHeight: 1 };
-  const b = pop(w(13, 10), 11, 200);
+  const b = pop(w(16, 10), 11, 200);
   return (
     <Scn>
-      <Pill top={312} tone="white" text="RETIENS ÇA" enterAt={s(13)} size={46} />
-      <Card top={440} t={w(13, 2)}>
+      <Pill top={312} tone="white" text="RETIENS ÇA" enterAt={s(16)} size={46} />
+      <Card top={440} t={w(16, 2)}>
         <div style={line}>
           <svg width={170} height={110} viewBox="-120 -55 240 110"><Dumbbell /></svg>
           LA SALLE
         </div>
-        <div style={eq(w(13, 6))}>= LE SIGNAL</div>
+        <div style={eq(w(16, 6))}>= LE SIGNAL</div>
       </Card>
-      <Card top={810} t={w(13, 7)}>
+      <Card top={810} t={w(16, 7)}>
         <div style={line}>
           <svg width={112} height={112} viewBox="-175 -175 350 350"><Plate /></svg>
           L'ASSIETTE
           <span style={{ color: "rgba(255,255,255,0.6)", opacity: b }}>+</span>
           <span style={{ opacity: Math.min(1, b * 2), transform: `scale(${b})`, display: "inline-block" }}>LE LIT</span>
         </div>
-        <div style={eq(w(13, 13))}>= LE MUSCLE</div>
+        <div style={eq(w(16, 13))}>= LE MUSCLE</div>
       </Card>
     </Scn>
   );
@@ -627,7 +682,7 @@ const Recap: React.FC = () => {
 // ───── 14. Abonne-toi ─────
 const Fin: React.FC = () => {
   const { pop, frame, fps } = useG();
-  const k = pop(w(14, 0), 9, 190);
+  const k = pop(w(17, 0), 9, 190);
   const t = frame / fps;
   const flex = 0.5 + 0.5 * Math.sin(t * 5);
   return (
@@ -652,8 +707,8 @@ const Fin: React.FC = () => {
       >
         + ABONNE-TOI
       </div>
-      <Label t={w(14, 1)} top={520} size={40} color="#fff">POUR COMPRENDRE TON CORPS</Label>
-      <Big t={w(14, 5)} top={580} size={92}>
+      <Label t={w(17, 1)} top={520} size={40} color="#fff">POUR COMPRENDRE TON CORPS</Label>
+      <Big t={w(17, 5)} top={580} size={92}>
         <span style={{ color: RED }}>1 MINUTE</span> À LA FOIS
       </Big>
       <Svg>
@@ -670,13 +725,14 @@ export const Scenes: React.FC = () => (
     <G from={cut(3)} to={cut(4)} name="3 Fibres"><Fibres /></G>
     <G from={cut(4)} to={cut(5)} name="4 Tension"><Tension /></G>
     <G from={cut(5)} to={cut(6)} name="5 Signal"><Signal /></G>
-    <G from={cut(6)} to={cut(7)} name="6 Chantier"><Chantier /></G>
-    <G from={cut(7)} to={cut(8)} name="7 24-48 h"><Synthese /></G>
-    <G from={cut(8)} to={cut(9)} name="8 Trois choses"><Trois /></G>
-    <G from={cut(9)} to={cut(10)} name="9 Protéines"><Proteines /></G>
-    <G from={cut(10)} to={cut(11)} name="10 Sommeil"><Sommeil /></G>
-    <G from={cut(11)} to={cut(13)} name="11 Progression"><Progression /></G>
-    <G from={cut(13)} to={cut(14)} name="12 À retenir"><Recap /></G>
-    <G from={cut(14)} to={DUREE + 1} name="13 Abonne-toi"><Fin /></G>
+    <G from={cut(6)} to={cut(7)} name="5 bis Proche de l'échec"><Echec /></G>
+    <G from={cut(7)} to={cut(8)} name="6 Chantier"><Chantier /></G>
+    <G from={cut(8)} to={cut(9)} name="7 24-48 h"><Synthese /></G>
+    <G from={cut(9)} to={cut(10)} name="8 Trois choses"><Trois /></G>
+    <G from={cut(10)} to={cut(12)} name="9 Protéines"><Proteines /></G>
+    <G from={cut(12)} to={cut(14)} name="10 Sommeil"><Sommeil /></G>
+    <G from={cut(14)} to={cut(16)} name="11 Progression"><Progression /></G>
+    <G from={cut(16)} to={cut(17)} name="12 À retenir"><Recap /></G>
+    <G from={cut(17)} to={DUREE + 1} name="13 Abonne-toi"><Fin /></G>
   </>
 );

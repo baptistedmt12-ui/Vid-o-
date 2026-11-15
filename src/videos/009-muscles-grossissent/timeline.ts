@@ -8,5 +8,5 @@ export const s = (i: number) => LIGNES[i].debut;
 /** début du mot k de la phrase i (secondes) */
 export const w = (i: number, k: number) => LIGNES[i].mots[k].t0;
 /** point de coupe juste avant la phrase i */
-export const cut = (i: number) => (i <= 0 ? 0 : i >= LIGNES.length ? DUREE : LIGNES[i].debut - 0.2);
+export const cut = (i: number) => (i <= 0 ? 0 : i >= LIGNES.length ? DUREE : LIGNES[i].debut - 0.07);
 export const CX = 485; // centre de la zone sûre TikTok
