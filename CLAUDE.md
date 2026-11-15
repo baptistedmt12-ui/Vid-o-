@@ -62,9 +62,12 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
 ## Vidéos 2D 100 % générées (série « explications », depuis la 009)
 - Demande : vidéos de A à Z, 1 min à 1 min 10, style 2D, niche musculation / sport, qui expliquent.
 - Modèle à reprendre : `src/videos/009-muscles-grossissent/` (personnage `Perso`, `ui.tsx`, `Captions`).
+- **Voix off : toujours la « voix 3 »** choisie par l'utilisateur (homme, la vingtaine, pas trop grave) :
+  Chatterbox multilingue qui imite `outils/voix-reference.wav`. Il a rejeté Kokoro et Piper (« nulles »).
+- Pour faire écouter des voix : envoyer de **petits fichiers audio mp3**, pas une vidéo.
 - Étapes : écrire `videos/NNN-nom/voix-off.txt` (une phrase par ligne, nombres en lettres) →
-  `python3 outils/voix.py NNN-nom [vitesse] [dossier_modeles]` (voix Kokoro + minutage Whisper,
-  écrit `assets/voix.wav` et `src/videos/NNN-nom/voix.ts`) → `python3 outils/musique.py` →
+  `python3 outils/voix.py NNN-nom [pause_s] [dossier_cache]` (~10 min sur CPU ; relit chaque phrase avec
+  Whisper, écrit `assets/voix.wav` et `src/videos/NNN-nom/voix.ts`) → `python3 outils/musique.py` →
   scènes calées sur les mots avec `w(phrase, mot)`.
 - Viser 62 à 68 s au total. Contenu factuel exact (pas de mythes), chiffres vérifiés.
 

@@ -1,6 +1,6 @@
 # Vidéo 009 — Tes muscles ne grossissent pas à la salle
 
-- **Statut :** 🔍 Relecture (v1 rendue)
+- **Statut :** 🔍 Relecture (v2 rendue, voix 3)
 - **Format :** 9:16 vertical (1080×1920), 30 i/s
 - **Durée finale :** 1 min 06 s
 - **Plateforme :** TikTok — plus d'1 minute (monétisation)
@@ -26,9 +26,14 @@ Aucun : vidéo 100 % générée (script, voix, animation, musique, bruitages).
   - musique de fond générée (`outils/musique.py`), bruitages whoosh / pop / impact ;
   - 13 scènes animées en 2D (personnage, fibres, jauges, graphique), calées sur chaque mot ;
   - sous-titres mot à mot au-dessus de la zone basse de TikTok, barre de progression en haut.
+- 2026-11-15 — Retour : la voix de la v1 ne plaît pas. Deux séries d'essais envoyées
+  (`export/009-essais-voix.mp4`, puis `assets/essais-voix/voix-1…6.mp3` : homme, la vingtaine, pas trop grave).
+  **Voix 3 choisie.**
+- 2026-11-15 — **v2** (`export/009-v2.mp4`, 1 min 07 s, 20 Mo) : même vidéo, voix off refaite avec la voix 3
+  (`outils/voix.py`, référence `outils/voix-reference.wav`), animation et sous-titres recalés sur la nouvelle voix.
 
 ## À faire / retours
 
-- [ ] Retours sur la v1 (voix, style du personnage, rythme, sujet)
-- [ ] Choisir : garder la voix synthétique ou enregistrer sa propre voix
+- [x] Voix : voix 3 choisie
+- [ ] Retours sur la v2 (style du personnage, rythme, sujet)
 - [ ] À la publication : cocher « Contenu généré par IA » si la voix synthétique est gardée
