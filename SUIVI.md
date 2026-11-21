@@ -22,7 +22,8 @@ Ce fichier regroupe trois choses :
 | 006 | On Air Chambly — annonce du 15/15/15 (banane en voiture) | 🔍 Relecture | 9:16 (1080×1920) 60 i/s | 10 s | `Video006` | — | — | — | v2 calée sur la voix (Whisper) |
 | 007 | Inox en muscu (extrait « Que devient Inox en Muscu ») | 🔍 Relecture | 9:16 (1080×1920) 25 i/s | 1 min 06 | `Video007` | — | — | — | v1 rendue, musique générée calée sur les coupes |
 | 008 | 5 étapes pour tes premières handstand push-ups (On Air) | 🔍 Relecture | 9:16 (1080×1920) 59,94 i/s | 1 min 02 | `Video008` | — | — | — | v1 : carte étapes + axe des jambes suivi |
-| 009 | | 💡 Idée | | | | | | | |
+| 009 | Restauration chaussure noire (flammes en ouverture) | 🔍 Relecture | 9:16 (1080×1920) 30 i/s | 1 min 02 | — (coupes ffmpeg) | — | — | — | v1 qualité max envoyée (158 Mo, hors GitHub : envoi LFS coupé par le proxy), modèle = montage bordeaux |
+| 010 | | 💡 Idée | | | | | | | |
 
 ### Banque d'idées
 
