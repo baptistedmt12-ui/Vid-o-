@@ -26,6 +26,12 @@ CIBLES = {
   "poutres":   (44.0, 46.5, (480, 400, 250, 330)),
   "douche":    (49.6, 50.6, (700, 700, 300, 450)),
   "mezz2":     (52.4, 54.0, (420, 1100, 220, 280)),
+  "fenetre2":  (25.6, 27.8, (918, 324, 119, 259)),
+}
+# Suivi dans les deux sens depuis une image de référence : id: (début, référence, fin, boîte à la référence)
+CIBLES_REF = {
+  "mezz-g": (52.4, 53.4, 54.0, (130, 1220, 190, 330)),
+  "mezz-d": (52.4, 53.4, 54.0, (626, 1170, 195, 290)),
 }
 S = 0.5
 cap = cv2.VideoCapture(RUSH); fps = cap.get(cv2.CAP_PROP_FPS)
@@ -44,6 +50,19 @@ for k, (t0, t1, (x, y, w, h)) in CIBLES.items():
         pts.append([round(t0 + i / fps, 3), round(bx + bw / 2, 1), round(by + bh / 2, 1), round(bw, 1), round(bh, 1)])
     res[k] = pts
     print(k, len(pts), pts[0][1:3], '->', pts[-1][1:3])
+def suivre(frames, box):
+    tr = cv2.TrackerCSRT_create(); tr.init(cv2.resize(frames[0], None, fx=S, fy=S), tuple(int(v * S) for v in box))
+    out = [box]
+    for fr in frames[1:]:
+        ok, b = tr.update(cv2.resize(fr, None, fx=S, fy=S)); out.append(tuple(v / S for v in b))
+    return out
+for k, (ta, tref, tb, box) in CIBLES_REF.items():
+    cap.set(cv2.CAP_PROP_POS_FRAMES, round(ta * fps))
+    frs = [cap.read()[1] for _ in range(round((tb - ta) * fps))]
+    iref = round((tref - ta) * fps)
+    arr = suivre(frs[iref::-1], box)[::-1] + suivre(frs[iref:], box)[1:]
+    res[k] = [[round(ta + i / fps, 3), round(x + w / 2, 1), round(y + h / 2, 1), round(w, 1), round(h, 1)] for i, (x, y, w, h) in enumerate(arr)]
+    print(k, len(arr))
 # Deux escaliers du hall : positions déduites du palier central (symétriques, suivent le zoom)
 res["escalier-g"] = [[t, cx - 0.7 * w, cy + 0.7 * w, 120, 120] for t, cx, cy, w, h in res["escalier"]]
 res["escalier-d"] = [[t, cx + 0.7 * w, cy + 0.7 * w, 120, 120] for t, cx, cy, w, h in res["escalier"]]
