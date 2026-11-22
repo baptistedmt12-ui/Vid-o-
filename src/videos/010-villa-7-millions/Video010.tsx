@@ -168,7 +168,8 @@ const Pastille: React.FC<{ n: string; texte: string; at: number }> = ({ n, texte
   );
 };
 
-const VOL: Record<Son, number> = { pop: 0.55, argent: 0.5, plouf: 0.5, verre: 0.4, scintille: 0.35 };
+// Bruitages volontairement bas : toujours sous la voix off (≈ -12 dB et moins)
+const VOL: Record<Son, number> = { pop: 0.22, argent: 0.28, plouf: 0.25, verre: 0.2, scintille: 0.18, coussin: 0.3, jeu: 0.16 };
 
 /** Petite étiquette de prix (en haut à gauche, hors interface TikTok), entrée en ressort. */
 const EtiquettePrix: React.FC<{ texte: string }> = ({ texte }) => {
@@ -229,7 +230,7 @@ export const Video010: React.FC<{ musique?: boolean }> = ({ musique = true }) =>
           volume={(f) => interpolate(f, [TOTAL_FRAMES - 45, TOTAL_FRAMES], [0.3, 0], clamp)}
         />
       )}
-      <Audio src={staticFile(ASSETS + "boom.wav")} volume={0.85} />
+      <Audio src={staticFile(ASSETS + "boom.wav")} volume={0.4} />
       {ANNOTS.map((a, i) => {
         if (!a.son) return null;
         const p = PLACED.find((s) => s.id === a.seg)!;
@@ -241,11 +242,11 @@ export const Video010: React.FC<{ musique?: boolean }> = ({ musique = true }) =>
         );
       })}
       <Sequence from={Math.round(PRIX.from * FPS)} durationInFrames={50} name="son-argent">
-        <Audio src={staticFile(ASSETS + "argent.wav")} volume={0.5} />
+        <Audio src={staticFile(ASSETS + "argent.wav")} volume={VOL.argent} />
       </Sequence>
       {CHOIX.map((c) => (
         <Sequence key={c.n} from={Math.round(c.t * FPS)} durationInFrames={20} name={`son-choix-${c.n}`}>
-          <Audio src={staticFile(ASSETS + "pop.wav")} volume={0.5} />
+          <Audio src={staticFile(ASSETS + "pop.wav")} volume={VOL.pop} />
         </Sequence>
       ))}
     </AbsoluteFill>

@@ -122,3 +122,16 @@ for k, m in enumerate([84, 88, 91, 96]):
     x[i0:i0 + len(d)] += b[: len(x) - i0] * (0.6 + 0.1 * k)
 save("scintille.wav", x)
 print("sons supplémentaires ok")
+
+# COUSSIN (canapé) : « pouf » moelleux
+tt = t_(0.45)
+pouf = lpf(rng.standard_normal(len(tt)), 500) * np.exp(-tt * 14) * np.minimum(1, tt / 0.015)
+pouf += np.sin(2 * np.pi * 90 * tt) * np.exp(-tt * 18) * 0.6
+save("coussin.wav", pouf)
+# JEU (salle de jeux) : deux petites notes rétro (carré adouci)
+x = np.zeros(int(0.42 * SR))
+for i0, m in [(0, 76), (int(0.11 * SR), 83)]:
+    d = t_(0.2); sq = np.tanh(4 * np.sin(2 * np.pi * mtof(m) * d)) * np.exp(-d * 14) * np.minimum(1, d / 0.003)
+    x[i0:i0 + len(d)] += sq[: len(x) - i0]
+save("jeu.wav", lpf(x, 5000))
+print("coussin + jeu ok")

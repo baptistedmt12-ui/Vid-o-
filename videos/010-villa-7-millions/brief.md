@@ -57,6 +57,14 @@ avait la voix, sans utiliser les crédits ElevenLabs, et explique ce que tu as f
   scintillement, tintement de verres, pop ; fin « Et dehors, la piscine » (ralenti 0,4×). Durée 63,8 s.
   Note : pas de cercle à 0,3 s (consigne du PDF), remplacé par la flèche sur la maison à la demande de l'utilisateur.
 
+## v3 (22/11) — retours sur la v2
+
+- Retours : plus aucune flèche entre l'îlot (34 s) et la piscine finale ; on peut aussi flécher de la déco quand le
+  script en parle (canapé), mais pas lustres / miroir ; la douche = architecture ; bruitages trop forts.
+- Fait : flèches ajoutées sur canapé (« pouf »), hotte, poutres du plafond cathédrale, douche à l'italienne
+  (salle de bain ralentie 0,7×), salle de jeux (« bip »), escaliers vus de la mezzanine → une flèche toutes les
+  3 à 5 s jusqu'à la fin. Bruitages baissés de moitié environ. Durée 63,8 s.
+
 ## À faire / retours
 
 - [ ] Validation du script par l'utilisateur

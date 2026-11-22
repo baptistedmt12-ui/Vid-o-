@@ -46,7 +46,7 @@ export const SEGS: Seg[] = [
   },
   {
     id: "cuisine-hotte",
-    src0: 37.0,
+    src0: 37.5,
     src1: 42.0,
     mirror: true,
     voix: "Placards bleu nuit, LED sous chaque meuble, et une hotte en inox… pour le chef que t'es pas.",
@@ -56,17 +56,18 @@ export const SEGS: Seg[] = [
     id: "salle-de-bain",
     src0: 46.6,
     src1: 50.6,
+    rate: 0.7,
     mirror: true,
-    voix: "Et la salle de bain : miroir lumineux, et une baignoire posée au milieu.",
+    voix: "Et la salle de bain, avec sa baignoire posée au milieu… et sa douche à l'italienne, toute vitrée.",
   },
   {
     id: "salle-de-jeux",
-    src0: 54.5,
+    src0: 55.2,
     src1: 60.4,
     mirror: true,
     voix: "À l'étage, au bout du couloir, une salle de jeux pour les enfants… ou pour toi, on juge pas.",
   },
-  { id: "mezzanine", src0: 50.7, src1: 54.0, rate: 0.85, voix: "Et depuis la mezzanine, vue plongeante sur les deux escaliers." },
+  { id: "mezzanine", src0: 50.7, src1: 54.0, voix: "Et depuis la mezzanine, vue plongeante sur les deux escaliers." },
   { id: "fin-piscine", src0: 60.45, src1: 62.0, rate: 0.4, mirror: true, zoom: "in", voix: "Et dehors, la piscine. Alors, 7 millions… un : tu signes direct." },
   { id: "fin-facade", src0: 0.0, src1: 2.4, zoom: "in", voix: "Deux : c'est beaucoup trop cher. Dis-le en commentaire !" },
 ];
@@ -91,7 +92,7 @@ export const outTime = (segId: string, src: number) => {
 };
 
 // Cercles et flèches : uniquement sur ce que dit la voix, suivis image par image (tracks.json)
-export type Son = "pop" | "argent" | "plouf" | "verre" | "scintille";
+export type Son = "pop" | "argent" | "plouf" | "verre" | "scintille" | "coussin" | "jeu";
 export type Annot = {
   seg: string;
   track: string;
@@ -110,9 +111,15 @@ export const ANNOTS: Annot[] = [
   { seg: "entree", track: "escalier-g", kind: "fleche", src0: 7.0, dir: "bas-droite", son: "scintille", phrase: "deux escaliers qui se rejoignent" },
   { seg: "entree", track: "escalier-d", kind: "fleche", src0: 7.0, dir: "bas-gauche", phrase: "deux escaliers qui se rejoignent" },
   { seg: "salon", track: "arches-fixe", kind: "fleche", src0: 9.8, src1: 12.2, dir: "bas-droite", son: "pop", phrase: "regarde ce plafond en arches" },
+  { seg: "salon", track: "canape2", kind: "fleche", src0: 15.2, src1: 16.4, dir: "haut-droite", son: "coussin", phrase: "Et le canapé ? Assez grand pour toute la famille, même celle que t'aimes pas." },
   { seg: "cave", track: "bouteilles", kind: "fleche", src0: 18.0, src1: 19.0, dir: "bas-gauche", son: "verre", phrase: "La cave à vin, toute vitrée" },
   { seg: "cuisine", track: "fenetres", kind: "fleche", src0: 25.5, src1: 27.8, dir: "bas-droite", phrase: "Des fenêtres jusqu'au plafond" },
   { seg: "cuisine", track: "ilot", kind: "fleche", src0: 30.0, dir: "haut-droite", son: "pop", phrase: "un îlot plus grand que mon appart" },
+  { seg: "cuisine-hotte", track: "hotte", kind: "fleche", src0: 40.5, src1: 41.8, dir: "bas-droite", phrase: "et une hotte en inox… pour le chef que t'es pas" },
+  { seg: "chambre", track: "poutres", kind: "fleche", src0: 44.0, src1: 45.0, dir: "bas-droite", phrase: "La chambre, sous un plafond cathédrale" },
+  { seg: "salle-de-bain", track: "douche", kind: "fleche", src0: 49.6, dir: "bas-droite", phrase: "et sa douche à l'italienne, toute vitrée" },
+  { seg: "salle-de-jeux", track: "jeux", kind: "fleche", src0: 57.0, src1: 59.2, dir: "haut-droite", son: "jeu", phrase: "une salle de jeux pour les enfants… ou pour toi" },
+  { seg: "mezzanine", track: "mezz2", kind: "fleche", src0: 52.4, dir: "bas-gauche", phrase: "vue plongeante sur les deux escaliers" },
   { seg: "fin-piscine", track: "piscine", kind: "fleche", src0: 60.5, dir: "haut-gauche", son: "plouf", phrase: "Et dehors, la piscine" },
 ];
 
