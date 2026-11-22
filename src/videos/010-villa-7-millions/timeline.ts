@@ -46,7 +46,7 @@ export const SEGS: Seg[] = [
     id: "cuisine",
     src0: 24.0,
     src1: 31.8,
-    voix: "La cuisine : des fenêtres partout, jusqu'au plafond. Franchement, t'as même pas besoin d'allumer la lumière. Un îlot plus grand que mon appart,",
+    voix: "La cuisine : des fenêtres partout, jusqu'au plafond. T'as même pas besoin d'allumer. Un îlot plus grand que mon appart,",
   },
   {
     id: "cuisine-hotte",
@@ -63,7 +63,7 @@ export const SEGS: Seg[] = [
     src1: 50.6,
     rate: 0.75,
     mirror: true,
-    voix: "La salle de bain, avec sa douche à l'italienne toute vitrée.",
+    voix: "La salle de bain, avec sa douche à l'italienne : la tienne est jalouse.",
   },
   {
     id: "salle-de-jeux",
