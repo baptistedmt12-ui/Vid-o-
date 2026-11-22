@@ -15,9 +15,9 @@ Règle : si deux éléments s'enchaînent trop vite, on n'en garde qu'un (une fl
 | 13,1 – 15,9 | Hall | À l'intérieur, deux escaliers qui se rejoignent. | 2 escaliers + scintillement |
 | 15,9 – 21,1 | Cave à vin | La cave à vin, juste à côté, avec des centaines de bouteilles… parfait pour impressionner tes invités. | bouteilles + verres |
 | 21,1 – 29,4 | Salon | Le salon ? Un plafond en arches, des poutres noires… et un canapé assez grand pour toute ta belle-famille… celle qui t'aime pas. | plafond + pop ; canapé + « pouf » |
-| 29,4 – 37,2 | Cuisine | La cuisine… des fenêtres partout, jusqu'au plafond : elle est baignée de lumière naturelle. Et un îlot plus grand que mon appart. | 4 fenêtres + scintillement ; îlot + pop |
+| 29,4 – 37,2 | Cuisine | La cuisine… des fenêtres partout, jusqu'au plafond. Franchement, t'as même pas besoin d'allumer la lumière. Et un îlot plus grand que mon appart. | 4 fenêtres + scintillement ; îlot + pop |
 | 37,2 – 41,2 | Cuisine, côté cuisson | Placards bleu nuit, LED sous chaque meuble, et une hotte en inox. | hotte |
-| 41,2 – 44,9 | Mezzanine | À l'étage, vue plongeante sur les deux escaliers. | 2 escaliers + scintillement |
+| 41,2 – 44,9 | Mezzanine | À l'étage, les deux escaliers vus d'en haut… avoue, c'est stylé. | 2 escaliers + scintillement |
 | 44,9 – 47,9 | Chambre | La suite parentale… et regarde ce lustre ! | lustre + pop |
 | 47,9 – 53,2 | Salle de bain (ralenti) | La salle de bain… avec sa douche à l'italienne, toute vitrée. | douche + pop |
 | 53,2 – 58,4 | Couloir + salle de jeux | Au bout du couloir, une salle de jeux pour les enfants… ou pour toi, on juge pas. | |

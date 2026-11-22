@@ -46,7 +46,7 @@ export const SEGS: Seg[] = [
     id: "cuisine",
     src0: 24.0,
     src1: 31.8,
-    voix: "La cuisine… des fenêtres partout, jusqu'au plafond : elle est baignée de lumière naturelle. Et un îlot plus grand que mon appart.",
+    voix: "La cuisine… des fenêtres partout, jusqu'au plafond. Franchement, t'as même pas besoin d'allumer la lumière. Et un îlot plus grand que mon appart.",
   },
   {
     id: "cuisine-hotte",
@@ -55,7 +55,7 @@ export const SEGS: Seg[] = [
     mirror: true,
     voix: "Placards bleu nuit, LED sous chaque meuble, et une hotte en inox.",
   },
-  { id: "mezzanine", src0: 50.7, src1: 54.0, rate: 0.9, voix: "À l'étage, vue plongeante sur les deux escaliers." },
+  { id: "mezzanine", src0: 50.7, src1: 54.0, rate: 0.9, voix: "À l'étage, les deux escaliers vus d'en haut… avoue, c'est stylé." },
   { id: "chambre", src0: 43.6, src1: 46.6, zoom: "out", voix: "La suite parentale… et regarde ce lustre !" },
   {
     id: "salle-de-bain",
@@ -129,8 +129,8 @@ export const ANNOTS: Annot[] = [
   { seg: "cuisine", track: "fenetre2", kind: "fleche", src0: 25.6, src1: 27.2, dir: "bas-gauche", phrase: "des fenêtres partout, jusqu'au plafond" },
   { seg: "cuisine", track: "ilot", kind: "fleche", src0: 30.0, dir: "haut-droite", son: "pop", phrase: "un îlot plus grand que mon appart" },
   { seg: "cuisine-hotte", track: "hotte", kind: "fleche", src0: 40.5, src1: 41.8, dir: "bas-droite", phrase: "et une hotte en inox" },
-  { seg: "mezzanine", track: "mezz-g", kind: "fleche", src0: 52.6, dir: "bas-droite", son: "scintille", phrase: "vue plongeante sur les deux escaliers" },
-  { seg: "mezzanine", track: "mezz-d", kind: "fleche", src0: 52.6, dir: "bas-gauche", phrase: "vue plongeante sur les deux escaliers" },
+  { seg: "mezzanine", track: "mezz-g", kind: "fleche", src0: 52.6, dir: "bas-droite", son: "scintille", phrase: "les deux escaliers vus d'en haut" },
+  { seg: "mezzanine", track: "mezz-d", kind: "fleche", src0: 52.6, dir: "bas-gauche", phrase: "les deux escaliers vus d'en haut" },
   { seg: "chambre", track: "anneau", kind: "fleche", src0: 44.0, src1: 44.9, dir: "bas-gauche", son: "pop", phrase: "La suite parentale… et regarde ce lustre !" },
   { seg: "salle-de-bain", track: "douche", kind: "fleche", src0: 49.6, dir: "bas-droite", son: "pop", phrase: "avec sa douche à l'italienne, toute vitrée" },
   { seg: "fin-piscine", track: "piscine", kind: "fleche", src0: 60.5, dir: "haut-gauche", son: "plouf", phrase: "Et pour finir, la piscine" },
