@@ -73,7 +73,8 @@ avait la voix, sans utiliser les crédits ElevenLabs, et explique ce que tu as f
 - Fait : bande-annonce supprimée ; ordre façade → allée (« reste jusqu'à la fin… la piscine ») → hall → cave →
   salon → cuisine → mezzanine → chambre → salle de bain → salle de jeux → piscine → façade (boucle).
   Inversions : cave avant le salon, mezzanine avant la chambre. Miroirs : cave, salon, cuisine côté hotte, salle de
-  bain, salle de jeux, piscine. Cuisine rallongée (24–34 s). Durée 63,3 s.
+  bain, salle de jeux, piscine. Appel à l'action vers 15–18 s sur un aperçu de la piscine (flèche + plouf), piscine reprise à la fin
+  (miroir, plus lente). Durée 64,2 s.
 
 ## À faire / retours
 

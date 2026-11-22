@@ -19,7 +19,7 @@ export type Seg = {
 // Visite progressive de A à Z : dehors → rez-de-chaussée → étage → dehors (piscine), jamais de retour en arrière.
 export const SEGS: Seg[] = [
   { id: "facade", src0: 0.0, src1: 3.3, zoom: "in", voix: "Voici ce que tu peux avoir pour seulement 7 millions d'euros." },
-  { id: "allee", src0: 3.3, src1: 6.45, rate: 0.75, zoom: "in", voix: "Et reste bien jusqu'à la fin… parce que la piscine, tu vas pas t'en remettre." },
+  { id: "allee", src0: 4.3, src1: 6.45, rate: 0.75, zoom: "in", voix: "Et à la fin, tu me diras si elle les vaut." },
   { id: "entree", src0: 6.5, src1: 8.45, rate: 0.7, zoom: "in", voix: "On entre… et direct, deux escaliers qui se rejoignent." },
   {
     id: "cave",
@@ -29,6 +29,8 @@ export const SEGS: Seg[] = [
     zoom: "in",
     voix: "Juste à côté de l'entrée, la cave à vin, toute vitrée. Parfait pour impressionner tes invités… ou pour ranger ton jus de raisin.",
   },
+  // Appel à l'action vers 15-20 s : aperçu rapide de la piscine (on y revient à la fin)
+  { id: "cta-piscine", src0: 60.45, src1: 62.0, rate: 0.42, punch: true, zoom: "in", voix: "Et reste bien jusqu'à la fin… parce que la piscine, tu vas pas t'en remettre." },
   {
     id: "salon",
     src0: 8.5,
@@ -39,7 +41,7 @@ export const SEGS: Seg[] = [
   {
     id: "cuisine",
     src0: 24.0,
-    src1: 34.0,
+    src1: 32.5,
     voix: "Et là… la cuisine. Des fenêtres jusqu'au plafond… honnêtement, rien que pour ça, je signe. Et un îlot plus grand que mon appart. Tout est pensé pour recevoir.",
   },
   {
@@ -118,6 +120,7 @@ export const ANNOTS: Annot[] = [
   { seg: "salle-de-bain", track: "douche", kind: "fleche", src0: 49.6, dir: "bas-droite", phrase: "et sa douche à l'italienne, toute vitrée" },
   { seg: "mezzanine", track: "mezz-g", kind: "fleche", src0: 52.6, src1: 53.9, dir: "bas-droite", son: "scintille", phrase: "vue plongeante sur les deux escaliers" },
   { seg: "mezzanine", track: "mezz-d", kind: "fleche", src0: 52.6, dir: "bas-gauche", phrase: "vue plongeante sur les deux escaliers" },
+  { seg: "cta-piscine", track: "piscine", kind: "fleche", src0: 60.5, dir: "haut-droite", son: "plouf", phrase: "parce que la piscine, tu vas pas t'en remettre" },
   { seg: "fin-piscine", track: "piscine", kind: "fleche", src0: 60.5, dir: "haut-gauche", son: "plouf", phrase: "Et voilà la piscine, au coucher du soleil" },
 ];
 
