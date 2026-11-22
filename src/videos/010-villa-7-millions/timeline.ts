@@ -40,7 +40,7 @@ export const SEGS: Seg[] = [
     src0: 8.5,
     src1: 16.8,
     mirror: true,
-    voix: "Le salon ? Un plafond en arches, des poutres noires… et un canapé assez grand pour toute ta belle-famille… même celle qui t'aime pas.",
+    voix: "Le salon ? Un plafond en arches, des poutres noires… et un canapé assez grand pour toute ta belle-famille… celle qui t'aime pas.",
   },
   {
     id: "cuisine",
