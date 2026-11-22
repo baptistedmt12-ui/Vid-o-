@@ -20,6 +20,8 @@ CIBLES = {
   "anneau":    (44.0, 46.5, (600, 345, 300, 200)),
   "miroir":    (47.8, 49.5, (710, 690, 155, 325)),
   "jeux":      (57.0, 60.3, (475, 1030, 260, 220)),
+  "arches":    (10.5, 12.0, (300, 150, 500, 380)),
+  "mezz":      (52.3, 54.0, (170, 1080, 160, 230)),
 }
 S = 0.5
 cap = cv2.VideoCapture(RUSH); fps = cap.get(cv2.CAP_PROP_FPS)
@@ -38,4 +40,11 @@ for k, (t0, t1, (x, y, w, h)) in CIBLES.items():
         pts.append([round(t0 + i / fps, 3), round(bx + bw / 2, 1), round(by + bh / 2, 1), round(bw, 1), round(bh, 1)])
     res[k] = pts
     print(k, len(pts), pts[0][1:3], '->', pts[-1][1:3])
+# Deux escaliers du hall : positions déduites du palier central (symétriques, suivent le zoom)
+res["escalier-g"] = [[t, cx - 0.7 * w, cy + 0.7 * w, 120, 120] for t, cx, cy, w, h in res["escalier"]]
+res["escalier-d"] = [[t, cx + 0.7 * w, cy + 0.7 * w, 120, 120] for t, cx, cy, w, h in res["escalier"]]
+# Maison entière (accroche) : centre de la façade, au-dessus de la porte
+res["maison-facade"] = [[t, cx, cy - 110, 120, 120] for t, cx, cy, w, h in res["maison"]]
+# Plafond en arches : il occupe tout le haut de l'image -> point fixe au centre des arches
+res["arches-fixe"] = [[round(9.8 + i / 60, 3), 540, 420, 300, 200] for i in range(int(2.6 * 60))]
 json.dump(res, open(OUT, "w"))

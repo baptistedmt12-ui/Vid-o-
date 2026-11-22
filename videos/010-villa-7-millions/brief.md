@@ -47,6 +47,16 @@ avait la voix, sans utiliser les crédits ElevenLabs, et explique ce que tu as f
 - **Flèches de préférence** ; cercle seulement autour d'un petit élément quand c'est propre.
 - Flèches / cercles **uniquement sur les éléments dont parle le script**, pas partout.
 
+## v2 (22/11) — retours sur la v1
+
+- Retours : trop de flèches sur la déco (lustres, miroir, baignoire) ; pas de flèche sur la piscine en premier plan ;
+  au début, juste une flèche sur la maison + pop-up « 7 millions » avec un son d'argent ; deux flèches sur le double
+  escalier ; sons différents selon l'élément, pas obligatoirement sur chaque flèche.
+- Fait : 10 flèches sur l'architecture seulement (maison, piscine ×2, 2 escaliers, plafond en arches, cave, fenêtres,
+  îlot), plus aucun cercle ; étiquette « PRIX 7 000 000 € » (1,9–5 s) + « ka-ching » ; sons : boom, argent, plouf,
+  scintillement, tintement de verres, pop ; fin « Et dehors, la piscine » (ralenti 0,4×). Durée 63,8 s.
+  Note : pas de cercle à 0,3 s (consigne du PDF), remplacé par la flèche sur la maison à la demande de l'utilisateur.
+
 ## À faire / retours
 
 - [ ] Validation du script par l'utilisateur

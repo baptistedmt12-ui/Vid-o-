@@ -90,3 +90,35 @@ tt = t_(1.3)
 bell = sum(a * np.sin(2 * np.pi * fr * tt) * np.exp(-tt * dk) for fr, a, dk in [(1568, 1, 3.5), (2093, .6, 4.5), (3136, .35, 6), (4186, .2, 8)])
 save("tintement.wav", bell * np.minimum(1, tt / 0.003))
 print("ok")
+
+# ARGENT (prix) : « ka-ching » = clic mécanique + pièces + cloche de caisse
+tt = t_(1.4); x = np.zeros(len(tt))
+clk = hpf(rng.standard_normal(int(0.03 * SR)), 2500) * np.exp(-t_(0.03) * 120); x[:len(clk)] += clk * 0.8
+for k in range(7):  # pièces qui tintent
+    i0 = int((0.06 + k * 0.035 + rng.uniform(0, 0.02)) * SR); d = t_(0.25)
+    fr = rng.uniform(3500, 6500)
+    c = (np.sin(2 * np.pi * fr * d) + 0.5 * np.sin(2 * np.pi * fr * 1.5 * d)) * np.exp(-d * 30)
+    x[i0:i0 + len(c)] += c[: len(x) - i0] * 0.35
+i0 = int(0.12 * SR); d = t_(1.2)
+bell = sum(a * np.sin(2 * np.pi * fr * d) * np.exp(-d * dk) for fr, a, dk in [(2637, 1, 3.2), (3951, .5, 4), (5274, .3, 6)])
+x[i0:i0 + len(d)] += bell[: len(x) - i0] * 0.6
+save("argent.wav", x)
+# PLOUF (piscine) : bulle qui monte + éclaboussure douce
+tt = t_(0.7); f = 250 + 900 * (1 - np.exp(-tt * 18))
+blub = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-tt * 9) * np.minimum(1, tt / 0.005)
+spl = lpf(hpf(rng.standard_normal(len(tt)), 800), 6000) * np.exp(-tt * 7) * np.minimum(1, tt / 0.02) * 0.35
+save("plouf.wav", blub * 0.8 + spl)
+# VERRE (cave à vin) : tintement de deux verres
+tt = t_(1.5); x = np.zeros(len(tt))
+for i0, fr in [(0, 2850), (int(0.09 * SR), 3320)]:
+    d = t_(1.4); g = sum(a * np.sin(2 * np.pi * fr * m * d) * np.exp(-d * dk) for m, a, dk in [(1, 1, 3), (2.76, .35, 6), (5.4, .15, 9)])
+    x[i0:i0 + len(d)] += g[: len(x) - i0]
+save("verre.wav", x * np.minimum(1, tt / 0.002))
+# SCINTILLEMENT (architecture) : arpège de clochettes ascendant
+tt = t_(1.3); x = np.zeros(len(tt))
+for k, m in enumerate([84, 88, 91, 96]):
+    i0 = int(k * 0.06 * SR); d = t_(1.0)
+    b = np.sin(2 * np.pi * mtof(m) * d) * np.exp(-d * 4.5) + 0.3 * np.sin(2 * np.pi * mtof(m + 12) * d) * np.exp(-d * 7)
+    x[i0:i0 + len(d)] += b[: len(x) - i0] * (0.6 + 0.1 * k)
+save("scintille.wav", x)
+print("sons supplémentaires ok")

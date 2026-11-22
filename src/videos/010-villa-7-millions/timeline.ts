@@ -28,7 +28,7 @@ export const SEGS: Seg[] = [
     src0: 8.5,
     src1: 16.8,
     mirror: true,
-    voix: "Le salon : plafond en arches, poutres noires… et regarde cette cheminée encastrée dans le mur. Le canapé ? Assez grand pour toute la famille, même celle que t'aimes pas.",
+    voix: "Le salon… regarde ce plafond en arches, avec ses poutres noires. La cheminée, encastrée dans le mur. Et le canapé ? Assez grand pour toute la famille, même celle que t'aimes pas.",
   },
   {
     id: "cave",
@@ -36,7 +36,7 @@ export const SEGS: Seg[] = [
     src1: 23.0,
     mirror: true,
     zoom: "in",
-    voix: "La cave à vin, juste à l'entrée. Parfait pour impressionner tes invités… ou pour ranger ton jus de raisin.",
+    voix: "La cave à vin, toute vitrée, juste à l'entrée. Parfait pour impressionner tes invités… ou pour ranger ton jus de raisin.",
   },
   {
     id: "cuisine",
@@ -51,7 +51,7 @@ export const SEGS: Seg[] = [
     mirror: true,
     voix: "Placards bleu nuit, LED sous chaque meuble, et une hotte en inox… pour le chef que t'es pas.",
   },
-  { id: "chambre", src0: 43.6, src1: 46.6, zoom: "out", voix: "La chambre, avec son lustre en anneau." },
+  { id: "chambre", src0: 43.6, src1: 46.6, zoom: "out", voix: "La chambre, sous un plafond cathédrale." },
   {
     id: "salle-de-bain",
     src0: 46.6,
@@ -66,8 +66,8 @@ export const SEGS: Seg[] = [
     mirror: true,
     voix: "À l'étage, au bout du couloir, une salle de jeux pour les enfants… ou pour toi, on juge pas.",
   },
-  { id: "mezzanine", src0: 50.7, src1: 54.0, rate: 0.85, voix: "Et cette vue sur l'entrée, avec le lustre géant au milieu." },
-  { id: "fin-piscine", src0: 60.45, src1: 62.0, rate: 0.5, mirror: true, zoom: "in", voix: "Alors, 7 millions… un : tu signes direct." },
+  { id: "mezzanine", src0: 50.7, src1: 54.0, rate: 0.85, voix: "Et depuis la mezzanine, vue plongeante sur les deux escaliers." },
+  { id: "fin-piscine", src0: 60.45, src1: 62.0, rate: 0.4, mirror: true, zoom: "in", voix: "Et dehors, la piscine. Alors, 7 millions… un : tu signes direct." },
   { id: "fin-facade", src0: 0.0, src1: 2.4, zoom: "in", voix: "Deux : c'est beaucoup trop cher. Dis-le en commentaire !" },
 ];
 
@@ -91,6 +91,7 @@ export const outTime = (segId: string, src: number) => {
 };
 
 // Cercles et flèches : uniquement sur ce que dit la voix, suivis image par image (tracks.json)
+export type Son = "pop" | "argent" | "plouf" | "verre" | "scintille";
 export type Annot = {
   seg: string;
   track: string;
@@ -98,27 +99,28 @@ export type Annot = {
   src0: number; // apparition (seconde du rush)
   src1?: number; // disparition (sinon : fin du plan)
   dir?: "bas-droite" | "bas-gauche" | "haut-droite" | "haut-gauche"; // d'où vient la flèche (à l'écran)
-  son: "pop" | "tintement";
+  son?: Son; // pas obligatoire
+  phrase: string; // phrase du script qui justifie la flèche
 };
 
+// Flèches uniquement sur l'ARCHITECTURE dont parle le script (pas la déco).
 export const ANNOTS: Annot[] = [
-  { seg: "facade", track: "maison", kind: "cercle", src0: 0.3, son: "pop" }, // cercle à 0,3 s
-  { seg: "facade", track: "porte", kind: "fleche", src0: 2.0, dir: "bas-droite", son: "tintement" }, // flèche à 2 s (« 7 millions »)
-  { seg: "entree", track: "escalier", kind: "fleche", src0: 7.0, dir: "bas-droite", son: "pop" }, // « deux escaliers »
-  { seg: "salon", track: "cheminee", kind: "cercle", src0: 12.6, src1: 14.4, son: "pop" }, // « cette cheminée »
-  { seg: "cave", track: "bouteilles", kind: "fleche", src0: 18.0, src1: 19.0, dir: "bas-gauche", son: "pop" }, // « la cave à vin »
-  { seg: "cuisine", track: "fenetres", kind: "fleche", src0: 25.5, src1: 27.8, dir: "bas-droite", son: "pop" }, // « des fenêtres jusqu'au plafond »
-  { seg: "cuisine", track: "ilot", kind: "fleche", src0: 30.0, dir: "haut-droite", son: "pop" }, // « un îlot »
-  { seg: "cuisine-hotte", track: "hotte", kind: "fleche", src0: 40.5, src1: 41.9, dir: "bas-droite", son: "pop" }, // « une hotte en inox »
-  { seg: "chambre", track: "anneau", kind: "fleche", src0: 44.0, src1: 44.9, dir: "bas-gauche", son: "pop" }, // « son lustre en anneau »
-  { seg: "salle-de-bain", track: "miroir", kind: "fleche", src0: 47.8, src1: 48.9, dir: "bas-droite", son: "pop" }, // « miroir lumineux »
-  { seg: "salle-de-bain", track: "baignoire", kind: "fleche", src0: 49.0, dir: "haut-droite", son: "pop" }, // « une baignoire »
-  { seg: "salle-de-jeux", track: "jeux", kind: "fleche", src0: 57.0, src1: 59.2, dir: "haut-droite", son: "pop" }, // « une salle de jeux »
-  { seg: "mezzanine", track: "lustre", kind: "fleche", src0: 52.3, dir: "bas-gauche", son: "pop" }, // « le lustre géant »
+  { seg: "facade", track: "maison-facade", kind: "fleche", src0: 0.3, dir: "bas-droite", phrase: "Voici ce que tu peux avoir…" },
+  { seg: "teaser-piscine", track: "piscine", kind: "fleche", src0: 60.5, dir: "haut-droite", son: "plouf", phrase: "une piscine pour les soirées d'été" },
+  { seg: "entree", track: "escalier-g", kind: "fleche", src0: 7.0, dir: "bas-droite", son: "scintille", phrase: "deux escaliers qui se rejoignent" },
+  { seg: "entree", track: "escalier-d", kind: "fleche", src0: 7.0, dir: "bas-gauche", phrase: "deux escaliers qui se rejoignent" },
+  { seg: "salon", track: "arches-fixe", kind: "fleche", src0: 9.8, src1: 12.2, dir: "bas-droite", son: "pop", phrase: "regarde ce plafond en arches" },
+  { seg: "cave", track: "bouteilles", kind: "fleche", src0: 18.0, src1: 19.0, dir: "bas-gauche", son: "verre", phrase: "La cave à vin, toute vitrée" },
+  { seg: "cuisine", track: "fenetres", kind: "fleche", src0: 25.5, src1: 27.8, dir: "bas-droite", phrase: "Des fenêtres jusqu'au plafond" },
+  { seg: "cuisine", track: "ilot", kind: "fleche", src0: 30.0, dir: "haut-droite", son: "pop", phrase: "un îlot plus grand que mon appart" },
+  { seg: "fin-piscine", track: "piscine", kind: "fleche", src0: 60.5, dir: "haut-gauche", son: "plouf", phrase: "Et dehors, la piscine" },
 ];
 
 // Question finale « 1 ou 2 » : deux pastilles (petites, en haut à gauche, hors interface TikTok)
 export const CHOIX = [
-  { t: outTime("fin-piscine", 60.45) + 1.0, n: "1", texte: "je signe direct" },
-  { t: outTime("fin-facade", 0) + 0.1, n: "2", texte: "beaucoup trop cher" },
+  { t: outTime("fin-piscine", 60.45) + 2.6, n: "1", texte: "je signe direct" },
+  { t: outTime("fin-facade", 0) + 0.6, n: "2", texte: "beaucoup trop cher" },
 ];
+
+// Étiquette de prix sur « 7 millions d'euros » (avec bruit d'argent)
+export const PRIX = { from: 1.9, to: 5.0, texte: "7 000 000 €" };

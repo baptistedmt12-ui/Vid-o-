@@ -12,7 +12,7 @@ import {
   useVideoConfig,
 } from "remotion";
 import tracksJson from "./tracks.json";
-import { ANNOTS, Annot, CHOIX, FPS, PLACED, Placed, RUSH, TOTAL_FRAMES } from "./timeline";
+import { ANNOTS, Annot, CHOIX, FPS, PLACED, Placed, PRIX, RUSH, Son, TOTAL_FRAMES } from "./timeline";
 
 export { FPS, TOTAL_FRAMES };
 
@@ -168,6 +168,36 @@ const Pastille: React.FC<{ n: string; texte: string; at: number }> = ({ n, texte
   );
 };
 
+const VOL: Record<Son, number> = { pop: 0.55, argent: 0.5, plouf: 0.5, verre: 0.4, scintille: 0.35 };
+
+/** Petite étiquette de prix (en haut à gauche, hors interface TikTok), entrée en ressort. */
+const EtiquettePrix: React.FC<{ texte: string }> = ({ texte }) => {
+  const frame = useCurrentFrame();
+  const { fps, durationInFrames } = useVideoConfig();
+  const k = spring({ frame, fps, config: { damping: 10, stiffness: 210 } });
+  const out = interpolate(frame, [durationInFrames - 8, durationInFrames], [1, 0], clamp);
+  return (
+    <div
+      style={{
+        position: "absolute",
+        left: 70,
+        top: 330,
+        background: "rgba(255,255,255,0.97)",
+        borderRadius: 26,
+        padding: "12px 28px 14px",
+        boxShadow: "0 8px 22px rgba(0,0,0,0.35)",
+        fontFamily: "Inter, Arial, sans-serif",
+        transform: `scale(${interpolate(k, [0, 1], [0.5, 1]) * (0.9 + 0.1 * out)}) rotate(-3deg)`,
+        transformOrigin: "0% 50%",
+        opacity: Math.min(1, k * 2) * out,
+      }}
+    >
+      <div style={{ fontSize: 20, fontWeight: 600, color: "#777", letterSpacing: 3, marginBottom: 2 }}>PRIX</div>
+      <div style={{ fontSize: 50, fontWeight: 800, color: RED, lineHeight: 1 }}>{texte}</div>
+    </div>
+  );
+};
+
 export const Video010: React.FC<{ musique?: boolean }> = ({ musique = true }) => {
   const debutFin = Math.round(CHOIX[0].t * FPS);
   return (
@@ -177,6 +207,11 @@ export const Video010: React.FC<{ musique?: boolean }> = ({ musique = true }) =>
           <Plan seg={s} />
         </Sequence>
       ))}
+
+      {/* Étiquette de prix sur « 7 millions d'euros » */}
+      <Sequence from={Math.round(PRIX.from * FPS)} durationInFrames={Math.round((PRIX.to - PRIX.from) * FPS)} name="prix">
+        <EtiquettePrix texte={PRIX.texte} />
+      </Sequence>
 
       {/* Question finale « 1 ou 2 » : petites pastilles en haut à gauche (zone sûre TikTok) */}
       <Sequence from={debutFin} name="choix-1-2">
@@ -196,14 +231,18 @@ export const Video010: React.FC<{ musique?: boolean }> = ({ musique = true }) =>
       )}
       <Audio src={staticFile(ASSETS + "boom.wav")} volume={0.85} />
       {ANNOTS.map((a, i) => {
+        if (!a.son) return null;
         const p = PLACED.find((s) => s.id === a.seg)!;
         const at = p.from + Math.round(((a.src0 - p.src0) / p.rate) * FPS);
         return (
-          <Sequence key={i} from={at} durationInFrames={45} name={`son-${a.track}`}>
-            <Audio src={staticFile(ASSETS + (a.son === "pop" ? "pop.wav" : "tintement.wav"))} volume={a.son === "pop" ? 0.55 : 0.4} />
+          <Sequence key={i} from={at} durationInFrames={50} name={`son-${a.son}-${a.track}`}>
+            <Audio src={staticFile(ASSETS + a.son + ".wav")} volume={VOL[a.son]} />
           </Sequence>
         );
       })}
+      <Sequence from={Math.round(PRIX.from * FPS)} durationInFrames={50} name="son-argent">
+        <Audio src={staticFile(ASSETS + "argent.wav")} volume={0.5} />
+      </Sequence>
       {CHOIX.map((c) => (
         <Sequence key={c.n} from={Math.round(c.t * FPS)} durationInFrames={20} name={`son-choix-${c.n}`}>
           <Audio src={staticFile(ASSETS + "pop.wav")} volume={0.5} />
