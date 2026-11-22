@@ -7,6 +7,7 @@ flèche à 2 s, question « 1 ou 2 » à la fin, son d'origine coupé, textes d'
 - Langue / pays : français, France.
 - Voix : **féminine, ElevenLabs** (abonnement 30 000 crédits/mois, ~1 000 crédits par vidéo).
   Voix choisie : **Chloé - Warm, Friendly & UGC Ready** (ID `Hy28BjVfgieDVMiyQpQe`, voix pro FR, réseaux sociaux) (choisie à l'oreille par l'utilisateur le 22/11/2026).
+- **Ne consommer AUCUN crédit ElevenLabs sans accord explicite de l'utilisateur** (compte gratuit 10 000 crédits pour l'instant).
 - Narration : présentation de la maison, un peu d'humour (« troll »).
 - Musique : à choisir selon la vidéo, discrète.
 
