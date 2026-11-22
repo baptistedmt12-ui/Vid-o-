@@ -65,6 +65,16 @@ avait la voix, sans utiliser les crédits ElevenLabs, et explique ce que tu as f
   (salle de bain ralentie 0,7×), salle de jeux (« bip »), escaliers vus de la mezzanine → une flèche toutes les
   3 à 5 s jusqu'à la fin. Bruitages baissés de moitié environ. Durée 63,8 s.
 
+## v4 (22/11) — retours sur la v3
+
+- Retours : 2 flèches sur les fenêtres du haut ; pas de flèche sur la table de la salle de jeux ; 2 flèches sur les
+  escaliers vus de la mezzanine ; phrase belle-famille ; surtout : **visite progressive de A à Z** comme les exemples,
+  pas de bande-annonce qui saute dehors/dedans ; appel à rester jusqu'à la fin pour la piscine.
+- Fait : bande-annonce supprimée ; ordre façade → allée (« reste jusqu'à la fin… la piscine ») → hall → cave →
+  salon → cuisine → mezzanine → chambre → salle de bain → salle de jeux → piscine → façade (boucle).
+  Inversions : cave avant le salon, mezzanine avant la chambre. Miroirs : cave, salon, cuisine côté hotte, salle de
+  bain, salle de jeux, piscine. Cuisine rallongée (24–34 s). Durée 63,3 s.
+
 ## À faire / retours
 
 - [ ] Validation du script par l'utilisateur
