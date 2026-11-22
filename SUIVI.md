@@ -23,7 +23,7 @@ Ce fichier regroupe trois choses :
 | 007 | Inox en muscu (extrait « Que devient Inox en Muscu ») | 🔍 Relecture | 9:16 (1080×1920) 25 i/s | 1 min 06 | `Video007` | — | — | — | v1 rendue, musique générée calée sur les coupes |
 | 008 | 5 étapes pour tes premières handstand push-ups (On Air) | 🔍 Relecture | 9:16 (1080×1920) 59,94 i/s | 1 min 02 | `Video008` | — | — | — | v1 : carte étapes + axe des jambes suivi |
 | 009 | Restauration chaussure noire (flammes en ouverture) | 🔍 Relecture | 9:16 (1080×1920) 30 i/s | 1 min 02 | — (coupes ffmpeg) | — | — | — | v1 qualité max envoyée (158 Mo, hors GitHub : envoi LFS coupé par le proxy), modèle = montage bordeaux |
-| 010 | Villa à « seulement » 7 millions d'euros (visite immo) | 🔍 Relecture | 9:16 (1080×1920) 30 i/s | 1 min 04 | `Video010` | — | — | — | montage v4 sans voix (visite A à Z), script à valider, voix Chloé (ElevenLabs) à faire |
+| 010 | Villa à « seulement » 7 millions d'euros (visite immo) | 🔍 Relecture | 9:16 (1080×1920) 30 i/s | 1 min 04 | `Video010` | — | — | — | montage v4 sans voix (style exemples), script à valider, voix Chloé (ElevenLabs) à faire |
 | 011 | | 💡 Idée | | | | | | | |
 
 ### Banque d'idées
