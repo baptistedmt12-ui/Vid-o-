@@ -6,7 +6,7 @@ flèche à 2 s, question « 1 ou 2 » à la fin, son d'origine coupé, textes d'
 ## Réponses de l'utilisateur
 - Langue / pays : français, France.
 - Voix : **féminine, ElevenLabs** (abonnement 30 000 crédits/mois, ~1 000 crédits par vidéo).
-  La voix précise reste à choisir par l'utilisateur à l'oreille.
+  Voix choisie : **ID `Hy28BjVfgieDVMiyQpQe`** (choisie à l'oreille par l'utilisateur le 22/11/2026).
 - Narration : présentation de la maison, un peu d'humour (« troll »).
 - Musique : à choisir selon la vidéo, discrète.
 
