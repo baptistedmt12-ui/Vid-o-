@@ -1,0 +1,214 @@
+import React from "react";
+import {
+  AbsoluteFill,
+  Audio,
+  Easing,
+  OffthreadVideo,
+  Sequence,
+  interpolate,
+  spring,
+  staticFile,
+  useCurrentFrame,
+  useVideoConfig,
+} from "remotion";
+import tracksJson from "./tracks.json";
+import { ANNOTS, Annot, CHOIX, FPS, PLACED, Placed, RUSH, TOTAL_FRAMES } from "./timeline";
+
+export { FPS, TOTAL_FRAMES };
+
+const RED = "#FF1E1E";
+const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
+const tracks = tracksJson as unknown as Record<string, [number, number, number, number, number][]>;
+const ASSETS = "010-villa-7-millions/assets/";
+
+/** Zoom du plan à l'image `frame` (lent zoom + entrée « punch »). */
+const zoomOf = (seg: Placed, frame: number, fps: number) => {
+  const p = frame / Math.max(1, seg.frames - 1);
+  let z = seg.zoom === "in" ? 1 + 0.07 * p : seg.zoom === "out" ? 1.07 - 0.07 * p : 1.02;
+  if (seg.punch) z *= interpolate(spring({ frame, fps, config: { damping: 15, stiffness: 200 } }), [0, 1], [1.12, 1]);
+  if (seg.id === "facade") {
+    // accroche : entrée choc sur le boom
+    z *= interpolate(spring({ frame, fps, config: { damping: 11, stiffness: 160 } }), [0, 1], [1.25, 1]);
+  }
+  return z;
+};
+
+/** Position d'un élément suivi (coordonnées rush) à une seconde du rush. */
+const trackAt = (id: string, src: number) => {
+  const tr = tracks[id];
+  const i = Math.max(0, Math.min(tr.length - 1, Math.round((src - tr[0][0]) * 60)));
+  // lissage léger sur ±3 images
+  let cx = 0, cy = 0, w = 0, h = 0, n = 0;
+  for (let k = Math.max(0, i - 3); k <= Math.min(tr.length - 1, i + 3); k++) {
+    cx += tr[k][1]; cy += tr[k][2]; w += tr[k][3]; h += tr[k][4]; n++;
+  }
+  return { cx: cx / n, cy: cy / n, w: w / n, h: h / n };
+};
+
+/** Coordonnées rush → écran (miroir + zoom autour du centre). */
+const toScreen = (seg: Placed, z: number, x: number, y: number) => {
+  const X = seg.mirror ? 1080 - x : x;
+  return { x: 540 + (X - 540) * z, y: 960 + (y - 960) * z };
+};
+
+const Cercle: React.FC<{ seg: Placed; a: Annot; z: number; src: number; local: number }> = ({ seg, a, z, src, local }) => {
+  const { fps } = useVideoConfig();
+  const p = trackAt(a.track, src);
+  const c = toScreen(seg, z, p.cx, p.cy);
+  const rx = Math.max(90, (p.w * z) / 2 + 40);
+  const ry = Math.max(80, (p.h * z) / 2 + 40);
+  const draw = interpolate(local, [0, 9], [0, 1], { ...clamp, easing: Easing.out(Easing.cubic) });
+  const pop = spring({ frame: local, fps, config: { damping: 10, stiffness: 220 } });
+  const s = interpolate(pop, [0, 1], [0.7, 1]);
+  const len = Math.PI * (3 * (rx + ry) - Math.sqrt((3 * rx + ry) * (rx + 3 * ry)));
+  const W = rx * 2 + 60, H = ry * 2 + 60;
+  return (
+    <svg
+      width={W}
+      height={H}
+      style={{ position: "absolute", left: c.x - W / 2, top: c.y - H / 2, transform: `scale(${s}) rotate(-8deg)`, overflow: "visible" }}
+    >
+      <ellipse cx={W / 2} cy={H / 2} rx={rx} ry={ry} fill="none" stroke="rgba(0,0,0,0.35)" strokeWidth={17}
+        strokeDasharray={len} strokeDashoffset={len * (1 - draw)} strokeLinecap="round" />
+      <ellipse cx={W / 2} cy={H / 2} rx={rx} ry={ry} fill="none" stroke={RED} strokeWidth={11}
+        strokeDasharray={len} strokeDashoffset={len * (1 - draw)} strokeLinecap="round" />
+    </svg>
+  );
+};
+
+const Fleche: React.FC<{ seg: Placed; a: Annot; z: number; src: number; local: number }> = ({ seg, a, z, src, local }) => {
+  const { fps } = useVideoConfig();
+  const p = trackAt(a.track, src);
+  const c = toScreen(seg, z, p.cx, p.cy);
+  const dir = a.dir ?? "bas-droite";
+  const dx = dir.includes("droite") ? 1 : -1;
+  const dy = dir.startsWith("bas") ? 1 : -1;
+  const ang = Math.atan2(dy, dx); // direction depuis la cible vers la queue
+  const gap = Math.min(p.w, p.h) * z * 0.35 + 18;
+  const k = spring({ frame: local, fps, config: { damping: 9, stiffness: 200 } });
+  const bob = Math.sin((local / fps) * Math.PI * 3) * 10;
+  const dist = gap + (1 - k) * 160 + bob;
+  const tipX = c.x + Math.cos(ang) * dist;
+  const tipY = c.y + Math.sin(ang) * dist;
+  const L = 190;
+  const deg = (ang * 180) / Math.PI + 180; // la flèche pointe vers la cible
+  return (
+    <div style={{ position: "absolute", left: tipX, top: tipY, opacity: Math.min(1, k * 2), transform: `rotate(${deg}deg)`, transformOrigin: "0 0" }}>
+      <svg width={L + 20} height={90} style={{ position: "absolute", left: -L - 10, top: -45, overflow: "visible" }}>
+        <g filter="drop-shadow(0 3px 4px rgba(0,0,0,0.45))">
+          <line x1={10} y1={45} x2={L - 30} y2={45} stroke={RED} strokeWidth={20} strokeLinecap="round" />
+          <polygon points={`${L + 10},45 ${L - 50},5 ${L - 50},85`} fill={RED} strokeLinejoin="round" stroke={RED} strokeWidth={6} />
+        </g>
+      </svg>
+    </div>
+  );
+};
+
+const Plan: React.FC<{ seg: Placed }> = ({ seg }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const z = zoomOf(seg, frame, fps);
+  const src = seg.src0 + (frame / fps) * seg.rate;
+  let shakeX = 0, shakeY = 0;
+  if (seg.id === "facade" && frame < 12) {
+    const a = 1 - frame / 12;
+    shakeX = Math.sin(frame * 2.9) * 16 * a;
+    shakeY = Math.cos(frame * 3.4) * 12 * a;
+  }
+  const annots = ANNOTS.filter((a) => a.seg === seg.id);
+  return (
+    <AbsoluteFill style={{ backgroundColor: "#000", overflow: "hidden" }}>
+      <AbsoluteFill style={{ transform: `translate(${shakeX}px, ${shakeY}px) scale(${z}) scaleX(${seg.mirror ? -1 : 1})` }}>
+        <OffthreadVideo
+          src={staticFile(RUSH)}
+          muted
+          trimBefore={Math.round(seg.src0 * fps)}
+          playbackRate={seg.rate}
+          style={{ width: "100%", height: "100%", objectFit: "cover", filter: "saturate(1.08) contrast(1.04)" }}
+        />
+      </AbsoluteFill>
+      {annots.map((a, i) => {
+        const local = Math.round((src - a.src0) * (fps / seg.rate));
+        if (src < a.src0 || (a.src1 !== undefined && src > a.src1)) return null;
+        // fondu de sortie quand l'élément quitte le suivi
+        const Comp = a.kind === "cercle" ? Cercle : Fleche;
+        return <Comp key={i} seg={seg} a={a} z={z} src={src} local={local} />;
+      })}
+    </AbsoluteFill>
+  );
+};
+
+const Pastille: React.FC<{ n: string; texte: string; at: number }> = ({ n, texte, at }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const k = spring({ frame: frame - at, fps, config: { damping: 12, stiffness: 200 } });
+  if (frame < at) return null;
+  return (
+    <div
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        gap: 12,
+        background: "rgba(255,255,255,0.96)",
+        borderRadius: 40,
+        padding: "12px 26px",
+        marginBottom: 14,
+        fontFamily: "Inter, Arial, sans-serif",
+        fontWeight: 800,
+        fontSize: 38,
+        color: n === "1" ? "#111" : RED,
+        boxShadow: "0 6px 18px rgba(0,0,0,0.35)",
+        transform: `scale(${interpolate(k, [0, 1], [0.6, 1])})`,
+        transformOrigin: "0% 50%",
+        opacity: Math.min(1, k * 2),
+      }}
+    >
+      {n} · {texte}
+    </div>
+  );
+};
+
+export const Video010: React.FC<{ musique?: boolean }> = ({ musique = true }) => {
+  const debutFin = Math.round(CHOIX[0].t * FPS);
+  return (
+    <AbsoluteFill style={{ backgroundColor: "#000" }}>
+      {PLACED.map((s) => (
+        <Sequence key={s.id + s.from} from={s.from} durationInFrames={s.frames} name={s.id}>
+          <Plan seg={s} />
+        </Sequence>
+      ))}
+
+      {/* Question finale « 1 ou 2 » : petites pastilles en haut à gauche (zone sûre TikTok) */}
+      <Sequence from={debutFin} name="choix-1-2">
+        <div style={{ position: "absolute", left: 70, top: 330, display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+          {CHOIX.map((c) => (
+            <Pastille key={c.n} n={c.n} texte={c.texte} at={Math.round(c.t * FPS) - debutFin} />
+          ))}
+        </div>
+      </Sequence>
+
+      {/* Son : musique légère + bruitages calés (son d'origine coupé) */}
+      {musique && (
+        <Audio
+          src={staticFile(ASSETS + "musique.wav")}
+          volume={(f) => interpolate(f, [TOTAL_FRAMES - 45, TOTAL_FRAMES], [0.3, 0], clamp)}
+        />
+      )}
+      <Audio src={staticFile(ASSETS + "boom.wav")} volume={0.85} />
+      {ANNOTS.map((a, i) => {
+        const p = PLACED.find((s) => s.id === a.seg)!;
+        const at = p.from + Math.round(((a.src0 - p.src0) / p.rate) * FPS);
+        return (
+          <Sequence key={i} from={at} durationInFrames={45} name={`son-${a.track}`}>
+            <Audio src={staticFile(ASSETS + (a.son === "pop" ? "pop.wav" : "tintement.wav"))} volume={a.son === "pop" ? 0.55 : 0.4} />
+          </Sequence>
+        );
+      })}
+      {CHOIX.map((c) => (
+        <Sequence key={c.n} from={Math.round(c.t * FPS)} durationInFrames={20} name={`son-choix-${c.n}`}>
+          <Audio src={staticFile(ASSETS + "pop.wav")} volume={0.5} />
+        </Sequence>
+      ))}
+    </AbsoluteFill>
+  );
+};
