@@ -28,7 +28,7 @@ avait la voix, sans utiliser les crédits ElevenLabs, et explique ce que tu as f
 
 - 2026-11-22 — Repérage image par image : visite d'une maison neuve aux États-Unis (drapeau US visible),
   aucun texte ni emoji incrusté → pas d'inpainting nécessaire.
-- 2026-11-22 — **Montage v1 sans voix** (`export/010-v1-montage.mp4`), calé sur la voix off imaginée (`script.md`) :
+- 2026-11-22 — **Montage v1 sans voix** (162 Mo, sur GitHub via LFS) (`export/010-v1-montage.mp4`), calé sur la voix off imaginée (`script.md`) :
   - accroche : façade (plan le plus impressionnant) avec boom + secousse, cercle à 0,3 s, flèche à 2 s + tintement ;
   - bande-annonce 3,3–8,3 s : escalier vu d'en haut (miroir), cave vitrée, piscine au coucher du soleil (ralenti) ;
   - visite remise dans un nouvel ordre (salle de jeux avant la mezzanine, piscine gardée pour la fin),
