@@ -83,6 +83,14 @@ avait la voix, sans utiliser les crédits ElevenLabs, et explique ce que tu as f
   (porte en arche, cheminée, lustres, miroir…), une phrase courte par pièce, fin « Alors, sois honnête : un… ou deux… ».
   Flèches sur tout ce qui est cité avec insistance (21 flèches), structure intro + visite dans l'ordre. **= v4 rendue.**
 
+## v5 (22/11) — retours sur la v4
+
+- Retours : pas de prix dès le début ; intro façon exemples = 3 plans dynamiques (piscine, double escalier, cheminée),
+  puis « Voici ce que tu peux avoir pour seulement 7 millions d'euros » ; flèches pas trop rapides (sinon une seule
+  flèche, une seule mention) ; flèches sur presque toutes les fenêtres de la cuisine (lumière naturelle).
+- Fait : intro piscine → escalier vu d'en haut → cheminée, puis façade + prix ; lustre de la mezzanine et miroir
+  retirés ; salle de bain = douche seulement ; 4 flèches sur les fenêtres de la cuisine. Durée 64,7 s.
+
 ## À faire / retours
 
 - [ ] Validation du script par l'utilisateur

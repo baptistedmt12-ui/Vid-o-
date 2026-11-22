@@ -18,11 +18,12 @@ export type Seg = {
 
 // Structure des exemples : accroche → intro rapide des points forts → visite dans l'ordre (A à Z) → piscine → question.
 export const SEGS: Seg[] = [
+  // Intro rapide des points forts (sans le prix), plan le plus fort en premier avec le boom
+  { id: "intro-piscine", src0: 60.45, src1: 62.0, rate: 0.8, punch: true, zoom: "in", voix: "Une piscine face au coucher du soleil," },
+  { id: "intro-escalier", src0: 52.0, src1: 53.6, mirror: true, punch: true, voix: "un double escalier ultra moderne," },
+  { id: "intro-cheminee", src0: 12.3, src1: 14.4, mirror: true, punch: true, zoom: "in", voix: "et même une cheminée incrustée dans le mur." },
+  // Puis la présentation, directement
   { id: "facade", src0: 0.0, src1: 3.3, zoom: "in", voix: "Voici ce que tu peux avoir pour seulement 7 millions d'euros." },
-  // Intro : les points forts en rafale
-  { id: "teaser-escalier", src0: 52.0, src1: 53.6, mirror: true, punch: true, voix: "Un double escalier de château," },
-  { id: "teaser-cave", src0: 19.2, src1: 20.7, punch: true, zoom: "out", voix: "une cave à vin toute vitrée," },
-  { id: "teaser-piscine", src0: 60.45, src1: 62.0, rate: 0.8, punch: true, zoom: "in", voix: "et une piscine au coucher du soleil !" },
   { id: "allee", src0: 3.3, src1: 6.45, rate: 0.75, zoom: "in", voix: "Reste bien jusqu'à la fin. On commence par l'allée fleurie… et cette porte en arche." },
   // Visite dans l'ordre
   { id: "entree", src0: 6.5, src1: 8.45, rate: 0.7, zoom: "in", voix: "À l'intérieur, deux escaliers qui se rejoignent." },
@@ -39,13 +40,13 @@ export const SEGS: Seg[] = [
     src0: 8.5,
     src1: 16.8,
     mirror: true,
-    voix: "Le salon ? Un plafond en arches, des poutres noires, une cheminée encastrée dans le marbre, et un canapé assez grand pour toute ta belle-famille… même celle qui t'aime pas.",
+    voix: "Le salon ? Un plafond en arches, des poutres noires… et un canapé assez grand pour toute ta belle-famille… même celle qui t'aime pas.",
   },
   {
     id: "cuisine",
     src0: 24.0,
     src1: 31.8,
-    voix: "La cuisine, avec ses fenêtres jusqu'au plafond… et un îlot plus grand que mon appart. Honnêtement, rien que pour ça, je signe.",
+    voix: "La cuisine… des fenêtres partout, jusqu'au plafond : elle est baignée de lumière naturelle. Et un îlot plus grand que mon appart.",
   },
   {
     id: "cuisine-hotte",
@@ -54,7 +55,7 @@ export const SEGS: Seg[] = [
     mirror: true,
     voix: "Placards bleu nuit, LED sous chaque meuble, et une hotte en inox.",
   },
-  { id: "mezzanine", src0: 50.7, src1: 54.0, rate: 0.9, voix: "À l'étage, vue plongeante sur les deux escaliers… et ce lustre en cristal !" },
+  { id: "mezzanine", src0: 50.7, src1: 54.0, rate: 0.9, voix: "À l'étage, vue plongeante sur les deux escaliers." },
   { id: "chambre", src0: 43.6, src1: 46.6, zoom: "out", voix: "La suite parentale… et regarde ce lustre !" },
   {
     id: "salle-de-bain",
@@ -62,7 +63,7 @@ export const SEGS: Seg[] = [
     src1: 50.6,
     rate: 0.75,
     mirror: true,
-    voix: "Une salle de bain avec miroir lumineux, baignoire posée au milieu et douche à l'italienne.",
+    voix: "La salle de bain… avec sa douche à l'italienne, toute vitrée.",
   },
   {
     id: "salle-de-jeux",
@@ -109,26 +110,29 @@ export type Annot = {
 
 // Flèches uniquement sur l'ARCHITECTURE dont parle le script (pas la déco).
 export const ANNOTS: Annot[] = [
+  // Intro
+  { seg: "intro-piscine", track: "piscine", kind: "fleche", src0: 60.69, dir: "haut-droite", son: "plouf", phrase: "Une piscine face au coucher du soleil" },
+  { seg: "intro-escalier", track: "mezz-g", kind: "fleche", src0: 52.4, dir: "bas-gauche", son: "scintille", phrase: "un double escalier ultra moderne" },
+  { seg: "intro-escalier", track: "mezz-d", kind: "fleche", src0: 52.4, dir: "bas-droite", phrase: "un double escalier ultra moderne" },
+  { seg: "intro-cheminee", track: "cheminee", kind: "fleche", src0: 12.6, src1: 14.1, dir: "bas-droite", son: "pop", phrase: "et même une cheminée incrustée dans le mur" },
+  // Présentation + visite dans l'ordre
   { seg: "facade", track: "maison-facade", kind: "fleche", src0: 0.3, dir: "bas-droite", phrase: "Voici ce que tu peux avoir…" },
-  { seg: "teaser-piscine", track: "piscine", kind: "fleche", src0: 60.5, dir: "haut-droite", son: "plouf", phrase: "et une piscine au coucher du soleil !" },
   { seg: "allee", track: "porte-allee", kind: "fleche", src0: 5.6, dir: "bas-droite", son: "pop", phrase: "et cette porte en arche" },
   { seg: "entree", track: "escalier-g", kind: "fleche", src0: 7.0, dir: "bas-droite", son: "scintille", phrase: "deux escaliers qui se rejoignent" },
   { seg: "entree", track: "escalier-d", kind: "fleche", src0: 7.0, dir: "bas-gauche", phrase: "deux escaliers qui se rejoignent" },
   { seg: "cave", track: "bouteilles", kind: "fleche", src0: 18.0, src1: 19.0, dir: "bas-gauche", son: "verre", phrase: "avec des centaines de bouteilles" },
   { seg: "salon", track: "arches-fixe", kind: "fleche", src0: 9.8, src1: 12.2, dir: "bas-droite", son: "pop", phrase: "Un plafond en arches, des poutres noires" },
-  { seg: "salon", track: "cheminee", kind: "fleche", src0: 12.6, src1: 14.1, dir: "bas-droite", phrase: "une cheminée encastrée dans le marbre" },
   { seg: "salon", track: "canape2", kind: "fleche", src0: 15.2, src1: 16.4, dir: "haut-droite", son: "coussin", phrase: "un canapé assez grand pour toute ta belle-famille" },
-  { seg: "cuisine", track: "fenetres", kind: "fleche", src0: 25.5, src1: 27.5, dir: "bas-droite", phrase: "avec ses fenêtres jusqu'au plafond" },
-  { seg: "cuisine", track: "fenetre2", kind: "fleche", src0: 25.6, src1: 27.2, dir: "bas-gauche", phrase: "avec ses fenêtres jusqu'au plafond" },
+  { seg: "cuisine", track: "baie-g", kind: "fleche", src0: 25.3, src1: 26.3, dir: "bas-droite", phrase: "des fenêtres partout, jusqu'au plafond" },
+  { seg: "cuisine", track: "baie-d", kind: "fleche", src0: 25.3, src1: 26.3, dir: "bas-droite", phrase: "des fenêtres partout, jusqu'au plafond" },
+  { seg: "cuisine", track: "fenetres", kind: "fleche", src0: 25.6, src1: 27.2, dir: "haut-droite", son: "scintille", phrase: "des fenêtres partout, jusqu'au plafond" },
+  { seg: "cuisine", track: "fenetre2", kind: "fleche", src0: 25.6, src1: 27.2, dir: "bas-gauche", phrase: "des fenêtres partout, jusqu'au plafond" },
   { seg: "cuisine", track: "ilot", kind: "fleche", src0: 30.0, dir: "haut-droite", son: "pop", phrase: "un îlot plus grand que mon appart" },
   { seg: "cuisine-hotte", track: "hotte", kind: "fleche", src0: 40.5, src1: 41.8, dir: "bas-droite", phrase: "et une hotte en inox" },
-  { seg: "mezzanine", track: "mezz-g", kind: "fleche", src0: 52.6, src1: 53.25, dir: "bas-droite", phrase: "vue plongeante sur les deux escaliers" },
-  { seg: "mezzanine", track: "mezz-d", kind: "fleche", src0: 52.6, src1: 53.25, dir: "bas-gauche", phrase: "vue plongeante sur les deux escaliers" },
-  { seg: "mezzanine", track: "lustre", kind: "fleche", src0: 53.3, dir: "bas-gauche", son: "scintille", phrase: "et ce lustre en cristal !" },
+  { seg: "mezzanine", track: "mezz-g", kind: "fleche", src0: 52.6, dir: "bas-droite", son: "scintille", phrase: "vue plongeante sur les deux escaliers" },
+  { seg: "mezzanine", track: "mezz-d", kind: "fleche", src0: 52.6, dir: "bas-gauche", phrase: "vue plongeante sur les deux escaliers" },
   { seg: "chambre", track: "anneau", kind: "fleche", src0: 44.0, src1: 44.9, dir: "bas-gauche", son: "pop", phrase: "La suite parentale… et regarde ce lustre !" },
-  { seg: "salle-de-bain", track: "miroir", kind: "fleche", src0: 47.8, src1: 48.9, dir: "bas-droite", son: "pop", phrase: "miroir lumineux" },
-  { seg: "salle-de-bain", track: "baignoire", kind: "fleche", src0: 49.0, src1: 49.55, dir: "haut-droite", phrase: "baignoire posée au milieu" },
-  { seg: "salle-de-bain", track: "douche", kind: "fleche", src0: 49.6, dir: "bas-droite", phrase: "et douche à l'italienne" },
+  { seg: "salle-de-bain", track: "douche", kind: "fleche", src0: 49.6, dir: "bas-droite", son: "pop", phrase: "avec sa douche à l'italienne, toute vitrée" },
   { seg: "fin-piscine", track: "piscine", kind: "fleche", src0: 60.5, dir: "haut-gauche", son: "plouf", phrase: "Et pour finir, la piscine" },
 ];
 
@@ -139,4 +143,4 @@ export const CHOIX = [
 ];
 
 // Étiquette de prix sur « 7 millions d'euros » (avec bruit d'argent)
-export const PRIX = { from: 1.9, to: 5.0, texte: "7 000 000 €" };
+export const PRIX = { from: outTime("facade", 1.9), to: outTime("facade", 3.3) + 1.2, texte: "7 000 000 €" };

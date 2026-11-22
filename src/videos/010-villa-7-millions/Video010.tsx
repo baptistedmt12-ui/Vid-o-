@@ -26,7 +26,7 @@ const zoomOf = (seg: Placed, frame: number, fps: number) => {
   const p = frame / Math.max(1, seg.frames - 1);
   let z = seg.zoom === "in" ? 1 + 0.07 * p : seg.zoom === "out" ? 1.07 - 0.07 * p : 1.02;
   if (seg.punch) z *= interpolate(spring({ frame, fps, config: { damping: 15, stiffness: 200 } }), [0, 1], [1.12, 1]);
-  if (seg.id === "facade") {
+  if (seg.from === 0) {
     // accroche : entrée choc sur le boom
     z *= interpolate(spring({ frame, fps, config: { damping: 11, stiffness: 160 } }), [0, 1], [1.25, 1]);
   }
@@ -110,7 +110,7 @@ const Plan: React.FC<{ seg: Placed }> = ({ seg }) => {
   const z = zoomOf(seg, frame, fps);
   const src = seg.src0 + (frame / fps) * seg.rate;
   let shakeX = 0, shakeY = 0;
-  if (seg.id === "facade" && frame < 12) {
+  if (seg.from === 0 && frame < 12) {
     const a = 1 - frame / 12;
     shakeX = Math.sin(frame * 2.9) * 16 * a;
     shakeY = Math.cos(frame * 3.4) * 12 * a;
