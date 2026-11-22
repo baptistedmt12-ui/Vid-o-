@@ -51,13 +51,13 @@ export const SEGS: Seg[] = [
     mirror: true,
     voix: "Placards bleu nuit, LED sous chaque meuble, et une hotte en inox… pour le chef que t'es pas.",
   },
-  { id: "chambre", src0: 43.6, src1: 46.6, zoom: "out", voix: "La chambre parentale, avec son lustre en anneau." },
+  { id: "chambre", src0: 43.6, src1: 46.6, zoom: "out", voix: "La chambre, avec son lustre en anneau." },
   {
     id: "salle-de-bain",
     src0: 46.6,
     src1: 50.6,
     mirror: true,
-    voix: "Et la salle de bain : douche à l'italienne, et une baignoire posée au milieu.",
+    voix: "Et la salle de bain : miroir lumineux, et une baignoire posée au milieu.",
   },
   {
     id: "salle-de-jeux",
@@ -104,12 +104,17 @@ export type Annot = {
 export const ANNOTS: Annot[] = [
   { seg: "facade", track: "maison", kind: "cercle", src0: 0.3, son: "pop" }, // cercle à 0,3 s
   { seg: "facade", track: "porte", kind: "fleche", src0: 2.0, dir: "bas-droite", son: "tintement" }, // flèche à 2 s (« 7 millions »)
-  { seg: "entree", track: "escalier", kind: "fleche", src0: 7.0, dir: "bas-droite", son: "pop" },
-  { seg: "salon", track: "cheminee", kind: "cercle", src0: 12.6, src1: 14.4, son: "pop" },
-  { seg: "cuisine", track: "ilot", kind: "cercle", src0: 30.0, son: "pop" },
-  { seg: "cuisine-hotte", track: "hotte", kind: "fleche", src0: 40.5, src1: 41.9, dir: "bas-droite", son: "pop" },
-  { seg: "salle-de-bain", track: "baignoire", kind: "cercle", src0: 49.0, son: "pop" },
-  { seg: "mezzanine", track: "lustre", kind: "fleche", src0: 52.3, dir: "bas-gauche", son: "pop" },
+  { seg: "entree", track: "escalier", kind: "fleche", src0: 7.0, dir: "bas-droite", son: "pop" }, // « deux escaliers »
+  { seg: "salon", track: "cheminee", kind: "cercle", src0: 12.6, src1: 14.4, son: "pop" }, // « cette cheminée »
+  { seg: "cave", track: "bouteilles", kind: "fleche", src0: 18.0, src1: 19.0, dir: "bas-gauche", son: "pop" }, // « la cave à vin »
+  { seg: "cuisine", track: "fenetres", kind: "fleche", src0: 25.5, src1: 27.8, dir: "bas-droite", son: "pop" }, // « des fenêtres jusqu'au plafond »
+  { seg: "cuisine", track: "ilot", kind: "fleche", src0: 30.0, dir: "haut-droite", son: "pop" }, // « un îlot »
+  { seg: "cuisine-hotte", track: "hotte", kind: "fleche", src0: 40.5, src1: 41.9, dir: "bas-droite", son: "pop" }, // « une hotte en inox »
+  { seg: "chambre", track: "anneau", kind: "fleche", src0: 44.0, src1: 44.9, dir: "bas-gauche", son: "pop" }, // « son lustre en anneau »
+  { seg: "salle-de-bain", track: "miroir", kind: "fleche", src0: 47.8, src1: 48.9, dir: "bas-droite", son: "pop" }, // « miroir lumineux »
+  { seg: "salle-de-bain", track: "baignoire", kind: "fleche", src0: 49.0, dir: "haut-droite", son: "pop" }, // « une baignoire »
+  { seg: "salle-de-jeux", track: "jeux", kind: "fleche", src0: 57.0, src1: 59.2, dir: "haut-droite", son: "pop" }, // « une salle de jeux »
+  { seg: "mezzanine", track: "lustre", kind: "fleche", src0: 52.3, dir: "bas-gauche", son: "pop" }, // « le lustre géant »
 ];
 
 // Question finale « 1 ou 2 » : deux pastilles (petites, en haut à gauche, hors interface TikTok)

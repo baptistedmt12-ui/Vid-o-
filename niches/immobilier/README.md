@@ -29,3 +29,11 @@ Transcription mot par mot : `exemple-transcription.json`.
   remonte aussi sur la question finale (~240 Hz, intonation très variée).
 - Débit soutenu : **~3,5 mots/s** (223 mots en 63 s), pauses très courtes (max 0,4 s), aucun blanc.
 - Ton : enthousiaste, conteuse, complice (tutoiement), pas lu.
+
+## Règles de montage (retours de l'utilisateur, 22/11/2026)
+- Les vidéos d'exemple servent surtout pour le **script et l'intonation**, pas à copier leur montage.
+- Retravailler la vidéo reçue : inverser des plans, effets miroir, ralentis, plans forts d'abord.
+- **Flèches de préférence** ; cercle seulement autour d'un petit élément quand il tombe proprement.
+- Flèches / cercles **uniquement sur ce que dit le script**, pas partout. Un « pop » sur chacun.
+- 2e exemple (Hidden Hills, 63 s) : une flèche toutes les ~4 s, chaque fois sur l'élément nommé ; fin
+  « Alors, sois honnête : un, tu signes direct ? Ou deux, beaucoup trop grand pour toi ? Dis-le-moi en commentaire ! ».

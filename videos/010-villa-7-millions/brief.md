@@ -33,10 +33,19 @@ avait la voix, sans utiliser les crédits ElevenLabs, et explique ce que tu as f
   - bande-annonce 3,3–8,3 s : escalier vu d'en haut (miroir), cave vitrée, piscine au coucher du soleil (ralenti) ;
   - visite remise dans un nouvel ordre (salle de jeux avant la mezzanine, piscine gardée pour la fin),
     7 plans en miroir, ralentis sur l'allée, l'entrée, la mezzanine et la piscine, cuisine raccourcie (19 s → 13 s) ;
-  - cercles et flèches rouges suivis image par image (OpenCV, `outils/suivi.py`), qui disparaissent au changement de plan,
-    chacun avec un « pop » ;
+  - 13 annotations rouges, uniquement sur ce que dit le script, suivies image par image (OpenCV, `outils/suivi.py`),
+    qui disparaissent au changement de plan, chacune avec un « pop » : 2 cercles (maison à 0,3 s, cheminée),
+    11 flèches (porte, escaliers, bouteilles, fenêtres, îlot, hotte, lustre de la chambre, miroir, baignoire,
+    salle de jeux, lustre géant) ;
   - fin : question 1 ou 2 avec deux petites pastilles en haut à gauche, retour sur la façade (boucle) ;
   - son d'origine coupé, musique house douce générée (`outils/sons.py`, 100 BPM), pas de whoosh.
+
+## Retours de l'utilisateur (22/11)
+
+- Les exemples servent surtout pour le **script et l'intonation**, pas à copier le montage.
+- Montage : retravailler la vidéo reçue (inverser des plans, miroirs…).
+- **Flèches de préférence** ; cercle seulement autour d'un petit élément quand c'est propre.
+- Flèches / cercles **uniquement sur les éléments dont parle le script**, pas partout.
 
 ## À faire / retours
 

@@ -90,14 +90,14 @@ const Fleche: React.FC<{ seg: Placed; a: Annot; z: number; src: number; local: n
   const dist = gap + (1 - k) * 160 + bob;
   const tipX = c.x + Math.cos(ang) * dist;
   const tipY = c.y + Math.sin(ang) * dist;
-  const L = 190;
+  const L = 160;
   const deg = (ang * 180) / Math.PI + 180; // la flèche pointe vers la cible
   return (
     <div style={{ position: "absolute", left: tipX, top: tipY, opacity: Math.min(1, k * 2), transform: `rotate(${deg}deg)`, transformOrigin: "0 0" }}>
       <svg width={L + 20} height={90} style={{ position: "absolute", left: -L - 10, top: -45, overflow: "visible" }}>
         <g filter="drop-shadow(0 3px 4px rgba(0,0,0,0.45))">
-          <line x1={10} y1={45} x2={L - 30} y2={45} stroke={RED} strokeWidth={20} strokeLinecap="round" />
-          <polygon points={`${L + 10},45 ${L - 50},5 ${L - 50},85`} fill={RED} strokeLinejoin="round" stroke={RED} strokeWidth={6} />
+          <line x1={10} y1={45} x2={L - 30} y2={45} stroke={RED} strokeWidth={17} strokeLinecap="round" />
+          <polygon points={`${L + 10},45 ${L - 44},10 ${L - 44},80`} fill={RED} strokeLinejoin="round" stroke={RED} strokeWidth={6} />
         </g>
       </svg>
     </div>
