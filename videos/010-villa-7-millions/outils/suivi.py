@@ -32,6 +32,7 @@ CIBLES = {
 CIBLES_REF = {
   "mezz-g": (52.4, 53.4, 54.0, (130, 1220, 190, 330)),
   "mezz-d": (52.4, 53.4, 54.0, (626, 1170, 195, 290)),
+  "porte-allee": (3.3, 5.9, 6.45, (515, 700, 105, 175)),
 }
 S = 0.5
 cap = cv2.VideoCapture(RUSH); fps = cap.get(cv2.CAP_PROP_FPS)

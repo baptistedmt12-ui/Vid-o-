@@ -79,6 +79,10 @@ avait la voix, sans utiliser les crédits ElevenLabs, et explique ce que tu as f
   bain, salle de jeux, piscine. Appel à l'action vers 15–18 s sur un aperçu de la piscine (flèche + plouf), piscine reprise à la fin
   (miroir, plus lente). Durée 64,2 s.
 
+- Dernière demande : « faire exactement comme les exemples », y compris le script : citer aussi la déco marquante
+  (porte en arche, cheminée, lustres, miroir…), une phrase courte par pièce, fin « Alors, sois honnête : un… ou deux… ».
+  Flèches sur tout ce qui est cité avec insistance (21 flèches), structure intro + visite dans l'ordre. **= v4 rendue.**
+
 ## À faire / retours
 
 - [ ] Validation du script par l'utilisateur
