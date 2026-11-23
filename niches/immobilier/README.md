@@ -65,3 +65,8 @@ Transcription mot par mot : `exemple-transcription.json`.
 - Musique **composée par programme** (aucun extrait existant, pas de droits) : script `videos/010-villa-7-millions/outils/sons.py`.
 - Test sur **2 vidéos** (010 + la suivante) avec cette musique maison, à volume léger sous la voix (0,14).
   Ensuite, comparer les stats TikTok ; option à tester après : version sans musique + son tendance ajouté dans l'appli.
+
+## Publication
+- Heure retenue : **18h** (vidéos 010 et suivante, même heure pour comparer). Les autres comptes de l'utilisateur
+  postent à 16h ; un test à 16h pourra être fait plus tard. Passer le compte en Pro pour voir l'activité des abonnés.
+- Stats à envoyer vers J+1, avec l'heure de publication.
