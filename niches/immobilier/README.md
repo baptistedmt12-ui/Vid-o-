@@ -60,3 +60,8 @@ Transcription mot par mot : `exemple-transcription.json`.
 - Ton familier, tutoiement, aucun mot « agence immobilière » (« baignée de lumière », « vue plongeante » refusés).
 - Flèches : sur ce que dit la voix (architecture d'abord, déco si citée avec insistance), jamais deux qui s'enchaînent
   trop vite (sinon une seule flèche, une seule mention). Bruitages variés et bas (sous la voix).
+
+## Musique (décision du 23/11/2026)
+- Musique **composée par programme** (aucun extrait existant, pas de droits) : script `videos/010-villa-7-millions/outils/sons.py`.
+- Test sur **2 vidéos** (010 + la suivante) avec cette musique maison, à volume léger sous la voix (0,14).
+  Ensuite, comparer les stats TikTok ; option à tester après : version sans musique + son tendance ajouté dans l'appli.
