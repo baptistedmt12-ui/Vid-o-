@@ -96,3 +96,13 @@ avait la voix, sans utiliser les crédits ElevenLabs, et explique ce que tu as f
 - [ ] Validation du script par l'utilisateur
 - [ ] Voix off ElevenLabs (Chloé) — **une seule prise, seulement après accord**
 - [ ] Recaler coupes, cercles et flèches sur la vraie voix (transcription mot à mot), baisser la musique sous la voix
+
+## Voix off (23/11)
+
+- Abonnement ElevenLabs Starter (40 000 crédits). L'offre gratuite refusait les voix de bibliothèque via l'API.
+- **Hook** généré : eleven_v4, Chloé, stabilité 0,30, ressemblance 0,75, style 0,5, speaker boost, vitesse 1,1,
+  seed 4242, texte sans majuscules (énergie par la ponctuation). **73 crédits.** `assets/voix/hook.mp3`
+  (+ alignement), pauses > 0,2 s raccourcies → `assets/voix/hook-edit.wav` (9,4 s).
+- Intro recalée sur la voix (piscine 0–1,97 / escalier –3,97 / cheminée –6,37 / façade « Voici » –9,53),
+  étiquette de prix sur « sept millions » (8,3 s). Extrait envoyé : `export/010-test-hook.mp4`.
+- Suite à générer avec les mêmes réglages + le hook en contexte (previous_text), à partir de « Reste bien… ».

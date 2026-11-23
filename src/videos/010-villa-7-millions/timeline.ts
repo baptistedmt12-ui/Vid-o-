@@ -10,6 +10,7 @@ export type Seg = {
   src0: number;
   src1: number;
   rate?: number; // < 1 = ralenti
+  dur?: number; // durée imposée à l'écran (s) : la vitesse s'adapte (calage sur la voix)
   mirror?: boolean; // effet miroir (image retournée)
   zoom?: "in" | "out"; // zoom lent pendant le plan
   punch?: boolean; // entrée en léger zoom (teaser)
@@ -19,11 +20,11 @@ export type Seg = {
 // Structure des exemples : accroche → intro rapide des points forts → visite dans l'ordre (A à Z) → piscine → question.
 export const SEGS: Seg[] = [
   // Intro rapide des points forts (sans le prix), plan le plus fort en premier avec le boom
-  { id: "intro-piscine", src0: 60.45, src1: 62.0, rate: 0.8, punch: true, zoom: "in", voix: "Une piscine face au coucher du soleil," },
-  { id: "intro-escalier", src0: 52.0, src1: 53.6, mirror: true, punch: true, voix: "un double escalier ultra moderne," },
-  { id: "intro-cheminee", src0: 12.3, src1: 14.4, mirror: true, punch: true, zoom: "in", voix: "et même une cheminée incrustée dans le mur." },
+  { id: "intro-piscine", src0: 60.45, src1: 62.0, dur: 1.95, punch: true, zoom: "in", voix: "Une piscine face au coucher du soleil," },
+  { id: "intro-escalier", src0: 52.0, src1: 53.6, dur: 2.0, mirror: true, punch: true, voix: "un double escalier ultra moderne," },
+  { id: "intro-cheminee", src0: 12.3, src1: 14.4, dur: 2.4, mirror: true, punch: true, zoom: "in", voix: "et même une cheminée incrustée dans le mur." },
   // Puis la présentation, directement
-  { id: "facade", src0: 0.0, src1: 3.3, zoom: "in", voix: "Voici ce que tu peux avoir pour seulement 7 millions d'euros." },
+  { id: "facade", src0: 0.0, src1: 3.3, dur: 3.15, zoom: "in", voix: "Voici ce que tu peux avoir pour seulement 7 millions d'euros." },
   { id: "allee", src0: 3.3, src1: 6.45, rate: 0.75, zoom: "in", voix: "Reste bien jusqu'à la fin. On commence par l'allée fleurie, et cette porte en arche." },
   // Visite dans l'ordre
   { id: "entree", src0: 6.5, src1: 8.45, rate: 0.7, zoom: "in", voix: "À l'intérieur, deux escaliers qui se rejoignent, direct, ça donne le ton." },
@@ -81,8 +82,8 @@ export type Placed = Seg & { from: number; frames: number; rate: number };
 const f = (t: number) => Math.round(t * FPS);
 let cursor = 0;
 export const PLACED: Placed[] = SEGS.map((s) => {
-  const rate = s.rate ?? 1;
-  const frames = f((s.src1 - s.src0) / rate);
+  const rate = s.dur ? (s.src1 - s.src0) / s.dur : s.rate ?? 1;
+  const frames = s.dur ? f(s.dur) : f((s.src1 - s.src0) / rate);
   const p = { ...s, rate, from: cursor, frames };
   cursor += frames;
   return p;
@@ -143,4 +144,7 @@ export const CHOIX = [
 ];
 
 // Étiquette de prix sur « 7 millions d'euros » (avec bruit d'argent)
-export const PRIX = { from: outTime("facade", 1.9), to: outTime("facade", 3.3) + 1.2, texte: "7 000 000 €" };
+export const PRIX = { from: 8.3, to: 10.8, texte: "7 000 000 €" }; // « sept millions » à 8,4 s dans la voix
+
+// Voix off (Chloé, ElevenLabs eleven_v4) : morceaux posés à leur seconde de sortie
+export const VOIX = [{ fichier: "voix/hook-edit.wav", at: 0 }];

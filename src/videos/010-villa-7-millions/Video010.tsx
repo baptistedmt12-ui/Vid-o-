@@ -12,7 +12,7 @@ import {
   useVideoConfig,
 } from "remotion";
 import tracksJson from "./tracks.json";
-import { ANNOTS, Annot, CHOIX, FPS, PLACED, Placed, PRIX, RUSH, Son, TOTAL_FRAMES } from "./timeline";
+import { ANNOTS, Annot, CHOIX, FPS, PLACED, Placed, PRIX, RUSH, Son, TOTAL_FRAMES, VOIX } from "./timeline";
 
 export { FPS, TOTAL_FRAMES };
 
@@ -227,10 +227,15 @@ export const Video010: React.FC<{ musique?: boolean }> = ({ musique = true }) =>
       {musique && (
         <Audio
           src={staticFile(ASSETS + "musique.wav")}
-          volume={(f) => interpolate(f, [TOTAL_FRAMES - 45, TOTAL_FRAMES], [0.3, 0], clamp)}
+          volume={(f) => interpolate(f, [TOTAL_FRAMES - 45, TOTAL_FRAMES], [VOIX.length ? 0.14 : 0.3, 0], clamp)}
         />
       )}
       <Audio src={staticFile(ASSETS + "boom.wav")} volume={0.4} />
+      {VOIX.map((v) => (
+        <Sequence key={v.fichier} from={Math.round(v.at * FPS)} name={`voix-${v.fichier}`}>
+          <Audio src={staticFile(ASSETS + v.fichier)} volume={1} />
+        </Sequence>
+      ))}
       {ANNOTS.map((a, i) => {
         if (!a.son) return null;
         const p = PLACED.find((s) => s.id === a.seg)!;
