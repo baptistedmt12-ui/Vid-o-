@@ -37,3 +37,26 @@ Transcription mot par mot : `exemple-transcription.json`.
 - Flèches / cercles **uniquement sur ce que dit le script**, pas partout. Un « pop » sur chacun.
 - 2e exemple (Hidden Hills, 63 s) : une flèche toutes les ~4 s, chaque fois sur l'élément nommé ; fin
   « Alors, sois honnête : un, tu signes direct ? Ou deux, beaucoup trop grand pour toi ? Dis-le-moi en commentaire ! ».
+
+## Méthode voix off validée (vidéo 010, 23/11/2026) — « c'est nickel »
+- Abonnement ElevenLabs **Starter** (40 000 crédits/mois ; l'offre gratuite refuse les voix de bibliothèque via l'API).
+- Modèle **eleven_v4**, Chloé `Hy28BjVfgieDVMiyQpQe`, stabilité **0,30**, ressemblance **0,75**, style **0,5**,
+  speaker boost, vitesse **1,1**, seed 4242. Pas de majuscules dans le texte : l'énergie vient des « ! » et « ? ».
+  Chiffres en toutes lettres (« sept millions »). Coût réel ≈ 0,35 crédit/caractère (73 + 404 = 477 crédits pour 64 s).
+- Ordre : **1) générer le hook seul** → le poser sur la vidéo → validation de l'utilisateur ; **2) générer la suite**
+  avec le hook en `previous_text` (même énergie, rien à refaire).
+- Après génération : pauses > 0,2 s raccourcies (0,26 s avant les chutes de blague), suite accélérée si besoin
+  (atempo ≤ 1,07), niveaux égalisés, puis montage recalé au mot près (alignement ElevenLabs).
+- **Attention prononciation** : « direct » a été écorché dans « un, tu signes direct ? » à la fin. Pour les prochaines
+  vidéos : transcrire la voix aussitôt et réécouter les mots à risque ; éviter de finir une question sur un mot comme
+  « direct » (préférer « tout de suite » / « sans hésiter ») ; régénérer seulement la phrase fautive si besoin.
+
+## Structure de script validée (comme les exemples)
+1. Intro 3 plans rapides des points forts (sans prix), plan le plus fort + boom + flèche à 0,3 s.
+2. « Voici ce que tu peux avoir pour seulement X millions d'euros » sur la façade + étiquette prix + son d'argent.
+3. « Reste bien jusqu'à la fin. On commence par… » puis visite dans l'ordre, une phrase courte par pièce,
+   déco marquante comprise, petites blagues courtes et familières (belle-famille, plats ratés, « la tienne est jalouse »).
+4. Fin sur la piscine (ou le plus beau plan) : « Alors, sois honnête : un… ? Ou deux… ? Dis-le en commentaire ! »
+- Ton familier, tutoiement, aucun mot « agence immobilière » (« baignée de lumière », « vue plongeante » refusés).
+- Flèches : sur ce que dit la voix (architecture d'abord, déco si citée avec insistance), jamais deux qui s'enchaînent
+  trop vite (sinon une seule flèche, une seule mention). Bruitages variés et bas (sous la voix).
