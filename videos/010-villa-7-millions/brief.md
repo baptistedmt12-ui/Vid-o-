@@ -1,8 +1,8 @@
 # Vidéo 010 — Villa à « seulement » 7 millions d'euros
 
-- **Statut :** 🔍 Relecture (montage v1 sans voix, script à valider)
+- **Statut :** 🔍 Relecture (v1 finale avec voix envoyée)
 - **Format :** 9:16 (1080×1920), 30 i/s (rush 60 i/s → ralentis fluides possibles)
-- **Durée :** 63,1 s
+- **Durée :** 64,98 s
 - **Plateforme :** TikTok, niche visite immobilière (voir `niches/immobilier/README.md`)
 - **Composition Remotion :** `Video010` (`src/videos/010-villa-7-millions/`)
 
@@ -105,4 +105,10 @@ avait la voix, sans utiliser les crédits ElevenLabs, et explique ce que tu as f
   (+ alignement), pauses > 0,2 s raccourcies → `assets/voix/hook-edit.wav` (9,4 s).
 - Intro recalée sur la voix (piscine 0–1,97 / escalier –3,97 / cheminée –6,37 / façade « Voici » –9,53),
   étiquette de prix sur « sept millions » (8,3 s). Extrait envoyé : `export/010-test-hook.mp4`.
-- Suite à générer avec les mêmes réglages + le hook en contexte (previous_text), à partir de « Reste bien… ».
+- **Suite** générée (mêmes réglages, hook en previous_text) : 404 crédits, 60,8 s. Pauses > 0,2 s raccourcies,
+  accélérée de 7 % (atempo, hauteur conservée), même niveau que le hook → `assets/voix/voix-complete.wav` (64,8 s),
+  mots horodatés dans `assets/voix/voix-mots.json`. **Total voix : 477 crédits.**
+- Montage recalé au mot près (durées imposées par plan, flèches à < 0,3 s de leur mot, pastilles 1/2 sur « un » et « deux »),
+  musique baissée sous la voix (0,14).
+- **Rendu final `export/010-v1.mp4`** : 64,98 s, 1080×1920, 30 i/s, H.264 CRF 14, AAC 320 kb/s, 159 Mo (GitHub via LFS),
+  aucune image noire, aucun silence > 0,4 s.
