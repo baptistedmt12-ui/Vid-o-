@@ -106,3 +106,4 @@ L'utilisateur veut **toujours le rendu final dans la meilleure qualité possible
   encodage (un `filter_complex` avec 20+ découpes fait planter la mémoire). Partie utile 1:00–1:05, puis
   **plans inutiles jusqu'à ~1:15–1:20** qu'il coupe lui-même sur TikTok (pour montrer qu'il monte). Aucun texte
   incrusté dans la partie utile (vérifier les étiquettes, panneaux, cartes).
+- **Règles de montage depuis le 23/11 (014) :** remontage pur (inverser des plans, miroir, couper/raccourcir, meilleur plan en accroche), sans filtre, sans graphiques ni sous-titres, son muet, partie utile **1:00–1:03**, puis **tous les plans non utilisés** à la suite. Il donne parfois le début du script pour choisir l'accroche. Modèle : `videos/014-jet-cdg/montage.py`.
