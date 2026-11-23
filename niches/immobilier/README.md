@@ -70,3 +70,12 @@ Transcription mot par mot : `exemple-transcription.json`.
 - Heure retenue : **18h** (vidéos 010 et suivante, même heure pour comparer). Les autres comptes de l'utilisateur
   postent à 16h ; un test à 16h pourra être fait plus tard. Passer le compte en Pro pour voir l'activité des abonnés.
 - Stats à envoyer vers J+1, avec l'heure de publication.
+
+## Stats vidéo 010 (publiée le 23/11 à 17:59, relevé ~7 h après)
+- 569 vues (98,6 % « Pour toi »), 22 j'aime, 1 commentaire, 0 partage, 2 enregistrements, 0 abonné.
+- **Temps de visionnage moyen 4,9 s (8 %)**, 0,96 % jusqu'au bout. **Décrochage massif à 0:02**, 16 % restants à 0:05.
+- Diagnostic : le problème est l'accroche, pas la visite. Phrase d'ouverture descriptive (« Une piscine face au coucher
+  de soleil… ») sans curiosité ni enjeu ; prix (l'enjeu) seulement à 8,4 s ; aucun texte à l'écran pour ceux qui
+  scrollent sans le son ; premier plan sombre (coucher de soleil) et lent (ralenti + zoom).
+- À appliquer : enjeu/curiosité dans la 1re seconde (prix ou question), texte d'accroche court à l'écran sur les
+  3 premières secondes, plan le plus lumineux et le plus « waouh » en 1er, coupes rapides (~1 s) au début, voix à fond dès 0,0 s.
