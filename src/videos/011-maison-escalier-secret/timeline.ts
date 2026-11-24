@@ -19,6 +19,7 @@ export type Seg = {
   mirror?: boolean;
   zoom?: "in" | "out";
   punch?: boolean;
+  crop?: number; // zoom fixe en plus (ex. faire sortir un texte incrusté du cadre)
   voix: string;
 };
 
@@ -27,8 +28,8 @@ export const SEGS: Seg[] = [
   { id: "accroche-escalier", rush: "v1", src0: 42.0, src1: 43.9, dur: 2.7, zoom: "in", voix: "Cette maison cache un escalier secret… dans son dressing !" },
   // Points forts en rafale (≈ 1 s par plan)
   { id: "rafale-piscine", rush: "v2", src0: 59.6, src1: 60.8, dur: 1.0, mirror: true, punch: true, voix: "Une piscine," },
-  { id: "rafale-cinema", rush: "v1", src0: 49.0, src1: 50.2, dur: 0.9, mirror: true, punch: true, voix: "un cinéma," },
-  { id: "rafale-sport", rush: "v1", src0: 44.2, src1: 45.2, dur: 1.1, mirror: true, punch: true, voix: "une salle de sport," },
+  { id: "rafale-cinema", rush: "v2", src0: 50.9, src1: 52.0, dur: 0.9, crop: 1.16, punch: true, voix: "un cinéma," },
+  { id: "rafale-sport", rush: "v1", src0: 44.2, src1: 45.0, dur: 1.1, punch: true, voix: "une salle de sport," },
   { id: "rafale-billard", rush: "v1", src0: 46.0, src1: 47.2, dur: 0.9, punch: true, voix: "un billard…" },
   { id: "rafale-terrain", rush: "v2", src0: 52.3, src1: 54.0, dur: 1.5, punch: true, voix: "et même un terrain de basket." },
   // Présentation
@@ -45,7 +46,7 @@ export const SEGS: Seg[] = [
   { id: "dressing", rush: "v1", src0: 38.6, src1: 43.9, dur: 5.6, mirror: true, voix: "Et le fameux dressing… regarde bien. Un escalier en colimaçon qui descend tout droit à la salle de sport !" },
   { id: "sport", rush: "v1", src0: 44.6, src1: 45.6, dur: 2.0, voix: "Plus aucune excuse pour sécher la muscu." },
   { id: "billard", rush: "v1", src0: 45.7, src1: 48.5, dur: 2.3, mirror: true, voix: "Le billard pour les soirées entre potes," },
-  { id: "cinema", rush: "v1", src0: 48.6, src1: 51.8, dur: 2.8, voix: "et un vrai cinéma, avec son canapé géant." },
+  { id: "cinema", rush: "v2", src0: 50.85, src1: 52.15, dur: 2.8, mirror: true, crop: 1.16, voix: "et un vrai cinéma, avec son écran géant." },
   { id: "piscine", rush: "v2", src0: 33.2, src1: 36.0, dur: 3.0, zoom: "in", voix: "Et dehors, une piscine face au coucher du soleil." },
   // Fin : prix « n'importe quoi » donné comme un avis + question 1 ou 2
   { id: "fin-terrasse", rush: "v2", src0: 56.7, src1: 61.3, dur: 4.6, mirror: true, zoom: "in", voix: "Et le prix ? Pour moi, six cent mille euros, pas un centime de plus." },
@@ -82,6 +83,12 @@ export type Annot = {
 // Flèches uniquement sur ce que dit la voix ; jamais deux qui s'enchaînent trop vite.
 export const ANNOTS: Annot[] = [
   { seg: "accroche-escalier", track: "v1:escalier", src0: 42.2, dir: "bas-gauche", phrase: "un escalier secret" },
+  // rafale : une flèche par plan, sur le mot
+  { seg: "rafale-piscine", track: "v2:piscine-soir", src0: 59.7, dir: "haut-droite", son: "plouf", phrase: "Une piscine" },
+  { seg: "rafale-cinema", track: "v2:ecran", src0: 51.0, dir: "bas-gauche", phrase: "un cinéma" },
+  { seg: "rafale-sport", track: "v1:sport", src0: 44.3, dir: "bas-droite", phrase: "une salle de sport" },
+  { seg: "rafale-billard", track: "v1:billard", src0: 46.1, dir: "haut-droite", phrase: "un billard" },
+  { seg: "rafale-terrain", track: "v2:terrain", src0: 52.5, src1: 53.7, dir: "haut-droite", son: "pop", phrase: "et même un terrain de basket" },
   { seg: "entree", track: "v2:mezzanine", src0: 7.2, src1: 8.8, dir: "bas-droite", son: "pop", phrase: "avec sa mezzanine" },
   { seg: "bureau", track: "v1:biblio", src0: 9.8, src1: 11.0, dir: "bas-droite", phrase: "une bibliothèque géante" },
   { seg: "salon", track: "v1:cave", src0: 16.8, dir: "bas-gauche", son: "verre", phrase: "la cave à vin en plein milieu" },
@@ -90,7 +97,7 @@ export const ANNOTS: Annot[] = [
   { seg: "chambre", track: "v2:poutres", src0: 36.2, src1: 37.5, dir: "bas-gauche", phrase: "ses poutres apparentes" },
   { seg: "salle-de-bain", track: "v1:baignoire-haut", src0: 33.8, src1: 35.5, dir: "haut-droite", son: "pop", phrase: "plus grande que ta chambre" },
   { seg: "dressing", track: "v1:escalier", src0: 42.0, src1: 43.4, dir: "bas-droite", son: "scintille", phrase: "un escalier en colimaçon" },
-  { seg: "cinema", track: "v1:cinema", src0: 48.8, src1: 50.3, dir: "haut-droite", phrase: "avec son canapé géant" },
+  { seg: "cinema", track: "v2:ecran", src0: 51.1, dir: "bas-droite", phrase: "avec son écran géant" },
   { seg: "piscine", track: "v2:piscine-eau", src0: 33.3, src1: 35.5, dir: "haut-droite", son: "plouf", phrase: "une piscine face au coucher du soleil" },
 ];
 

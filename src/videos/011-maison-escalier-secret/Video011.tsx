@@ -30,6 +30,7 @@ const zoomOf = (seg: Placed, frame: number, fps: number) => {
     // accroche : entrée choc sur le boom
     z *= interpolate(spring({ frame, fps, config: { damping: 11, stiffness: 160 } }), [0, 1], [1.25, 1]);
   }
+  z *= seg.crop ?? 1;
   return z;
 };
 

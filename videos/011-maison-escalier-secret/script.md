@@ -7,7 +7,7 @@ Pas de question qui finit sur « direct » (mot écorché dans la 010).
 | Temps | Image | Voix | Flèches / habillage / son |
 |-------|-------|------|---------------------------|
 | 0,0 – 2,7 | Escalier en colimaçon du dressing | Cette maison cache un escalier secret… dans son dressing ! | texte « Attends de voir le dressing 😳 » (0–3 s) ; flèche escalier 0,3 s ; boom |
-| 2,7 – 8,1 | Rafale : piscine, cinéma, salle de sport, billard, terrain | Une piscine, un cinéma, une salle de sport, un billard… et même un terrain de basket. | coupes ≈ 1 s |
+| 2,7 – 8,1 | Rafale : piscine, cinéma, salle de sport, billard, terrain | Une piscine, un cinéma, une salle de sport, un billard… et même un terrain de basket. | coupes ≈ 1 s ; une flèche par plan (piscine + plouf, écran, appareils, table, terrain + pop) |
 | 8,1 – 11,1 | Façade (plein jour) | Bienvenue dans la maison de tes rêves. Reste bien jusqu'à la fin pour connaître le prix. | |
 | 11,1 – 13,5 | Allée | On commence par l'entrée… | |
 | 13,5 – 16,8 | Entrée double hauteur | une entrée sur deux étages, avec sa mezzanine. | flèche mezzanine + pop |
@@ -20,11 +20,14 @@ Pas de question qui finit sur « direct » (mot écorché dans la 010).
 | 39,4 – 45,0 | Dressing (miroir) | Et le fameux dressing… regarde bien. Un escalier en colimaçon qui descend tout droit à la salle de sport ! | flèche escalier + scintillement |
 | 45,0 – 47,0 | Salle de sport | Plus aucune excuse pour sécher la muscu. | |
 | 47,0 – 49,3 | Billard (miroir) | Le billard pour les soirées entre potes, | |
-| 49,3 – 52,1 | Cinéma | et un vrai cinéma, avec son canapé géant. | flèche canapé |
+| 49,3 – 52,1 | Cinéma (miroir) | et un vrai cinéma, avec son écran géant. | flèche écran |
 | 52,1 – 55,1 | Piscine | Et dehors, une piscine face au coucher du soleil. | flèche piscine + plouf |
 | 55,1 – 59,7 | Terrasse au coucher du soleil (miroir) | Et le prix ? Pour moi, six cent mille euros, pas un centime de plus. | étiquette « SELON MOI 600 000 € » + argent |
 | 59,7 – 63,0 | Façade (boucle) | Alors, sois honnête : un, t'es d'accord ? Deux, n'importe quoi ? Dis-le en commentaire ! | pastilles 1 / 2 |
 
 ## Texte d'un bloc pour ElevenLabs
 
-Cette maison cache un escalier secret… dans son dressing ! Une piscine, un cinéma, une salle de sport, un billard… et même un terrain de basket. Bienvenue dans la maison de tes rêves. Reste bien jusqu'à la fin pour connaître le prix. On commence par l'entrée… une entrée sur deux étages, avec sa mezzanine. Un bureau avec une bibliothèque géante… pour faire semblant de lire. Le salon, plafond immense… et la cave à vin en plein milieu. T'as juste à tendre le bras. La cuisine : un îlot en marbre géant, et assez de tabourets pour inviter tout le quartier. À l'étage, une coursive qui surplombe tout le salon. La chambre, avec ses poutres apparentes. La salle de bain… plus grande que ta chambre. Et le fameux dressing… regarde bien. Un escalier en colimaçon qui descend tout droit à la salle de sport ! Plus aucune excuse pour sécher la muscu. Le billard pour les soirées entre potes, et un vrai cinéma, avec son canapé géant. Et dehors, une piscine face au coucher du soleil. Et le prix ? Pour moi, six cent mille euros, pas un centime de plus. Alors, sois honnête : un, t'es d'accord ? Deux, n'importe quoi ? Dis-le en commentaire !
+Cette maison cache un escalier secret… dans son dressing ! Une piscine, un cinéma, une salle de sport, un billard… et même un terrain de basket. Bienvenue dans la maison de tes rêves. Reste bien jusqu'à la fin pour connaître le prix. On commence par l'entrée… une entrée sur deux étages, avec sa mezzanine. Un bureau avec une bibliothèque géante… pour faire semblant de lire. Le salon, plafond immense… et la cave à vin en plein milieu. T'as juste à tendre le bras. La cuisine : un îlot en marbre géant, et assez de tabourets pour inviter tout le quartier. À l'étage, une coursive qui surplombe tout le salon. La chambre, avec ses poutres apparentes. La salle de bain… plus grande que ta chambre. Et le fameux dressing… regarde bien. Un escalier en colimaçon qui descend tout droit à la salle de sport ! Plus aucune excuse pour sécher la muscu. Le billard pour les soirées entre potes, et un vrai cinéma, avec son écran géant. Et dehors, une piscine face au coucher du soleil. Et le prix ? Pour moi, six cent mille euros, pas un centime de plus. Alors, sois honnête : un, t'es d'accord ? Deux, n'importe quoi ? Dis-le en commentaire !
+
+Note : cinéma = celui de v2 (grand écran), zoom fixe ×1,16 pour faire sortir du cadre un petit « AI » incrusté en haut à gauche.
+Salle de sport jamais en miroir (le mot « CYCLONE » peint au mur se lirait à l'envers).
