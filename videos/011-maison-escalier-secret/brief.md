@@ -1,8 +1,8 @@
 # Vidéo 011 — La maison à l'escalier secret
 
-- **Statut :** 🔍 Relecture (montage v1 sans voix, script à valider)
+- **Statut :** 🔍 Relecture (v1 finale avec voix envoyée)
 - **Format :** 9:16 (1080×1920), 30 i/s (rushes 60 i/s)
-- **Durée :** 64,2 s
+- **Durée :** 64,98 s
 - **Plateforme :** TikTok, niche visite immobilière (voir `niches/immobilier/README.md`)
 - **Composition Remotion :** `Video011` (`src/videos/011-maison-escalier-secret/`)
 
@@ -51,3 +51,5 @@ Montage + script, **pas encore la voix off**. Avant : dire ce qui sera amélior�
   (« …pour perdre contre tes enfants ») vers la fin. Salle de bain : baignoire au milieu + une douche de chaque côté (3 flèches).
 - Montage recalé au mot près (coupes 0,08 s avant chaque phrase), flèches à ±0,1 s de leur mot (17 flèches),
   étiquette « SELON MOI 600 000 € » sur « six cent mille », pastilles sur « un » et « deux ».
+- **Rendu final `export/011-v1.mp4`** : 64,98 s, 1080×1920, 30 i/s, H.264 CRF 14, AAC 320 kb/s, 157 Mo (GitHub via LFS),
+  aucune image noire, aucun silence > 0,4 s. Transcription de contrôle : RAS sauf « basket » (~54 s) à réécouter.

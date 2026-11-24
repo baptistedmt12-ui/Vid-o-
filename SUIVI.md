@@ -24,7 +24,7 @@ Ce fichier regroupe trois choses :
 | 008 | 5 étapes pour tes premières handstand push-ups (On Air) | 🔍 Relecture | 9:16 (1080×1920) 59,94 i/s | 1 min 02 | `Video008` | — | — | — | v1 : carte étapes + axe des jambes suivi |
 | 009 | Restauration chaussure noire (flammes en ouverture) | 🔍 Relecture | 9:16 (1080×1920) 30 i/s | 1 min 02 | — (coupes ffmpeg) | — | — | — | v1 qualité max envoyée (158 Mo, hors GitHub : envoi LFS coupé par le proxy), modèle = montage bordeaux |
 | 010 | Villa à « seulement » 7 millions d'euros (visite immo) | 🔍 Relecture | 9:16 (1080×1920) 30 i/s | 1 min 05 | `Video010` | — | — | — | v1 finale avec voix Chloé (ElevenLabs, 477 crédits), 159 Mo via LFS |
-| 011 | La maison à l'escalier secret (2 visites fusionnées) | 🔍 Relecture | 9:16 (1080×1920) 30 i/s | 1 min 03 | `Video011` | — | — | — | montage v1 sans voix, script à valider |
+| 011 | La maison à l'escalier secret (2 visites fusionnées) | 🔍 Relecture | 9:16 (1080×1920) 30 i/s | 1 min 05 | `Video011` | — | — | — | v1 finale avec voix Chloé (483 crédits), 157 Mo via LFS |
 | 012 | | 💡 Idée | | | | | | | |
 
 ### Banque d'idées
