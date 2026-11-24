@@ -32,7 +32,7 @@ export const SEGS: Seg[] = [
   { id: "rafale-billard", rush: "v1", src0: 46.0, src1: 47.2, dur: 0.9, punch: true, voix: "un billard…" },
   { id: "rafale-terrain", rush: "v2", src0: 52.3, src1: 54.0, dur: 1.5, punch: true, voix: "et même un terrain de basket." },
   // Présentation
-  { id: "facade", rush: "v2", src0: 0.0, src1: 3.8, dur: 3.0, zoom: "in", voix: "Bienvenue dans la maison de tes rêves. Reste bien jusqu'à la fin." },
+  { id: "facade", rush: "v2", src0: 0.0, src1: 3.8, dur: 4.2, zoom: "in", voix: "Bienvenue dans la maison de tes rêves. Reste bien jusqu'à la fin pour connaître le prix." },
   { id: "allee", rush: "v2", src0: 3.85, src1: 6.65, dur: 2.4, zoom: "in", voix: "On commence par l'entrée…" },
   // Visite dans l'ordre
   { id: "entree", rush: "v2", src0: 6.75, src1: 10.0, dur: 3.3, voix: "une entrée sur deux étages, avec sa mezzanine." },
