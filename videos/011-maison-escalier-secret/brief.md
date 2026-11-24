@@ -37,3 +37,10 @@ Montage + script, **pas encore la voix off**. Avant : dire ce qui sera amélior�
 
 - [ ] Validation du montage et du script
 - [ ] Voix Chloé (hook d'abord, puis la suite en previous_text), recalage au mot près
+
+## Voix off (24/11)
+- Hook généré (eleven_v4, Chloé, stabilité 0,30, ressemblance 0,75, **style 0,55, vitesse 1,15** pour plus de dynamisme,
+  seed 4242), **80 crédits** : « Cette maison cache un escalier secret dans son dressing ! Une piscine, un cinéma, et même
+  une salle de sport ! Bienvenue dans la maison de tes rêves. Reste bien jusqu'à la fin pour connaître le prix ! »
+- Blancs raccourcis à 0,14 s → `assets/voix/hook-edit.wav` (9,75 s, 3,6 mots/s), MP3 envoyé pour validation.
+- Rafale réduite à 3 plans (piscine, cinéma, salle de sport) à la demande de l'utilisateur.
