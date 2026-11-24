@@ -2,7 +2,7 @@
 
 - **Statut :** 🔍 Relecture (montage v1 sans voix, script à valider)
 - **Format :** 9:16 (1080×1920), 30 i/s (rushes 60 i/s)
-- **Durée :** 63,0 s
+- **Durée :** 64,2 s
 - **Plateforme :** TikTok, niche visite immobilière (voir `niches/immobilier/README.md`)
 - **Composition Remotion :** `Video011` (`src/videos/011-maison-escalier-secret/`)
 
