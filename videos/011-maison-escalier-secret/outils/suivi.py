@@ -21,6 +21,9 @@ CIBLES = {
   "v2:ecran":     ("v2", 50.85, 51.5, 52.1, (560, 790, 500, 240)),
   "v1:sport":     ("v1", 44.2, 44.4, 45.6, (350, 750, 280, 500)),
   "v1:billard":   ("v1", 45.8, 46.3, 47.3, (300, 1100, 500, 300)),
+  # salle de bain : une douche à l'italienne de chaque côté de la baignoire
+  "v1:douche-g":  ("v1", 34.0, 35.5, 36.0, (90, 560, 190, 560)),
+  "v1:douche-d":  ("v1", 34.0, 35.5, 36.0, (842, 560, 190, 560)),
 }
 S = 0.5
 caps = {v: cv2.VideoCapture(f"{R}/{v}.mp4") for v in ("v1", "v2")}
