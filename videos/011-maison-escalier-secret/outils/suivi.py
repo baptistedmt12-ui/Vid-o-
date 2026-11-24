@@ -46,5 +46,6 @@ for k, (v, ta, tref, tb, box) in CIBLES.items():
 # Points visés remontés (le suivi accroche le bord, la cible est juste au-dessus)
 res["v1:baignoire-haut"] = [[t, cx, cy - 130, w, h] for t, cx, cy, w, h in res["v1:baignoire"]]
 res["v2:ilot-marbre"] = [[t, cx + 40, cy + 330, w, h] for t, cx, cy, w, h in res["v2:ilot"]]
+res["v2:terrain-haut"] = [[t, cx, cy - 280, w, h] for t, cx, cy, w, h in res["v2:terrain"]]
 res["v2:piscine-eau"] = [[t, cx, cy - 70, w, h] for t, cx, cy, w, h in res["v2:piscine"]]
 json.dump(res, open(OUT, "w"))

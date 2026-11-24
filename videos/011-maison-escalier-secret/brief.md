@@ -44,3 +44,10 @@ Montage + script, **pas encore la voix off**. Avant : dire ce qui sera amélior�
   une salle de sport ! Bienvenue dans la maison de tes rêves. Reste bien jusqu'à la fin pour connaître le prix ! »
 - Blancs raccourcis à 0,14 s → `assets/voix/hook-edit.wav` (9,75 s, 3,6 mots/s), MP3 envoyé pour validation.
 - Rafale réduite à 3 plans (piscine, cinéma, salle de sport) à la demande de l'utilisateur.
+- **Suite** générée (même voix, style 0,55, vitesse 1,12, hook en previous_text) : **403 crédits**. Blancs ramenés à
+  0,14 s (0,22 s avant les chutes), accélérée ×1,10 (hauteur conservée), même niveau que le hook
+  → `assets/voix/voix-complete.wav` (64,8 s). **Total voix 011 : 483 crédits.**
+- Fin retravaillée : salle de sport et cinéma raccourcis (déjà vus dans la rafale), billard + terrain de basket
+  (« …pour perdre contre tes enfants ») vers la fin. Salle de bain : baignoire au milieu + une douche de chaque côté (3 flèches).
+- Montage recalé au mot près (coupes 0,08 s avant chaque phrase), flèches à ±0,1 s de leur mot (17 flèches),
+  étiquette « SELON MOI 600 000 € » sur « six cent mille », pastilles sur « un » et « deux ».

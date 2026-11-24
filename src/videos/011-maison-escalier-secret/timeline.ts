@@ -1,5 +1,5 @@
 // Vidéo 011 — La maison à l'escalier secret (montage de 2 vidéos de visite, présentées comme une seule maison).
-// Montage calé sur une voix off IMAGINÉE (≈ 3,3 mots/s) : à recaler au mot près sur la vraie voix (Chloé, ElevenLabs).
+// Montage calé au mot près sur la voix off réelle (Chloé, ElevenLabs eleven_v4).
 // Temps « src » = secondes du rush (v1 ou v2, 60 i/s) ; temps « out » = secondes de la vidéo finale.
 // Leçons de la 010 (décrochage à 0:02) : enjeu dès la 1re seconde, texte d'accroche à l'écran, plans lumineux et rapides au début.
 
@@ -23,34 +23,29 @@ export type Seg = {
   voix: string;
 };
 
+// Calé au mot près sur la voix réelle (assets/voix/voix-mots.json), coupes 0,08 s avant chaque phrase.
 export const SEGS: Seg[] = [
-  // Accroche : l'élément le plus surprenant, tout de suite
-  { id: "accroche-escalier", rush: "v1", src0: 42.0, src1: 43.9, dur: 2.7, zoom: "in", voix: "Cette maison cache un escalier secret… dans son dressing !" },
-  // Points forts en rafale (≈ 1 s par plan)
-  { id: "rafale-piscine", rush: "v2", src0: 59.6, src1: 60.8, dur: 1.0, mirror: true, punch: true, voix: "Une piscine," },
-  { id: "rafale-cinema", rush: "v2", src0: 50.9, src1: 52.0, dur: 0.9, crop: 1.16, punch: true, voix: "un cinéma," },
-  { id: "rafale-sport", rush: "v1", src0: 44.2, src1: 45.0, dur: 1.1, punch: true, voix: "une salle de sport," },
-  { id: "rafale-billard", rush: "v1", src0: 46.0, src1: 47.2, dur: 0.9, punch: true, voix: "un billard…" },
-  { id: "rafale-terrain", rush: "v2", src0: 52.3, src1: 54.0, dur: 1.5, punch: true, voix: "et même un terrain de basket." },
-  // Présentation
-  { id: "facade", rush: "v2", src0: 0.0, src1: 3.8, dur: 4.2, zoom: "in", voix: "Bienvenue dans la maison de tes rêves. Reste bien jusqu'à la fin pour connaître le prix." },
-  { id: "allee", rush: "v2", src0: 3.85, src1: 6.65, dur: 2.4, zoom: "in", voix: "On commence par l'entrée…" },
-  // Visite dans l'ordre
-  { id: "entree", rush: "v2", src0: 6.75, src1: 10.0, dur: 3.3, voix: "une entrée sur deux étages, avec sa mezzanine." },
-  { id: "bureau", rush: "v1", src0: 9.6, src1: 11.5, dur: 3.2, mirror: true, voix: "Un bureau avec une bibliothèque géante… pour faire semblant de lire." },
-  { id: "salon", rush: "v1", src0: 12.5, src1: 19.5, dur: 5.2, voix: "Le salon, plafond immense… et la cave à vin en plein milieu. T'as juste à tendre le bras." },
-  { id: "cuisine", rush: "v2", src0: 22.3, src1: 28.0, dur: 5.2, voix: "La cuisine : un îlot en marbre géant, et assez de tabourets pour inviter tout le quartier." },
-  { id: "coursive", rush: "v2", src0: 45.7, src1: 50.0, dur: 3.0, mirror: true, voix: "À l'étage, une coursive qui surplombe tout le salon." },
-  { id: "chambre", rush: "v2", src0: 36.1, src1: 39.0, dur: 2.8, zoom: "out", voix: "La chambre, avec ses poutres apparentes." },
-  { id: "salle-de-bain", rush: "v1", src0: 33.0, src1: 37.0, dur: 3.2, mirror: true, voix: "La salle de bain… plus grande que ta chambre." },
-  { id: "dressing", rush: "v1", src0: 38.6, src1: 43.9, dur: 5.6, mirror: true, voix: "Et le fameux dressing… regarde bien. Un escalier en colimaçon qui descend tout droit à la salle de sport !" },
-  { id: "sport", rush: "v1", src0: 44.6, src1: 45.6, dur: 2.0, voix: "Plus aucune excuse pour sécher la muscu." },
-  { id: "billard", rush: "v1", src0: 45.7, src1: 48.5, dur: 2.3, mirror: true, voix: "Le billard pour les soirées entre potes," },
-  { id: "cinema", rush: "v2", src0: 50.85, src1: 52.15, dur: 2.8, mirror: true, crop: 1.16, voix: "et un vrai cinéma, avec son écran géant." },
-  { id: "piscine", rush: "v2", src0: 33.2, src1: 36.0, dur: 3.0, zoom: "in", voix: "Et dehors, une piscine face au coucher du soleil." },
-  // Fin : prix « n'importe quoi » donné comme un avis + question 1 ou 2
-  { id: "fin-terrasse", rush: "v2", src0: 56.7, src1: 61.3, dur: 4.6, mirror: true, zoom: "in", voix: "Et le prix ? Pour moi, six cent mille euros, pas un centime de plus." },
-  { id: "fin-facade", rush: "v2", src0: 0.0, src1: 3.0, dur: 3.3, zoom: "in", voix: "Alors, sois honnête : un, t'es d'accord ? Deux, n'importe quoi ? Dis-le en commentaire !" },
+  { id: "accroche-escalier", rush: "v1", src0: 42.0, src1: 43.9, dur: 2.86, zoom: "in", voix: "Cette maison cache un escalier secret dans son dressing" },
+  { id: "rafale-piscine", rush: "v2", src0: 59.6, src1: 60.8, dur: 0.833, mirror: true, punch: true, voix: "Une piscine" },
+  { id: "rafale-cinema", rush: "v2", src0: 50.9, src1: 52.0, dur: 0.82, crop: 1.16, punch: true, voix: "un cinéma" },
+  { id: "rafale-sport", rush: "v1", src0: 44.2, src1: 45.0, dur: 1.38, punch: true, voix: "et même une salle de sport" },
+  { id: "facade", rush: "v2", src0: 0.0, src1: 3.8, dur: 3.9, zoom: "in", voix: "Bienvenue dans la maison de tes rêves Reste bien jusqu'à la fin pour connaître le prix" },
+  { id: "allee", rush: "v2", src0: 4.9, src1: 6.65, dur: 1.455, zoom: "in", voix: "On commence par l'entrée" },
+  { id: "entree", rush: "v2", src0: 6.75, src1: 10.0, dur: 2.236, voix: "deux étages de hauteur avec sa mezzanine" },
+  { id: "bureau", rush: "v1", src0: 9.6, src1: 11.5, dur: 3.854, mirror: true, voix: "Un bureau avec une bibliothèque géante pour faire semblant de lire" },
+  { id: "salon", rush: "v1", src0: 14.3, src1: 19.5, dur: 5.219, voix: "Le salon plafond immense et la cave à vin en plein milieu T'as juste à tendre le bras" },
+  { id: "cuisine", rush: "v2", src0: 22.3, src1: 28.0, dur: 5.309, voix: "La cuisine un îlot en marbre géant et assez de tabourets pour inviter tout le quartier" },
+  { id: "coursive", rush: "v2", src0: 45.7, src1: 50.0, dur: 3.272, mirror: true, voix: "À l'étage une coursive qui surplombe tout le salon" },
+  { id: "chambre", rush: "v2", src0: 36.1, src1: 39.0, dur: 2.328, zoom: "out", voix: "La chambre avec ses poutres apparentes" },
+  { id: "salle-de-bain", rush: "v1", src0: 33.0, src1: 37.0, dur: 4.727, mirror: true, voix: "La salle de bain une baignoire en plein milieu et une douche à l'italienne de chaque côté" },
+  { id: "dressing", rush: "v1", src0: 40.0, src1: 43.9, dur: 6.109, mirror: true, voix: "Et le fameux dressing regarde bien un escalier en colimaçon qui descend tout droit à la salle de sport" },
+  { id: "sport", rush: "v1", src0: 44.2, src1: 45.6, dur: 2.109, crop: 1.1, zoom: "in", voix: "Plus aucune excuse pour sécher la muscu" },
+  { id: "billard", rush: "v1", src0: 45.7, src1: 48.5, dur: 1.794, mirror: true, voix: "Un billard pour les soirées entre potes" },
+  { id: "cinema", rush: "v2", src0: 50.85, src1: 52.15, dur: 2.643, mirror: true, crop: 1.16, voix: "et un vrai cinéma avec son écran géant" },
+  { id: "piscine", rush: "v2", src0: 33.2, src1: 36.0, dur: 2.763, zoom: "in", voix: "Et dehors une piscine face au coucher du soleil" },
+  { id: "terrain", rush: "v2", src0: 52.3, src1: 56.5, dur: 2.939, zoom: "in", voix: "et même un terrain de basket pour perdre contre tes enfants" },
+  { id: "fin-terrasse", rush: "v2", src0: 56.7, src1: 61.3, dur: 3.479, mirror: true, zoom: "in", voix: "Et le prix Pour moi six cent mille euros pas un centime de plus" },
+  { id: "fin-facade", rush: "v2", src0: 0.0, src1: 3.0, dur: 4.931, zoom: "in", voix: "Alors sois honnête un t'es d'accord Deux n'importe quoi Dis-le en commentaire" },
 ];
 
 export type Placed = Seg & { from: number; frames: number; rate: number };
@@ -82,36 +77,36 @@ export type Annot = {
 
 // Flèches uniquement sur ce que dit la voix ; jamais deux qui s'enchaînent trop vite.
 export const ANNOTS: Annot[] = [
-  { seg: "accroche-escalier", track: "v1:escalier", src0: 42.2, dir: "bas-gauche", phrase: "un escalier secret" },
-  // rafale : une flèche par plan, sur le mot
-  { seg: "rafale-piscine", track: "v2:piscine-soir", src0: 59.7, dir: "haut-droite", son: "plouf", phrase: "Une piscine" },
-  { seg: "rafale-cinema", track: "v2:ecran", src0: 51.0, dir: "bas-gauche", phrase: "un cinéma" },
-  { seg: "rafale-sport", track: "v1:sport", src0: 44.3, dir: "bas-droite", phrase: "une salle de sport" },
-  { seg: "rafale-billard", track: "v1:billard", src0: 46.1, dir: "haut-droite", phrase: "un billard" },
-  { seg: "rafale-terrain", track: "v2:terrain", src0: 52.5, src1: 53.7, dir: "haut-droite", son: "pop", phrase: "et même un terrain de basket" },
-  { seg: "entree", track: "v2:mezzanine", src0: 7.2, src1: 8.8, dir: "bas-droite", son: "pop", phrase: "avec sa mezzanine" },
-  { seg: "bureau", track: "v1:biblio", src0: 9.8, src1: 11.0, dir: "bas-droite", phrase: "une bibliothèque géante" },
-  { seg: "salon", track: "v1:cave", src0: 16.8, dir: "bas-gauche", son: "verre", phrase: "la cave à vin en plein milieu" },
+  { seg: "accroche-escalier", track: "v1:escalier", src0: 42.133, src1: 43.4, dir: "bas-gauche", phrase: "un escalier secret" },
+  { seg: "rafale-piscine", track: "v2:piscine-soir", src0: 59.763, src1: 60.8, dir: "haut-droite", son: "plouf", phrase: "Une piscine" },
+  { seg: "rafale-cinema", track: "v2:ecran", src0: 51.141, src1: 52.0, dir: "bas-gauche", phrase: "un cinéma" },
+  { seg: "rafale-sport", track: "v1:sport", src0: 44.675, src1: 45.0, dir: "bas-droite", phrase: "et même une salle de sport" },
+  { seg: "entree", track: "v2:mezzanine", src0: 8.6, src1: 8.8, dir: "bas-droite", son: "pop", phrase: "avec sa mezzanine" },
+  { seg: "bureau", track: "v1:biblio", src0: 10.092, src1: 11.0, dir: "bas-droite", phrase: "une bibliothèque géante" },
+  { seg: "salon", track: "v1:cave", src0: 16.8, src1: 19.5, dir: "bas-gauche", son: "verre", phrase: "la cave à vin en plein milieu" },
   { seg: "cuisine", track: "v2:ilot-marbre", src0: 24.0, src1: 26.5, dir: "haut-droite", son: "pop", phrase: "un îlot en marbre géant" },
-  { seg: "coursive", track: "v2:coursive", src0: 46.5, src1: 47.5, dir: "haut-droite", phrase: "une coursive qui surplombe tout le salon" },
-  { seg: "chambre", track: "v2:poutres", src0: 36.2, src1: 37.5, dir: "bas-gauche", phrase: "ses poutres apparentes" },
-  { seg: "salle-de-bain", track: "v1:baignoire-haut", src0: 33.8, src1: 35.5, dir: "haut-droite", son: "pop", phrase: "plus grande que ta chambre" },
+  { seg: "coursive", track: "v2:coursive", src0: 46.964, src1: 47.5, dir: "haut-droite", phrase: "une coursive qui surplombe tout le salon" },
+  { seg: "chambre", track: "v2:poutres", src0: 37.3, src1: 37.5, dir: "bas-gauche", phrase: "ses poutres apparentes" },
+  { seg: "salle-de-bain", track: "v1:baignoire-haut", src0: 33.999, src1: 34.9, dir: "haut-droite", son: "pop", phrase: "une baignoire en plein milieu" },
+  { seg: "salle-de-bain", track: "v1:douche-g", src0: 35.4, src1: 35.85, dir: "bas-droite", phrase: "une douche à l'italienne de chaque côté" },
+  { seg: "salle-de-bain", track: "v1:douche-d", src0: 35.404, src1: 35.8, dir: "bas-gauche", phrase: "une douche à l'italienne de chaque côté" },
   { seg: "dressing", track: "v1:escalier", src0: 42.0, src1: 43.4, dir: "bas-droite", son: "scintille", phrase: "un escalier en colimaçon" },
-  { seg: "cinema", track: "v2:ecran", src0: 51.1, dir: "bas-droite", phrase: "avec son écran géant" },
-  { seg: "piscine", track: "v2:piscine-eau", src0: 33.3, src1: 35.5, dir: "haut-droite", son: "plouf", phrase: "une piscine face au coucher du soleil" },
+  { seg: "cinema", track: "v2:ecran", src0: 51.604, src1: 52.1, dir: "bas-droite", phrase: "avec son écran géant" },
+  { seg: "piscine", track: "v2:piscine-eau", src0: 34.211, src1: 35.5, dir: "haut-droite", son: "plouf", phrase: "une piscine face au coucher du soleil" },
+  { seg: "terrain", track: "v2:terrain-haut", src0: 53.052, src1: 53.7, dir: "haut-droite", son: "pop", phrase: "et même un terrain de basket" },
 ];
 
 // Texte d'accroche à l'écran (3 premières secondes, pour ceux qui scrollent sans le son)
 export const ACCROCHE = { from: 0.0, to: 3.0, texte: "Attends de voir le dressing 😳" };
 
 // Prix « n'importe quoi » (donné comme un avis) sur « six cent mille »
-export const PRIX = { from: outTime("fin-terrasse", 56.7) + 1.3, to: outTime("fin-terrasse", 61.3), texte: "600 000 €" };
+export const PRIX = { from: 57.77, to: 60.03, texte: "600 000 €" }; // « six cent mille »
 
 // Question finale « 1 ou 2 »
 export const CHOIX = [
-  { t: outTime("fin-facade", 0) + 1.0, n: "1", texte: "t'es d'accord" },
-  { t: outTime("fin-facade", 0) + 1.9, n: "2", texte: "n'importe quoi" },
+  { t: 61.27, n: "1", texte: "t'es d'accord" },
+  { t: 62.5, n: "2", texte: "n'importe quoi" },
 ];
 
 // Voix off : à remplir après génération (mêmes réglages que la 010)
-export const VOIX: { fichier: string; at: number }[] = [];
+export const VOIX: { fichier: string; at: number }[] = [{ fichier: "voix/voix-complete.wav", at: 0 }];
