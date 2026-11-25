@@ -55,3 +55,6 @@ auteurs) ; sources gratuites conseillées : Pexels, Unsplash, Pixabay.
 
 - [ ] Validation du montage et du script
 - [ ] Voix (hook puis suite), recalage au mot près, rendu final
+- **Rendu final `export/012-v1.mp4`** : 64,9 s, 1080×1920, 30 i/s, H.264 CRF 14, AAC 320 kb/s, 205 Mo (GitHub via LFS),
+  aucune image noire, aucun silence > 0,4 s. Crédits ElevenLabs utilisés au total : 1 578 / 40 000.
+- Titre proposé à l'utilisateur (à mettre lui-même dans TikTok) : « 450 000 € à Marseille… tu signes ? 😳 ».
