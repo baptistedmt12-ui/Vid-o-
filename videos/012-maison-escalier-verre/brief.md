@@ -32,6 +32,14 @@ auteurs) ; sources gratuites conseillées : Pexels, Unsplash, Pixabay.
   piscine « le jour… et la nuit » ; prix donné comme un avis (« SELON MOI 800 000 € ») ; 14 flèches suivies (OpenCV) ;
   nouvelle musique maison (`outils/musique.py`, 98 BPM).
 
+- 2026-11-25 — Retours v1 : trop proche de la 011 (prix « selon moi », question « d'accord / n'importe quoi ») →
+  garder le format des exemples mais : **pas de titre à l'écran** (l'utilisateur le met ; donner le titre au rendu final),
+  **accroche plus grosse et plus rapide** (2 éléments max), **« Bienvenue à Marseille » + 450 000 €** dès le début
+  (affirmation voulue par l'utilisateur, réserve exprimée sur le côté trompeur), appel à rester, visite directe,
+  **appel « de quelle ville tu es » au milieu**, fin « tu signes tout de suite / c'est forcément une arnaque ».
+- Montage v2 : intro escalier (vu d'en dessous, miroir) + piscine illuminée, façade + « PRIX 450 000 € », 13 flèches,
+  fin en 2 plans. Script porté à ≈ 215 mots (ajouts courts) pour tenir 62 s sans blanc.
+
 ## À faire / retours
 
 - [ ] Validation du montage et du script

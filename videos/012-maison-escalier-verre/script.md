@@ -1,30 +1,33 @@
-# Script voix off — Vidéo 012 « La maison à l'escalier de verre » (≈ 215 mots, 63 s)
+# Script voix off — Vidéo 012 « La maison à l'escalier de verre » — v2 (≈ 215 mots, ≈ 64 s)
 
-Une seule maison : extérieur + l'essentiel de la vidéo TikTok ; chambres d'amis, balcon vue lac et piscine de jour de la
-vidéo Pinterest (étalonnée pour se fondre). Voix : Chloé (eleven_v4, réglages de la 011, très dynamique dès 0,0 s).
+Format des exemples, accroche renforcée : intro 2 éléments ultra rapide → « Bienvenue à Marseille » + 450 000 € dès 3 s
+→ appel à rester → visite directe → appel « de quelle ville tu es » au milieu → question finale.
+Pas de titre à l'écran (l'utilisateur le met lui-même dans TikTok ; titre proposé au rendu final).
+Prix et ville voulus par l'utilisateur (affirmation volontairement improbable pour faire réagir ; réserve exprimée).
 
-| Temps | Image | Voix | Flèches / habillage / son |
-|-------|-------|------|---------------------------|
-| 0,0 – 2,7 | Façade au crépuscule (TikTok) | Personne ne veut croire le prix de cette maison. | texte « Devine le prix 😳 » ; flèche maison ; boom |
-| 2,7 – 6,8 | Rafale : escalier, cave, piscine de nuit | Un escalier qui flotte, une cave tout en verre, et une piscine qui s'illumine la nuit ! | une flèche par plan (verres, plouf) |
-| 6,8 – 12,2 | Allée vers la porte | Bienvenue dans une maison qui coche toutes les cases. Reste bien jusqu'à la fin pour connaître le prix. | |
-| 12,2 – 16,4 | Entrée + escalier | On entre… et direct, cet escalier en verre qui flotte dans le vide. | flèche escalier + scintillement |
-| 16,4 – 20,4 | Salon + bar | Le salon, avec son bar intégré… pour les soirées entre potes. | flèche bar + pop |
-| 20,4 – 23,0 | Salle à manger | La salle à manger et ses lustres dorés, | flèche lustres |
-| 23,0 – 26,5 | Cave vitrée | et juste à côté, la cave à vin vitrée. Tu prends un verre ? | flèche cave + verres |
-| 26,5 – 30,9 | Cuisine | La cuisine : un îlot en marbre interminable… assez long pour tout le quartier. | flèche îlot + pop |
-| 30,9 – 32,9 | 2e salon | Et un deuxième salon, ultra cosy. | |
-| 32,9 – 35,7 | Mezzanine vitrée | À l'étage, une mezzanine tout en verre, | flèche mezzanine |
-| 35,7 – 37,1 | Suite parentale | la suite parentale, | |
-| 37,1 – 40,7 | Salle de bain en marbre | et sa salle de bain en marbre, avec une baignoire posée au milieu. | flèche baignoire + pop |
-| 40,7 – 45,1 | Chambres d'amis (Pinterest) | Deux chambres d'amis… pour la belle-famille qu'on invite le moins possible. | |
-| 45,1 – 47,3 | Balcon vue lac (Pinterest) | Un balcon avec vue sur le lac, | flèche lac |
-| 47,3 – 49,7 | Cinéma | un cinéma privé, pour tes soirées Netflix, | |
-| 49,7 – 52,5 | Piscine de jour (Pinterest) | et la piscine… le jour, | flèche piscine + plouf |
-| 52,5 – 54,9 | Piscine de nuit | et la nuit. Avoue, c'est magique. | flèche piscine + scintillement |
-| 54,9 – 58,9 | Façade de près | Et le prix ? Pour moi, huit cent mille euros, pas un centime de plus. | étiquette « SELON MOI 800 000 € » + argent |
-| 58,9 – 62,9 | Façade (boucle) | Alors, sois honnête : un, t'es d'accord ? Deux, n'importe quoi ? Dis-le en commentaire ! | pastilles 1 / 2 |
+| Temps (estimé) | Image | Voix | Flèches / son |
+|-------|-------|------|---------------|
+| 0,0 – 1,1 | Escalier qui flotte (vu d'en dessous, miroir) | Un escalier qui flotte | flèche ; boom |
+| 1,1 – 3,3 | Piscine illuminée | et une piscine qui s'illumine la nuit ! | flèche + plouf |
+| 3,3 – 7,5 | Façade au crépuscule | Bienvenue à Marseille, et regarde ce que t'as pour 450 000 euros ! | étiquette « PRIX 450 000 € » + argent |
+| 7,5 – 10,6 | Allée | Reste bien jusqu'à la fin, tu vas pas en revenir. | |
+| 10,6 – 15,9 | Entrée + escalier | L'entrée, avec cet escalier en verre qui flotte dans le vide. Franchement, j'ose même pas monter dessus. | flèche + scintillement |
+| 15,9 – 19,3 | Salon + bar | Le salon, avec son bar intégré… pour les soirées entre potes. | flèche bar + pop |
+| 19,3 – 21,8 | Salle à manger | La salle à manger et ses lustres dorés, | flèche lustres |
+| 21,8 – 26,8 | Cave vitrée | et juste à côté, la cave à vin vitrée. Tu prends un verre ? Moi, je dis jamais non. | flèche + verres |
+| 26,8 – 30,8 | Cuisine | La cuisine : un îlot en marbre interminable… assez long pour tout le quartier. | flèche îlot + pop |
+| 30,8 – 33,9 | 2e salon | D'ailleurs, dis-moi en commentaire de quelle ville tu es ! | |
+| 33,9 – 36,2 | Mezzanine | À l'étage, une mezzanine tout en verre, | flèche |
+| 36,2 – 38,7 | Suite | la suite parentale, avec vue sur le jardin, | |
+| 38,7 – 42,6 | Salle de bain | et sa salle de bain en marbre, avec une baignoire posée au milieu. | flèche + pop |
+| 42,6 – 46,6 | Chambres d'amis (Pinterest) | Deux chambres d'amis… pour la belle-famille qu'on invite le moins possible. | |
+| 46,6 – 50,2 | Balcon vue lac (Pinterest) | Un balcon avec vue sur le lac, parfait pour ton café du matin, | flèche lac |
+| 50,2 – 52,4 | Cinéma | un cinéma privé pour tes soirées Netflix, | |
+| 52,4 – 54,8 | Piscine de jour (Pinterest) | et la piscine… le jour, | flèche + plouf |
+| 54,8 – 56,9 | Piscine de nuit | et la nuit. Avoue, c'est magique. | flèche + scintillement |
+| 56,9 – 60,5 | Façade de près | Alors, sois honnête : 450 000 euros à Marseille… | |
+| 60,5 – 64,5 | Façade (boucle) | un, tu signes tout de suite ? Ou deux, c'est forcément une arnaque ? Dis-le en commentaire ! | pastilles 1 / 2 |
 
-## Texte d'un bloc pour ElevenLabs
+## Texte d'un bloc pour ElevenLabs (chiffres en lettres)
 
-Personne ne veut croire le prix de cette maison. Un escalier qui flotte, une cave tout en verre, et une piscine qui s'illumine la nuit ! Bienvenue dans une maison qui coche toutes les cases. Reste bien jusqu'à la fin pour connaître le prix. On entre… et direct, cet escalier en verre qui flotte dans le vide. Le salon, avec son bar intégré… pour les soirées entre potes. La salle à manger et ses lustres dorés, et juste à côté, la cave à vin vitrée. Tu prends un verre ? La cuisine : un îlot en marbre interminable… assez long pour tout le quartier. Et un deuxième salon, ultra cosy. À l'étage, une mezzanine tout en verre, la suite parentale, et sa salle de bain en marbre, avec une baignoire posée au milieu. Deux chambres d'amis… pour la belle-famille qu'on invite le moins possible. Un balcon avec vue sur le lac, un cinéma privé, pour tes soirées Netflix, et la piscine… le jour, et la nuit. Avoue, c'est magique. Et le prix ? Pour moi, huit cent mille euros, pas un centime de plus. Alors, sois honnête : un, t'es d'accord ? Deux, n'importe quoi ? Dis-le en commentaire !
+Un escalier qui flotte et une piscine qui s'illumine la nuit ! Bienvenue à Marseille, et regarde ce que t'as pour quatre cent cinquante mille euros ! Reste bien jusqu'à la fin, tu vas pas en revenir. L'entrée, avec cet escalier en verre qui flotte dans le vide. Franchement, j'ose même pas monter dessus. Le salon, avec son bar intégré… pour les soirées entre potes. La salle à manger et ses lustres dorés, et juste à côté, la cave à vin vitrée. Tu prends un verre ? Moi, je dis jamais non. La cuisine : un îlot en marbre interminable… assez long pour tout le quartier. D'ailleurs, dis-moi en commentaire de quelle ville tu es ! À l'étage, une mezzanine tout en verre, la suite parentale, avec vue sur le jardin, et sa salle de bain en marbre, avec une baignoire posée au milieu. Deux chambres d'amis… pour la belle-famille qu'on invite le moins possible. Un balcon avec vue sur le lac, parfait pour ton café du matin, un cinéma privé pour tes soirées Netflix, et la piscine… le jour, et la nuit. Avoue, c'est magique. Alors, sois honnête : quatre cent cinquante mille euros à Marseille… un, tu signes tout de suite ? Ou deux, c'est forcément une arnaque ? Dis-le en commentaire !

@@ -24,33 +24,30 @@ export type Seg = {
   voix: string;
 };
 
+// v2 : intro 2 éléments → Marseille + 450 000 € → appel à rester → visite (appel « de quelle ville tu es » au milieu).
+// Durées estimées (≈ 3,55 mots/s) : recalées au mot près sur la vraie voix.
 export const SEGS: Seg[] = [
-  // Accroche : la façade (comme la vidéo d'origine, qui a bien marché) + phrase intrigante
-  { id: "accroche", rush: "t", src0: 0.0, src1: 3.0, dur: 2.7, zoom: "in", voix: "Personne ne veut croire le prix de cette maison." },
-  // Rafale des points forts
-  { id: "rafale-escalier", rush: "t", src0: 15.0, src1: 16.2, dur: 1.1, mirror: true, punch: true, voix: "Un escalier qui flotte," },
-  { id: "rafale-cave", rush: "t", src0: 30.8, src1: 31.8, dur: 1.0, punch: true, voix: "une cave tout en verre," },
-  { id: "rafale-piscine", rush: "t", src0: 59.5, src1: 60.7, dur: 2.0, punch: true, zoom: "in", voix: "et une piscine qui s'illumine la nuit !" },
-  { id: "allee", rush: "t", src0: 3.0, src1: 11.4, dur: 5.4, zoom: "in", voix: "Bienvenue dans une maison qui coche toutes les cases. Reste bien jusqu'à la fin pour connaître le prix." },
-  // Visite dans l'ordre
-  { id: "entree", rush: "t", src0: 11.7, src1: 18.5, dur: 4.2, voix: "On entre… et direct, cet escalier en verre qui flotte dans le vide." },
-  { id: "salon", rush: "t", src0: 19.0, src1: 24.5, dur: 4.0, voix: "Le salon, avec son bar intégré… pour les soirées entre potes." },
-  { id: "salle-a-manger", rush: "t", src0: 25.5, src1: 29.0, dur: 2.6, mirror: true, voix: "La salle à manger et ses lustres dorés," },
-  { id: "cave", rush: "t", src0: 29.5, src1: 32.5, dur: 3.5, mirror: true, voix: "et juste à côté, la cave à vin vitrée. Tu prends un verre ?" },
-  { id: "cuisine", rush: "t", src0: 37.5, src1: 44.0, dur: 4.4, voix: "La cuisine : un îlot en marbre interminable… assez long pour tout le quartier." },
-  { id: "salon-2", rush: "t", src0: 44.0, src1: 47.0, dur: 2.0, mirror: true, voix: "Et un deuxième salon, ultra cosy." },
-  { id: "mezzanine", rush: "t", src0: 55.0, src1: 57.5, dur: 2.8, mirror: true, voix: "À l'étage, une mezzanine tout en verre," },
-  { id: "suite", rush: "t", src0: 48.0, src1: 50.5, dur: 1.4, voix: "la suite parentale," },
-  { id: "salle-de-bain", rush: "t", src0: 50.8, src1: 54.5, dur: 3.6, voix: "et sa salle de bain en marbre, avec une baignoire posée au milieu." },
-  { id: "chambre-amis-1", rush: "p", src0: 56.5, src1: 59.5, dur: 2.2, voix: "Deux chambres d'amis…" },
+  { id: "intro-escalier", rush: "t", src0: 17.0, src1: 18.2, dur: 1.1, mirror: true, punch: true, voix: "Un escalier qui flotte" },
+  { id: "intro-piscine", rush: "t", src0: 59.5, src1: 60.7, dur: 2.16, punch: true, zoom: "in", voix: "et une piscine qui s'illumine la nuit !" },
+  { id: "facade", rush: "t", src0: 0.0, src1: 3.0, dur: 4.22, zoom: "in", voix: "Bienvenue à Marseille, et regarde ce que t'as pour quatre cent cinquante mille euros !" },
+  { id: "allee", rush: "t", src0: 8.0, src1: 11.4, dur: 3.1, zoom: "in", voix: "Reste bien jusqu'à la fin, tu vas pas en revenir." },
+  { id: "entree", rush: "t", src0: 11.7, src1: 18.5, dur: 5.25, voix: "L'entrée, avec cet escalier en verre qui flotte dans le vide. Franchement, j'ose même pas monter dessus." },
+  { id: "salon", rush: "t", src0: 19.0, src1: 24.5, dur: 3.47, voix: "Le salon, avec son bar intégré… pour les soirées entre potes." },
+  { id: "salle-a-manger", rush: "t", src0: 25.5, src1: 29.0, dur: 2.44, mirror: true, voix: "La salle à manger et ses lustres dorés," },
+  { id: "cave", rush: "t", src0: 29.5, src1: 32.5, dur: 5.0, mirror: true, voix: "et juste à côté, la cave à vin vitrée. Tu prends un verre ? Moi, je dis jamais non." },
+  { id: "cuisine", rush: "t", src0: 37.5, src1: 44.0, dur: 4.03, voix: "La cuisine : un îlot en marbre interminable… assez long pour tout le quartier." },
+  { id: "cta-ville", rush: "t", src0: 44.0, src1: 47.0, dur: 3.1, mirror: true, voix: "D'ailleurs, dis-moi en commentaire de quelle ville tu es !" },
+  { id: "mezzanine", rush: "t", src0: 55.0, src1: 57.5, dur: 2.25, mirror: true, voix: "À l'étage, une mezzanine tout en verre," },
+  { id: "suite", rush: "t", src0: 48.0, src1: 50.5, dur: 2.53, voix: "la suite parentale, avec vue sur le jardin," },
+  { id: "salle-de-bain", rush: "t", src0: 50.8, src1: 54.5, dur: 3.94, voix: "et sa salle de bain en marbre, avec une baignoire posée au milieu." },
+  { id: "chambre-amis-1", rush: "p", src0: 56.5, src1: 59.5, dur: 1.8, voix: "Deux chambres d'amis…" },
   { id: "chambre-amis-2", rush: "p", src0: 79.8, src1: 82.0, dur: 2.2, mirror: true, voix: "pour la belle-famille qu'on invite le moins possible." },
-  { id: "balcon", rush: "p", src0: 48.6, src1: 50.2, dur: 2.2, zoom: "in", voix: "Un balcon avec vue sur le lac," },
-  { id: "cinema", rush: "t", src0: 57.9, src1: 59.3, dur: 2.4, voix: "un cinéma privé, pour tes soirées Netflix," },
-  { id: "piscine-jour", rush: "p", src0: 16.6, src1: 20.0, dur: 2.8, zoom: "in", voix: "et la piscine… le jour," },
-  { id: "piscine-nuit", rush: "t", src0: 59.5, src1: 60.7, dur: 2.4, mirror: true, zoom: "in", voix: "et la nuit. Avoue, c'est magique." },
-  // Fin : prix « n'importe quoi » donné comme un avis + question 1 ou 2
-  { id: "fin-prix", rush: "t", src0: 7.5, src1: 11.4, dur: 4.0, mirror: true, zoom: "in", voix: "Et le prix ? Pour moi, huit cent mille euros, pas un centime de plus." },
-  { id: "fin-facade", rush: "t", src0: 0.0, src1: 3.0, dur: 4.0, mirror: true, zoom: "in", voix: "Alors, sois honnête : un, t'es d'accord ? Deux, n'importe quoi ? Dis-le en commentaire !" },
+  { id: "balcon", rush: "p", src0: 47.8, src1: 50.4, dur: 3.6, zoom: "in", voix: "Un balcon avec vue sur le lac, parfait pour ton café du matin," },
+  { id: "cinema", rush: "t", src0: 57.9, src1: 59.3, dur: 2.16, voix: "un cinéma privé pour tes soirées Netflix," },
+  { id: "piscine-jour", rush: "p", src0: 16.6, src1: 20.0, dur: 2.4, zoom: "in", voix: "et la piscine… le jour," },
+  { id: "piscine-nuit", rush: "t", src0: 59.5, src1: 60.7, dur: 2.06, mirror: true, zoom: "in", voix: "et la nuit. Avoue, c'est magique." },
+  { id: "fin-1", rush: "t", src0: 7.5, src1: 11.4, dur: 3.6, mirror: true, zoom: "in", voix: "Alors, sois honnête : quatre cent cinquante mille euros à Marseille…" },
+  { id: "fin-2", rush: "t", src0: 0.0, src1: 3.0, dur: 4.0, mirror: true, zoom: "in", voix: "un, tu signes tout de suite ? Ou deux, c'est forcément une arnaque ? Dis-le en commentaire !" },
 ];
 
 export type Placed = Seg & { from: number; frames: number; rate: number };
@@ -82,10 +79,9 @@ export type Annot = {
 
 // Flèches uniquement sur ce que dit la voix ; jamais deux qui s'enchaînent trop vite.
 export const ANNOTS: Annot[] = [
-  { seg: "accroche", track: "t:maison", src0: 0.3, src1: 1.2, dir: "bas-droite", phrase: "cette maison" },
-  { seg: "rafale-escalier", track: "t:escalier", src0: 15.05, dir: "bas-gauche", phrase: "Un escalier qui flotte" },
-  { seg: "rafale-cave", track: "t:cave", src0: 30.85, dir: "bas-droite", son: "verre", phrase: "une cave tout en verre" },
-  { seg: "rafale-piscine", track: "t:piscine", src0: 59.6, dir: "haut-droite", son: "plouf", phrase: "une piscine qui s'illumine la nuit" },
+  { seg: "intro-escalier", track: "t:escalier", src0: 17.1, dir: "bas-gauche", phrase: "Un escalier qui flotte" },
+  { seg: "intro-piscine", track: "t:piscine", src0: 59.6, dir: "haut-droite", son: "plouf", phrase: "une piscine qui s'illumine la nuit" },
+  { seg: "facade", track: "t:maison", src0: 0.3, src1: 1.2, dir: "bas-droite", phrase: "Bienvenue à Marseille" },
   { seg: "entree", track: "t:escalier", src0: 15.0, src1: 18.0, dir: "bas-droite", son: "scintille", phrase: "cet escalier en verre qui flotte dans le vide" },
   { seg: "salon", track: "t:bar", src0: 22.0, src1: 24.0, dir: "bas-gauche", son: "pop", phrase: "son bar intégré" },
   { seg: "salle-a-manger", track: "t:lustres", src0: 26.2, dir: "bas-droite", phrase: "ses lustres dorés" },
@@ -99,14 +95,15 @@ export const ANNOTS: Annot[] = [
 ];
 
 // Texte d'accroche à l'écran (3 premières secondes)
-export const ACCROCHE = { from: 0.0, to: 3.0, texte: "Devine le prix 😳" };
+// Pas de texte d'accroche à l'écran : l'utilisateur met son titre lui-même dans TikTok.
+export const ACCROCHE = { from: 0, to: 0, texte: "" };
 
-// Prix « n'importe quoi » (donné comme un avis) sur « huit cent mille »
-export const PRIX = { from: outTime("fin-prix", 7.5) + 1.2, to: outTime("fin-prix", 11.4), texte: "800 000 €" };
+// Prix sur « quatre cent cinquante mille » (étiquette « PRIX »)
+export const PRIX = { from: outTime("facade", 0) + 1.9, to: outTime("allee", 11.4), texte: "450 000 €" };
 
 export const CHOIX = [
-  { t: outTime("fin-facade", 0) + 1.0, n: "1", texte: "t'es d'accord" },
-  { t: outTime("fin-facade", 0) + 1.9, n: "2", texte: "n'importe quoi" },
+  { t: outTime("fin-2", 0) + 0.1, n: "1", texte: "je signe tout de suite" },
+  { t: outTime("fin-2", 0) + 1.4, n: "2", texte: "c'est une arnaque" },
 ];
 
 export const VOIX: { fichier: string; at: number }[] = [];

@@ -194,7 +194,7 @@ const EtiquettePrix: React.FC<{ texte: string }> = ({ texte }) => {
         opacity: Math.min(1, k * 2) * out,
       }}
     >
-      <div style={{ fontSize: 20, fontWeight: 600, color: "#777", letterSpacing: 3, marginBottom: 2 }}>SELON MOI</div>
+      <div style={{ fontSize: 20, fontWeight: 600, color: "#777", letterSpacing: 3, marginBottom: 2 }}>PRIX</div>
       <div style={{ fontSize: 50, fontWeight: 800, color: RED, lineHeight: 1 }}>{texte}</div>
     </div>
   );
@@ -242,9 +242,11 @@ export const Video012: React.FC<{ musique?: boolean }> = ({ musique = true }) =>
       ))}
 
       {/* Texte d'accroche (3 premières secondes) */}
-      <Sequence from={Math.round(ACCROCHE.from * FPS)} durationInFrames={Math.round((ACCROCHE.to - ACCROCHE.from) * FPS)} name="accroche">
-        <TexteAccroche texte={ACCROCHE.texte} />
-      </Sequence>
+      {ACCROCHE.texte ? (
+        <Sequence from={Math.round(ACCROCHE.from * FPS)} durationInFrames={Math.round((ACCROCHE.to - ACCROCHE.from) * FPS)} name="accroche">
+          <TexteAccroche texte={ACCROCHE.texte} />
+        </Sequence>
+      ) : null}
 
       {/* Étiquette de prix sur « 7 millions d'euros » */}
       <Sequence from={Math.round(PRIX.from * FPS)} durationInFrames={Math.round((PRIX.to - PRIX.from) * FPS)} name="prix">
