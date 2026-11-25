@@ -79,3 +79,11 @@ Transcription mot par mot : `exemple-transcription.json`.
   scrollent sans le son ; premier plan sombre (coucher de soleil) et lent (ralenti + zoom).
 - À appliquer : enjeu/curiosité dans la 1re seconde (prix ou question), texte d'accroche court à l'écran sur les
   3 premières secondes, plan le plus lumineux et le plus « waouh » en 1er, coupes rapides (~1 s) au début, voix à fond dès 0,0 s.
+
+## Stats vidéo 011 (publiée à 18h) et hypothèses
+- 628 vues (99,4 % Pour toi), 6 j'aime, 0 commentaire/partage/favori, **3,6 s** de moyenne, 12 % à 5 s, 2 % à 30 s.
+- Changer l'accroche n'a pas aidé (pire que la 010) → causes probables : voix IA reconnue dès la 1re seconde ;
+  images déjà vues / reconnues par TikTok (vidéos virales retéléchargées) ; compte neuf.
+- Pistes : voix humaine de l'utilisateur (test), images moins vues (Pexels/Unsplash — **Pinterest n'est pas libre de
+  droits**), séquence face caméra au début, vérifier les avertissements « contenu non original » dans TikTok Studio.
+- Vidéo 012 : test « mélange TikTok + Pinterest » pour casser l'effet « déjà vu ».
