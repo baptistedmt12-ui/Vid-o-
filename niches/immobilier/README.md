@@ -87,3 +87,11 @@ Transcription mot par mot : `exemple-transcription.json`.
 - Pistes : voix humaine de l'utilisateur (test), images moins vues (Pexels/Unsplash — **Pinterest n'est pas libre de
   droits**), séquence face caméra au début, vérifier les avertissements « contenu non original » dans TikTok Studio.
 - Vidéo 012 : test « mélange TikTok + Pinterest » pour casser l'effet « déjà vu ».
+
+## Règles ajoutées (vidéo 012, 25/11/2026)
+- **Un élément cité et fléché à chaque plan** ; un plan sans élément = ennuyeux → raccourcir ou retirer.
+- Pas de titre à l'écran : l'utilisateur le met lui-même ; lui **donner le titre au rendu final**.
+- Accroche : 2 éléments max en une phrase très rapide, puis ville + prix choc dès ~3 s (ville en gros en motion design),
+  puis « Reste bien jusqu'à la fin, tu vas pas t'en remettre », puis visite directe ; appel à commenter rapide au milieu.
+- Voix : couper les blancs **uniquement dans le silence réel** (`videos/012-maison-escalier-verre/outils/voix.py`) ;
+  transcrire après génération ; si un mot sonne mal, regénérer **la phrase seule** (previous/next_text) et la réinsérer.

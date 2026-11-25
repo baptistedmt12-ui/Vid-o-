@@ -12,7 +12,7 @@ import {
   useVideoConfig,
 } from "remotion";
 import tracksJson from "./tracks.json";
-import { ACCROCHE, ANNOTS, Annot, CHOIX, FILTRE_P, FPS, PLACED, Placed, PRIX, RUSHES, Son, TOTAL_FRAMES, VOIX } from "./timeline";
+import { ACCROCHE, ANNOTS, Annot, CHOIX, FILTRE_P, FPS, PLACED, Placed, PRIX, RUSHES, Son, TOTAL_FRAMES, VILLE, VOIX } from "./timeline";
 
 export { FPS, TOTAL_FRAMES };
 
@@ -231,6 +231,47 @@ const TexteAccroche: React.FC<{ texte: string }> = ({ texte }) => {
   );
 };
 
+/** « MARSEILLE » qui claque en gros : arrivée en écrasement + secousse, soulignement rouge, sortie rapide. */
+const VilleSlam: React.FC<{ texte: string }> = ({ texte }) => {
+  const frame = useCurrentFrame();
+  const { fps, durationInFrames } = useVideoConfig();
+  const k = spring({ frame, fps, config: { damping: 9, stiffness: 260, mass: 0.7 } });
+  const scale = interpolate(k, [0, 1], [2.6, 1]);
+  const shake = frame < 8 ? Math.sin(frame * 3.1) * 14 * (1 - frame / 8) : 0;
+  const barre = spring({ frame: frame - 4, fps, config: { damping: 14, stiffness: 200 } });
+  const out = interpolate(frame, [durationInFrames - 7, durationInFrames], [1, 0], clamp);
+  return (
+    <div
+      style={{
+        position: "absolute",
+        left: 70,
+        width: 830,
+        top: 520,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        opacity: Math.min(1, k * 3) * out,
+        transform: `translate(${shake}px, ${-shake * 0.6}px) scale(${scale * (0.92 + 0.08 * out)}) rotate(-4deg)`,
+      }}
+    >
+      <div
+        style={{
+          fontFamily: "Anton, Impact, sans-serif",
+          fontSize: 168,
+          lineHeight: 1,
+          color: "#FFFFFF",
+          letterSpacing: 4,
+          textShadow: "0 10px 30px rgba(0,0,0,0.6), 0 0 2px rgba(0,0,0,0.8)",
+          WebkitTextStroke: "3px rgba(0,0,0,0.25)",
+        }}
+      >
+        📍{texte}
+      </div>
+      <div style={{ height: 16, width: 620 * barre, background: RED, borderRadius: 8, marginTop: 10, boxShadow: "0 6px 16px rgba(0,0,0,0.4)" }} />
+    </div>
+  );
+};
+
 export const Video012: React.FC<{ musique?: boolean }> = ({ musique = true }) => {
   const debutFin = Math.round(CHOIX[0].t * FPS);
   return (
@@ -247,6 +288,14 @@ export const Video012: React.FC<{ musique?: boolean }> = ({ musique = true }) =>
           <TexteAccroche texte={ACCROCHE.texte} />
         </Sequence>
       ) : null}
+
+      {/* « MARSEILLE » en gros sur le mot */}
+      <Sequence from={Math.round(VILLE.t * FPS)} durationInFrames={Math.round(VILLE.dur * FPS)} name="ville">
+        <VilleSlam texte={VILLE.texte} />
+      </Sequence>
+      <Sequence from={Math.round(VILLE.t * FPS)} durationInFrames={50} name="son-ville">
+        <Audio src={staticFile(ASSETS + "boom.wav")} volume={0.32} />
+      </Sequence>
 
       {/* Étiquette de prix sur « 7 millions d'euros » */}
       <Sequence from={Math.round(PRIX.from * FPS)} durationInFrames={Math.round((PRIX.to - PRIX.from) * FPS)} name="prix">

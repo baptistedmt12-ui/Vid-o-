@@ -1,6 +1,6 @@
 # Vidéo 012 — La maison à l'escalier de verre
 
-- **Statut :** 🔍 Relecture (montage v1 sans voix, script à valider)
+- **Statut :** 🔍 Relecture (rendu final avec voix)
 - **Format :** 9:16 (1080×1920), 30 i/s
 - **Durée :** 62,9 s
 - **Composition Remotion :** `Video012` (`src/videos/012-maison-escalier-verre/`)
@@ -39,6 +39,17 @@ auteurs) ; sources gratuites conseillées : Pexels, Unsplash, Pixabay.
   **appel « de quelle ville tu es » au milieu**, fin « tu signes tout de suite / c'est forcément une arnaque ».
 - Montage v2 : intro escalier (vu d'en dessous, miroir) + piscine illuminée, façade + « PRIX 450 000 € », 13 flèches,
   fin en 2 plans. Script porté à ≈ 215 mots (ajouts courts) pour tenir 62 s sans blanc.
+
+- 2026-11-25 — Voix : hook avec « tu vas pas t'en remettre » (81 crédits) + suite (435 crédits) + phrase
+  « belle-famille qu'on invite » regénérée seule et réinsérée (22 crédits ; « invite » sonnait « enlite »).
+  **Total voix 012 : 618 crédits** (dont 80 du 1er hook écarté).
+- **Nouvelle méthode anti-mots écorchés** (`outils/voix.py`) : on ne coupe que du silence réel (énergie mesurée),
+  avec 0,07 s de marge après chaque mot et 0,04 s avant le suivant ; blancs ramenés à 0,16 s.
+- **Règle utilisateur : un élément cité ET fléché à chaque plan** (sinon le plan est ennuyeux) : canapé, tête de lit,
+  baies vitrées, lit, écran ajoutés ; plan Pinterest (salon double hauteur) pour l'appel « de quelle ville tu es ».
+- **« MARSEILLE » en motion design** (arrivée en écrasement + secousse + soulignement rouge + impact) sur le mot,
+  puis étiquette « PRIX 450 000 € » + argent. Punch à chaque coupe pour le dynamisme.
+- Calage au mot près (`outils/calage.py`) : coupes 0,08 s avant chaque phrase, flèches à 0,1 s de leur mot.
 
 ## À faire / retours
 
