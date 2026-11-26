@@ -6,3 +6,4 @@ videos/010-villa-7-millions/export/010-v1.mp4 filter=lfs diff=lfs merge=lfs -tex
 videos/011-maison-escalier-secret/export/011-v1.mp4 filter=lfs diff=lfs merge=lfs -text
 videos/012-maison-escalier-verre/export/012-v1.mp4 filter=lfs diff=lfs merge=lfs -text
 videos/012-maison-escalier-verre/export/012-sans-voix.mp4 filter=lfs diff=lfs merge=lfs -text
+videos/013-maison-cheminee-basket/export/013-v1-montage.mp4 filter=lfs diff=lfs merge=lfs -text
