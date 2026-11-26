@@ -93,6 +93,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition id="Video010" component={Video010} durationInFrames={TOTAL010} fps={FPS010} width={1080} height={1920} />
       <Composition id="Video011" component={Video011} durationInFrames={TOTAL011} fps={FPS011} width={1080} height={1920} />
       <Composition id="Video012" component={Video012} durationInFrames={TOTAL012} fps={FPS012} width={1080} height={1920} />
+      <Composition id="Video012SansVoix" component={Video012} durationInFrames={TOTAL012} fps={FPS012} width={1080} height={1920} defaultProps={{ voix: false }} />
     </>
   );
 };

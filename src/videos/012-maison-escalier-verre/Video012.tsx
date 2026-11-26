@@ -272,7 +272,7 @@ const VilleSlam: React.FC<{ texte: string }> = ({ texte }) => {
   );
 };
 
-export const Video012: React.FC<{ musique?: boolean }> = ({ musique = true }) => {
+export const Video012: React.FC<{ musique?: boolean; voix?: boolean }> = ({ musique = true, voix = true }) => {
   const debutFin = Math.round(CHOIX[0].t * FPS);
   return (
     <AbsoluteFill style={{ backgroundColor: "#000" }}>
@@ -315,11 +315,11 @@ export const Video012: React.FC<{ musique?: boolean }> = ({ musique = true }) =>
       {musique && (
         <Audio
           src={staticFile(ASSETS + "musique.wav")}
-          volume={(f) => interpolate(f, [TOTAL_FRAMES - 45, TOTAL_FRAMES], [VOIX.length ? 0.14 : 0.3, 0], clamp)}
+          volume={(f) => interpolate(f, [TOTAL_FRAMES - 45, TOTAL_FRAMES], [voix && VOIX.length ? 0.14 : 0.3, 0], clamp)}
         />
       )}
       <Audio src={staticFile(ASSETS + "boom.wav")} volume={0.4} />
-      {VOIX.map((v) => (
+      {voix && VOIX.map((v) => (
         <Sequence key={v.fichier} from={Math.round(v.at * FPS)} name={`voix-${v.fichier}`}>
           <Audio src={staticFile(ASSETS + v.fichier)} volume={1} />
         </Sequence>

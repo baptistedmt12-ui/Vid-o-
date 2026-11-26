@@ -95,3 +95,9 @@ Transcription mot par mot : `exemple-transcription.json`.
   puis « Reste bien jusqu'à la fin, tu vas pas t'en remettre », puis visite directe ; appel à commenter rapide au milieu.
 - Voix : couper les blancs **uniquement dans le silence réel** (`videos/012-maison-escalier-verre/outils/voix.py`) ;
   transcrire après génération ; si un mot sonne mal, regénérer **la phrase seule** (previous/next_text) et la réinsérer.
+
+## Stats vidéo 012 (Marseille 450 000 €, ~24 h après)
+- ≈ 700 vues, **4,6 s** de moyenne, **18 % à 5 s** (meilleur que 011 : 12 %), 2 % à 30 s.
+- L'accroche aide un peu, mais le décrochage reste massif. Hypothèse de l'utilisateur : la voix IA est pénalisée.
+- **Test suivant : la voix de l'utilisateur** sur le même montage (`Video012SansVoix` + script à lire), recalage
+  du montage sur son enregistrement.
